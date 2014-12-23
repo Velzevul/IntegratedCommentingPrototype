@@ -1,8 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "Integrated Commenting Prototype",
   "version": "1.0.0",
   "author": "Volodymyr Dziubak",
-  "license": "MIT",
   "scripts": {
     "preinstall": "bundle",
     "postinstall": "./node_modules/.bin/bower install",

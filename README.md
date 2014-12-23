@@ -1,13 +1,12 @@
-Frontend Boilerplate
-===========
+Integrated Commenting Prototype
+=================
 
-Preconfigured Grunt with standard tasks:
-* SASS compilation with Compass + watch
-* Local server with autoreload
+Incorporating enhanced commenting functionality into the existing D2L educational platform.
 
-SMACSS + OOCSS stylesheet structure, includes:
-* normalize.css + some custom resets
-* few useful mixins and functions
-* general OOCSS abstractions (media element, island, flag, ...)
-* stylesheets for basic layout handling
-* CSS Wizardry Grid
+requirements:
+ * nodejs (+ npm )
+ * ruby
+
+install & run:
+```
+npm install && npm start

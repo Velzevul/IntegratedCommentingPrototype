@@ -1,11 +1,9 @@
 {
-  "name": "boilerplate",
+  "name": "Integrated Commenting Prototype",
   "version": "1.0.0",
-  "homepage": "https://github.com/Velzevul/boilerplate",
   "authors": [
     "Volodymyr Dziubak <volodymyr.dzyubak@gmail.com>"
   ],
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
