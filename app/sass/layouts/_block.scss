@@ -3,6 +3,7 @@
  *
  *  maintains vertical spacing between different modules
  *  for each of block types:
+ *    - block-x-small
  *    - block-small
  *    - block
  *    - block-med
@@ -15,6 +16,7 @@
  *
  */
 $blocks: (
+  'block-x-small': $global-baseline/2,
   'block-small'  : $global-baseline,
   'block'        : $global-baseline * 2,
   'block-med'    : $global-baseline * 3,

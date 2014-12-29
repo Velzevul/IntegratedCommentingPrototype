@@ -1,0 +1,55 @@
+/**
+ *  DOCUMENT MODULE
+ *
+ *  styling for the document and its content
+ *
+ *  .document
+ *    &__title
+ *    &__anchor
+ *
+ */
+.document {
+  margin-top: $global-baseline * 4;
+  margin-bottom: $global-baseline * 10;
+  padding: $global-baseline * 4;
+
+  background: white;
+  border: 2px solid darken($color-bg, 5%);
+  border-top: none;
+
+  &__title {
+    display: inline-block;
+
+    font-size: 22px;
+    line-height: $global-baseline * 3;
+
+    color: $color-tx-darkened;
+  }
+
+  &__anchor {
+    display: inline;
+    padding: 3px 0;
+
+    background-color: #cecece;
+
+    cursor: pointer;
+
+    @include transition-property(background-color);
+    @include transition-duration(0.2s);
+  }
+}
+
+@each $name, $value in $highlight-colors {
+  .document__anchor--#{$name} {
+    background-color: rgba($value, 0.25);
+
+    &:hover,
+    &.document__anchor--highlighted {
+      background-color: rgba($value, 0.7);
+    }
+
+    &.document__anchor--selected {
+      background-color: rgba($value, 1);
+    }
+  }
+}

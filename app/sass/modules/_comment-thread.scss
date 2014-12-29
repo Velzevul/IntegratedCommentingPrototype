@@ -1,0 +1,98 @@
+/**
+ *  COMMENT THREAD MODULE
+ *
+ *  styling for comment threads
+ *
+ *  .comment-thread
+ *    &--multiple
+ *    &--selected
+ *    &--highlighted
+ *    &--{color}
+ *    <>--  .ct-comment
+ *            &__author
+ *            &__updated_at
+ *            &__text
+ *
+ */
+.comment-thread {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  margin-bottom: $global-baseline * 2;
+
+  font-size: 13px;
+  line-height: 17px;
+
+  background: white;
+  border: 1px solid darken($color-bg, 5%);
+  border-left-width: 4px;
+
+  cursor: pointer;
+
+  @include transition-property(left, top);
+  @include transition-duration(0.2s, 0.35s);
+
+  &__new-indicator {
+    position: absolute;
+    bottom: 7px;
+    right: 9px;
+  }
+}
+  .comment-thread--multiple {
+    box-shadow: 2px 2px 0 0 white,
+                2px 2px 0 1px darken($color-bg, 5%),
+                5px 5px 0 0 white,
+                5px 5px 0 1px darken($color-bg, 5%),
+                8px 8px 0 0 white,
+                8px 8px 0 1px darken($color-bg, 5%);
+  }
+  .comment-thread--unseen {
+    background: #FFFFBC;
+  }
+  .comment-thread--highlighted {
+    left: -$global-baseline;
+  }
+  .comment-thread--selected {
+    left: -$global-baseline * 3;
+    cursor: inherit;
+  }
+  @each $name, $value in $highlight-colors {
+    .comment-thread--#{$name} {
+      border-left-color: $value;
+
+      &.comment-thread--selected:before {
+        @include simple-arrow(8px, $value, 'quadrant-1', -20px, 6px, 'left');
+        z-index: 1;
+      }
+    }
+  }
+
+.ct-comment {
+  position: relative;
+  padding: $global-baseline $global-baseline;
+
+  &__author {
+    display: inline-block;
+
+    font-weight: 600;
+
+    color: $color-tx-darkened;
+  }
+
+  &__updated-at {
+    font-weight: 300;
+
+    color: $color-tx-muted;
+  }
+
+  &__text {
+    // ...
+  }
+}
+  .ct-comment--reply {
+    border-top: 1px solid darken($color-bg, 5%);
+  }
+  .ct-comment--new {
+    background: #FFFFBC;
+  }

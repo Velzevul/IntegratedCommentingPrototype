@@ -116,9 +116,20 @@
         'layouts/tricol',
         'layouts/media',
         'layouts/block',
-        'layouts/offscreen';
+        'layouts/offscreen',
+        'layouts/supplement';
 
-// module imports here
+@import 'modules/link',
+        'modules/icons',
+        'modules/labels',
+        'modules/buttons',
+        'modules/content-area',
+        'modules/comments',
+        'modules/comment-tabs',
+        'modules/comment-thread',
+        'modules/general-comment',
+        'modules/document',
+        'modules/document-toolbar';
 
 @import 'states',
         'dev-grid',

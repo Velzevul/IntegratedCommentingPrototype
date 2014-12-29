@@ -1,13 +1,335 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="comments">
   <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Integrated Commenting Prototype</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
     <script src="modernizr/modernizr.js"></script>
   </head>
-  <body>
-    I am the boilerplate
+  <body ng-controller="commentsController" ng-click="deselectAllComments($event)">
+    <div class="l-wrap">
+      <div class="grid grid--center grid--full">
+        <div class="grid__item three-quarters">
+          <div class="document-toolbar" fix-width>
+            <div class="l-split">
+              <div class="l-split__right">
+                <div class="l-list-inline" ng-hide="selectingContext">
+                  <div class="l-list-inline__item" ng-show="activeTab">
+                    <button class="link-inv link--success" ng-click="addContextualComment()">add contextual comment</button>
+                  </div>
+
+                  <div class="l-list-inline__item" ng-show="activeTab">
+                    <button class="link-inv link--success">add general comment</button>
+                  </div>
+
+                  <div class="l-list-inline__item">
+                    <button class="link-inv link--success" ng-click="activeTab = 'contextual'" ng-show="!activeTab">show comments</button>
+                    <button class="link-inv link--danger" ng-click="activeTab = false" ng-show="activeTab">hide comments</button>
+                  </div>
+                </div>
+
+                <div class="l-list-inline" ng-show="selectingContext">
+                  <div class="l-list-inline__item">Select the text which you want to comment on</div>
+                  <div class="l-list-inline__item"><button class="link link--danger" ng-click="cancelContextualComment()">cancel</button></div>
+                </div>
+              </div>
+
+              <div class="l-split__left">
+                <div class="l-list-inline l-list-inline--small">
+                  <div class="l-list-inline__item">
+                    <div class="document-toolbar__title">Comments:</div>
+                  </div>
+
+                  <div class="l-list-inline__item">
+                    35 comments in total &nbsp; <div class="label label--secondary">3 new</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <article class="document">
+            <header class='l-block-med'>
+              <h1 class="document__title">Introduction to Linear Algebra</h1>
+            </header>
+
+            <div class="content-area" select-anchor>
+              <p>Lorem ipsum dolor sit amet, <note-1 id="1" comment-anchor>consectetur adipiscing elit.</note-1> Quisque viverra, <note-4 id="7" comment-anchor>libero vel suscipit lobortis</note-4>, eros nunc porttitor eros, non dictum felis nibh ut tellus. Nulla malesuada, nisl eu vestibulum vulputate, ante nulla sollicitudin ligula, vel posuere neque felis a mauris. Curabitur quis consequat erat, aliquam posuere nisl. Ut a purus justo. Vestibulum in dolor eu eros suscipit imperdiet. Cras convallis dolor nec ligula fringilla sollicitudin. Sed consequat sollicitudin malesuada. Ut eget enim vitae felis efficitur ultricies ut vitae diam. Nam a lorem viverra, tempor nunc gravida, aliquet leo. Nullam sodales lacus massa, nec malesuada nunc tincidunt in. Aenean vehicula sollicitudin justo. Nulla posuere porta diam at molestie. Nulla facilisi. Maecenas faucibus diam in sollicitudin tempor. Maecenas sit amet sapien at est tincidunt semper eu ac nisi. Aenean nunc diam, gravida ut arcu quis, imperdiet placerat augue.</p>
+              <p>Cum sociis natoque <note-2 id="4" comment-anchor>penatibus et magnis dis parturient montes, nascetur ridiculus mus</note-2>. Vestibulum id libero vel nisl dignissim facilisis in a leo. Praesent pulvinar ultricies ex, vitae mattis diam ornare nec. Proin in vestibulum ex, in luctus lectus. Aliquam dictum volutpat diam, ac gravida tellus dapibus sit amet. In fermentum volutpat magna, vitae vestibulum sem imperdiet id. Donec ut ipsum at velit tincidunt ultricies. Donec lacinia dui a elit aliquet finibus. Donec eleifend elit vel lorem auctor vestibulum. Praesent et sodales nunc, sit amet pretium justo. Praesent sagittis sapien at massa ornare euismod.</p>
+
+              <h1>1. Vectors</h1>
+              <p>Nulla ut scelerisque ligula. <note-3 id="5" comment-anchor>Aenean eget quam id nisi tristique aliquet. Donec ac nisi ligula. Morbi magna metus, posuere eget nunc vel, placerat vehicula</note-3> lorem. Nam dignissim, enim eu commodo molestie, enim est egestas ipsum, eget luctus ex lorem et dolor. Nam luctus elit est, vel finibus purus porta id. Sed ut cursus neque. In quis felis fringilla, vehicula nibh et, bibendum tortor. Suspendisse eget vehicula libero, ac finibus velit. Donec convallis fermentum purus sit amet accumsan. Aenean suscipit ligula mi, at porta erat consectetur sit amet.</p>
+              <p>Praesent porttitor tempor hendrerit. Pellentesque pulvinar, ex eget sagittis fermentum, nisi lorem convallis neque, et pulvinar massa arcu ac elit. Suspendisse convallis lacus in metus tincidunt cursus. Nam non purus nec nibh lacinia euismod. Nulla rutrum interdum iaculis. Cras sodales, nisl in scelerisque scelerisque, arcu urna ultricies erat, nec sodales ante lorem sed tortor. Phasellus nec ultricies tortor, ultrices vehicula tortor. In in diam ultricies, accumsan lectus in, facilisis lectus.</p>
+              <p>Quisque facilisis arcu id nisi scelerisque tincidunt vel volutpat turpis. Curabitur a posuere massa. Nulla venenatis nunc leo, vitae vulputate urna malesuada nec. Nulla vulputate, enim ac gravida imperdiet, magna ligula suscipit nibh, vitae feugiat metus nisl sed velit. In sit amet efficitur eros. Cras vulputate purus a tincidunt blandit. Cras eleifend vel massa sit amet mattis. Sed at rutrum ipsum. In convallis accumsan mattis. Maecenas sollicitudin sollicitudin mi sit amet venenatis. Donec at finibus tellus, in tempor ligula. Sed commodo eros eu massa accumsan tristique. Pellentesque placerat lacinia venenatis.</p>
+              <p>Suspendisse pharetra purus eu leo vestibulum faucibus. Nulla sed nulla ipsum. Nullam erat nisi, porta in auctor vel, ullamcorper a augue. Proin a commodo purus. Vivamus id condimentum orci. Quisque pharetra viverra dui vitae ultrices. Integer quis sapien neque. Phasellus sed eros vel ipsum vulputate laoreet. In ornare posuere facilisis. Aliquam ultricies tellus vitae orci blandit ullamcorper. Quisque sagittis rhoncus dui, porttitor facilisis risus facilisis vitae. Suspendisse ac nisl erat. Vivamus sed dolor non nibh fermentum auctor. Mauris sollicitudin metus eget augue convallis aliquam.</p>
+              <p>Mauris libero diam, hendrerit non rhoncus a, rhoncus eget quam. Proin pellentesque massa ligula, vel malesuada nisi laoreet ut. Pellentesque arcu lacus, interdum ac odio ut, placerat consectetur mauris. Nunc consectetur fringilla libero convallis molestie. Maecenas in enim porttitor, condimentum tellus tempor, sodales ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam tempor diam ex. Nam nec lacinia risus, nec ultrices elit. Vestibulum non volutpat purus. Suspendisse non ligula vehicula, dignissim dui a, suscipit purus. Nam convallis nisi leo, nec molestie tortor blandit id.</p>
+
+              <h1>2. Linear space and basis</h1>
+              <p>Etiam neque leo, pretium et elit a, fermentum pulvinar neque. Pellentesque non sem id elit egestas gravida eget sed arcu. Quisque consequat ligula nec lectus dignissim ultrices sit amet id augue. Pellentesque a tortor eleifend, luctus nisi ut, pretium nisi. Cras eu molestie lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris varius sapien sit amet dui maximus, quis tempor neque tempor. Nunc eu rhoncus metus, sit amet scelerisque eros. Donec dapibus diam velit, et iaculis lacus faucibus id. Donec fringilla efficitur elit. Aenean a urna nisi. Nullam pharetra purus ut risus ultrices bibendum.</p>
+              <p>Morbi vitae tortor ac purus egestas laoreet a id turpis. Phasellus vel faucibus enim, at sollicitudin velit. Aliquam lacinia diam et orci cursus euismod. Duis maximus rutrum dolor, vel auctor metus rutrum vel. Quisque dictum posuere enim, eget suscipit risus bibendum id. Nulla egestas felis et augue facilisis venenatis. Duis ac sagittis magna. Duis vel viverra metus.</p>
+              <p>Fusce venenatis semper purus a varius. Nam enim arcu, egestas non diam id, placerat aliquam nisi. Pellentesque cursus mi sit amet tortor accumsan, vel accumsan sapien iaculis. Phasellus ut lacinia leo. In pharetra, quam ac suscipit varius, metus felis pharetra magna, eget bibendum erat leo in arcu. Sed id diam et purus finibus vehicula eu a est. Ut et enim non arcu rhoncus dapibus. Nulla facilisi. Sed lacus urna, porta ac facilisis ac, gravida in nulla. Quisque dignissim et sapien sit amet mattis. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Aenean posuere tempus neque id aliquet.</p>
+              <p>Fusce nunc felis, ultrices nec justo ac, egestas tincidunt tortor. Suspendisse aliquet congue leo, a aliquam velit condimentum vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan enim sed vehicula lacinia. Curabitur sit amet leo metus. Ut ultricies sit amet eros et pharetra. Donec porta leo orci, at vehicula massa maximus non. Suspendisse tortor lectus, luctus sed nulla et, efficitur facilisis dui. Praesent ut est consectetur, sollicitudin tortor sed, egestas sem. Ut auctor lectus eu tellus faucibus, a finibus augue malesuada. Nulla in risus a elit scelerisque feugiat id et elit. Vivamus vel risus id quam feugiat efficitur ut quis ex.</p>
+              <p>Fusce quis pharetra nunc. Vivamus vulputate odio sed turpis faucibus tincidunt. Nulla rutrum suscipit ante vel ultricies. Pellentesque id tellus varius, malesuada sem sed, cursus mi. Mauris eu quam eu mi hendrerit sollicitudin. Suspendisse consequat pulvinar erat eu dictum. Phasellus rutrum eu augue ut rhoncus. In ultricies mi metus, at condimentum felis porta in. Etiam sit amet condimentum velit. Nam dapibus, lectus quis tempus viverra, mi odio luctus erat, vitae volutpat lorem enim quis sem. Quisque malesuada erat quis ligula bibendum, quis vehicula mi auctor. Donec aliquam vel magna nec efficitur.</p>
+              <p>Donec scelerisque mauris sit amet porta pellentesque. Etiam ullamcorper et arcu ut tempor. Aliquam placerat viverra risus, eu molestie enim ultrices vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac congue erat. Nunc fringilla est tellus, sit amet faucibus nunc suscipit vel. Maecenas a efficitur ligula. Cras scelerisque purus id accumsan finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse consequat nibh quis dolor rutrum, non pretium ante dapibus. Donec et dictum sem. Proin pretium justo elit, ut mattis dui tempus in. Ut egestas, mauris ut ornare laoreet, risus ante scelerisque eros, id convallis elit mi non sapien. Nulla eu placerat tellus.</p>
+            </div>
+          </article>
+        </div><!--
+        --><div class="grid__item one-quarter" ng-show="activeTab">
+          <div class="comment-tabs" fix-width>
+            <div class="grid grid--narrow">
+              <div class="grid__item one-half">
+                <button class="comment-tabs__item"
+                        ng-class="{'comment-tabs__item--active': activeTab == 'contextual'}"
+                        ng-click="activeTab = 'contextual'">Contextual</button>
+              </div><!--
+              --><div class="grid__item one-half">
+                <button class="comment-tabs__item"
+                        ng-class="{'comment-tabs__item--active': activeTab == 'general'}"
+                        ng-click="activeTab = 'general'">General</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="comments">
+            <div ng-show="activeTab == 'contextual'">
+              <contextual-comment ng-repeat="comment in contextualComments" comment="comment"></contextual-comment>
+            </div>
+
+            <div ng-show="activeTab == 'general'">
+              <div class="l-block">
+                <article class="thread-general">
+                  <div class="tg-comment">
+                    <form>
+                      <div class="l-block-small">
+                        <textarea placeholder="Post new comment"></textarea>
+                      </div>
+
+                      <div class="l-split">
+                        <div class="l-split__right">
+                          <button class="button">Post</button>
+                        </div>
+
+                        <div class="l-split__left">
+                          <button class="button">Cancel</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </article>
+              </div>
+
+              <div class="l-block">
+                <article class="thread-general">
+                  <section class="tg-comment tg-comment--new">
+                    <div class="l-block-x-small">
+                      <div class="l-split">
+                        <div class="l-split__right">
+                          <div class="tg-comment__updated-at">2 hours ago</div>
+                        </div>
+
+                        <div class="l-split__left">
+                          <div class="tg-comment__author">Volo Dziu</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tg-comment__text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi omnis, fuga consequuntur id voluptates ipsum error accusantium, eveniet ad optio placeat esse, maxime dolore perspiciatis nulla quidem nesciunt pariatur molestiae!
+                    </div>
+
+                    <div class="tg-comment__new-indicator">
+                      <div class="label label--secondary">New</div>
+                    </div>
+                  </section>
+
+                  <section class="tg-comment tg-comment--new tg-comment--reply">
+                    <div class="l-block-x-small">
+                      <div class="l-split">
+                        <div class="l-split__right">
+                          <div class="tg-comment__updated-at">2 hours ago</div>
+                        </div>
+
+                        <div class="l-split__left">
+                          <div class="tg-comment__author">Reply by Rose Kocher</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tg-comment__text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt consequatur aperiam quod ab, omnis, nam, aut itaque suscipit tenetur neque illo quidem magni blanditiis nisi similique veniam placeat minima doloribus.
+                    </div>
+
+                    <div class="tg-comment__new-indicator">
+                      <div class="label label--secondary">New</div>
+                    </div>
+                  </section>
+
+                  <div class="tg-comment tg-comment--reply">
+                    <form>
+                      <div class="l-block-small">
+                        <textarea placeholder="Reply to this comment"></textarea>
+                      </div>
+
+                      <div class="l-split">
+                        <div class="l-split__right">
+                          <button class="button">Post</button>
+                        </div>
+
+                        <div class="l-split__left">
+                          <button class="button">Cancel</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </article>
+              </div>
+
+              <div class="l-block">
+                <article class="thread-general">
+                  <section class="tg-comment">
+                    <div class="l-block-x-small">
+                      <div class="l-split">
+                        <div class="l-split__right">
+                          <div class="tg-comment__updated-at">2 hours ago</div>
+                        </div>
+
+                        <div class="l-split__left">
+                          <div class="tg-comment__author">Volo Dziu</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tg-comment__text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi omnis, fuga consequuntur id voluptates ipsum error accusantium, eveniet ad optio placeat esse, maxime dolore perspiciatis nulla quidem nesciunt pariatur molestiae!
+                    </div>
+                  </section>
+
+                  <div class="tg-comment tg-comment--reply">
+                    <form>
+                      <div class="l-block-small">
+                        <textarea placeholder="Reply to this comment"></textarea>
+                      </div>
+
+                      <div class="l-split">
+                        <div class="l-split__right">
+                          <button class="button">Post</button>
+                        </div>
+
+                        <div class="l-split__left">
+                          <button class="button">Cancel</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/ng-template" id="contextualComment.html">
+      <article  class="comment-thread"
+                ng-class="{'comment-thread--selected': comment.isSelected,
+                           'comment-thread--highlighted': comment.isHighlighted,
+                           'comment-thread--multiple': comment.replies.length > 0 && !comment.isSelected}"
+                ng-click="selectComment()">
+        <section class="ct-comment">
+          <div class="l-block-small">
+            <div class="l-split">
+              <div class="l-split__right">
+                <div class="ct-comment__updated-at">{{comment.postedOn}}</div>
+              </div>
+
+              <div class="l-split__left">
+                <div class="ct-comment__author">{{comment.authorName}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ct-comment__text" ng-show="comment.isSelected">{{comment.text}}</div>
+
+          <div ng-hide="comment.isSelected">
+            <div class="l-block-small">
+              <div class="ct-comment__text">{{comment.text | words:10}}</div>
+            </div>
+
+            <div class="l-split">
+              <div class="l-split__right" ng-show="comment.replies.length > 0">
+                {{comment.replies.length}} replies
+              </div>
+
+              <div class="l-split__left">
+                <span class="link link--success" ng-if="comment.replies.length > 0">see full discussion</span>
+                <span class="link link--success" ng-if="comment.replies.length == 0">see full comment</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div ng-show="comment.isSelected">
+          <section  class="ct-comment ct-comment--reply"
+                    ng-repeat="reply in comment.replies">
+            <div class="l-block-small">
+              <div class="l-split">
+                <div class="l-split__right">
+                  <div class="ct-comment__updated-at">{{reply.postedOn}}</div>
+                </div>
+
+                <div class="l-split__left">
+                  <div class="ct-comment__author">{{reply.authorName}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ct-comment__text">{{reply.text}}</div>
+          </section>
+
+          <reply-form-dummy parent-thread-id="comment.id"></reply-form-dummy>
+        </div>
+      </article>
+    </script>
+
+    <script type="text/ng-template" id="replyFormDummy.html">
+      <div class="ct-comment ct-comment--reply">
+        <form ng-submit="postComment()">
+          <div ng-class="{'l-block-small': active}">
+            <textarea placeholder="Reply to the comment" ng-focus="activate()" ng-model="commentText"></textarea>
+          </div>
+
+          <div class="l-split" ng-show="active">
+            <div class="l-split__right">
+              <button class="button">Post</button>
+            </div>
+
+            <div class="l-split__left">
+              <button class="button" type="button" ng-click="deactivate()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </script>
+
+
+    <!-- <div class="dev-grid"></div> -->
+
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular-truncate/src/truncate.js"></script>
+
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/commentsController.js"></script>
+
+    <script src="scripts/contextualCommentsService.js"></script>
+    <script src="scripts/selectionService.js"></script>
+
+    <script src="scripts/contextualCommentDirective.js"></script>
+    <script src="scripts/commentAnchorDirective.js"></script>
+    <script src="scripts/replyFormDummyDirective.js"></script>
+    <script src="scripts/fixWidthDirective.js"></script>
+    <script src="scripts/selectAnchorDirective.js"></script>
   </body>
 </html>

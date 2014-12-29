@@ -4,3 +4,13 @@
  *  sandbox for various experiments and other stuff that should be refactored in the future
  *
  */
+textarea {
+  display: block;
+  width: 100%;
+  padding: $global-baseline/2 $global-baseline;
+
+  border: 1px solid darken($color-bg, 5%);
+
+  resize: none;
+}
+

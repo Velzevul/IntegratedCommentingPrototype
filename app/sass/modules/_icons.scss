@@ -1,0 +1,36 @@
+/**
+ *  ICONS MODULE (SVG)
+ *
+ *  styling for svg-versions of icons on the website
+ *
+ *  .icon
+ *
+ */
+.icon {
+  display: block;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+/**
+ *  COMMENTS ICON
+ *
+ *  icon for awareness widget for the total number of comments
+ *
+ *  .icon
+ *  <---  .icon-comments
+ *
+ */
+.icon-comments {
+  @extend .icon;
+
+  width: $global-baseline * 6;
+  height: $global-baseline * 6;
+  margin: 0 auto;
+
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSI0OHB4IiBoZWlnaHQ9IjQ4cHgiIHZpZXdCb3g9Ii0yLjM3NSAtMTMuNjI1IDQ4IDQ4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IC0yLjM3NSAtMTMuNjI1IDQ4IDQ4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0iI0JBQkFCQSIgZD0iTTIxLjYyNSwyMy40NThjLTAuNzI5LDAtMS44LTAuODIyLTIuNTA3LTAuODk2Yy0yLjAyMiwxLjY5Ny00LjEzLDMuNzM2LTYuOTkxLDQuNzk3CgljLTEuMjUsMC41MjktMi4zMjQsMC44MzgtMi42MDIsMC41MDNjLTAuMzc1LTAuNDM1LTAuOTQxLTEuMDQtMS4wNDItMS4yMDFjMC4wMDctMC4yNCwwLjI5OC0wLjA1MiwwLjYxNC0wLjM5NAoJYzEuNzI5LTAuNzI2LDIuODQ0LTIuNjAyLDMuNTk1LTQuODk1Yy01LjQxMi0yLjcxMy05LjA2Ny03LjgtOS4wNjctMTMuNjQ0QzMuNjI1LTAuOTU4LDExLjY4NC04LDIxLjYyNS04CgljOS45NCwwLDE4LDcuMDQyLDE4LDE1LjcyOUMzOS42MjUsMTYuNDE2LDMxLjU2NSwyMy40NTgsMjEuNjI1LDIzLjQ1OHoiLz4KPC9zdmc+');
+}
+
+

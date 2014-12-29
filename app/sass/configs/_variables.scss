@@ -8,30 +8,39 @@
 // typography
   $global-font-family: sans-serif;
   $global-font-family-soft: sans-serif;
-  $global-font-size: 16px;
+  $global-font-size: 14px;
   $global-line-height: $global-baseline * 2;
 
-  $content-area-line-height: 32px;
+  $content-area-line-height: 24px;
 
 // colors
   $color-tx:          #444444;
-  $color-tx-muted:    #969696;
+  $color-tx-muted:    #929292;
   $color-tx-darkened: #202020;
 
-  $color-bg:            #FFFFFF;
-  $color-bg-secondary:  #FAFAFA; // beige sections
-  $color-bg-tertiary:   #363636; // dark grey sections
-  $color-bg-quaternary: #202020; // dark sections
+  $color-bg:            #EEEEEE; // light grey
+  $color-bg-secondary:  #505050; // dark grey
 
   $color-border: #f4f4f4;
 
-  $color-dc-primary:   #31BB9B; // green
-  $color-dc-secondary: #BCA97A; // brown
-  $color-dc-tertiary:  #F54828; // red
+  $color-dc-primary:   #597BE3; // blue
+  $color-dc-secondary: #F55B5B; // red
+  $color-dc-tertiary:  #74A77C; // green
+
+  $highlight-colors: (
+    'blue': #63B9FF,
+    'green': #83F2B3,
+    'yellow': #F2F283,
+    'orange': #FFDD78,
+    'red': #FF8C8C,
+    'teal': #8CFFFF,
+    'purple': #BE8CFF,
+    'pink': #FF8CFB
+  );
 
 // layout
   $max-width: 1200px;
-  $min-width: 500px;
+  $min-width: $max-width;
 
 /*
  * RESPONSIVE

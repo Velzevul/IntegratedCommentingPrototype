@@ -1,0 +1,28 @@
+/**
+ *  SUPPLEMENT LAYOUT
+ *
+ *  positioning of supplementary information on the top right
+ *  from the main information, e.g. header + link on expert page
+ *
+ *  .l-supplement
+ *    &__main
+ *    &__info
+ *
+ */
+.l-supplement {
+  position: relative;
+  display: inline-block;
+
+  .l-supplement__main {
+    // ...
+  }
+
+  .l-supplement__info {
+    display: block;
+    position: absolute;
+    top: -$global-baseline;
+    left: 100%;
+    padding-left: $global-baseline/2;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,56 @@
+/**
+ *  THREAD GENERAL
+ *
+ *  styling for general comments
+ *
+ *  .thread-general
+ *    <>-- .tg-comment
+ *
+ *    &__author
+ *    &__updated-at
+ *    <>--  .tg-reply
+ *
+ */
+.thread-general {
+  font-size: 13px;
+  line-height: 17px;
+
+  background: white;
+  border: 1px solid darken($color-bg, 5%);
+}
+
+.tg-comment {
+  position: relative;
+  padding: $global-baseline;
+
+  &__author {
+    font-weight: 600;
+
+    color: $color-tx-darkened;
+  }
+
+  &__updated-at {
+    font-weight: 300;
+
+    color: $color-tx-muted;
+  }
+
+  &__new-indicator {
+    position: absolute;
+    top: -11px;
+    left: -24px;
+  }
+}
+  .tg-comment--reply {
+    padding-left: $global-baseline * 2;
+
+    border-top: 1px solid darken($color-bg, 5%);
+    border-left: 4px solid darken($color-bg, 5%);
+
+    .tg-comment__new-indicator {
+      top: 11px;
+    }
+  }
+  .tg-comment--new {
+    background: #FFFFBC;
+  }

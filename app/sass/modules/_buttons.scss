@@ -1,0 +1,15 @@
+/**
+ *  BUTTONS MODULE
+ *
+ *  styling for buttons used in the project
+ *
+ *  .button
+ *
+ */
+.button {
+  padding: $global-baseline/4 $global-baseline;
+
+  background: white;
+  border: 1px solid darken($color-bg, 10%);
+  border-radius: 4px;
+}

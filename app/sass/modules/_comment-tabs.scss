@@ -1,0 +1,38 @@
+/**
+ *  COMMENT TABS MODULE
+ *
+ *  styling for the comments tabs
+ *
+ *  .comment-tabs
+ *    &__item
+ *      &--active
+ *
+ */
+.comment-tabs {
+  position: fixed;
+  z-index: 5;
+  height:  $global-baseline * 4;
+  padding: $global-baseline;
+
+  font-size: 13px;
+
+  background: $color-bg;
+  border-bottom: 2px solid darken($color-bg, 5%);
+
+  &__item {
+    display: block;
+    width: 100%;
+    height: $global-baseline * 2;
+
+    line-height: $global-baseline*2 - 2px;
+
+    text-align: center;
+
+    background: darken($color-bg, 8%);
+    border-radius: 4px;
+  }
+    &__item--active {
+      color: white;
+      background: $color-dc-primary;
+    }
+}

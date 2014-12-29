@@ -1,0 +1,25 @@
+/**
+ *  DOCUMENT TOOLBAR MODULE
+ *
+ *  styling for the toolbar with commenting options and actions
+ *
+ *  .document-toolbar
+ *    &__title
+ *
+ */
+.document-toolbar {
+  position: fixed;
+  z-index: 5;
+  height: $global-baseline * 4;
+  padding: $global-baseline $global-baseline*2;
+
+  font-size: 13px;
+
+  background: white;
+  border: 2px solid darken($color-bg, 5%);
+  border-top: none;
+
+  &__title {
+    font-weight: 600;
+  }
+}
