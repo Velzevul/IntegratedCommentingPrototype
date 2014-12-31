@@ -1,16 +1,17 @@
 angular.module('comments')
-  .directive('replyFormDummy', function(ContextualCommentsService, $timeout) {
+  .directive('generalReplyFormDummy', function(GeneralCommentsService) {
     'use strict';
 
     return {
+      restrict: 'E',
+      templateUrl: 'generalReplyFormDummy.html',
       scope: {
         parentThreadId: '='
       },
-      templateUrl: 'replyFormDummy.html',
       controller: function($scope) {
         $scope.postComment = function() {
           if ($scope.commentText) {
-            ContextualCommentsService.create($scope.commentText, $scope.parentThreadId);
+            GeneralCommentsService.create($scope.commentText, $scope.parentThreadId);
           }
 
           $scope.deactivate();
@@ -18,19 +19,11 @@ angular.module('comments')
 
         $scope.activate = function() {
           $scope.active = true;
-
-          $timeout(function() {
-            ContextualCommentsService.reposition();
-          });
         };
 
         $scope.deactivate = function() {
           $scope.commentText = '';
           $scope.active = false;
-
-          $timeout(function() {
-            ContextualCommentsService.reposition();
-          });
         };
       }
     }

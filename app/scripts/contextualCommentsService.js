@@ -136,7 +136,6 @@ angular.module('comments')
 
         if (parent) {
           parent.replies.push(comment);
-          parent.repliesCount += 1;
         } else {
           comment.color = getRandomColor();
           comment.unseenRepliesCount = 0;
@@ -161,7 +160,7 @@ angular.module('comments')
         // console.log('reposition');
         var spacing = 24,
             anchors = $('[comment-anchor]'),
-            threads = $('.comment-thread'),
+            threads = $('.thread-contextual'),
             anchor,
             previousComment,
             previousCommentElement,
@@ -175,11 +174,11 @@ angular.module('comments')
 
             if (index > 0) {
               previousComment = mock[index - 1];
-              previousCommentElement = $('.comment-thread')[index - 1];
+              previousCommentElement = $('.thread-contextual')[index - 1];
 
               if (previousComment.isSelected && index > 1) {
                 secondPreviousComment = mock[index - 2];
-                secondPreviousCommentElement = $('.comment-thread')[index - 2];
+                secondPreviousCommentElement = $('.thread-contextual')[index - 2];
 
                 if (secondPreviousComment.position + secondPreviousCommentElement.offsetHeight > previousComment.position + previousCommentElement.offsetHeight) {
                   previousComment = secondPreviousComment;

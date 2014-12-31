@@ -17,9 +17,7 @@ angular.module('comments')
         };
       },
       link: function($scope, elem, attrs) {
-        var positionFix = 72;
-
-        elem.addClass('comment-thread--' + $scope.comment.color);
+        elem.addClass('thread-contextual--' + $scope.comment.color);
 
         $(elem).hover(function() {
           $scope.comment.highlightedAnchor = true;
@@ -30,7 +28,7 @@ angular.module('comments')
         });
 
         $scope.$watch('comment.position', function(value) {
-          elem.css('top', value - positionFix);
+          elem.css('top', value);
         });
       }
     }

@@ -12,12 +12,21 @@
  *
  */
 .thread-general {
+  margin-left: $global-baseline;
   font-size: 13px;
   line-height: 17px;
 
   background: white;
   border: 1px solid darken($color-bg, 5%);
 }
+  .thread-general--multiple {
+    box-shadow: 2px 2px 0 0 white,
+                2px 2px 0 1px darken($color-bg, 5%),
+                5px 5px 0 0 white,
+                5px 5px 0 1px darken($color-bg, 5%),
+                8px 8px 0 0 white,
+                8px 8px 0 1px darken($color-bg, 5%);
+  }
 
 .tg-comment {
   position: relative;
@@ -34,12 +43,6 @@
 
     color: $color-tx-muted;
   }
-
-  &__new-indicator {
-    position: absolute;
-    top: -11px;
-    left: -24px;
-  }
 }
   .tg-comment--reply {
     padding-left: $global-baseline * 2;
@@ -50,7 +53,4 @@
     .tg-comment__new-indicator {
       top: 11px;
     }
-  }
-  .tg-comment--new {
-    background: #FFFFBC;
   }

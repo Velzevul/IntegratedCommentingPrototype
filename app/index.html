@@ -20,7 +20,7 @@
                   </div>
 
                   <div class="l-list-inline__item" ng-show="activeTab">
-                    <button class="link-inv link--success">add general comment</button>
+                    <button class="link-inv link--success" ng-click="showGeneralCommentForm()">add general comment</button>
                   </div>
 
                   <div class="l-list-inline__item">
@@ -91,138 +91,29 @@
             </div>
           </div>
 
-          <div class="comments">
+          <div class="new-positioning-grid">
             <div ng-show="activeTab == 'contextual'">
               <contextual-comment ng-repeat="comment in contextualComments" comment="comment"></contextual-comment>
             </div>
 
             <div ng-show="activeTab == 'general'">
-              <div class="l-block">
-                <article class="thread-general">
-                  <div class="tg-comment">
-                    <form>
-                      <div class="l-block-small">
-                        <textarea placeholder="Post new comment"></textarea>
-                      </div>
+              <div comments-sidebar class="comments-sidebar">
+                <div class="comments-sidebar__head">
+                </div>
 
-                      <div class="l-split">
-                        <div class="l-split__right">
-                          <button class="button">Post</button>
-                        </div>
-
-                        <div class="l-split__left">
-                          <button class="button">Cancel</button>
-                        </div>
+                <div class="comments-sidebar__body">
+                  <div class="l-block" ng-show="generalCommentFormShown">
+                    <div class="thread-general">
+                      <div class="tg-comment">
+                        <general-comment-form visibility-switcher="generalCommentFormShown"></general-comment-form>
                       </div>
-                    </form>
+                    </div>
                   </div>
-                </article>
-              </div>
 
-              <div class="l-block">
-                <article class="thread-general">
-                  <section class="tg-comment tg-comment--new">
-                    <div class="l-block-x-small">
-                      <div class="l-split">
-                        <div class="l-split__right">
-                          <div class="tg-comment__updated-at">2 hours ago</div>
-                        </div>
-
-                        <div class="l-split__left">
-                          <div class="tg-comment__author">Volo Dziu</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="tg-comment__text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi omnis, fuga consequuntur id voluptates ipsum error accusantium, eveniet ad optio placeat esse, maxime dolore perspiciatis nulla quidem nesciunt pariatur molestiae!
-                    </div>
-
-                    <div class="tg-comment__new-indicator">
-                      <div class="label label--secondary">New</div>
-                    </div>
-                  </section>
-
-                  <section class="tg-comment tg-comment--new tg-comment--reply">
-                    <div class="l-block-x-small">
-                      <div class="l-split">
-                        <div class="l-split__right">
-                          <div class="tg-comment__updated-at">2 hours ago</div>
-                        </div>
-
-                        <div class="l-split__left">
-                          <div class="tg-comment__author">Reply by Rose Kocher</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="tg-comment__text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt consequatur aperiam quod ab, omnis, nam, aut itaque suscipit tenetur neque illo quidem magni blanditiis nisi similique veniam placeat minima doloribus.
-                    </div>
-
-                    <div class="tg-comment__new-indicator">
-                      <div class="label label--secondary">New</div>
-                    </div>
-                  </section>
-
-                  <div class="tg-comment tg-comment--reply">
-                    <form>
-                      <div class="l-block-small">
-                        <textarea placeholder="Reply to this comment"></textarea>
-                      </div>
-
-                      <div class="l-split">
-                        <div class="l-split__right">
-                          <button class="button">Post</button>
-                        </div>
-
-                        <div class="l-split__left">
-                          <button class="button">Cancel</button>
-                        </div>
-                      </div>
-                    </form>
+                  <div class="l-block" ng-repeat="comment in generalComments">
+                    <general-comment comment="comment"></general-comment>
                   </div>
-                </article>
-              </div>
-
-              <div class="l-block">
-                <article class="thread-general">
-                  <section class="tg-comment">
-                    <div class="l-block-x-small">
-                      <div class="l-split">
-                        <div class="l-split__right">
-                          <div class="tg-comment__updated-at">2 hours ago</div>
-                        </div>
-
-                        <div class="l-split__left">
-                          <div class="tg-comment__author">Volo Dziu</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="tg-comment__text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi omnis, fuga consequuntur id voluptates ipsum error accusantium, eveniet ad optio placeat esse, maxime dolore perspiciatis nulla quidem nesciunt pariatur molestiae!
-                    </div>
-                  </section>
-
-                  <div class="tg-comment tg-comment--reply">
-                    <form>
-                      <div class="l-block-small">
-                        <textarea placeholder="Reply to this comment"></textarea>
-                      </div>
-
-                      <div class="l-split">
-                        <div class="l-split__right">
-                          <button class="button">Post</button>
-                        </div>
-
-                        <div class="l-split__left">
-                          <button class="button">Cancel</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </article>
+                </div>
               </div>
             </div>
           </div>
@@ -231,29 +122,29 @@
     </div>
 
     <script type="text/ng-template" id="contextualComment.html">
-      <article  class="comment-thread"
-                ng-class="{'comment-thread--selected': comment.isSelected,
-                           'comment-thread--highlighted': comment.isHighlighted,
-                           'comment-thread--multiple': comment.replies.length > 0 && !comment.isSelected}"
+      <article  class="thread-contextual"
+                ng-class="{'thread-contextual--selected': comment.isSelected,
+                           'thread-contextual--highlighted': comment.isHighlighted,
+                           'thread-contextual--multiple': comment.replies.length > 0 && !comment.isSelected}"
                 ng-click="selectComment()">
-        <section class="ct-comment">
+        <section class="tc-comment">
           <div class="l-block-small">
             <div class="l-split">
               <div class="l-split__right">
-                <div class="ct-comment__updated-at">{{comment.postedOn}}</div>
+                <div class="tc-comment__updated-at">{{comment.postedOn}}</div>
               </div>
 
               <div class="l-split__left">
-                <div class="ct-comment__author">{{comment.authorName}}</div>
+                <div class="tc-comment__author">{{comment.authorName}}</div>
               </div>
             </div>
           </div>
 
-          <div class="ct-comment__text" ng-show="comment.isSelected">{{comment.text}}</div>
+          <div class="tc-comment__text" ng-show="comment.isSelected">{{comment.text}}</div>
 
           <div ng-hide="comment.isSelected">
             <div class="l-block-small">
-              <div class="ct-comment__text">{{comment.text | words:10}}</div>
+              <div class="tc-comment__text">{{comment.text | words:10}}</div>
             </div>
 
             <div class="l-split">
@@ -270,30 +161,30 @@
         </section>
 
         <div ng-show="comment.isSelected">
-          <section  class="ct-comment ct-comment--reply"
+          <section  class="tc-comment tc-comment--reply"
                     ng-repeat="reply in comment.replies">
             <div class="l-block-small">
               <div class="l-split">
                 <div class="l-split__right">
-                  <div class="ct-comment__updated-at">{{reply.postedOn}}</div>
+                  <div class="tc-comment__updated-at">{{reply.postedOn}}</div>
                 </div>
 
                 <div class="l-split__left">
-                  <div class="ct-comment__author">{{reply.authorName}}</div>
+                  <div class="tc-comment__author">{{reply.authorName}}</div>
                 </div>
               </div>
             </div>
 
-            <div class="ct-comment__text">{{reply.text}}</div>
+            <div class="tc-comment__text">{{reply.text}}</div>
           </section>
 
-          <reply-form-dummy parent-thread-id="comment.id"></reply-form-dummy>
+          <contextual-reply-form-dummy parent-thread-id="comment.id"></contextual-reply-form-dummy>
         </div>
       </article>
     </script>
 
-    <script type="text/ng-template" id="replyFormDummy.html">
-      <div class="ct-comment ct-comment--reply">
+    <script type="text/ng-template" id="contextualReplyFormDummy.html">
+      <div class="tc-comment tc-comment--reply">
         <form ng-submit="postComment()">
           <div ng-class="{'l-block-small': active}">
             <textarea placeholder="Reply to the comment" ng-focus="activate()" ng-model="commentText"></textarea>
@@ -312,6 +203,103 @@
       </div>
     </script>
 
+    <script type="text/ng-template" id="generalComment.html">
+      <article  class="thread-general"
+                ng-class="{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,
+                           'thread-general--expanded': comment.isExpanded}">
+        <section class="tg-comment">
+          <div class="l-block-x-small">
+            <div class="l-split">
+              <div class="l-split__right">
+                <div class="tg-comment__updated-at">{{comment.postedOn}}</div>
+              </div>
+
+              <div class="l-split__left">
+                <div class="tg-comment__author">{{comment.authorName}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="l-block-small">
+            <div class="tg-comment__text" ng-show="!comment.isExpanded">{{comment.text | words: 10}}</div>
+            <div class="tg-comment__text" ng-show="comment.isExpanded">{{comment.text}}</div>
+          </div>
+
+          <div class="l-split">
+            <div class="l-split__right">
+              {{comment.replies.length}} replies
+            </div>
+
+            <div class="l-split__left">
+              <button class="link link--success" ng-click="comment.isExpanded = false" ng-show="comment.isExpanded">collapse discussion</button>
+              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="!comment.isExpanded && comment.replies.length > 0">see full discussion</button>
+              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="!comment.isExpanded && comment.replies.length == 0">see full comment</button>
+            </div>
+          </div>
+        </section>
+
+        <div ng-show="comment.isExpanded">
+          <section class="tg-comment tg-comment--reply" ng-repeat="reply in comment.replies">
+            <div class="l-block-x-small">
+              <div class="l-split">
+                <div class="l-split__right">
+                  <div class="tg-comment__updated-at">{{reply.postedOn}}</div>
+                </div>
+
+                <div class="l-split__left">
+                  <div class="tg-comment__author">Reply by {{reply.authorName}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tg-comment__text">{{reply.text}}</div>
+          </section>
+
+          <div class="tg-comment tg-comment--reply">
+            <general-reply-form-dummy parent-thread-id="comment.id"></general-reply-form-dummy>
+          </div>
+        </div>
+      </article>
+    </script>
+
+    <script type="text/ng-template" id="generalReplyFormDummy.html">
+      <form ng-submit="postComment()">
+        <div class="l-block-small">
+          <textarea placeholder="Reply to this comment" ng-focus="activate()" ng-model="commentText"></textarea>
+        </div>
+
+        <div class="l-split" ng-show="active">
+          <div class="l-split__right">
+            <button class="button">Post</button>
+          </div>
+
+          <div class="l-split__left">
+            <button class="button" ng-click="deactivate()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </script>
+
+    <script type="text/ng-template" id="generalCommentForm.html">
+      <form ng-submit="postComment()">
+        <div class="l-block-small">
+          <textarea placeholder="Write new comment" ng-model="commentText"></textarea>
+        </div>
+
+        <div class="l-split">
+          <div class="l-split__right">
+            <button class="button">Post</button>
+          </div>
+
+          <div class="l-split__left">
+            <button class="button" ng-click="cancelComment()">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </script>
+
+
+
 
     <!-- <div class="dev-grid"></div> -->
 
@@ -325,11 +313,16 @@
 
     <script src="scripts/contextualCommentsService.js"></script>
     <script src="scripts/selectionService.js"></script>
+    <script src="scripts/generalCommentsService.js"></script>
 
-    <script src="scripts/contextualCommentDirective.js"></script>
-    <script src="scripts/commentAnchorDirective.js"></script>
-    <script src="scripts/replyFormDummyDirective.js"></script>
     <script src="scripts/fixWidthDirective.js"></script>
     <script src="scripts/selectAnchorDirective.js"></script>
+    <script src="scripts/contextualCommentDirective.js"></script>
+    <script src="scripts/commentAnchorDirective.js"></script>
+    <script src="scripts/contextualReplyFormDummyDirective.js"></script>
+    <script src="scripts/commentsSidebarDirective.js"></script>
+    <script src="scripts/generalCommentDirective.js"></script>
+    <script src="scripts/generalReplyFormDummyDirective.js"></script>
+    <script src="scripts/generalCommentFormDirective.js"></script>
   </body>
 </html>

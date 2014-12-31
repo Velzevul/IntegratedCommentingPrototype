@@ -1,20 +1,20 @@
 /**
- *  COMMENT THREAD MODULE
+ *  THREAD CONTEXTUAL MODULE
  *
  *  styling for comment threads
  *
- *  .comment-thread
+ *  .thread-contextual
  *    &--multiple
  *    &--selected
  *    &--highlighted
  *    &--{color}
- *    <>--  .ct-comment
+ *    <>--  .tc-comment
  *            &__author
  *            &__updated_at
  *            &__text
  *
  */
-.comment-thread {
+.thread-contextual {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -39,7 +39,7 @@
     right: 9px;
   }
 }
-  .comment-thread--multiple {
+  .thread-contextual--multiple {
     box-shadow: 2px 2px 0 0 white,
                 2px 2px 0 1px darken($color-bg, 5%),
                 5px 5px 0 0 white,
@@ -47,28 +47,28 @@
                 8px 8px 0 0 white,
                 8px 8px 0 1px darken($color-bg, 5%);
   }
-  .comment-thread--unseen {
+  .thread-contextual--unseen {
     background: #FFFFBC;
   }
-  .comment-thread--highlighted {
+  .thread-contextual--highlighted {
     left: -$global-baseline;
   }
-  .comment-thread--selected {
+  .thread-contextual--selected {
     left: -$global-baseline * 3;
     cursor: inherit;
   }
   @each $name, $value in $highlight-colors {
-    .comment-thread--#{$name} {
+    .thread-contextual--#{$name} {
       border-left-color: $value;
 
-      &.comment-thread--selected:before {
+      &.thread-contextual--selected:before {
         @include simple-arrow(8px, $value, 'quadrant-1', -20px, 6px, 'left');
         z-index: 1;
       }
     }
   }
 
-.ct-comment {
+.tc-comment {
   position: relative;
   padding: $global-baseline $global-baseline;
 
@@ -90,9 +90,6 @@
     // ...
   }
 }
-  .ct-comment--reply {
+  .tc-comment--reply {
     border-top: 1px solid darken($color-bg, 5%);
-  }
-  .ct-comment--new {
-    background: #FFFFBC;
   }
