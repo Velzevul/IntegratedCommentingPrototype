@@ -209,13 +209,18 @@ angular.module('comments')
         });
       },
       activate: function(id) {
-        var self = this;
+        var self = this,
+            anchor = document.getElementById(id);
 
         deactivateAll();
         getById(id).isSelected = true;
 
         $timeout(function() {
           self.reposition();
+
+          if ($(document).scrollTop() > anchor.offsetTop - 48) {
+            $('body').animate({'scrollTop': anchor.offsetTop - 100});
+          }
         });
       }
     }
