@@ -9,15 +9,15 @@ angular.module('comments')
           authorName: 'Volo Dziu',
           postedOn: '12-12-2014',
           color: 'pink',
+          unseenCount: 1,
           seen: true,
-          unseenRepliesCount: 2,
           replies: [
             {
               id: 2,
               text: 'Necessitatibus illo ad veritatis commodi maiores et adipisci repellat officia suscipit quaerat minus minima placeat veniam expedita quasi, vel nemo distinctio provident.',
               authorName: 'Andrea Bunt',
               postedOn: '13-12-2014',
-              seen: false
+              seen: true
             },
             {
               id: 3,
@@ -34,9 +34,8 @@ angular.module('comments')
           authorName: 'Md Adnan Alam Khan',
           postedOn: '14-12-2014',
           color: 'teal',
-          seen: true,
-          isSelected: false,
-          unseenRepliesCount: 0,
+          unseenCount: 1,
+          seen: false,
           replies: []
         },
         {
@@ -45,9 +44,8 @@ angular.module('comments')
           authorName: 'Brian Yeo',
           postedOn: '12-12-2014',
           color: 'purple',
+          unseenCount: 0,
           seen: true,
-          isSelected: false,
-          unseenRepliesCount: 0,
           replies: []
         },
         {
@@ -56,9 +54,8 @@ angular.module('comments')
           authorName: 'Volodymyr Dziubak',
           postedOn: '18-12-2014',
           color: 'yellow',
+          unseenCount: 2,
           seen: false,
-          isSelected: false,
-          unseenRepliesCount: 1,
           replies: [
             {
               id: 6,
@@ -76,7 +73,12 @@ angular.module('comments')
         4: 2,
         5: 3
       },
-      nextId = 8;
+      nextId = 8,
+      statsCache = {
+        commentsCount: 7,
+        threadsCount: 4,
+        totalUnseenCount: 4
+      };
 
     function getRandomColor() {
       var colors = ['blue', 'green', 'yellow', 'orange', 'red', 'teal', 'purple', 'pink'],
@@ -116,6 +118,20 @@ angular.module('comments')
     }
 
     return {
+      stats: function() {
+        return statsCache;
+      },
+      markAsSeen: function(comment, parent) {
+        comment.seen = true;
+
+        if (parent) {
+          parent.unseenCount -= 1;
+        } else {
+          comment.unseenCount -= 1;
+        }
+
+        statsCache.totalUnseenCount -= 1;
+      },
       getAll: function() {
         return mock;
       },
@@ -138,8 +154,8 @@ angular.module('comments')
           parent.replies.push(comment);
         } else {
           comment.color = getRandomColor();
-          comment.unseenRepliesCount = 0;
           comment.replies = [];
+          comment.unseenCount = 0;
           comment.text = dummyText;
 
           SelectionService.insertRealNote(comment)
@@ -147,6 +163,7 @@ angular.module('comments')
           mock.splice(getCommentIndex(comment), 0, comment);
 
           updateIdIndexMap();
+          statsCache.threadsCount += 1;
 
           $timeout(function() {
             comment.isSelected = true;
@@ -154,6 +171,7 @@ angular.module('comments')
           });
         }
 
+        statsCache.commentsCount += 1;
         nextId += 1;
       },
       reposition: function() {

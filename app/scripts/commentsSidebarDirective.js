@@ -5,13 +5,9 @@ angular.module('comments')
     return {
       restrict: 'A',
       link: function($scope, elem, attrs) {
-        var sidebarHead = elem.find('.comments-sidebar__head'),
-            sidebarBody = elem.find('.comments-sidebar__body');
-
-
         function fixHeight() {
-          var newHeight = $(window).height() - sidebarHead.outerHeight();
-          sidebarBody.innerHeight(newHeight);
+          var newHeight = $(window).height() - parseInt(elem.css('margin-top'));
+          elem.innerHeight(newHeight);
         }
 
         fixHeight();

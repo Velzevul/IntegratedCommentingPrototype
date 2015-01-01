@@ -12,43 +12,32 @@
 .comments-sidebar {
   position: fixed;
   width: 300px;
+  margin-top: $global-baseline * 4;
+  margin-right: -$global-baseline;
+  padding-top: $global-baseline * 2;
+  padding-right: $global-baseline;
+  overflow-y: auto;
 
-  &__head {
-    height: $global-baseline * 14;
-    padding-top: $global-baseline * 6;
-    padding-bottom: $global-baseline * 2;
-
-    border-bottom: 2px solid darken($color-bg, 5%);
+  /* Let's get this party started */
+  &::-webkit-scrollbar {
+    width: $global-baseline / 2;
+    margin-left: -$global-baseline;
   }
 
-  &__body {
-    height: 500px;
-    padding: $global-baseline 0;
-    margin-right: -$global-baseline;
-    padding-right: $global-baseline;
-    overflow-y: auto;
+  /* Track */
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
 
-    /* Let's get this party started */
-    &::-webkit-scrollbar {
-      width: $global-baseline / 2;
-      margin-left: -$global-baseline;
-    }
-
-    /* Track */
-    &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
       -webkit-border-radius: 10px;
       border-radius: 10px;
-    }
-
-    /* Handle */
-    &::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: $color-bg-secondary;
-    }
-    &::-webkit-scrollbar-thumb:window-inactive {
-      background: rgba(255,0,0,0.4);
-    }
+      background: $color-bg-secondary;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,0.4);
   }
 }

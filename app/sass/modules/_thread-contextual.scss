@@ -6,6 +6,7 @@
  *  .thread-contextual
  *    &--multiple
  *    &--selected
+ *    &--has-unseen-items
  *    &--highlighted
  *    &--{color}
  *    <>--  .tc-comment
@@ -47,15 +48,16 @@
                 8px 8px 0 0 white,
                 8px 8px 0 1px darken($color-bg, 5%);
   }
-  .thread-contextual--unseen {
-    background: #FFFFBC;
-  }
   .thread-contextual--highlighted {
     left: -$global-baseline;
+  }
+  .thread-contextual--has-unseen-items {
+    background: #FFFFBC;
   }
   .thread-contextual--selected {
     left: -$global-baseline * 3;
     cursor: inherit;
+    background: white;
   }
   @each $name, $value in $highlight-colors {
     .thread-contextual--#{$name} {
@@ -71,6 +73,11 @@
 .tc-comment {
   position: relative;
   padding: $global-baseline $global-baseline;
+
+  background: transparent;
+
+  @include transition-property(background-color);
+  @include transition-duration(0.5s);
 
   &__author {
     display: inline-block;
@@ -92,4 +99,7 @@
 }
   .tc-comment--reply {
     border-top: 1px solid darken($color-bg, 5%);
+  }
+  .tc-comment--unseen {
+    background: #FFFFBC !important;
   }

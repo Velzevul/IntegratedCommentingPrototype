@@ -15,6 +15,12 @@ angular.module('comments')
             ContextualCommentsService.activate($scope.comment.id);
           }
         };
+
+        $scope.markSeen = function(comment, parent) {
+          if (!comment.seen) {
+            ContextualCommentsService.markAsSeen(comment, parent);
+          }
+        };
       },
       link: function($scope, elem, attrs) {
         elem.addClass('thread-contextual--' + $scope.comment.color);
