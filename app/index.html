@@ -44,20 +44,7 @@
           </article>
         </div><!--
         --><div class="grid__item one-quarter" ng-show="activeTab">
-          <div class="comment-tabs" fix-width>
-            <div class="grid grid--narrow">
-              <div class="grid__item one-half">
-                <button class="comment-tabs__item"
-                        ng-class="{'comment-tabs__item--active': activeTab == 'contextual'}"
-                        ng-click="activeTab = 'contextual'">Contextual</button>
-              </div><!--
-              --><div class="grid__item one-half">
-                <button class="comment-tabs__item"
-                        ng-class="{'comment-tabs__item--active': activeTab == 'general'}"
-                        ng-click="activeTab = 'general'">General</button>
-              </div>
-            </div>
-          </div>
+          <comment-tabs></comment-tabs>
 
           <div class="new-positioning-grid">
             <div ng-show="activeTab == 'contextual'">
@@ -88,10 +75,8 @@
       <article  class="thread-contextual"
                 ng-class="{'thread-contextual--selected': comment.isSelected,
                            'thread-contextual--highlighted': comment.isHighlighted,
-                           'thread-contextual--has-unseen-items': comment.unseenCount > 0,
                            'thread-contextual--multiple': comment.replies.length > 0 && !comment.isSelected}"
-                ng-click="selectComment()"
-                ng-mouseover="markCommentSeen(reply)">
+                ng-click="selectComment()">
         <section class="tc-comment"
                  ng-hide="comment.isSelected">
           <div class="l-block-small">
@@ -112,8 +97,7 @@
 
           <div class="l-split">
             <div class="l-split__right" ng-show="comment.unseenCount > 0">
-              <div class="label" ng-show="comment.replies.length + 1 != comment.unseenCount">{{comment.unseenCount}} new replies</div>
-              <div class="label" ng-show="comment.replies.length + 1 == comment.unseenCount">new comment</div>
+              <div class="label" ng-show="comment.unseenCount">{{comment.unseenCount}} unseen</div>
             </div>
 
             <div class="l-split__right" ng-show="comment.unseenCount == 0">
@@ -194,7 +178,7 @@
       <article  class="thread-general"
                 ng-class="{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,
                            'thread-general--expanded': comment.isExpanded}">
-        <section class="tg-comment">
+        <section class="tg-comment" ng-hide="comment.isExpanded">
           <div class="l-block-x-small">
             <div class="l-split">
               <div class="l-split__right">
@@ -208,25 +192,62 @@
           </div>
 
           <div class="l-block-small">
-            <div class="tg-comment__text" ng-show="!comment.isExpanded">{{comment.text | words: 10}}</div>
-            <div class="tg-comment__text" ng-show="comment.isExpanded">{{comment.text}}</div>
+            <div class="tg-comment__text">{{comment.text | words: 10}}</div>
           </div>
 
           <div class="l-split">
             <div class="l-split__right">
-              {{comment.replies.length}} replies
+              <div ng-show="comment.unseenCount > 0">
+                <div class="label">{{comment.unseenCount}} unseen</div>
+              </div>
+
+              <div ng-show="comment.unseenCount == 0">
+                {{comment.replies.length}} replies
+              </div>
             </div>
 
             <div class="l-split__left">
-              <button class="link link--success" ng-click="comment.isExpanded = false" ng-show="comment.isExpanded">collapse discussion</button>
-              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="!comment.isExpanded && comment.replies.length > 0">see full discussion</button>
-              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="!comment.isExpanded && comment.replies.length == 0">see full comment</button>
+              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="comment.replies.length > 0">see full discussion</button>
+              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="comment.replies.length == 0">see full comment</button>
             </div>
           </div>
         </section>
 
         <div ng-show="comment.isExpanded">
-          <section class="tg-comment tg-comment--reply" ng-repeat="reply in comment.replies">
+          <section  class="tg-comment"
+                    ng-class="{'tg-comment--unseen': !comment.seen}"
+                    ng-mouseover="markSeen(comment)">
+            <div class="l-block-x-small">
+              <div class="l-split">
+                <div class="l-split__right">
+                  <div class="tg-comment__updated-at">{{comment.postedOn}}</div>
+                </div>
+
+                <div class="l-split__left">
+                  <div class="tg-comment__author">{{comment.authorName}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="l-block-small">
+              <div class="tg-comment__text">{{comment.text}}</div>
+            </div>
+
+            <div class="l-split">
+              <div class="l-split__right">
+                {{comment.replies.length}} replies
+              </div>
+
+              <div class="l-split__left">
+                <button class="link link--success" ng-click="comment.isExpanded = false">collapse discussion</button>
+              </div>
+            </div>
+          </section>
+
+          <section  class="tg-comment tg-comment--reply"
+                    ng-class="{'tg-comment--unseen': !reply.seen}"
+                    ng-repeat="reply in comment.replies"
+                    ng-mouseover="markSeen(reply, comment)">
             <div class="l-block-x-small">
               <div class="l-split">
                 <div class="l-split__right">
@@ -298,7 +319,7 @@
             </div>
 
             <div class="l-list-inline__item">
-              35 comments in total &nbsp; <div class="label">3 unseen</div>
+              {{contextualStats.threadsCount + generalStats.threadsCount}} threads, {{contextualStats.commentsCount + generalStats.commentsCount}} comments
             </div>
           </div>
         </div>
@@ -331,7 +352,7 @@
             </div>
 
             <div class="l-list-inline__item">
-              {{stats.threadsCount}} threads, {{stats.commentsCount}} comments &nbsp; <div class="label" ng-show="stats.totalUnseenCount">{{stats.totalUnseenCount}} unseen</div>
+              {{contextualStats.threadsCount}} threads, {{contextualStats.commentsCount}} comments
             </div>
           </div>
         </div>
@@ -359,8 +380,29 @@
             </div>
 
             <div class="l-list-inline__item">
-              35 comments in total &nbsp; <div class="label">3 new</div>
+              {{generalStats.threadsCount}} threads, {{generalStats.commentsCount}} comments
             </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="commentTabs.html">
+      <div class="comment-tabs" fix-width>
+        <div class="grid grid--narrow">
+          <div class="grid__item one-half">
+            <button class="ct-item"
+                    ng-class="{'ct-item--active': activeTab == 'contextual'}"
+                    ng-click="activeTab = 'contextual'">
+              Contextual <span class="ct-item__counter" ng-show="contextualStats.totalUnseenCount">{{contextualStats.totalUnseenCount}}</span>
+            </button>
+          </div><!--
+          --><div class="grid__item one-half">
+            <button class="ct-item"
+                    ng-class="{'ct-item--active': activeTab == 'general'}"
+                    ng-click="activeTab = 'general'">
+              General <span class="ct-item__counter" ng-show="generalStats.totalUnseenCount">{{generalStats.totalUnseenCount}}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -382,6 +424,7 @@
 
     <script src="scripts/fixWidthDirective.js"></script>
     <script src="scripts/commentsSidebarDirective.js"></script>
+    <script src="scripts/commentTabsDirective.js"></script>
 
     <script src="scripts/selectAnchorDirective.js"></script>
     <script src="scripts/contextualCommentDirective.js"></script>

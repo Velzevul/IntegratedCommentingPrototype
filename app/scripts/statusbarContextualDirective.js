@@ -6,7 +6,9 @@ angular.module('comments')
       restrict: 'E',
       templateUrl: 'statusbarContextual.html',
       controller: function($scope) {
-        $scope.stats = ContextualCommentsService.stats();
+        if (!$scope.contextualStats) {
+          $scope.contextualStats = ContextualCommentsService.stats();
+        }
 
         $scope.deselectAllComments = function($event) {
           var isContextualComment = $($event.target).parents('.thread-contextual').length,

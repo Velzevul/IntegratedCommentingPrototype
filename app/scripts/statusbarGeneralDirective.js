@@ -1,11 +1,15 @@
 angular.module('comments')
-  .directive('statusbarGeneral', function() {
+  .directive('statusbarGeneral', function(GeneralCommentsService) {
     'use strict';
 
     return {
       restrict: 'E',
       templateUrl: 'statusbarGeneral.html',
       controller: function($scope) {
+        if (!$scope.generalStats) {
+          $scope.stats = GeneralCommentsService.stats();
+        }
+
         $scope.showGeneralCommentForm = function() {
           var commentsBody = $('.comments-sidebar');
 

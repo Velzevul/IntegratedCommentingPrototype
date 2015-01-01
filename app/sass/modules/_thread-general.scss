@@ -32,6 +32,11 @@
   position: relative;
   padding: $global-baseline;
 
+  background: transparent;
+
+  @include transition-property(background-color);
+  @include transition-duration(0.5s);
+
   &__author {
     font-weight: 600;
 
@@ -44,13 +49,12 @@
     color: $color-tx-muted;
   }
 }
+  .tg-comment--unseen {
+    background: #FFFFBC;
+  }
   .tg-comment--reply {
     padding-left: $global-baseline * 2;
 
     border-top: 1px solid darken($color-bg, 5%);
     border-left: 4px solid darken($color-bg, 5%);
-
-    .tg-comment__new-indicator {
-      top: 11px;
-    }
   }

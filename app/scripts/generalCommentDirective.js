@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('generalComment', function() {
+  .directive('generalComment', function(GeneralCommentsService) {
     'use strict';
 
     return {
@@ -9,10 +9,14 @@ angular.module('comments')
         comment: '='
       },
       controller: function($scope) {
-
+        $scope.markSeen = function(comment, parent) {
+          if (!comment.seen) {
+            GeneralCommentsService.markAsSeen(comment, parent);
+          }
+        };
       },
       link: function($scope, elem, attrs) {
-
+        // empty for now...
       }
     }
   });
