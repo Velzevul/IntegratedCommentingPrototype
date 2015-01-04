@@ -1,7 +1,7 @@
 Integrated Commenting Prototype
 =================
 
-Incorporating enhanced commenting functionality into the existing D2L educational platform.
+Integrated commenting prototype for the existing D2L educational platform.
 
 requirements:
  * nodejs (+ npm )
@@ -10,3 +10,7 @@ requirements:
 install & run:
 ```
 npm install && npm start
+
+build export-ready version:
+```
+npm instsall && grunt build

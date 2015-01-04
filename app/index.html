@@ -5,7 +5,9 @@
     <title>Integrated Commenting Prototype</title>
     <meta name="viewport" content="width=device-width, user-scalable=no" />
     <link rel="stylesheet" href="css/main.css">
+    <!-- build:[src] src/ -->
     <script src="modernizr/modernizr.js"></script>
+    <!-- /build -->
   </head>
   <body ng-controller="commentsController" ng-click="deselectAllComments($event)">
     <div class="l-wrap">
@@ -408,12 +410,17 @@
       </div>
     </script>
 
+  <!-- build:remove -->
     <!-- <div class="dev-grid"></div> -->
+  <!-- /build -->
 
+  <!-- build:js scripts/dependencies.concat.js -->
     <script src="jquery/dist/jquery.js"></script>
     <script src="angular/angular.js"></script>
     <script src="angular-truncate/src/truncate.js"></script>
+  <!-- /build -->
 
+  <!-- build:js scripts/app.concat.js -->
     <script src="scripts/app.js"></script>
 
     <script src="scripts/commentsController.js"></script>
@@ -438,5 +445,6 @@
     <script src="scripts/statusbarDefaultDirective.js"></script>
     <script src="scripts/statusbarContextualDirective.js"></script>
     <script src="scripts/statusbarGeneralDirective.js"></script>
+  <!-- /build -->
   </body>
 </html>
