@@ -10,7 +10,9 @@ requirements:
 install & run:
 ```
 npm install && npm start
+```
 
 build export-ready version:
 ```
 npm instsall && grunt build
+```
