@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'generalComment.html',
+      templateUrl: 'templates/generalComment.html',
       scope: {
         comment: '='
       },

@@ -1,0 +1,18 @@
+<div class="comment-tabs" fix-width>
+  <div class="grid grid--narrow">
+    <div class="grid__item one-half">
+      <button class="ct-item"
+              ng-class="{'ct-item--active': activeTab == 'contextual'}"
+              ng-click="activeTab = 'contextual'">
+        Contextual <span class="ct-item__counter" ng-show="contextualStats.totalUnseenCount">{{contextualStats.totalUnseenCount}}</span>
+      </button>
+    </div><!--
+    --><div class="grid__item one-half">
+      <button class="ct-item"
+              ng-class="{'ct-item--active': activeTab == 'general'}"
+              ng-click="activeTab = 'general'">
+        General <span class="ct-item__counter" ng-show="generalStats.totalUnseenCount">{{generalStats.totalUnseenCount}}</span>
+      </button>
+    </div>
+  </div>
+</div>

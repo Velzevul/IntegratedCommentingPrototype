@@ -1,0 +1,15 @@
+<form ng-submit="postComment()">
+  <div class="l-block-small">
+    <textarea placeholder="Write new comment" ng-model="commentText"></textarea>
+  </div>
+
+  <div class="l-split">
+    <div class="l-split__right">
+      <button class="button">Post</button>
+    </div>
+
+    <div class="l-split__left">
+      <button class="button" ng-click="cancelComment()">Cancel</button>
+    </div>
+  </div>
+</form>

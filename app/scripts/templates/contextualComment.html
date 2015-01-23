@@ -1,0 +1,96 @@
+<article  class="thread-contextual"
+          ng-class="{'thread-contextual--selected': comment.isSelected,
+                     'thread-contextual--highlighted': comment.isHighlighted,
+                     'thread-contextual--multiple': comment.replies.length > 0 && !comment.isSelected}"
+          ng-click="selectComment()">
+  <div class="tc-unseen" ng-show="!comment.isSelected && (!comment.seen || comment.unseenRepliesCount > 0)">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item" ng-show="!comment.seen">
+        <div class="tc-unseen__item">
+          unseen comment
+        </div>
+      </div>
+
+      <div class="l-list-inline__item" ng-show="comment.seen && comment.unseenRepliesCount > 0">
+        <div class="tc-unseen__item">
+          {{comment.unseenRepliesCount}} unseen <ng-pluralize count="comment.unseenRepliesCount" when="{'1': 'reply', other: 'replies'}"></ng-pluralize>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section  class="tc-comment"
+            ng-hide="comment.isSelected">
+    <div class="l-block-small">
+      <div class="l-split">
+        <div class="l-split__right">
+          <div class="tc-comment__updated-at">{{comment.postedOn | date:'short'}}</div>
+        </div>
+
+        <div class="l-split__left">
+          <div class="tc-comment__author">{{comment.authorName}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="l-block-small">
+      <div class="tc-comment__text">{{comment.text | words:10}}</div>
+    </div>
+
+    <div class="l-split">
+      <div class="l-split__right" ng-show="comment.unseenCount > 0">
+        <div class="label" ng-show="comment.unseenCount">{{comment.unseenCount}} unseen</div>
+      </div>
+
+      <div class="l-split__right" ng-show="comment.unseenCount == 0">
+        {{comment.replies.length}} replies
+      </div>
+
+      <div class="l-split__left">
+        <span class="link link--success" ng-if="comment.replies.length > 0">see replies</span>
+        <span class="link link--success" ng-if="comment.replies.length == 0">see full comment</span>
+      </div>
+    </div>
+  </section>
+
+  <div ng-show="comment.isSelected">
+    <section  class="tc-comment"
+              ng-class="{'tc-comment--unseen': !comment.seen}"
+              ng-mouseover="markSeen(comment)">
+      <div class="l-block-small">
+        <div class="l-split">
+          <div class="l-split__right">
+            <div class="tc-comment__updated-at">{{comment.postedOn | date:'short'}}</div>
+          </div>
+
+          <div class="l-split__left">
+            <div class="tc-comment__author">{{comment.authorName}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-comment__text" ng-show="comment.isSelected">{{comment.text}}</div>
+    </section>
+
+    <section  class="tc-comment tc-comment--reply"
+              ng-class="{'tc-comment--unseen': !reply.seen}"
+              ng-repeat="reply in comment.replies"
+              ng-mouseover="markSeen(reply, comment)">
+      <div class="l-block-small">
+        <div class="l-split">
+          <div class="l-split__right">
+            <div class="tc-comment__updated-at">{{reply.postedOn | date:'short'}}</div>
+          </div>
+
+          <div class="l-split__left">
+            <div class="tc-comment__author">{{reply.authorName}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-comment__text">{{reply.text}}</div>
+    </section>
+
+    <contextual-reply-form-dummy parent-thread-id="comment.id"></contextual-reply-form-dummy>
+  </div>
+</article>

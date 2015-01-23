@@ -13,6 +13,8 @@
  *            &__author
  *            &__updated_at
  *            &__text
+ *    <>--  .tc-unseen
+ *            &__item
  *
  */
 .thread-contextual {
@@ -34,11 +36,6 @@
   @include transition-property(left, top);
   @include transition-duration(0.2s, 0.35s);
 
-  &__new-indicator {
-    position: absolute;
-    bottom: 7px;
-    right: 9px;
-  }
 }
   .thread-contextual--multiple {
     box-shadow: 2px 2px 0 0 white,
@@ -101,5 +98,18 @@
     border-top: 1px solid darken($color-bg, 5%);
   }
   .tc-comment--unseen {
-    background: #FFFFBC !important;
+    background: $color-dc-quaternary !important;
   }
+
+
+.tc-unseen {
+  position: absolute;
+  bottom: -10px; right: -10px;
+
+  &__item {
+    padding: 0 12px;
+
+    background: $color-dc-quaternary;
+    border: 1px solid darken($color-bg, 5%);
+  }
+}

@@ -7,23 +7,23 @@ angular.module('comments')
           id: 1,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ab dolore, delectus exercitationem quia cumque distinctio ipsum reprehenderit harum quisquam suscipit iste recusandae enim, quod, saepe earum tenetur voluptatibus. Iure?',
           authorName: 'Volo Dziu',
-          postedOn: '12-12-2014',
+          postedOn: '2014-05-31T11:18:12',
           color: 'pink',
-          unseenCount: 1,
+          unseenRepliesCount: 1,
           seen: true,
           replies: [
             {
               id: 2,
               text: 'Necessitatibus illo ad veritatis commodi maiores et adipisci repellat officia suscipit quaerat minus minima placeat veniam expedita quasi, vel nemo distinctio provident.',
               authorName: 'Andrea Bunt',
-              postedOn: '13-12-2014',
+              postedOn: '2014-03-27T04:01:16',
               seen: true
             },
             {
               id: 3,
               text: 'Iure natus fugiat impedit pariatur est dolore delectus illo voluptates. Deleniti laborum obcaecati cum, sed! Nisi cum, deserunt eos aspernatur? Quos, facilis.',
               authorName: 'Rose Kocher',
-              postedOn: '13-12-2014',
+              postedOn: '2014-03-27T04:01:16',
               seen: false
             }
           ]
@@ -32,9 +32,9 @@ angular.module('comments')
           id: 7,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iure ullam minus optio sint tenetur, facere mollitia commodi accusamus doloribus!',
           authorName: 'Md Adnan Alam Khan',
-          postedOn: '14-12-2014',
+          postedOn: '2014-03-27T04:01:16',
           color: 'teal',
-          unseenCount: 1,
+          unseenRepliesCount: 0,
           seen: false,
           replies: []
         },
@@ -42,9 +42,9 @@ angular.module('comments')
           id: 4,
           text: 'Quae omnis iste reiciendis eaque culpa excepturi officia obcaecati consequatur eum quasi vitae, suscipit nam sapiente similique voluptatum at maxime provident. Doloremque non voluptatibus, nam dolore atque ea aliquid beatae consequatur? Molestiae.',
           authorName: 'Brian Yeo',
-          postedOn: '12-12-2014',
+          postedOn: '2014-03-27T04:01:16',
           color: 'purple',
-          unseenCount: 0,
+          unseenRepliesCount: 0,
           seen: true,
           replies: []
         },
@@ -52,16 +52,16 @@ angular.module('comments')
           id: 5,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae accusantium, quasi vel eveniet earum et, rem placeat mollitia! Debitis doloribus similique obcaecati, nulla vitae beatae illo qui. Maxime, quia?',
           authorName: 'Volodymyr Dziubak',
-          postedOn: '18-12-2014',
+          postedOn: '2014-03-27T04:01:16',
           color: 'yellow',
-          unseenCount: 2,
+          unseenRepliesCount: 1,
           seen: false,
           replies: [
             {
               id: 6,
               text: 'Harum fuga beatae optio alias modi, nobis veniam, assumenda saepe provident soluta eligendi. Suscipit obcaecati soluta earum optio minus et quisquam eligendi provident. Ut, asperiores? Vitae, dicta commodi dolorem quo esse nulla unde! Voluptas veritatis unde quae, a accusantium placeat optio quis, saepe laudantium qui consequatur expedita ducimus iste tenetur, quam sit soluta quidem eius. Nobis harum commodi porro explicabo saepe? Dignissimos eaque nostrum deleniti debitis facere delectus nemo sit laborum neque quasi, ipsam dolor ratione soluta rem exercitationem voluptates. In voluptatem saepe officiis consequatur eligendi ducimus, impedit similique maiores voluptate repellat?',
               authorName: 'Masayuki Nakane',
-              postedOn: '18-12-2014',
+              postedOn: '2014-03-27T04:01:16',
               seen: false
             }
           ]
@@ -75,8 +75,8 @@ angular.module('comments')
       },
       nextId = 8,
       statsCache = {
-        commentsCount: 7,
-        threadsCount: 4,
+        commentsCount: 4,
+        repliesCount: 3,
         totalUnseenCount: 4
       };
 
@@ -125,9 +125,7 @@ angular.module('comments')
         comment.seen = true;
 
         if (parent) {
-          parent.unseenCount -= 1;
-        } else {
-          comment.unseenCount -= 1;
+          parent.unseenRepliesCount -= 1;
         }
 
         statsCache.totalUnseenCount -= 1;
@@ -152,10 +150,11 @@ angular.module('comments')
 
         if (parent) {
           parent.replies.push(comment);
+          statsCache.repliesCount += 1;
         } else {
           comment.color = getRandomColor();
           comment.replies = [];
-          comment.unseenCount = 0;
+          comment.unseenRepliesCount = 0;
           comment.text = dummyText;
 
           SelectionService.insertRealNote(comment)
@@ -163,7 +162,7 @@ angular.module('comments')
           mock.splice(getCommentIndex(comment), 0, comment);
 
           updateIdIndexMap();
-          statsCache.threadsCount += 1;
+          statsCache.commentsCount += 1;
 
           $timeout(function() {
             comment.isSelected = true;
@@ -171,7 +170,6 @@ angular.module('comments')
           });
         }
 
-        statsCache.commentsCount += 1;
         nextId += 1;
       },
       reposition: function() {

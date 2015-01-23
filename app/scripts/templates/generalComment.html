@@ -1,0 +1,93 @@
+<article  class="thread-general"
+                ng-class="{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,
+                           'thread-general--expanded': comment.isExpanded}">
+        <section class="tg-comment" ng-hide="comment.isExpanded">
+          <div class="l-block-x-small">
+            <div class="l-split">
+              <div class="l-split__right">
+                <div class="tg-comment__updated-at">{{comment.postedOn}}</div>
+              </div>
+
+              <div class="l-split__left">
+                <div class="tg-comment__author">{{comment.authorName}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="l-block-small">
+            <div class="tg-comment__text">{{comment.text | words: 10}}</div>
+          </div>
+
+          <div class="l-split">
+            <div class="l-split__right">
+              <div ng-show="comment.unseenCount > 0">
+                <div class="label">{{comment.unseenCount}} unseen</div>
+              </div>
+
+              <div ng-show="comment.unseenCount == 0">
+                {{comment.replies.length}} replies
+              </div>
+            </div>
+
+            <div class="l-split__left">
+              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="comment.replies.length > 0">see full discussion</button>
+              <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="comment.replies.length == 0">see full comment</button>
+            </div>
+          </div>
+        </section>
+
+        <div ng-show="comment.isExpanded">
+          <section  class="tg-comment"
+                    ng-class="{'tg-comment--unseen': !comment.seen}"
+                    ng-mouseover="markSeen(comment)">
+            <div class="l-block-x-small">
+              <div class="l-split">
+                <div class="l-split__right">
+                  <div class="tg-comment__updated-at">{{comment.postedOn}}</div>
+                </div>
+
+                <div class="l-split__left">
+                  <div class="tg-comment__author">{{comment.authorName}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="l-block-small">
+              <div class="tg-comment__text">{{comment.text}}</div>
+            </div>
+
+            <div class="l-split">
+              <div class="l-split__right">
+                {{comment.replies.length}} replies
+              </div>
+
+              <div class="l-split__left">
+                <button class="link link--success" ng-click="comment.isExpanded = false">collapse discussion</button>
+              </div>
+            </div>
+          </section>
+
+          <section  class="tg-comment tg-comment--reply"
+                    ng-class="{'tg-comment--unseen': !reply.seen}"
+                    ng-repeat="reply in comment.replies"
+                    ng-mouseover="markSeen(reply, comment)">
+            <div class="l-block-x-small">
+              <div class="l-split">
+                <div class="l-split__right">
+                  <div class="tg-comment__updated-at">{{reply.postedOn}}</div>
+                </div>
+
+                <div class="l-split__left">
+                  <div class="tg-comment__author">Reply by {{reply.authorName}}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tg-comment__text">{{reply.text}}</div>
+          </section>
+
+          <div class="tg-comment tg-comment--reply">
+            <general-reply-form-dummy parent-thread-id="comment.id"></general-reply-form-dummy>
+          </div>
+        </div>
+      </article>

@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'statusbarGeneral.html',
+      templateUrl: 'templates/statusbarGeneral.html',
       controller: function($scope) {
         if (!$scope.generalStats) {
           $scope.stats = GeneralCommentsService.stats();

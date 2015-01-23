@@ -1,0 +1,15 @@
+<form ng-submit="postComment()">
+  <div class="l-block-small">
+    <textarea placeholder="Reply to this comment" ng-focus="activate()" ng-model="commentText"></textarea>
+  </div>
+
+  <div class="l-split" ng-show="active">
+    <div class="l-split__right">
+      <button class="button">Post</button>
+    </div>
+
+    <div class="l-split__left">
+      <button class="button" ng-click="deactivate()">Cancel</button>
+    </div>
+  </div>
+</form>

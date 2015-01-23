@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'contextualReplyFormDummy.html',
+      templateUrl: 'templates/contextualReplyFormDummy.html',
       scope: {
         parentThreadId: '='
       },

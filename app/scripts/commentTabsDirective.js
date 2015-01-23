@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'commentTabs.html',
+      templateUrl: 'templates/commentTabs.html',
       controller: function($scope) {
         if (!$scope.contextualStats) {
           $scope.contextualStats = ContextualCommentsService.stats();

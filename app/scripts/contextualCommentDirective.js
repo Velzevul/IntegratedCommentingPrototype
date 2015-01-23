@@ -7,7 +7,7 @@ angular.module('comments')
         comment: '='
       },
       restrict: 'E',
-      templateUrl: 'contextualComment.html',
+      templateUrl: 'templates/contextualComment.html',
       replace: true,
       controller: function($scope) {
         $scope.selectComment = function() {

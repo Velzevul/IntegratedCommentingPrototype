@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'statusbarContextual.html',
+      templateUrl: 'templates/statusbarContextual.html',
       controller: function($scope) {
         if (!$scope.contextualStats) {
           $scope.contextualStats = ContextualCommentsService.stats();

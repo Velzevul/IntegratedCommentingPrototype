@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'generalReplyFormDummy.html',
+      templateUrl: 'templates/generalReplyFormDummy.html',
       scope: {
         parentThreadId: '='
       },

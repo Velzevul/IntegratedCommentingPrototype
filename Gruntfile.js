@@ -40,6 +40,17 @@ module.exports = function(grunt) {
       }
     },
 
+    html2js: {
+      options: {
+        base: 'app/scripts/',
+        module: 'app-templates'
+      },
+      templates: {
+        src: ['app/scripts/templates/**/*.html'],
+        dest: 'app/scripts/templates.js'
+      }
+    },
+
     copy: {
       modernizr: { expand: true, cwd: 'bower_components/', src: 'modernizr/modernizr.js', dest: 'dist/scripts/', flatten: true },
       css:       { expand: true, src: 'app/css/*.css', dest: 'dist/css/', flatten: true }
@@ -57,7 +68,10 @@ module.exports = function(grunt) {
         files: ['app/sass/**/*.scss'],
         tasks: ['compass']
       },
-
+      templates: {
+        files: ['app/scripts/templates/**/*.html'],
+        tasks: ['html2js']
+      },
       livereload: {
         files: ['app/*.html', 'app/css/*.css', 'app/scripts/**/*.js'],
         options: {
@@ -74,7 +88,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-html2js');
 
-  grunt.registerTask('default', ['compass', 'express', 'watch', 'express-keepalive']);
-  grunt.registerTask('dist', ['compass', 'clean:dist', 'concat', 'copy', 'processhtml:dist']);
+  grunt.registerTask('default', ['compass', 'html2js', 'express', 'watch', 'express-keepalive']);
+  grunt.registerTask('dist', ['compass', 'html2js', 'clean:dist', 'concat', 'copy', 'processhtml:dist']);
 };

@@ -4,7 +4,7 @@ angular.module('comments')
 
     return {
       restrict: 'E',
-      templateUrl: 'generalCommentForm.html',
+      templateUrl: 'templates/generalCommentForm.html',
       scope: {
         visibilitySwitcher: '='
       },

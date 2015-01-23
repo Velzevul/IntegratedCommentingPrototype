@@ -1,0 +1,30 @@
+ <div class="l-split">
+  <div class="l-split__right">
+    <div class="l-list-inline" ng-hide="selectingContext">
+      <div class="l-list-inline__item">
+        <button class="link-inv link--success" ng-click="addContextualComment()">add contextual comment</button>
+      </div>
+
+      <div class="l-list-inline__item">
+        <button class="link-inv link--danger" ng-click="activeTab = false">hide comments</button>
+      </div>
+    </div>
+
+    <div class="l-list-inline" ng-show="selectingContext">
+      <div class="l-list-inline__item">Select the text which you want to comment on</div>
+      <div class="l-list-inline__item"><button class="link link--danger" ng-click="cancelContextualComment()">cancel</button></div>
+    </div>
+  </div>
+
+  <div class="l-split__left">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">
+        <div class="document-toolbar__title">Contextual comments:</div>
+      </div>
+
+      <div class="l-list-inline__item">
+        {{contextualStats.commentsCount}} comments, {{contextualStats.repliesCount}} replies
+      </div>
+    </div>
+  </div>
+</div>
