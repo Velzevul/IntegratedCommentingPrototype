@@ -1,0 +1,52 @@
+/**
+ *  CONTEXTUAL AWARENESS MODULE
+ *
+ *  styling for the widget that shows how many
+ *  comments are hidden above and below the fold
+ *
+ *  .contextual-awareness
+ *    &__indicator
+ *      &--top
+ *      &--bottom
+ *      &--hidden
+ *
+ */
+.contextual-awareness {
+  position: fixed;
+  width: 300px;
+  margin-top: $global-baseline * 4;
+
+  font-size: 18px;
+  font-weight: 300;
+
+  text-align: center;
+  color: #c6c6c6;
+
+
+  &__indicator {
+    position: absolute;
+    width: 100%;
+    padding: $global-baseline * 3 0;
+
+    background-repeat: no-repeat;
+
+    opacity: 1;
+    @include transition-property(opacity);
+    @include transition-duration(0.2s);
+  }
+    &__indicator--top {
+      top: 0;
+
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIzNnB4IiBoZWlnaHQ9IjM2cHgiIHZpZXdCb3g9Ii0yMi41IDEuNSAzNiAzNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtMjIuNSAxLjUgMzYgMzYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjQzZDNkM2IiBkPSJNLTE0LjUwMSwyMy4yNzFjMC0wLjIyMSwwLjA3OC0wLjQwNiwwLjIzNS0wLjU2NGw5LjIwNy05LjE5MmMwLjE1Ni0wLjE1NywwLjM0NC0wLjIzNSwwLjU1OS0wLjIzNQoJczAuNDAyLDAuMDc4LDAuNTYsMC4yMzVsOS4yMDUsOS4xOTJjMC4xNTgsMC4xNTgsMC4yMzUsMC4zNDQsMC4yMzUsMC41NjRjMCwwLjIyLTAuMDc3LDAuNDA2LTAuMjM1LDAuNTY0bC0yLjA2LDIuMDQ3CgljLTAuMTU1LDAuMTU1LTAuMzQzLDAuMjM0LTAuNTU5LDAuMjM0cy0wLjQwMy0wLjA3OS0wLjU1OS0wLjIzNGwtNi41ODgtNi41ODhsLTYuNTg4LDYuNTg4Yy0wLjE1NiwwLjE1NS0wLjM0MywwLjIzNC0wLjU1OSwwLjIzNAoJYy0wLjIxNSwwLTAuNDAyLTAuMDc5LTAuNTU5LTAuMjM0bC0yLjA2LTIuMDQ3Qy0xNC40MjMsMjMuNjc3LTE0LjUwMSwyMy40OS0xNC41MDEsMjMuMjcxeiIvPgo8L3N2Zz4=');
+      background-position: center top;
+    }
+    &__indicator--bottom {
+      bottom: 0;
+
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIzNnB4IiBoZWlnaHQ9IjM2cHgiIHZpZXdCb3g9Ii0yMi41IDEuNSAzNiAzNiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAtMjIuNSAxLjUgMzYgMzYiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBmaWxsPSIjQzZDNkM2IiBkPSJNNS41LDE2LjEyNmMwLDAuMjIxLTAuMDc4LDAuNDA2LTAuMjM1LDAuNTY0bC05LjIwNyw5LjE5MmMtMC4xNTYsMC4xNTctMC4zNDQsMC4yMzUtMC41NTksMC4yMzUKCXMtMC40MDItMC4wNzgtMC41Ni0wLjIzNWwtOS4yMDUtOS4xOTJjLTAuMTU4LTAuMTU4LTAuMjM1LTAuMzQ0LTAuMjM1LTAuNTY0YzAtMC4yMiwwLjA3Ny0wLjQwNiwwLjIzNS0wLjU2NGwyLjA2LTIuMDQ3CgljMC4xNTUtMC4xNTUsMC4zNDMtMC4yMzQsMC41NTktMC4yMzRzMC40MDMsMC4wNzksMC41NTksMC4yMzRsNi41ODgsNi41ODhsNi41ODgtNi41ODhjMC4xNTYtMC4xNTUsMC4zNDMtMC4yMzQsMC41NTktMC4yMzQKCWMwLjIxNSwwLDAuNDAyLDAuMDc5LDAuNTU5LDAuMjM0bDIuMDYsMi4wNDdDNS40MjIsMTUuNzIsNS41LDE1LjkwNiw1LjUsMTYuMTI2eiIvPgo8L3N2Zz4=');
+      background-position: center bottom;
+    }
+    &__indicator--hidden {
+      opacity: 0;
+    }
+}

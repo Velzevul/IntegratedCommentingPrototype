@@ -51,6 +51,11 @@
           <div class="new-positioning-grid">
             <div ng-show="activeTab == 'contextual'">
               <contextual-comment ng-repeat="comment in contextualComments" comment="comment"></contextual-comment>
+
+              <div comments-sidebar class="contextual-awareness">
+                <div class="contextual-awareness__indicator contextual-awareness__indicator--top" contextual-awareness="top">3 comments</div>
+                <div class="contextual-awareness__indicator contextual-awareness__indicator--bottom" contextual-awareness="bottom">5 comments</div>
+              </div>
             </div>
 
             <div ng-show="activeTab == 'general'">
@@ -437,6 +442,7 @@
     <script src="scripts/contextualCommentDirective.js"></script>
     <script src="scripts/commentAnchorDirective.js"></script>
     <script src="scripts/contextualReplyFormDummyDirective.js"></script>
+    <script src="scripts/contextualAwarenessDirective.js"></script>
 
     <script src="scripts/generalCommentDirective.js"></script>
     <script src="scripts/generalReplyFormDummyDirective.js"></script>
