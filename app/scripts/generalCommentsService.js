@@ -8,7 +8,7 @@ angular.module('comments')
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ab dolore, delectus exercitationem quia cumque distinctio ipsum reprehenderit harum quisquam suscipit iste recusandae enim, quod, saepe earum tenetur voluptatibus. Iure?',
           authorName: 'Volo Dziu',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 1,
+          unseenRepliesCount: 1,
           seen: true,
           replies: [
             {
@@ -32,7 +32,7 @@ angular.module('comments')
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iure ullam minus optio sint tenetur, facere mollitia commodi accusamus doloribus!',
           authorName: 'Md Adnan Alam Khan',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 0,
+          unseenRepliesCount: 0,
           seen: true,
           replies: []
         },
@@ -41,7 +41,7 @@ angular.module('comments')
           text: 'Quae omnis iste reiciendis eaque culpa excepturi officia obcaecati consequatur eum quasi vitae, suscipit nam sapiente similique voluptatum at maxime provident. Doloremque non voluptatibus, nam dolore atque ea aliquid beatae consequatur? Molestiae.',
           authorName: 'Brian Yeo',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 1,
+          unseenRepliesCount: 0,
           seen: false,
           replies: []
         },
@@ -50,7 +50,7 @@ angular.module('comments')
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae accusantium, quasi vel eveniet earum et, rem placeat mollitia! Debitis doloribus similique obcaecati, nulla vitae beatae illo qui. Maxime, quia?',
           authorName: 'Volodymyr Dziubak',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 2,
+          unseenRepliesCount: 1,
           seen: false,
           replies: [
             {
@@ -67,7 +67,7 @@ angular.module('comments')
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ab dolore, delectus exercitationem quia cumque distinctio ipsum reprehenderit harum quisquam suscipit iste recusandae enim, quod, saepe earum tenetur voluptatibus. Iure?',
           authorName: 'Volo Dziu',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 0,
+          unseenRepliesCount: 0,
           seen: true,
           replies: [
             {
@@ -91,7 +91,7 @@ angular.module('comments')
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iure ullam minus optio sint tenetur, facere mollitia commodi accusamus doloribus!',
           authorName: 'Md Adnan Alam Khan',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 0,
+          unseenRepliesCount: 0,
           seen: true,
           replies: []
         },
@@ -100,7 +100,7 @@ angular.module('comments')
           text: 'Quae omnis iste reiciendis eaque culpa excepturi officia obcaecati consequatur eum quasi vitae, suscipit nam sapiente similique voluptatum at maxime provident. Doloremque non voluptatibus, nam dolore atque ea aliquid beatae consequatur? Molestiae.',
           authorName: 'Brian Yeo',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 0,
+          unseenRepliesCount: 0,
           seen: true,
           replies: []
         },
@@ -109,7 +109,7 @@ angular.module('comments')
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae accusantium, quasi vel eveniet earum et, rem placeat mollitia! Debitis doloribus similique obcaecati, nulla vitae beatae illo qui. Maxime, quia?',
           authorName: 'Volodymyr Dziubak',
           postedOn: '2014-03-27T04:01:16',
-          unseenCount: 0,
+          unseenRepliesCount: 0,
           seen: true,
           replies: [
             {
@@ -125,8 +125,8 @@ angular.module('comments')
       idIndexMap = {},
       nextId = 16,
       statsCache = {
-        commentsCount: 14,
-        threadsCount: 8,
+        commentsCount: 8,
+        repliesCount: 6,
         totalUnseenCount: 4
       };
 
@@ -154,9 +154,7 @@ angular.module('comments')
         comment.seen = true;
 
         if (parent) {
-          parent.unseenCount -= 1;
-        } else {
-          comment.unseenCount -= 1;
+          parent.unseenRepliesCount -= 1;
         }
 
         statsCache.totalUnseenCount -= 1;
@@ -170,23 +168,23 @@ angular.module('comments')
               id: nextId,
               text: text,
               authorName: 'Volod Dziu',
-              postedOn: '26-12-2014',
+              postedOn: '2014-03-27T04:01:16',
               seen: true
             };
 
         if (parent) {
           parent.replies.push(comment);
+          statsCache.repliesCount += 1;
         } else {
           comment.replies = [];
           comment.unseenCount = 0;
           mock.splice(0,0,comment);
 
-          statsCache.threadsCount += 1;
+          statsCache.commentsCount += 1;
 
           updateIdIndexMap();
         }
 
-        statsCache.commentsCount += 1;
         nextId += 1;
       }
     };

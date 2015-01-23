@@ -37,20 +37,8 @@
       <div class="tc-comment__text">{{comment.text | words:10}}</div>
     </div>
 
-    <div class="l-split">
-      <div class="l-split__right" ng-show="comment.unseenCount > 0">
-        <div class="label" ng-show="comment.unseenCount">{{comment.unseenCount}} unseen</div>
-      </div>
-
-      <div class="l-split__right" ng-show="comment.unseenCount == 0">
-        {{comment.replies.length}} replies
-      </div>
-
-      <div class="l-split__left">
-        <span class="link link--success" ng-if="comment.replies.length > 0">see replies</span>
-        <span class="link link--success" ng-if="comment.replies.length == 0">see full comment</span>
-      </div>
-    </div>
+    <span class="link link--success" ng-if="comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></span>
+    <span class="link link--success" ng-if="comment.replies.length == 0">see full comment</span>
   </section>
 
   <div ng-show="comment.isSelected">

@@ -63,20 +63,8 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "      <div class=\"tc-comment__text\">{{comment.text | words:10}}</div>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-split\">\n" +
-    "      <div class=\"l-split__right\" ng-show=\"comment.unseenCount > 0\">\n" +
-    "        <div class=\"label\" ng-show=\"comment.unseenCount\">{{comment.unseenCount}} unseen</div>\n" +
-    "      </div>\n" +
-    "\n" +
-    "      <div class=\"l-split__right\" ng-show=\"comment.unseenCount == 0\">\n" +
-    "        {{comment.replies.length}} replies\n" +
-    "      </div>\n" +
-    "\n" +
-    "      <div class=\"l-split__left\">\n" +
-    "        <span class=\"link link--success\" ng-if=\"comment.replies.length > 0\">see replies</span>\n" +
-    "        <span class=\"link link--success\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
-    "      </div>\n" +
-    "    </div>\n" +
+    "    <span class=\"link link--success\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
+    "    <span class=\"link link--success\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
     "  </section>\n" +
     "\n" +
     "  <div ng-show=\"comment.isSelected\">\n" +
@@ -146,98 +134,92 @@ angular.module("templates/contextualReplyFormDummy.html", []).run(["$templateCac
 angular.module("templates/generalComment.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/generalComment.html",
     "<article  class=\"thread-general\"\n" +
-    "                ng-class=\"{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,\n" +
-    "                           'thread-general--expanded': comment.isExpanded}\">\n" +
-    "        <section class=\"tg-comment\" ng-hide=\"comment.isExpanded\">\n" +
-    "          <div class=\"l-block-x-small\">\n" +
-    "            <div class=\"l-split\">\n" +
-    "              <div class=\"l-split__right\">\n" +
-    "                <div class=\"tg-comment__updated-at\">{{comment.postedOn}}</div>\n" +
-    "              </div>\n" +
+    "          ng-class=\"{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,\n" +
+    "                     'thread-general--expanded': comment.isExpanded}\">\n" +
+    "  <div class=\"tg-unseen\" ng-show=\"!comment.isExpanded && (!comment.seen || comment.unseenRepliesCount > 0)\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
+    "        <div class=\"tg-unseen__item\">\n" +
+    "          unseen comment\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "\n" +
-    "              <div class=\"l-split__left\">\n" +
-    "                <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
-    "              </div>\n" +
-    "            </div>\n" +
+    "      <div class=\"l-list-inline__item\" ng-show=\"comment.seen && comment.unseenRepliesCount > 0\">\n" +
+    "        <div class=\"tg-unseen__item\">\n" +
+    "          {{comment.unseenRepliesCount}} unseen <ng-pluralize count=\"comment.unseenRepliesCount\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <section class=\"tg-comment\" ng-hide=\"comment.isExpanded\">\n" +
+    "    <div class=\"l-block-x-small\">\n" +
+    "      <div class=\"l-split\">\n" +
+    "        <div class=\"l-split__right\">\n" +
+    "          <div class=\"tg-comment__updated-at\">{{comment.postedOn | date:'short'}}</div>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"l-split__left\">\n" +
+    "          <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"l-block-small\">\n" +
+    "      <div class=\"tg-comment__text\">{{comment.text | words: 10}}</div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <button class=\"link link--success\" ng-click=\"comment.isExpanded = true\" ng-show=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
+    "    <button class=\"link link--success\" ng-click=\"comment.isExpanded = true\" ng-show=\"comment.replies.length == 0\">see full comment</button>\n" +
+    "  </section>\n" +
+    "\n" +
+    "  <div ng-show=\"comment.isExpanded\">\n" +
+    "    <section  class=\"tg-comment\"\n" +
+    "              ng-class=\"{'tg-comment--unseen': !comment.seen}\"\n" +
+    "              ng-mouseover=\"markSeen(comment)\">\n" +
+    "      <div class=\"l-block-x-small\">\n" +
+    "        <div class=\"l-split\">\n" +
+    "          <div class=\"l-split__right\">\n" +
+    "            <div class=\"tg-comment__updated-at\">{{comment.postedOn | date:'short'}}</div>\n" +
     "          </div>\n" +
     "\n" +
-    "          <div class=\"l-block-small\">\n" +
-    "            <div class=\"tg-comment__text\">{{comment.text | words: 10}}</div>\n" +
-    "          </div>\n" +
-    "\n" +
-    "          <div class=\"l-split\">\n" +
-    "            <div class=\"l-split__right\">\n" +
-    "              <div ng-show=\"comment.unseenCount > 0\">\n" +
-    "                <div class=\"label\">{{comment.unseenCount}} unseen</div>\n" +
-    "              </div>\n" +
-    "\n" +
-    "              <div ng-show=\"comment.unseenCount == 0\">\n" +
-    "                {{comment.replies.length}} replies\n" +
-    "              </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"l-split__left\">\n" +
-    "              <button class=\"link link--success\" ng-click=\"comment.isExpanded = true\" ng-show=\"comment.replies.length > 0\">see full discussion</button>\n" +
-    "              <button class=\"link link--success\" ng-click=\"comment.isExpanded = true\" ng-show=\"comment.replies.length == 0\">see full comment</button>\n" +
-    "            </div>\n" +
-    "          </div>\n" +
-    "        </section>\n" +
-    "\n" +
-    "        <div ng-show=\"comment.isExpanded\">\n" +
-    "          <section  class=\"tg-comment\"\n" +
-    "                    ng-class=\"{'tg-comment--unseen': !comment.seen}\"\n" +
-    "                    ng-mouseover=\"markSeen(comment)\">\n" +
-    "            <div class=\"l-block-x-small\">\n" +
-    "              <div class=\"l-split\">\n" +
-    "                <div class=\"l-split__right\">\n" +
-    "                  <div class=\"tg-comment__updated-at\">{{comment.postedOn}}</div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"l-split__left\">\n" +
-    "                  <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
-    "                </div>\n" +
-    "              </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"l-block-small\">\n" +
-    "              <div class=\"tg-comment__text\">{{comment.text}}</div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"l-split\">\n" +
-    "              <div class=\"l-split__right\">\n" +
-    "                {{comment.replies.length}} replies\n" +
-    "              </div>\n" +
-    "\n" +
-    "              <div class=\"l-split__left\">\n" +
-    "                <button class=\"link link--success\" ng-click=\"comment.isExpanded = false\">collapse discussion</button>\n" +
-    "              </div>\n" +
-    "            </div>\n" +
-    "          </section>\n" +
-    "\n" +
-    "          <section  class=\"tg-comment tg-comment--reply\"\n" +
-    "                    ng-class=\"{'tg-comment--unseen': !reply.seen}\"\n" +
-    "                    ng-repeat=\"reply in comment.replies\"\n" +
-    "                    ng-mouseover=\"markSeen(reply, comment)\">\n" +
-    "            <div class=\"l-block-x-small\">\n" +
-    "              <div class=\"l-split\">\n" +
-    "                <div class=\"l-split__right\">\n" +
-    "                  <div class=\"tg-comment__updated-at\">{{reply.postedOn}}</div>\n" +
-    "                </div>\n" +
-    "\n" +
-    "                <div class=\"l-split__left\">\n" +
-    "                  <div class=\"tg-comment__author\">Reply by {{reply.authorName}}</div>\n" +
-    "                </div>\n" +
-    "              </div>\n" +
-    "            </div>\n" +
-    "\n" +
-    "            <div class=\"tg-comment__text\">{{reply.text}}</div>\n" +
-    "          </section>\n" +
-    "\n" +
-    "          <div class=\"tg-comment tg-comment--reply\">\n" +
-    "            <general-reply-form-dummy parent-thread-id=\"comment.id\"></general-reply-form-dummy>\n" +
+    "          <div class=\"l-split__left\">\n" +
+    "            <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
     "          </div>\n" +
     "        </div>\n" +
-    "      </article>");
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-block-small\">\n" +
+    "        <div class=\"tg-comment__text\">{{comment.text}}</div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <button class=\"link link--success\" ng-click=\"comment.isExpanded = false\">collapse comment</button>\n" +
+    "    </section>\n" +
+    "\n" +
+    "    <section  class=\"tg-comment tg-comment--reply\"\n" +
+    "              ng-class=\"{'tg-comment--unseen': !reply.seen}\"\n" +
+    "              ng-repeat=\"reply in comment.replies\"\n" +
+    "              ng-mouseover=\"markSeen(reply, comment)\">\n" +
+    "      <div class=\"l-block-x-small\">\n" +
+    "        <div class=\"l-split\">\n" +
+    "          <div class=\"l-split__right\">\n" +
+    "            <div class=\"tg-comment__updated-at\">{{reply.postedOn | date:'short'}}</div>\n" +
+    "          </div>\n" +
+    "\n" +
+    "          <div class=\"l-split__left\">\n" +
+    "            <div class=\"tg-comment__author\">{{reply.authorName}}</div>\n" +
+    "          </div>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"tg-comment__text\">{{reply.text}}</div>\n" +
+    "    </section>\n" +
+    "\n" +
+    "    <div class=\"tg-comment tg-comment--reply\">\n" +
+    "      <general-reply-form-dummy parent-thread-id=\"comment.id\"></general-reply-form-dummy>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</article>");
 }]);
 
 angular.module("templates/generalCommentForm.html", []).run(["$templateCache", function($templateCache) {
@@ -326,7 +308,7 @@ angular.module("templates/statusbarDefault.html", []).run(["$templateCache", fun
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        {{contextualStats.threadsCount + generalStats.threadsCount}} threads, {{contextualStats.commentsCount + generalStats.commentsCount}} comments\n" +
+    "        {{contextualStats.commentsCount + generalStats.commentsCount}} comments, {{contextualStats.repliesCount + generalStats.repliesCount}} replies\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -355,7 +337,7 @@ angular.module("templates/statusbarGeneral.html", []).run(["$templateCache", fun
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        {{generalStats.threadsCount}} comments, {{generalStats.commentsCount}} replies\n" +
+    "        {{generalStats.commentsCount}} comments, {{generalStats.repliesCount}} replies\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +

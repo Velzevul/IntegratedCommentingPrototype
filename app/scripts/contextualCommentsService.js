@@ -67,18 +67,15 @@ angular.module('comments')
           ]
         }
       ],
-      idIndexMap = {
-        1: 0,
-        7: 1,
-        4: 2,
-        5: 3
-      },
+      idIndexMap = {},
       nextId = 8,
       statsCache = {
         commentsCount: 4,
         repliesCount: 3,
         totalUnseenCount: 4
       };
+
+    updateIdIndexMap();
 
     function getRandomColor() {
       var colors = ['blue', 'green', 'yellow', 'orange', 'red', 'teal', 'purple', 'pink'],
@@ -142,7 +139,7 @@ angular.module('comments')
               id: nextId,
               text: text,
               authorName: 'Volodymyr Dziubak',
-              postedOn: '25-12-2014',
+              postedOn: '2014-03-27T04:01:16',
               seen: true
             },
             dummyText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia cupiditate, architecto voluptatem neque quo impedit possimus officia id maxime nesciunt qui sed voluptatibus soluta vero libero ex veritatis placeat molestias!',
