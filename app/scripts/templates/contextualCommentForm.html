@@ -1,0 +1,28 @@
+<div  class="thread-contextual"
+      ng-class="{'thread-contextual--selected': comment.isSelected,
+                 'thread-contextual--highlighted': comment.isHighlighted}"
+      ng-click="selectComment()">
+  <section  class="tc-comment"
+            ng-class="{'tc-comment--unseen': comment.isSelected && !comment.seen}"
+            ng-mouseover="markSeen(comment)">
+    <div class="l-block-x-small">
+      <div class="tc-comment__author">{{comment.authorName}}</div>
+    </div>
+
+    <form ng-submit="saveComment()">
+      <div class="l-block-small">
+        <textarea placeholder="Type your comment here" msd-elastic="\n" ng-model="tempText"></textarea>
+      </div>
+
+      <div class="l-list-inline l-list-inline--small">
+        <div class="l-list-inline__item">
+          <button class="button">Save</button>
+        </div>
+
+        <div class="l-list-inline__item">
+          <button class="button" type="button" ng-click="deleteComment()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>

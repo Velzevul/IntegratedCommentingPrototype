@@ -136,7 +136,6 @@ angular.module('comments')
               postedOn: '2014-03-27T04:01:16',
               seen: true
             },
-            dummyText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia cupiditate, architecto voluptatem neque quo impedit possimus officia id maxime nesciunt qui sed voluptatibus soluta vero libero ex veritatis placeat molestias!',
             self = this;
 
         if (parent) {
@@ -146,7 +145,6 @@ angular.module('comments')
           comment.color = user.commentingColor;
           comment.replies = [];
           comment.unseenRepliesCount = 0;
-          comment.text = dummyText;
 
           SelectionService.insertRealNote(comment)
 

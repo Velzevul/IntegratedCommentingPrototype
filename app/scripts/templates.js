@@ -1,4 +1,4 @@
-angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualReplyForm.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
+angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
 
 angular.module("templates/commentBody.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/commentBody.html",
@@ -134,6 +134,38 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "</article>");
 }]);
 
+angular.module("templates/contextualCommentForm.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/contextualCommentForm.html",
+    "<div  class=\"thread-contextual\"\n" +
+    "      ng-class=\"{'thread-contextual--selected': comment.isSelected,\n" +
+    "                 'thread-contextual--highlighted': comment.isHighlighted}\"\n" +
+    "      ng-click=\"selectComment()\">\n" +
+    "  <section  class=\"tc-comment\"\n" +
+    "            ng-class=\"{'tc-comment--unseen': comment.isSelected && !comment.seen}\"\n" +
+    "            ng-mouseover=\"markSeen(comment)\">\n" +
+    "    <div class=\"l-block-x-small\">\n" +
+    "      <div class=\"tc-comment__author\">{{comment.authorName}}</div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <form ng-submit=\"saveComment()\">\n" +
+    "      <div class=\"l-block-small\">\n" +
+    "        <textarea placeholder=\"Type your comment here\" msd-elastic=\"\\n\" ng-model=\"tempText\"></textarea>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\">Save</button>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\" type=\"button\" ng-click=\"deleteComment()\">Cancel</button>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </form>\n" +
+    "  </section>\n" +
+    "</div>");
+}]);
+
 angular.module("templates/contextualReplyForm.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/contextualReplyForm.html",
     "<div class=\"tc-comment tc-comment--reply\">\n" +
@@ -142,12 +174,12 @@ angular.module("templates/contextualReplyForm.html", []).run(["$templateCache", 
     "      <textarea msd-elastic=\"\\n\" placeholder=\"Reply to the comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-split\" ng-show=\"active\">\n" +
-    "      <div class=\"l-split__right\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\" ng-show=\"active\">\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
     "        <button class=\"button\">Post</button>\n" +
     "      </div>\n" +
     "\n" +
-    "      <div class=\"l-split__left\">\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
     "        <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
     "      </div>\n" +
     "    </div>\n" +

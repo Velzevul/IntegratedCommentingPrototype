@@ -50,7 +50,10 @@
 
           <div class="new-positioning-grid">
             <div ng-show="activeTab == 'contextual'">
-              <contextual-comment ng-repeat="comment in contextualComments" comment="comment"></contextual-comment>
+              <div ng-repeat="comment in contextualComments">
+                <contextual-comment comment="comment" ng-if="comment.text != undefined"></contextual-comment>
+                <contextual-comment-form comment="comment" ng-if="comment.text == undefined"></contextual-comment-form>
+              </div>
             </div>
 
             <div ng-show="activeTab == 'general'">
@@ -102,6 +105,7 @@
 
     <script src="scripts/selectAnchorDirective.js"></script>
     <script src="scripts/contextualCommentDirective.js"></script>
+    <script src="scripts/contextualCommentFormDirective.js"></script>
     <script src="scripts/commentAnchorDirective.js"></script>
     <script src="scripts/contextualReplyFormDirective.js"></script>
 
