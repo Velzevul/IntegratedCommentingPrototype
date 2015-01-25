@@ -1,0 +1,18 @@
+/**
+ *  COMMENT BODY MODULE
+ *
+ *  styling for the area containing comment
+ *  textand form for its editing
+ *
+ *  .comment-body
+ *    &__text
+ *    &__controls
+ *
+ */
+.comment-body {
+  // ...
+
+  &__controls {
+    font-size: em(11,13);
+  }
+}

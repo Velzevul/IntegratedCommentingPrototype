@@ -1,5 +1,5 @@
 angular.module('comments')
-  .factory('ContextualCommentsService', function($timeout, SelectionService) {
+  .factory('ContextualCommentsService', function($timeout, SelectionService, UserService) {
     'use strict';
 
     var mock = [
@@ -73,16 +73,10 @@ angular.module('comments')
         commentsCount: 4,
         repliesCount: 3,
         totalUnseenCount: 4
-      };
+      },
+      user = UserService.getCurrent();
 
     updateIdIndexMap();
-
-    function getRandomColor() {
-      var colors = ['blue', 'green', 'yellow', 'orange', 'red', 'teal', 'purple', 'pink'],
-          randomIndex = parseInt(Math.random() * 10) % colors.length;
-
-      return colors[randomIndex]
-    }
 
     function getById(id) {
       return mock[idIndexMap[id]];
@@ -138,7 +132,7 @@ angular.module('comments')
             comment = {
               id: nextId,
               text: text,
-              authorName: 'Volodymyr Dziubak',
+              authorName: user.name,
               postedOn: '2014-03-27T04:01:16',
               seen: true
             },
@@ -149,7 +143,7 @@ angular.module('comments')
           parent.replies.push(comment);
           statsCache.repliesCount += 1;
         } else {
-          comment.color = getRandomColor();
+          comment.color = user.commentingColor;
           comment.replies = [];
           comment.unseenRepliesCount = 0;
           comment.text = dummyText;
@@ -235,6 +229,25 @@ angular.module('comments')
             $('body').animate({'scrollTop': anchor.offsetTop - 100});
           }
         });
+      },
+      delete: function(comment, parent) {
+        var context;
+
+        if (parent) {
+          context = parent.replies;
+        } else {
+          context = mock;
+          SelectionService.removeNote(comment.id);
+        }
+
+        for (var i = 0; i < context.length; i++) {
+          if (context[i].id == comment.id) {
+            $timeout(function() {
+              context.splice(i, 1);
+            });
+            break;
+          }
+        }
       }
     }
   });

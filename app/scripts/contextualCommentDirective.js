@@ -17,8 +17,10 @@ angular.module('comments')
         };
 
         $scope.markSeen = function(comment, parent) {
-          if (!comment.seen) {
-            ContextualCommentsService.markAsSeen(comment, parent);
+          if ((comment.isSelected) || (parent && parent.isSelected)) {
+            if (!comment.seen) {
+              ContextualCommentsService.markAsSeen(comment, parent);
+            }
           }
         };
       },

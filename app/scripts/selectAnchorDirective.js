@@ -24,6 +24,7 @@ angular.module('comments')
 
         $scope.$watch('contextualComments.length', function() {
           $compile(elem.contents())($scope);
+          // debugger;
         });
       }
     };

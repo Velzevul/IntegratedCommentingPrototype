@@ -4,14 +4,15 @@ angular.module('comments')
 
     var range;
 
-    function makeTempNote() {
-      return '<note-temp>' + range.originalText + '</note-temp>';
-    }
-
     function makeRealNote(comment) {
-      var randId = parseInt(Math.random() * 100000);
+      var randId = parseInt(Math.random() * 100000),
+          el = document.createElement('note-' +  randId);
 
-      return '<note-' + randId + ' id="' + comment.id + '" comment-anchor class="document__anchor document__anchor--' + comment.color + '">' + range.originalText + '</note-' + randId + '>';
+      el.id = comment.id;
+      el.setAttribute('comment-anchor', '');
+      el.setAttribute('class', 'document__anchor document__anchor--' + comment.color)
+
+      return  el;
     }
 
     return {
@@ -19,22 +20,22 @@ angular.module('comments')
         var newFragment;
 
         if (range) {
+          newFragment = range.createContextualFragment(range.toString());
           range.deleteContents();
-          newFragment = range.createContextualFragment(range.originalText);
           range.insertNode(newFragment);
         }
 
         range = null;
       },
       storeSelection: function() {
-        var newFragment;
+        var noteElement = document.createElement('note-temp'),
+            selection = window.getSelection();
 
         if (window.getSelection().type == 'Range') {
-          range = window.getSelection().getRangeAt(0);
-          range.originalText = range.toString();
-          range.deleteContents();
-          newFragment = range.createContextualFragment(makeTempNote());
-          range.insertNode(newFragment);
+          range = selection.getRangeAt(0);
+          range.surroundContents(noteElement);
+          selection.removeAllRanges();
+          selection.addRange(range);
         }
       },
       hasSelection: function() {
@@ -43,11 +44,25 @@ angular.module('comments')
       insertRealNote: function(comment) {
         var newFragment;
 
-        range.deleteContents();
-        newFragment = range.createContextualFragment(makeRealNote(comment));
-        range.insertNode(newFragment);
+        if (range) {
+          newFragment = range.createContextualFragment(range.toString());
 
-        range = null;
+          range.deleteContents();
+          range.insertNode(newFragment);
+          range.surroundContents( makeRealNote(comment) );
+
+          range = null;
+        }
+      },
+      removeNote: function(id) {
+        var note = document.getElementById(id),
+            noteRange = new Range(),
+            newFragment;
+
+        noteRange.selectNode(note);
+        noteRange.deleteContents();
+        newFragment = noteRange.createContextualFragment(note.innerHTML);
+        noteRange.insertNode(newFragment);
       }
     };
   });

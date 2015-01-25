@@ -1,4 +1,43 @@
-angular.module('app-templates', ['templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualReplyFormDummy.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
+angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualReplyFormDummy.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
+
+angular.module("templates/commentBody.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/commentBody.html",
+    "<div class=\"comment-body\">\n" +
+    "  <div ng-hide=\"editMode\">\n" +
+    "    <div class=\"l-block-x-small\">\n" +
+    "      <div class=\"comment-body__text\">{{comment.text | words: truncated && 10 || comment.text.length}}</div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"comment-body__controls\">\n" +
+    "      <div class=\"l-list-inline l-list-inline--small\" ng-show=\"postedByCurrentUser && !truncated\">\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"link\" ng-click=\"enterEditMode()\">edit comment</button>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"link link--danger\" ng-click=\"deleteComment()\">delete</button>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <form ng-show=\"editMode\" ng-submit=\"updateComment()\">\n" +
+    "    <div class=\"l-block-small\">\n" +
+    "      <textarea msd-elastic=\"\\n\" ng-model=\"tempText\"></textarea>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <button class=\"button\">Save</button>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <button class=\"button\" type=\"button\" ng-click=\"leaveEditMode()\">Cancel</button>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </form>\n" +
+    "</div>");
+}]);
 
 angular.module("templates/commentTabs.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/commentTabs.html",
@@ -46,8 +85,9 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "  </div>\n" +
     "\n" +
     "  <section  class=\"tc-comment\"\n" +
-    "            ng-hide=\"comment.isSelected\">\n" +
-    "    <div class=\"l-block-small\">\n" +
+    "            ng-class=\"{'tc-comment--unseen': comment.isSelected && !comment.seen}\"\n" +
+    "            ng-mouseover=\"markSeen(comment)\">\n" +
+    "    <div class=\"l-block-x-small\">\n" +
     "      <div class=\"l-split\">\n" +
     "        <div class=\"l-split__right\">\n" +
     "          <div class=\"tc-comment__updated-at\">{{comment.postedOn | date:'short'}}</div>\n" +
@@ -59,33 +99,17 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-block-small\">\n" +
-    "      <div class=\"tc-comment__text\">{{comment.text | words:10}}</div>\n" +
+    "    <div class=\"l-block-x-small\">\n" +
+    "      <comment-body comment=\"comment\" truncated=\"!comment.isSelected\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
-    "    <span class=\"link link--success\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
-    "    <span class=\"link link--success\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
+    "    <div class=\"tc-comment__controls\" ng-hide=\"comment.isSelected\">\n" +
+    "      <span class=\"link\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
+    "      <span class=\"link\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
+    "    </div>\n" +
     "  </section>\n" +
     "\n" +
     "  <div ng-show=\"comment.isSelected\">\n" +
-    "    <section  class=\"tc-comment\"\n" +
-    "              ng-class=\"{'tc-comment--unseen': !comment.seen}\"\n" +
-    "              ng-mouseover=\"markSeen(comment)\">\n" +
-    "      <div class=\"l-block-small\">\n" +
-    "        <div class=\"l-split\">\n" +
-    "          <div class=\"l-split__right\">\n" +
-    "            <div class=\"tc-comment__updated-at\">{{comment.postedOn | date:'short'}}</div>\n" +
-    "          </div>\n" +
-    "\n" +
-    "          <div class=\"l-split__left\">\n" +
-    "            <div class=\"tc-comment__author\">{{comment.authorName}}</div>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "\n" +
-    "      <div class=\"tc-comment__text\" ng-show=\"comment.isSelected\">{{comment.text}}</div>\n" +
-    "    </section>\n" +
-    "\n" +
     "    <section  class=\"tc-comment tc-comment--reply\"\n" +
     "              ng-class=\"{'tc-comment--unseen': !reply.seen}\"\n" +
     "              ng-repeat=\"reply in comment.replies\"\n" +
@@ -102,7 +126,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "        </div>\n" +
     "      </div>\n" +
     "\n" +
-    "      <div class=\"tc-comment__text\">{{reply.text}}</div>\n" +
+    "      <comment-body comment=\"reply\" parent=\"comment\" truncated=\"false\"></comment-body>\n" +
     "    </section>\n" +
     "\n" +
     "    <contextual-reply-form-dummy parent-thread-id=\"comment.id\"></contextual-reply-form-dummy>\n" +
@@ -266,7 +290,7 @@ angular.module("templates/statusbarContextual.html", []).run(["$templateCache", 
     "  <div class=\"l-split__right\">\n" +
     "    <div class=\"l-list-inline\" ng-hide=\"selectingContext\">\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"link-inv link--success\" ng-click=\"addContextualComment()\">add contextual comment</button>\n" +
+    "        <button class=\"link-inv link--success\" ng-click=\"addContextualComment()\">new contextual comment</button>\n" +
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline__item\">\n" +
@@ -274,9 +298,9 @@ angular.module("templates/statusbarContextual.html", []).run(["$templateCache", 
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-list-inline\" ng-show=\"selectingContext\">\n" +
-    "      <div class=\"l-list-inline__item\">Select the text which you want to comment on</div>\n" +
-    "      <div class=\"l-list-inline__item\"><button class=\"link link--danger\" ng-click=\"cancelContextualComment()\">cancel</button></div>\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\" ng-show=\"selectingContext\">\n" +
+    "      <div class=\"l-list-inline__item\">Now, select the part of the text you want to comment on</div>\n" +
+    "      <div class=\"l-list-inline__item\"><button class=\"link link--danger\" ng-click=\"cancelContextualComment()\">(Cancel)</button></div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "\n" +
@@ -321,7 +345,7 @@ angular.module("templates/statusbarGeneral.html", []).run(["$templateCache", fun
     "  <div class=\"l-split__right\">\n" +
     "    <div class=\"l-list-inline\">\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"link-inv link--success\" ng-click=\"showGeneralCommentForm()\">add general comment</button>\n" +
+    "        <button class=\"link-inv link--success\" ng-click=\"showGeneralCommentForm()\">new general comment</button>\n" +
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline__item\">\n" +

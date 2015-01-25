@@ -20,8 +20,9 @@
   </div>
 
   <section  class="tc-comment"
-            ng-hide="comment.isSelected">
-    <div class="l-block-small">
+            ng-class="{'tc-comment--unseen': comment.isSelected && !comment.seen}"
+            ng-mouseover="markSeen(comment)">
+    <div class="l-block-x-small">
       <div class="l-split">
         <div class="l-split__right">
           <div class="tc-comment__updated-at">{{comment.postedOn | date:'short'}}</div>
@@ -33,33 +34,17 @@
       </div>
     </div>
 
-    <div class="l-block-small">
-      <div class="tc-comment__text">{{comment.text | words:10}}</div>
+    <div class="l-block-x-small">
+      <comment-body comment="comment" truncated="!comment.isSelected"></comment-body>
     </div>
 
-    <span class="link link--success" ng-if="comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></span>
-    <span class="link link--success" ng-if="comment.replies.length == 0">see full comment</span>
+    <div class="tc-comment__controls" ng-hide="comment.isSelected">
+      <span class="link" ng-if="comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></span>
+      <span class="link" ng-if="comment.replies.length == 0">see full comment</span>
+    </div>
   </section>
 
   <div ng-show="comment.isSelected">
-    <section  class="tc-comment"
-              ng-class="{'tc-comment--unseen': !comment.seen}"
-              ng-mouseover="markSeen(comment)">
-      <div class="l-block-small">
-        <div class="l-split">
-          <div class="l-split__right">
-            <div class="tc-comment__updated-at">{{comment.postedOn | date:'short'}}</div>
-          </div>
-
-          <div class="l-split__left">
-            <div class="tc-comment__author">{{comment.authorName}}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tc-comment__text" ng-show="comment.isSelected">{{comment.text}}</div>
-    </section>
-
     <section  class="tc-comment tc-comment--reply"
               ng-class="{'tc-comment--unseen': !reply.seen}"
               ng-repeat="reply in comment.replies"
@@ -76,7 +61,7 @@
         </div>
       </div>
 
-      <div class="tc-comment__text">{{reply.text}}</div>
+      <comment-body comment="reply" parent="comment" truncated="false"></comment-body>
     </section>
 
     <contextual-reply-form-dummy parent-thread-id="comment.id"></contextual-reply-form-dummy>
