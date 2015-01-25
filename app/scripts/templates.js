@@ -1,4 +1,4 @@
-angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualReplyFormDummy.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
+angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualReplyForm.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
 
 angular.module("templates/commentBody.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/commentBody.html",
@@ -129,17 +129,17 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "      <comment-body comment=\"reply\" parent=\"comment\" truncated=\"false\"></comment-body>\n" +
     "    </section>\n" +
     "\n" +
-    "    <contextual-reply-form-dummy parent-thread-id=\"comment.id\"></contextual-reply-form-dummy>\n" +
+    "    <contextual-reply-form parent-thread-id=\"comment.id\"></contextual-reply-form>\n" +
     "  </div>\n" +
     "</article>");
 }]);
 
-angular.module("templates/contextualReplyFormDummy.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("templates/contextualReplyFormDummy.html",
+angular.module("templates/contextualReplyForm.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/contextualReplyForm.html",
     "<div class=\"tc-comment tc-comment--reply\">\n" +
     "  <form ng-submit=\"postComment()\">\n" +
     "    <div ng-class=\"{'l-block-small': active}\">\n" +
-    "      <textarea placeholder=\"Reply to the comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
+    "      <textarea msd-elastic=\"\\n\" placeholder=\"Reply to the comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"l-split\" ng-show=\"active\">\n" +

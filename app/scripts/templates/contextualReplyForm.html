@@ -1,7 +1,7 @@
 <div class="tc-comment tc-comment--reply">
   <form ng-submit="postComment()">
     <div ng-class="{'l-block-small': active}">
-      <textarea placeholder="Reply to the comment" ng-focus="activate()" ng-model="commentText"></textarea>
+      <textarea msd-elastic="\n" placeholder="Reply to the comment" ng-focus="activate()" ng-model="commentText"></textarea>
     </div>
 
     <div class="l-split" ng-show="active">

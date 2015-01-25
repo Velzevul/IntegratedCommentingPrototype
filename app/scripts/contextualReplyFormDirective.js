@@ -1,10 +1,10 @@
 angular.module('comments')
-  .directive('contextualReplyFormDummy', function(ContextualCommentsService, $timeout) {
+  .directive('contextualReplyForm', function(ContextualCommentsService, $timeout) {
     'use strict';
 
     return {
       restrict: 'E',
-      templateUrl: 'templates/contextualReplyFormDummy.html',
+      templateUrl: 'templates/contextualReplyForm.html',
       scope: {
         parentThreadId: '='
       },
@@ -33,6 +33,13 @@ angular.module('comments')
             ContextualCommentsService.reposition();
           });
         };
+      },
+      link: function($scope, elem, attrs) {
+        var textarea = elem.find('textarea');
+
+        textarea.on('keypress', function() {
+          ContextualCommentsService.reposition();
+        });
       }
     }
   });

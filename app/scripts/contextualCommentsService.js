@@ -242,12 +242,18 @@ angular.module('comments')
 
         for (var i = 0; i < context.length; i++) {
           if (context[i].id == comment.id) {
-            $timeout(function() {
+            if (parent) {
+              $timeout(function() {
+                context.splice(i, 1);
+              });
+            } else {
               context.splice(i, 1);
-            });
+            }
             break;
           }
         }
+
+        updateIdIndexMap();
       }
     }
   });
