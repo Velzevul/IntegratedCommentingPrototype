@@ -10,8 +10,10 @@ angular.module('comments')
       },
       controller: function($scope) {
         $scope.markSeen = function(comment, parent) {
-          if (!comment.seen) {
-            GeneralCommentsService.markAsSeen(comment, parent);
+          if ((comment.isExpanded) || (parent && parent.isExpanded)) {
+            if (!comment.seen) {
+              GeneralCommentsService.markAsSeen(comment, parent);
+            }
           }
         };
       },

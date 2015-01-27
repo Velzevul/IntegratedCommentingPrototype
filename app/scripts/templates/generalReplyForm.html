@@ -1,0 +1,17 @@
+<div class="tg-comment tg-comment--reply">
+  <form ng-submit="postComment()">
+    <div ng-class="{'l-block-small': active}">
+      <textarea msd-elastic="\n" placeholder="Reply to this comment" ng-focus="activate()" ng-model="commentText"></textarea>
+    </div>
+
+    <div class="l-list-inline l-list-inline--small" ng-show="active">
+      <div class="l-list-inline__item">
+        <button class="button">Post</button>
+      </div>
+
+      <div class="l-list-inline__item">
+        <button class="button" type="button" ng-click="deactivate()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

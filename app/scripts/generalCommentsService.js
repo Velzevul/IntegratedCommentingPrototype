@@ -1,5 +1,5 @@
 angular.module('comments')
-  .factory('GeneralCommentsService', function() {
+  .factory('GeneralCommentsService', function(UserService) {
     'use strict';
 
     var mock = [
@@ -128,7 +128,8 @@ angular.module('comments')
         commentsCount: 8,
         repliesCount: 6,
         totalUnseenCount: 4
-      };
+      },
+      user = UserService.getCurrent();
 
     updateIdIndexMap();
 
@@ -167,7 +168,7 @@ angular.module('comments')
             comment = {
               id: nextId,
               text: text,
-              authorName: 'Volod Dziu',
+              authorName: user.name,
               postedOn: '2014-03-27T04:01:16',
               seen: true
             };
@@ -186,6 +187,24 @@ angular.module('comments')
         }
 
         nextId += 1;
+      },
+      delete: function(comment, parent) {
+        var context;
+
+        if (parent) {
+          context = parent.replies;
+        } else {
+          context = mock;
+        }
+
+        for (var i = 0; i<context.length; i++) {
+          if (context[i].id == comment.id) {
+            context.splice(i, 1);
+            break;
+          }
+        }
+
+        updateIdIndexMap();
       }
     };
   });

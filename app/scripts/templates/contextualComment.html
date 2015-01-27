@@ -35,7 +35,7 @@
     </div>
 
     <div class="l-block-x-small">
-      <comment-body comment="comment" truncated="!comment.isSelected"></comment-body>
+      <comment-body type="contextual" comment="comment" truncated="!comment.isSelected"></comment-body>
     </div>
 
     <div class="tc-comment__controls" ng-hide="comment.isSelected">
@@ -49,7 +49,7 @@
               ng-class="{'tc-comment--unseen': !reply.seen}"
               ng-repeat="reply in comment.replies"
               ng-mouseover="markSeen(reply, comment)">
-      <div class="l-block-small">
+      <div class="l-block-x-small">
         <div class="l-split">
           <div class="l-split__right">
             <div class="tc-comment__updated-at">{{reply.postedOn | date:'short'}}</div>
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <comment-body comment="reply" parent="comment" truncated="false"></comment-body>
+      <comment-body type="contextual" comment="reply" parent="comment" truncated="false"></comment-body>
     </section>
 
     <contextual-reply-form parent-thread-id="comment.id"></contextual-reply-form>

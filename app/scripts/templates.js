@@ -1,4 +1,4 @@
-angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyFormDummy.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
+angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyForm.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
 
 angular.module("templates/commentBody.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/commentBody.html",
@@ -100,7 +100,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "    </div>\n" +
     "\n" +
     "    <div class=\"l-block-x-small\">\n" +
-    "      <comment-body comment=\"comment\" truncated=\"!comment.isSelected\"></comment-body>\n" +
+    "      <comment-body type=\"contextual\" comment=\"comment\" truncated=\"!comment.isSelected\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"tc-comment__controls\" ng-hide=\"comment.isSelected\">\n" +
@@ -114,7 +114,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "              ng-class=\"{'tc-comment--unseen': !reply.seen}\"\n" +
     "              ng-repeat=\"reply in comment.replies\"\n" +
     "              ng-mouseover=\"markSeen(reply, comment)\">\n" +
-    "      <div class=\"l-block-small\">\n" +
+    "      <div class=\"l-block-x-small\">\n" +
     "        <div class=\"l-split\">\n" +
     "          <div class=\"l-split__right\">\n" +
     "            <div class=\"tc-comment__updated-at\">{{reply.postedOn | date:'short'}}</div>\n" +
@@ -126,7 +126,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "        </div>\n" +
     "      </div>\n" +
     "\n" +
-    "      <comment-body comment=\"reply\" parent=\"comment\" truncated=\"false\"></comment-body>\n" +
+    "      <comment-body type=\"contextual\" comment=\"reply\" parent=\"comment\" truncated=\"false\"></comment-body>\n" +
     "    </section>\n" +
     "\n" +
     "    <contextual-reply-form parent-thread-id=\"comment.id\"></contextual-reply-form>\n" +
@@ -190,8 +190,7 @@ angular.module("templates/contextualReplyForm.html", []).run(["$templateCache", 
 angular.module("templates/generalComment.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/generalComment.html",
     "<article  class=\"thread-general\"\n" +
-    "          ng-class=\"{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,\n" +
-    "                     'thread-general--expanded': comment.isExpanded}\">\n" +
+    "          ng-class=\"{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded}\">\n" +
     "  <div class=\"tg-unseen\" ng-show=\"!comment.isExpanded && (!comment.seen || comment.unseenRepliesCount > 0)\">\n" +
     "    <div class=\"l-list-inline l-list-inline--small\">\n" +
     "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
@@ -208,7 +207,9 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "    </div>\n" +
     "  </div>\n" +
     "\n" +
-    "  <section class=\"tg-comment\" ng-hide=\"comment.isExpanded\">\n" +
+    "  <section  class=\"tg-comment\"\n" +
+    "            ng-class=\"{'tg-comment--unseen': comment.isExpanded && !comment.seen}\"\n" +
+    "            ng-mouseover=\"markSeen(comment)\">\n" +
     "    <div class=\"l-block-x-small\">\n" +
     "      <div class=\"l-split\">\n" +
     "        <div class=\"l-split__right\">\n" +
@@ -221,37 +222,18 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-block-small\">\n" +
-    "      <div class=\"tg-comment__text\">{{comment.text | words: 10}}</div>\n" +
+    "    <div class=\"l-block-x-small\">\n" +
+    "      <comment-body comment=\"comment\" truncated=\"!comment.isExpanded\" type=\"general\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
-    "    <button class=\"link link--success\" ng-click=\"comment.isExpanded = true\" ng-show=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
-    "    <button class=\"link link--success\" ng-click=\"comment.isExpanded = true\" ng-show=\"comment.replies.length == 0\">see full comment</button>\n" +
+    "    <div class=\"tc-comment__controls\">\n" +
+    "      <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
+    "      <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length == 0\">see full comment</button>\n" +
+    "      <button ng-click=\"comment.isExpanded = false\" class=\"link\" ng-show=\"comment.isExpanded\">collapse comment</button>\n" +
+    "    </div>\n" +
     "  </section>\n" +
     "\n" +
     "  <div ng-show=\"comment.isExpanded\">\n" +
-    "    <section  class=\"tg-comment\"\n" +
-    "              ng-class=\"{'tg-comment--unseen': !comment.seen}\"\n" +
-    "              ng-mouseover=\"markSeen(comment)\">\n" +
-    "      <div class=\"l-block-x-small\">\n" +
-    "        <div class=\"l-split\">\n" +
-    "          <div class=\"l-split__right\">\n" +
-    "            <div class=\"tg-comment__updated-at\">{{comment.postedOn | date:'short'}}</div>\n" +
-    "          </div>\n" +
-    "\n" +
-    "          <div class=\"l-split__left\">\n" +
-    "            <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
-    "          </div>\n" +
-    "        </div>\n" +
-    "      </div>\n" +
-    "\n" +
-    "      <div class=\"l-block-small\">\n" +
-    "        <div class=\"tg-comment__text\">{{comment.text}}</div>\n" +
-    "      </div>\n" +
-    "\n" +
-    "      <button class=\"link link--success\" ng-click=\"comment.isExpanded = false\">collapse comment</button>\n" +
-    "    </section>\n" +
-    "\n" +
     "    <section  class=\"tg-comment tg-comment--reply\"\n" +
     "              ng-class=\"{'tg-comment--unseen': !reply.seen}\"\n" +
     "              ng-repeat=\"reply in comment.replies\"\n" +
@@ -268,12 +250,10 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "        </div>\n" +
     "      </div>\n" +
     "\n" +
-    "      <div class=\"tg-comment__text\">{{reply.text}}</div>\n" +
+    "      <comment-body comment=\"reply\" parent=\"comment\" truncated=\"false\" type=\"general\"></comment-body>\n" +
     "    </section>\n" +
     "\n" +
-    "    <div class=\"tg-comment tg-comment--reply\">\n" +
-    "      <general-reply-form-dummy parent-thread-id=\"comment.id\"></general-reply-form-dummy>\n" +
-    "    </div>\n" +
+    "    <general-reply-form parent-thread-id=\"comment.id\"></general-reply-form>\n" +
     "  </div>\n" +
     "</article>");
 }]);
@@ -282,38 +262,40 @@ angular.module("templates/generalCommentForm.html", []).run(["$templateCache", f
   $templateCache.put("templates/generalCommentForm.html",
     "<form ng-submit=\"postComment()\">\n" +
     "  <div class=\"l-block-small\">\n" +
-    "    <textarea placeholder=\"Write new comment\" ng-model=\"commentText\"></textarea>\n" +
+    "    <textarea msd-elastic=\"\\n\" placeholder=\"Write new comment\" ng-model=\"commentText\"></textarea>\n" +
     "  </div>\n" +
     "\n" +
-    "  <div class=\"l-split\">\n" +
-    "    <div class=\"l-split__right\">\n" +
+    "  <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "    <div class=\"l-list-inline__item\">\n" +
     "      <button class=\"button\">Post</button>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-split__left\">\n" +
+    "    <div class=\"l-list-inline__item\">\n" +
     "      <button class=\"button\" ng-click=\"cancelComment()\">Cancel</button>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</form>");
 }]);
 
-angular.module("templates/generalReplyFormDummy.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("templates/generalReplyFormDummy.html",
-    "<form ng-submit=\"postComment()\">\n" +
-    "  <div class=\"l-block-small\">\n" +
-    "    <textarea placeholder=\"Reply to this comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
-    "  </div>\n" +
-    "\n" +
-    "  <div class=\"l-split\" ng-show=\"active\">\n" +
-    "    <div class=\"l-split__right\">\n" +
-    "      <button class=\"button\">Post</button>\n" +
+angular.module("templates/generalReplyForm.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/generalReplyForm.html",
+    "<div class=\"tg-comment tg-comment--reply\">\n" +
+    "  <form ng-submit=\"postComment()\">\n" +
+    "    <div ng-class=\"{'l-block-small': active}\">\n" +
+    "      <textarea msd-elastic=\"\\n\" placeholder=\"Reply to this comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-split__left\">\n" +
-    "      <button class=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\" ng-show=\"active\">\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <button class=\"button\">Post</button>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "      </div>\n" +
     "    </div>\n" +
-    "  </div>\n" +
-    "</form>");
+    "  </form>\n" +
+    "</div>");
 }]);
 
 angular.module("templates/statusbarContextual.html", []).run(["$templateCache", function($templateCache) {

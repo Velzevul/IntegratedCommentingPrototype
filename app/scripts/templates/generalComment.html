@@ -1,6 +1,5 @@
 <article  class="thread-general"
-          ng-class="{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded,
-                     'thread-general--expanded': comment.isExpanded}">
+          ng-class="{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded}">
   <div class="tg-unseen" ng-show="!comment.isExpanded && (!comment.seen || comment.unseenRepliesCount > 0)">
     <div class="l-list-inline l-list-inline--small">
       <div class="l-list-inline__item" ng-show="!comment.seen">
@@ -17,7 +16,9 @@
     </div>
   </div>
 
-  <section class="tg-comment" ng-hide="comment.isExpanded">
+  <section  class="tg-comment"
+            ng-class="{'tg-comment--unseen': comment.isExpanded && !comment.seen}"
+            ng-mouseover="markSeen(comment)">
     <div class="l-block-x-small">
       <div class="l-split">
         <div class="l-split__right">
@@ -30,37 +31,18 @@
       </div>
     </div>
 
-    <div class="l-block-small">
-      <div class="tg-comment__text">{{comment.text | words: 10}}</div>
+    <div class="l-block-x-small">
+      <comment-body comment="comment" truncated="!comment.isExpanded" type="general"></comment-body>
     </div>
 
-    <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></button>
-    <button class="link link--success" ng-click="comment.isExpanded = true" ng-show="comment.replies.length == 0">see full comment</button>
+    <div class="tc-comment__controls">
+      <button ng-click="comment.isExpanded = true" class="link" ng-show="!comment.isExpanded && comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></button>
+      <button ng-click="comment.isExpanded = true" class="link" ng-show="!comment.isExpanded && comment.replies.length == 0">see full comment</button>
+      <button ng-click="comment.isExpanded = false" class="link" ng-show="comment.isExpanded">collapse comment</button>
+    </div>
   </section>
 
   <div ng-show="comment.isExpanded">
-    <section  class="tg-comment"
-              ng-class="{'tg-comment--unseen': !comment.seen}"
-              ng-mouseover="markSeen(comment)">
-      <div class="l-block-x-small">
-        <div class="l-split">
-          <div class="l-split__right">
-            <div class="tg-comment__updated-at">{{comment.postedOn | date:'short'}}</div>
-          </div>
-
-          <div class="l-split__left">
-            <div class="tg-comment__author">{{comment.authorName}}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="l-block-small">
-        <div class="tg-comment__text">{{comment.text}}</div>
-      </div>
-
-      <button class="link link--success" ng-click="comment.isExpanded = false">collapse comment</button>
-    </section>
-
     <section  class="tg-comment tg-comment--reply"
               ng-class="{'tg-comment--unseen': !reply.seen}"
               ng-repeat="reply in comment.replies"
@@ -77,11 +59,9 @@
         </div>
       </div>
 
-      <div class="tg-comment__text">{{reply.text}}</div>
+      <comment-body comment="reply" parent="comment" truncated="false" type="general"></comment-body>
     </section>
 
-    <div class="tg-comment tg-comment--reply">
-      <general-reply-form-dummy parent-thread-id="comment.id"></general-reply-form-dummy>
-    </div>
+    <general-reply-form parent-thread-id="comment.id"></general-reply-form>
   </div>
 </article>

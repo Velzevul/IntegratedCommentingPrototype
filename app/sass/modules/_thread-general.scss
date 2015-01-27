@@ -5,12 +5,13 @@
  *
  *  .thread-general
  *    &--multiple
+ *    &--has-unseen-items
  *    <>--  .tg-comment
  *            &__author
  *            &__updated-at
- *            &__text
- *            &--unseen
+ *            &__controls
  *            &--reply
+ *            &--unseen
  *    <>--  .tg-unseen
  *            &__item
  *
@@ -18,6 +19,7 @@
 .thread-general {
   position: relative;
   margin-left: $global-baseline;
+
   font-size: 13px;
   line-height: 17px;
 
@@ -35,7 +37,7 @@
 
 .tg-comment {
   position: relative;
-  padding: $global-baseline;
+  padding: 8px;
 
   background: transparent;
 
@@ -43,29 +45,29 @@
   @include transition-duration(0.5s);
 
   &__author {
+    display: inline-block;
+
     font-weight: 600;
 
     color: $color-tx-darkened;
   }
 
   &__updated-at {
+    font-size: em(11,13);
     font-weight: 300;
 
     color: $color-tx-muted;
   }
 
-  &__text {
-    // ...
+  &__controls {
+    font-size: 11px;
   }
 }
-  .tg-comment--unseen {
-    background: #FFFFBC;
-  }
   .tg-comment--reply {
-    // padding-left: $global-baseline * 2;
-
     border-top: 1px solid darken($color-bg, 5%);
-    // border-left: 4px solid darken($color-bg, 5%);
+  }
+  .tg-comment--unseen {
+    background: $color-dc-quaternary;
   }
 
 .tg-unseen {

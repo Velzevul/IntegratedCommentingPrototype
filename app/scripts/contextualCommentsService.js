@@ -241,12 +241,15 @@ angular.module('comments')
         for (var i = 0; i < context.length; i++) {
           if (context[i].id == comment.id) {
             if (parent) {
+              // timeout is required so that the "click" event
+              // is processed before the comment is deleted
               $timeout(function() {
                 context.splice(i, 1);
               });
             } else {
               context.splice(i, 1);
             }
+
             break;
           }
         }

@@ -1,10 +1,10 @@
 angular.module('comments')
-  .directive('generalReplyFormDummy', function(GeneralCommentsService) {
+  .directive('generalReplyForm', function(GeneralCommentsService) {
     'use strict';
 
     return {
       restrict: 'E',
-      templateUrl: 'templates/generalReplyFormDummy.html',
+      templateUrl: 'templates/generalReplyForm.html',
       scope: {
         parentThreadId: '='
       },

@@ -6,13 +6,14 @@
  *  .thread-contextual
  *    &--multiple
  *    &--selected
- *    &--has-unseen-items
  *    &--highlighted
  *    &--{color}
  *    <>--  .tc-comment
  *            &__author
- *            &__updated_at
+ *            &__updated-at
  *            &__controls
+ *            &--reply
+ *            &--unseen
  *    <>--  .tc-unseen
  *            &__item
  *
@@ -47,9 +48,6 @@
   }
   .thread-contextual--highlighted {
     left: -$global-baseline;
-  }
-  .thread-contextual--has-unseen-items {
-    background: #FFFFBC;
   }
   .thread-contextual--selected {
     left: -$global-baseline * 3;

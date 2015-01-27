@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('commentBody', function(UserService, ContextualCommentsService, $timeout) {
+  .directive('commentBody', function(UserService, ContextualCommentsService, GeneralCommentsService, $timeout) {
     'use strict';
 
     return {
@@ -8,7 +8,8 @@ angular.module('comments')
       scope: {
         comment: '=',
         parent: '=',
-        truncated: '='
+        truncated: '=',
+        type: '@'
       },
       controller: function($scope) {
         $scope.editMode = false;
@@ -24,17 +25,21 @@ angular.module('comments')
           $scope.tempText = $scope.comment.text;
           $scope.editMode = true;
 
-          $timeout(function() {
-            ContextualCommentsService.reposition();
-          });
+          if ($scope.type == 'contextual') {
+            $timeout(function() {
+              ContextualCommentsService.reposition();
+            });
+          }
         };
 
         $scope.leaveEditMode = function() {
           $scope.editMode = false;
 
-          $timeout(function() {
-            ContextualCommentsService.reposition();
-          });
+          if ($scope.type == 'contextual') {
+            $timeout(function() {
+              ContextualCommentsService.reposition();
+            });
+          }
         };
 
         $scope.updateComment = function() {
@@ -45,15 +50,25 @@ angular.module('comments')
         };
 
         $scope.deleteComment = function() {
-          ContextualCommentsService.delete($scope.comment, $scope.parent);
+          var targetService;
+
+          if ($scope.type == 'contextual') {
+            targetService = ContextualCommentsService;
+          } else if ($scope.type == 'general') {
+            targetService = GeneralCommentsService;
+          }
+
+          targetService.delete($scope.comment, $scope.parent);
         };
       },
-      link: function(scope, elem, attrs) {
+      link: function($scope, elem, attrs) {
         var textarea = elem.find('textarea');
 
-        textarea.on('keypress', function() {
-          ContextualCommentsService.reposition();
-        });
+        if ($scope.type == 'contextual') {
+          textarea.on('keypress', function() {
+            ContextualCommentsService.reposition();
+          });
+        }
       }
     };
   });
