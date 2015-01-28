@@ -1,11 +1,11 @@
-angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyForm.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
+angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/developerToolbar.html', 'templates/generalComment.html', 'templates/generalCommentForm.html', 'templates/generalReplyForm.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html', 'templates/statusbarGeneral.html']);
 
 angular.module("templates/commentBody.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/commentBody.html",
     "<div class=\"comment-body\">\n" +
     "  <div ng-hide=\"editMode\">\n" +
     "    <div class=\"l-block-x-small\">\n" +
-    "      <div class=\"comment-body__text\">{{comment.text | words: truncated && 10 || comment.text.length}}</div>\n" +
+    "      <div class=\"comment-body__text\">{{comment.text | words: truncated && parameters.truncate || comment.text.length}}</div>\n" +
     "    </div>\n" +
     "\n" +
     "    <div class=\"comment-body__controls\">\n" +
@@ -184,6 +184,54 @@ angular.module("templates/contextualReplyForm.html", []).run(["$templateCache", 
     "      </div>\n" +
     "    </div>\n" +
     "  </form>\n" +
+    "</div>");
+}]);
+
+angular.module("templates/developerToolbar.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/developerToolbar.html",
+    "<div class=\"dev-toolbar\" ng-class=\"{'dev-toolbar--hidden': isHidden}\">\n" +
+    "  <div class=\"dev-toolbar__section dev-toolbar__section--header\">\n" +
+    "    <div class=\"l-split\">\n" +
+    "      <div class=\"l-split__right\">\n" +
+    "        <div class=\"dev-toolbar__controls\">\n" +
+    "          <button class=\"link\" ng-click=\"isHidden = !isHidden\"><span ng-if=\"isHidden\">show</span><span ng-if=\"!isHidden\">hide</span></button>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-split__left\">\n" +
+    "        <div class=\"dev-toolbar__title\">Developer panel</div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"dev-toolbar__section\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">Truncate comments after</div>\n" +
+    "      <div class=\"l-list-inline__item\"><input class=\"dev-toolbar__input-text\" size=\"2\" type=\"number\" ng-model=\"params.truncate\" ng-change=\"reposition()\"></div>\n" +
+    "      <div class=\"l-list-inline__item\">words</div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"dev-toolbar__section\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">Document font-size</div>\n" +
+    "      <div class=\"l-list-inline__item\"><input ng-change=\"changeDocumentFontSize()\" size=\"3\" class=\"dev-toolbar__input-text\" type=\"number\" ng-model=\"documentFontSize\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"dev-toolbar__section\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">Comment font-size</div>\n" +
+    "      <div class=\"l-list-inline__item\"><input ng-change=\"changeCommentFontSize()\" size=\"3\" class=\"dev-toolbar__input-text\" type=\"number\" ng-model=\"commentFontSize\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"dev-toolbar__section\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">Unseen indicator color</div>\n" +
+    "      <div class=\"l-list-inline__item\"><input ng-change=\"changeUnseenIndicatorColor()\" class=\"dev-toolbar__input-color\" type=\"color\" ng-model=\"unseenIndicatorColor\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
     "</div>");
 }]);
 

@@ -20,7 +20,7 @@
   &__title {
     display: inline-block;
 
-    font-size: 22px;
+    font-size: em(22,14);
     line-height: $global-baseline * 3;
 
     color: $color-tx-darkened;

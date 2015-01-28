@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('commentBody', function(UserService, ContextualCommentsService, GeneralCommentsService, $timeout) {
+  .directive('commentBody', function(UserService, ContextualCommentsService, GeneralCommentsService, DevParametersService, $timeout) {
     'use strict';
 
     return {
@@ -12,6 +12,7 @@ angular.module('comments')
         type: '@'
       },
       controller: function($scope) {
+        $scope.parameters = DevParametersService.getParams();
         $scope.editMode = false;
         $scope.postedByCurrentUser = $scope.comment.authorName == UserService.getCurrent().name;
 

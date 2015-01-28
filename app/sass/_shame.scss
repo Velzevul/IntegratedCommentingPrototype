@@ -14,3 +14,46 @@ textarea {
   resize: none;
 }
 
+.dev-toolbar {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  padding: 0 $global-baseline $global-baseline $global-baseline;
+
+  font-size: 13px;
+
+  background: white;
+  border: 1px solid #C0C0C0;
+  box-shadow: 0 0 5px rgba(black, 0.3);
+
+  &__controls {
+    // ...
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__section {
+    padding-top: $global-baseline;
+  }
+    &__section--header {
+      padding-bottom: $global-baseline;
+
+      border-bottom: 1px solid #C0C0C0;
+    }
+
+  &__input-text {
+    width: 4em;
+    padding: 0 0 0 0.5em;
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+  }
+
+  &__input-color {
+    border: none;
+  }
+}
+  .dev-toolbar--hidden {
+    bottom: -166px;
+  }

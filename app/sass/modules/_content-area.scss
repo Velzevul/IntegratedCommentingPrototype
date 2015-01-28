@@ -8,21 +8,18 @@
  *
  */
 .content-area {
-  line-height: $content-area-line-height;
+  // ...
 
   h1 {
     margin-bottom: $global-baseline;
 
-    font-size: 18px;
-    line-height: $global-baseline * 2;
+    font-size: em(18,14);
 
     color: $color-tx-muted;
   }
 
   p {
     margin-bottom: $global-baseline * 2;
-
-    font-size: 15px;
   }
 
   :last-child {

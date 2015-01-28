@@ -1,7 +1,7 @@
 <div class="comment-body">
   <div ng-hide="editMode">
     <div class="l-block-x-small">
-      <div class="comment-body__text">{{comment.text | words: truncated && 10 || comment.text.length}}</div>
+      <div class="comment-body__text">{{comment.text | words: truncated && parameters.truncate || comment.text.length}}</div>
     </div>
 
     <div class="comment-body__controls">

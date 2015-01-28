@@ -1,0 +1,44 @@
+<div class="dev-toolbar" ng-class="{'dev-toolbar--hidden': isHidden}">
+  <div class="dev-toolbar__section dev-toolbar__section--header">
+    <div class="l-split">
+      <div class="l-split__right">
+        <div class="dev-toolbar__controls">
+          <button class="link" ng-click="isHidden = !isHidden"><span ng-if="isHidden">show</span><span ng-if="!isHidden">hide</span></button>
+        </div>
+      </div>
+
+      <div class="l-split__left">
+        <div class="dev-toolbar__title">Developer panel</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Truncate comments after</div>
+      <div class="l-list-inline__item"><input class="dev-toolbar__input-text" size="2" type="number" ng-model="params.truncate" ng-change="reposition()"></div>
+      <div class="l-list-inline__item">words</div>
+    </div>
+  </div>
+
+  <div class="dev-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Document font-size</div>
+      <div class="l-list-inline__item"><input ng-change="changeDocumentFontSize()" size="3" class="dev-toolbar__input-text" type="number" ng-model="documentFontSize"></div>
+    </div>
+  </div>
+
+  <div class="dev-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Comment font-size</div>
+      <div class="l-list-inline__item"><input ng-change="changeCommentFontSize()" size="3" class="dev-toolbar__input-text" type="number" ng-model="commentFontSize"></div>
+    </div>
+  </div>
+
+  <div class="dev-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Unseen indicator color</div>
+      <div class="l-list-inline__item"><input ng-change="changeUnseenIndicatorColor()" class="dev-toolbar__input-color" type="color" ng-model="unseenIndicatorColor"></div>
+    </div>
+  </div>
+</div>
