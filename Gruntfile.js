@@ -28,11 +28,13 @@ module.exports = function(grunt) {
       dependencies: {
         src: ['bower_components/jquery/dist/jquery.js',
               'bower_components/angular/angular.js',
-              'bower_components/angular-truncate/src/truncate.js'],
+              'bower_components/angular-truncate/src/truncate.js',
+              'bower_components/angular-elastic/elastic.js'],
         dest: 'dist/scripts/dependencies.concat.js'
       },
       dist: {
         src: ['app/scripts/app.js',
+              'app/scripts/templates.js',
               'app/scripts/*Service.js',
               'app/scripts/*Controller.js',
               'app/scripts/*Directive.js'],

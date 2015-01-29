@@ -352,11 +352,11 @@ angular.module("templates/statusbarContextual.html", []).run(["$templateCache", 
     "  <div class=\"l-split__right\">\n" +
     "    <div class=\"l-list-inline\" ng-hide=\"selectingContext\">\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"link-inv link--success\" ng-click=\"addContextualComment()\">new contextual comment</button>\n" +
+    "        <button class=\"button button--small button--success\" ng-click=\"addContextualComment()\">new contextual comment</button>\n" +
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"link-inv link--danger\" ng-click=\"activeTab = false\">hide comments</button>\n" +
+    "        <button class=\"button button--small\" ng-click=\"activeTab = false\">hide comments</button>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
@@ -384,7 +384,7 @@ angular.module("templates/statusbarDefault.html", []).run(["$templateCache", fun
   $templateCache.put("templates/statusbarDefault.html",
     "<div class=\"l-split\">\n" +
     "  <div class=\"l-split__right\">\n" +
-    "    <button class=\"link-inv link--success\" ng-click=\"activeTab = 'contextual'\">show comments</button>\n" +
+    "    <button class=\"button button--small button--success\" ng-click=\"activeTab = 'contextual'\">show comments</button>\n" +
     "  </div>\n" +
     "\n" +
     "  <div class=\"l-split__left\">\n" +
@@ -407,11 +407,11 @@ angular.module("templates/statusbarGeneral.html", []).run(["$templateCache", fun
     "  <div class=\"l-split__right\">\n" +
     "    <div class=\"l-list-inline\">\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"link-inv link--success\" ng-click=\"showGeneralCommentForm()\">new general comment</button>\n" +
+    "        <button class=\"button button--small button--success\" ng-click=\"showGeneralCommentForm()\">new general comment</button>\n" +
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"link-inv link--danger\" ng-click=\"activeTab = false\">hide comments</button>\n" +
+    "        <button class=\"button button--small\" ng-click=\"activeTab = false\">hide comments</button>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +

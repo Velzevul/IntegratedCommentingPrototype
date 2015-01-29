@@ -13,3 +13,17 @@
   border: 1px solid darken($color-bg, 10%);
   border-radius: 4px;
 }
+  .button--small {
+    height: $global-baseline*2;
+    padding: 0 $global-baseline;
+  }
+  .button--success {
+    color: white;
+    background: $color-dc-tertiary;
+    border-color: darken($color-dc-tertiary, 10%);
+  }
+  .button--danger {
+    color: white;
+    background: $color-dc-secondary;
+    border-color: darken($color-dc-secondary, 10%);
+  }
