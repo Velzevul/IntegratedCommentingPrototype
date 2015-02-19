@@ -68,8 +68,8 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "                     'thread-contextual--highlighted': comment.isHighlighted,\n" +
     "                     'thread-contextual--multiple': comment.replies.length > 0 && !comment.isSelected}\"\n" +
     "          ng-click=\"selectComment()\">\n" +
-    "  <div class=\"tc-unseen\" ng-show=\"!comment.isSelected && (!comment.seen || comment.unseenRepliesCount > 0)\">\n" +
-    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "  <div class=\"tc-unseen\" ng-show=\"!comment.isSelected\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--x-small\">\n" +
     "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
     "        <div class=\"tc-unseen__item\">\n" +
     "          unseen comment\n" +
@@ -94,7 +94,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "        </div>\n" +
     "\n" +
     "        <div class=\"l-split__left\">\n" +
-    "          <div class=\"tc-comment__author\">{{comment.authorName}}</div>\n" +
+    "          <div class=\"tc-comment__author\">{{comment.author.name}} <span ng-show=\"comment.author.isInstructor\">(Prof)</span></div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -103,9 +103,19 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "      <comment-body type=\"contextual\" comment=\"comment\" truncated=\"!comment.isSelected\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"tc-comment__controls\" ng-hide=\"comment.isSelected\">\n" +
-    "      <span class=\"link\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
-    "      <span class=\"link\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
+    "    <div class=\"l-split\" ng-hide=\"comment.isSelected\">\n" +
+    "      <div class=\"l-split__right\" ng-show=\"comment.hasInstructor && currentUser.role == 'student'\">\n" +
+    "        <div class=\"tc-comment__prof-indicator\">\n" +
+    "          discussion with Prof\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-split__left\">\n" +
+    "        <div class=\"tc-comment__controls\">\n" +
+    "          <span class=\"link\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
+    "          <span class=\"link\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </section>\n" +
     "\n" +
@@ -121,7 +131,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "          </div>\n" +
     "\n" +
     "          <div class=\"l-split__left\">\n" +
-    "            <div class=\"tc-comment__author\">{{reply.authorName}}</div>\n" +
+    "            <div class=\"tc-comment__author\">{{reply.author.name}} <span ng-show=\"reply.author.isInstructor\">(Prof)</span></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
@@ -230,6 +240,22 @@ angular.module("templates/developerToolbar.html", []).run(["$templateCache", fun
     "    <div class=\"l-list-inline l-list-inline--small\">\n" +
     "      <div class=\"l-list-inline__item\">Unseen indicator color</div>\n" +
     "      <div class=\"l-list-inline__item\"><input ng-change=\"changeUnseenIndicatorColor()\" class=\"dev-toolbar__input-color\" type=\"color\" ng-model=\"unseenIndicatorColor\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"dev-toolbar__section\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">Current user role</div>\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <label>\n" +
+    "          <input type=\"radio\" ng-model=\"currentUser.role\" value=\"student\"> Student\n" +
+    "        </label>\n" +
+    "      </div>\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <label>\n" +
+    "          <input type=\"radio\" ng-model=\"currentUser.role\" value=\"prof\"> Prof\n" +
+    "        </label>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>");

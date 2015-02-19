@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('contextualComment', function(ContextualCommentsService, $timeout) {
+  .directive('contextualComment', function(ContextualCommentsService, UserService, $timeout) {
     'use strict';
 
     return {
@@ -10,6 +10,8 @@ angular.module('comments')
       templateUrl: 'templates/contextualComment.html',
       replace: true,
       controller: function($scope) {
+        $scope.currentUser = UserService.getCurrent();
+
         $scope.selectComment = function() {
           if (!$scope.comment.isSelected) {
             ContextualCommentsService.activate($scope.comment.id);

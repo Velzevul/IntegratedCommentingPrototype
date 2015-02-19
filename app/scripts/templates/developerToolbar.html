@@ -41,4 +41,20 @@
       <div class="l-list-inline__item"><input ng-change="changeUnseenIndicatorColor()" class="dev-toolbar__input-color" type="color" ng-model="unseenIndicatorColor"></div>
     </div>
   </div>
+
+  <div class="dev-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Current user role</div>
+      <div class="l-list-inline__item">
+        <label>
+          <input type="radio" ng-model="currentUser.role" value="student"> Student
+        </label>
+      </div>
+      <div class="l-list-inline__item">
+        <label>
+          <input type="radio" ng-model="currentUser.role" value="prof"> Prof
+        </label>
+      </div>
+    </div>
+  </div>
 </div>
