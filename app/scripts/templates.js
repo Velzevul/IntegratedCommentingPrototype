@@ -70,6 +70,12 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "          ng-click=\"selectComment()\">\n" +
     "  <div class=\"tc-unseen\" ng-show=\"!comment.isSelected\">\n" +
     "    <div class=\"l-list-inline l-list-inline--x-small\">\n" +
+    "      <div class=\"l-list-inline__item\" ng-show=\"currentUser.role == 'prof' && comment.replyRequested\">\n" +
+    "        <div class=\"tc-unseen__item\">\n" +
+    "          reply requested\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
     "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
     "        <div class=\"tc-unseen__item\">\n" +
     "          unseen comment\n" +
@@ -265,8 +271,14 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
   $templateCache.put("templates/generalComment.html",
     "<article  class=\"thread-general\"\n" +
     "          ng-class=\"{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded}\">\n" +
-    "  <div class=\"tg-unseen\" ng-show=\"!comment.isExpanded && (!comment.seen || comment.unseenRepliesCount > 0)\">\n" +
+    "  <div class=\"tg-unseen\" ng-show=\"!comment.isExpanded\">\n" +
     "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\" ng-show=\"comment.replyRequested && currentUser.role == 'prof'\">\n" +
+    "        <div class=\"tg-unseen__item\">\n" +
+    "          reply requested\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
     "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
     "        <div class=\"tg-unseen__item\">\n" +
     "          unseen comment\n" +

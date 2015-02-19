@@ -10,6 +10,7 @@ angular.module('comments')
             name: 'Volo Dziu',
             isInstructor: false
           },
+          replyRequested: true,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 1,
@@ -44,6 +45,7 @@ angular.module('comments')
             name: 'Md Adnan Alam Khan',
             isInstructor: false
           },
+          replyRequested: false,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
@@ -57,6 +59,7 @@ angular.module('comments')
             name: 'Brian Yeo',
             isInstructor: false
           },
+          replyRequested: false,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
@@ -70,6 +73,7 @@ angular.module('comments')
             name: 'Andrea Bunt',
             isInstructor: true
           },
+          replyRequested: false,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 1,
@@ -94,6 +98,7 @@ angular.module('comments')
             name: 'Volo Dziu',
             isInstructor: false
           },
+          replyRequested: true,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
@@ -128,6 +133,7 @@ angular.module('comments')
             name: 'Md Adnan Alam Khan',
             isInstructor: false
           },
+          replyRequested: false,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
@@ -141,6 +147,7 @@ angular.module('comments')
             name: 'Andrea Bunt',
             isInstructor: true
           },
+          replyRequested: false,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
@@ -154,6 +161,7 @@ angular.module('comments')
             name: 'Volodymyr Dziubak',
             isInstructor: false
           },
+          replyRequested: false,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,

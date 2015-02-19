@@ -10,6 +10,7 @@ angular.module('comments')
             name: 'Volo Dziu',
             isInstructor: false
           },
+          replyRequested: true,
           hasInstructor: true,
           postedOn: '2014-05-31T11:18:12',
           color: 'pink',
@@ -45,6 +46,7 @@ angular.module('comments')
             name: 'Md Adnan Alam Khan',
             isInstructor: false
           },
+          replyRequested: false,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           color: 'teal',
@@ -59,6 +61,7 @@ angular.module('comments')
             name: 'Andrea Bunt',
             isInstructor: true
           },
+          replyRequested: false,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           color: 'purple',
@@ -73,7 +76,8 @@ angular.module('comments')
             name: 'Volodymyr Dziubak',
             isInstructor: false
           },
-          hasInstructor: false,
+          replyRequested: false,
+          hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           color: 'yellow',
           unseenRepliesCount: 1,
