@@ -141,7 +141,7 @@ angular.module('comments')
       var hasInstructor = comment.author.isInstructor;
 
       angular.forEach(comment.replies, function(reply, index) {
-        hasInstructor = reply.author.isInstructor;
+        hasInstructor = hasInstructor || reply.author.isInstructor;
       });
 
       comment.hasInstructor = hasInstructor;
@@ -166,7 +166,7 @@ angular.module('comments')
       getOne: function(id) {
         return getById(id);
       },
-      create: function(text, parentId) {
+      create: function(text, replyRequested, parentId) {
         var parent = getById(parentId),
             comment = {
               id: nextId,
@@ -182,6 +182,12 @@ angular.module('comments')
 
         if (parent) {
           parent.replies.push(comment);
+          if (user.role == 'prof') {
+            parent.replyRequested = false;
+          } else {
+            parent.replyRequested = replyRequested;
+          }
+
           recalculateProfInvolvement(parent);
           statsCache.repliesCount += 1;
         } else {
@@ -296,6 +302,12 @@ angular.module('comments')
 
             break;
           }
+        }
+
+        if (parent) {
+          $timeout(function() {
+            recalculateProfInvolvement(parent);
+          });
         }
 
         updateIdIndexMap();

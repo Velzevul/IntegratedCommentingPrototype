@@ -32,7 +32,7 @@
         </div>
 
         <div class="l-split__left">
-          <div class="tg-comment__author">{{comment.author.name}} <span ng-show="comment.author.isInstructor">(Prof)</span></div>
+          <div class="tg-comment__author">{{comment.author.name}} <span ng-show="comment.author.isInstructor && currentUser.role == 'student'">(Prof)</span></div>
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@
           </div>
 
           <div class="l-split__left">
-            <div class="tg-comment__author">{{reply.author.name}} <span ng-show="reply.author.isInstructor">(Prof)</span></div>
+            <div class="tg-comment__author">{{reply.author.name}} <span ng-show="reply.author.isInstructor && currentUser.role == 'student'">(Prof)</span></div>
           </div>
         </div>
       </div>

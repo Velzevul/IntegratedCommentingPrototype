@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('contextualReplyForm', function(ContextualCommentsService, $timeout) {
+  .directive('contextualReplyForm', function(ContextualCommentsService, UserService, $timeout) {
     'use strict';
 
     return {
@@ -9,9 +9,11 @@ angular.module('comments')
         parentThreadId: '='
       },
       controller: function($scope) {
+        $scope.currentUser = UserService.getCurrent();
+
         $scope.postComment = function() {
           if ($scope.commentText) {
-            ContextualCommentsService.create($scope.commentText, $scope.parentThreadId);
+            ContextualCommentsService.create($scope.commentText, $scope.replyRequested, $scope.parentThreadId);
           }
 
           $scope.deactivate();
