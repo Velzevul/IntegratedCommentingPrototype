@@ -6,8 +6,11 @@ angular.module('comments')
         {
           id: 1,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ab dolore, delectus exercitationem quia cumque distinctio ipsum reprehenderit harum quisquam suscipit iste recusandae enim, quod, saepe earum tenetur voluptatibus. Iure?',
-          authorName: 'Volo Dziu',
-          postedByInstructor: false,
+          author: {
+            name: 'Volo Dziu',
+            isInstructor: false
+          },
+          hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 1,
           seen: true,
@@ -15,16 +18,20 @@ angular.module('comments')
             {
               id: 2,
               text: 'Necessitatibus illo ad veritatis commodi maiores et adipisci repellat officia suscipit quaerat minus minima placeat veniam expedita quasi, vel nemo distinctio provident.',
-              authorName: 'Andrea Bunt',
-              postedByInstructor: true,
+              author: {
+                name: 'Andrea Bunt',
+                isInstructor: true
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: true
             },
             {
               id: 3,
               text: 'Iure natus fugiat impedit pariatur est dolore delectus illo voluptates. Deleniti laborum obcaecati cum, sed! Nisi cum, deserunt eos aspernatur? Quos, facilis.',
-              authorName: 'Rose Kocher',
-              postedByInstructor: false,
+              author: {
+                name: 'Rose Kocher',
+                isInstructor: false
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: false
             }
@@ -33,8 +40,11 @@ angular.module('comments')
         {
           id: 7,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iure ullam minus optio sint tenetur, facere mollitia commodi accusamus doloribus!',
-          authorName: 'Md Adnan Alam Khan',
-          postedByInstructor: false,
+          author: {
+            name: 'Md Adnan Alam Khan',
+            isInstructor: false
+          },
+          hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
           seen: true,
@@ -43,8 +53,11 @@ angular.module('comments')
         {
           id: 4,
           text: 'Quae omnis iste reiciendis eaque culpa excepturi officia obcaecati consequatur eum quasi vitae, suscipit nam sapiente similique voluptatum at maxime provident. Doloremque non voluptatibus, nam dolore atque ea aliquid beatae consequatur? Molestiae.',
-          authorName: 'Brian Yeo',
-          postedByInstructor: false,
+          author: {
+            name: 'Brian Yeo',
+            isInstructor: false
+          },
+          hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
           seen: false,
@@ -53,8 +66,11 @@ angular.module('comments')
         {
           id: 5,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae accusantium, quasi vel eveniet earum et, rem placeat mollitia! Debitis doloribus similique obcaecati, nulla vitae beatae illo qui. Maxime, quia?',
-          authorName: 'Andrea Bunt',
-          postedByInstructor: true,
+          author: {
+            name: 'Andrea Bunt',
+            isInstructor: true
+          },
+          hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 1,
           seen: false,
@@ -62,8 +78,10 @@ angular.module('comments')
             {
               id: 6,
               text: 'Harum fuga beatae optio alias modi, nobis veniam, assumenda saepe provident soluta eligendi. Suscipit obcaecati soluta earum optio minus et quisquam eligendi provident. Ut, asperiores? Vitae, dicta commodi dolorem quo esse nulla unde! Voluptas veritatis unde quae, a accusantium placeat optio quis, saepe laudantium qui consequatur expedita ducimus iste tenetur, quam sit soluta quidem eius. Nobis harum commodi porro explicabo saepe? Dignissimos eaque nostrum deleniti debitis facere delectus nemo sit laborum neque quasi, ipsam dolor ratione soluta rem exercitationem voluptates. In voluptatem saepe officiis consequatur eligendi ducimus, impedit similique maiores voluptate repellat?',
-              authorName: 'Masayuki Nakane',
-              postedByInstructor: false,
+              author: {
+                name: 'Masayuki Nakane',
+                isInstructor: false
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: false
             }
@@ -72,8 +90,11 @@ angular.module('comments')
         {
           id: 9,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ab dolore, delectus exercitationem quia cumque distinctio ipsum reprehenderit harum quisquam suscipit iste recusandae enim, quod, saepe earum tenetur voluptatibus. Iure?',
-          authorName: 'Volo Dziu',
-          postedByInstructor: false,
+          author: {
+            name: 'Volo Dziu',
+            isInstructor: false
+          },
+          hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
           seen: true,
@@ -81,16 +102,20 @@ angular.module('comments')
             {
               id: 10,
               text: 'Necessitatibus illo ad veritatis commodi maiores et adipisci repellat officia suscipit quaerat minus minima placeat veniam expedita quasi, vel nemo distinctio provident.',
-              authorName: 'Andrea Bunt',
-              postedByInstructor: false,
+              author: {
+                name: 'Andrea Bunt',
+                isInstructor: true
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: true
             },
             {
               id: 11,
               text: 'Iure natus fugiat impedit pariatur est dolore delectus illo voluptates. Deleniti laborum obcaecati cum, sed! Nisi cum, deserunt eos aspernatur? Quos, facilis.',
-              authorName: 'Rose Kocher',
-              postedByInstructor: false,
+              author: {
+                name: 'Rose Kocher',
+                isInstructor: false
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: true
             }
@@ -99,8 +124,11 @@ angular.module('comments')
         {
           id: 12,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas iure ullam minus optio sint tenetur, facere mollitia commodi accusamus doloribus!',
-          authorName: 'Md Adnan Alam Khan',
-          postedByInstructor: false,
+          author: {
+            name: 'Md Adnan Alam Khan',
+            isInstructor: false
+          },
+          hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
           seen: true,
@@ -109,8 +137,11 @@ angular.module('comments')
         {
           id: 13,
           text: 'Quae omnis iste reiciendis eaque culpa excepturi officia obcaecati consequatur eum quasi vitae, suscipit nam sapiente similique voluptatum at maxime provident. Doloremque non voluptatibus, nam dolore atque ea aliquid beatae consequatur? Molestiae.',
-          authorName: 'Andrea Bunt',
-          postedByInstructor: true,
+          author: {
+            name: 'Andrea Bunt',
+            isInstructor: true
+          },
+          hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
           seen: true,
@@ -119,8 +150,11 @@ angular.module('comments')
         {
           id: 14,
           text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae accusantium, quasi vel eveniet earum et, rem placeat mollitia! Debitis doloribus similique obcaecati, nulla vitae beatae illo qui. Maxime, quia?',
-          authorName: 'Volodymyr Dziubak',
-          postedByInstructor: false,
+          author: {
+            name: 'Volodymyr Dziubak',
+            isInstructor: false
+          },
+          hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           unseenRepliesCount: 0,
           seen: true,
@@ -128,8 +162,10 @@ angular.module('comments')
             {
               id: 15,
               text: 'Harum fuga beatae optio alias modi, nobis veniam, assumenda saepe provident soluta eligendi. Suscipit obcaecati soluta earum optio minus et quisquam eligendi provident. Ut, asperiores? Vitae, dicta commodi dolorem quo esse nulla unde! Voluptas veritatis unde quae, a accusantium placeat optio quis, saepe laudantium qui consequatur expedita ducimus iste tenetur, quam sit soluta quidem eius. Nobis harum commodi porro explicabo saepe? Dignissimos eaque nostrum deleniti debitis facere delectus nemo sit laborum neque quasi, ipsam dolor ratione soluta rem exercitationem voluptates. In voluptatem saepe officiis consequatur eligendi ducimus, impedit similique maiores voluptate repellat?',
-              authorName: 'Masayuki Nakane',
-              postedByInstructor: false,
+              author: {
+                name: 'Masayuki Nakane',
+                isInstructor: false
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: true
             }

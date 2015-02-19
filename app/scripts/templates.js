@@ -238,7 +238,7 @@ angular.module("templates/developerToolbar.html", []).run(["$templateCache", fun
     "\n" +
     "  <div class=\"dev-toolbar__section\">\n" +
     "    <div class=\"l-list-inline l-list-inline--small\">\n" +
-    "      <div class=\"l-list-inline__item\">Unseen indicator color</div>\n" +
+    "      <div class=\"l-list-inline__item\">Comment notification color</div>\n" +
     "      <div class=\"l-list-inline__item\"><input ng-change=\"changeUnseenIndicatorColor()\" class=\"dev-toolbar__input-color\" type=\"color\" ng-model=\"unseenIndicatorColor\"></div>\n" +
     "    </div>\n" +
     "  </div>\n" +
@@ -291,7 +291,7 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "        </div>\n" +
     "\n" +
     "        <div class=\"l-split__left\">\n" +
-    "          <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
+    "          <div class=\"tg-comment__author\">{{comment.author.name}} <span ng-show=\"comment.author.isInstructor\">(Prof)</span></div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -300,11 +300,22 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "      <comment-body comment=\"comment\" truncated=\"!comment.isExpanded\" type=\"general\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"tc-comment__controls\">\n" +
-    "      <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
-    "      <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length == 0\">see full comment</button>\n" +
-    "      <button ng-click=\"comment.isExpanded = false\" class=\"link\" ng-show=\"comment.isExpanded\">collapse comment</button>\n" +
+    "    <div class=\"l-split\">\n" +
+    "      <div class=\"l-split__right\" ng-show=\"comment.hasInstructor && currentUser.role == 'student'\">\n" +
+    "        <div class=\"tc-comment__prof-indicator\">\n" +
+    "          discussion with Prof\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-split__left\">\n" +
+    "        <div class=\"tc-comment__controls\">\n" +
+    "          <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
+    "          <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length == 0\">see full comment</button>\n" +
+    "          <button ng-click=\"comment.isExpanded = false\" class=\"link\" ng-show=\"comment.isExpanded\">collapse comment</button>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
+    "\n" +
     "  </section>\n" +
     "\n" +
     "  <div ng-show=\"comment.isExpanded\">\n" +
@@ -319,7 +330,7 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "          </div>\n" +
     "\n" +
     "          <div class=\"l-split__left\">\n" +
-    "            <div class=\"tg-comment__author\">{{reply.authorName}}</div>\n" +
+    "            <div class=\"tg-comment__author\">{{reply.author.name}} <span ng-show=\"reply.author.isInstructor\">(Prof)</span></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
