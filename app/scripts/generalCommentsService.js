@@ -205,6 +205,16 @@ angular.module('comments')
       idIndexMap = map;
     }
 
+    function recalculateProfInvolvement(comment) {
+      var hasInstructor = comment.author.isInstructor;
+
+      angular.forEach(comment.replies, function(reply, index) {
+        hasInstructor = reply.author.isInstructor;
+      });
+
+      comment.hasInstructor = hasInstructor;
+    }
+
     return {
       stats: function() {
         return statsCache;
@@ -226,17 +236,22 @@ angular.module('comments')
             comment = {
               id: nextId,
               text: text,
-              authorName: user.name,
+              author: {
+                name: user.name,
+                isInstructor: user.role == 'prof'
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: true
             };
 
         if (parent) {
           parent.replies.push(comment);
+          recalculateProfInvolvement(comment);
           statsCache.repliesCount += 1;
         } else {
           comment.replies = [];
           comment.unseenCount = 0;
+          comment.hasInstructor = user.role == 'prof';
           mock.splice(0,0,comment);
 
           statsCache.commentsCount += 1;

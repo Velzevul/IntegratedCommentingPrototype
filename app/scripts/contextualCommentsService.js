@@ -137,6 +137,16 @@ angular.module('comments')
       }
     }
 
+    function recalculateProfInvolvement(comment) {
+      var hasInstructor = comment.author.isInstructor;
+
+      angular.forEach(comment.replies, function(reply, index) {
+        hasInstructor = reply.author.isInstructor;
+      });
+
+      comment.hasInstructor = hasInstructor;
+    }
+
     return {
       stats: function() {
         return statsCache;
@@ -161,7 +171,10 @@ angular.module('comments')
             comment = {
               id: nextId,
               text: text,
-              authorName: user.name,
+              author: {
+                name: user.name,
+                isInstructor: user.role == 'prof'
+              },
               postedOn: '2014-03-27T04:01:16',
               seen: true
             },
@@ -169,11 +182,13 @@ angular.module('comments')
 
         if (parent) {
           parent.replies.push(comment);
+          recalculateProfInvolvement(parent);
           statsCache.repliesCount += 1;
         } else {
           comment.color = user.commentingColor;
           comment.replies = [];
           comment.unseenRepliesCount = 0;
+          comment.hasInstructor = user.role == 'prof';
 
           SelectionService.insertRealNote(comment)
 
