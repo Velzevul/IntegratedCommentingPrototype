@@ -3,6 +3,10 @@
     <textarea msd-elastic="\n" placeholder="Write new comment" ng-model="commentText"></textarea>
   </div>
 
+  <div class="l-block-small" ng-show="currentUser.role == 'student'">
+    <label><input type="checkbox" ng-model="replyRequested"> request reply from Prof.</label>
+  </div>
+
   <div class="l-list-inline l-list-inline--small">
     <div class="l-list-inline__item">
       <button class="button">Post</button>

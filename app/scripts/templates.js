@@ -372,6 +372,10 @@ angular.module("templates/generalCommentForm.html", []).run(["$templateCache", f
     "    <textarea msd-elastic=\"\\n\" placeholder=\"Write new comment\" ng-model=\"commentText\"></textarea>\n" +
     "  </div>\n" +
     "\n" +
+    "  <div class=\"l-block-small\" ng-show=\"currentUser.role == 'student'\">\n" +
+    "    <label><input type=\"checkbox\" ng-model=\"replyRequested\"> request reply from Prof.</label>\n" +
+    "  </div>\n" +
+    "\n" +
     "  <div class=\"l-list-inline l-list-inline--small\">\n" +
     "    <div class=\"l-list-inline__item\">\n" +
     "      <button class=\"button\">Post</button>\n" +
@@ -392,13 +396,19 @@ angular.module("templates/generalReplyForm.html", []).run(["$templateCache", fun
     "      <textarea msd-elastic=\"\\n\" placeholder=\"Reply to this comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-list-inline l-list-inline--small\" ng-show=\"active\">\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button\">Post</button>\n" +
+    "    <div ng-show=\"active\">\n" +
+    "      <div class=\"l-block-small\" ng-show=\"currentUser.role == 'student'\">\n" +
+    "        <label><input type=\"checkbox\" ng-model=\"replyRequested\"> request reply from Prof.</label>\n" +
     "      </div>\n" +
     "\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "      <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\">Post</button>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </form>\n" +

@@ -209,7 +209,7 @@ angular.module('comments')
       var hasInstructor = comment.author.isInstructor;
 
       angular.forEach(comment.replies, function(reply, index) {
-        hasInstructor = reply.author.isInstructor;
+        hasInstructor = hasInstructor || reply.author.isInstructor;
       });
 
       comment.hasInstructor = hasInstructor;
@@ -231,7 +231,7 @@ angular.module('comments')
       getAll: function() {
         return mock;
       },
-      create: function(text, parentId) {
+      create: function(text, replyRequested, parentId) {
         var parent = getById(parentId),
             comment = {
               id: nextId,
@@ -246,12 +246,20 @@ angular.module('comments')
 
         if (parent) {
           parent.replies.push(comment);
-          recalculateProfInvolvement(comment);
+          recalculateProfInvolvement(parent);
+
+          if (user.role == 'prof') {
+            parent.replyRequested = false;
+          } else {
+            parent.replyRequested = replyRequested;
+          }
+
           statsCache.repliesCount += 1;
         } else {
           comment.replies = [];
           comment.unseenCount = 0;
           comment.hasInstructor = user.role == 'prof';
+          comment.replyRequested = replyRequested;
           mock.splice(0,0,comment);
 
           statsCache.commentsCount += 1;
@@ -275,6 +283,10 @@ angular.module('comments')
             context.splice(i, 1);
             break;
           }
+        }
+
+        if (parent) {
+          recalculateProfInvolvement(parent);
         }
 
         updateIdIndexMap();
