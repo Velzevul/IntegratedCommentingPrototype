@@ -3,8 +3,14 @@
                      'thread-contextual--highlighted': comment.isHighlighted,
                      'thread-contextual--multiple': comment.replies.length > 0 && !comment.isSelected}"
           ng-click="selectComment()">
-  <div class="tc-unseen" ng-show="!comment.isSelected && (!comment.seen || comment.unseenRepliesCount > 0)">
-    <div class="l-list-inline l-list-inline--small">
+  <div class="tc-unseen" ng-show="!comment.isSelected">
+    <div class="l-list-inline l-list-inline--x-small">
+      <div class="l-list-inline__item" ng-show="currentUser.role == 'prof' && comment.replyRequested">
+        <div class="tc-unseen__item">
+          reply requested
+        </div>
+      </div>
+
       <div class="l-list-inline__item" ng-show="!comment.seen">
         <div class="tc-unseen__item">
           unseen comment
@@ -29,7 +35,7 @@
         </div>
 
         <div class="l-split__left">
-          <div class="tc-comment__author">{{comment.authorName}}</div>
+          <div class="tc-comment__author">{{comment.author.name}} <span ng-show="comment.author.isInstructor && currentUser.role == 'student'">(Prof)</span></div>
         </div>
       </div>
     </div>
@@ -38,9 +44,19 @@
       <comment-body type="contextual" comment="comment" truncated="!comment.isSelected"></comment-body>
     </div>
 
-    <div class="tc-comment__controls" ng-hide="comment.isSelected">
-      <span class="link" ng-if="comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></span>
-      <span class="link" ng-if="comment.replies.length == 0">see full comment</span>
+    <div class="l-split" ng-hide="comment.isSelected">
+      <div class="l-split__right" ng-show="comment.hasInstructor && currentUser.role == 'student'">
+        <div class="tc-comment__prof-indicator">
+          discussion with Prof
+        </div>
+      </div>
+
+      <div class="l-split__left">
+        <div class="tc-comment__controls">
+          <span class="link" ng-if="comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></span>
+          <span class="link" ng-if="comment.replies.length == 0">see full comment</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -56,7 +72,7 @@
           </div>
 
           <div class="l-split__left">
-            <div class="tc-comment__author">{{reply.authorName}}</div>
+            <div class="tc-comment__author">{{reply.author.name}} <span ng-show="reply.author.isInstructor && currentUser.role == 'student'">(Prof)</span></div>
           </div>
         </div>
       </div>

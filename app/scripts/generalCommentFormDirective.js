@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('generalCommentForm', function(GeneralCommentsService) {
+  .directive('generalCommentForm', function(GeneralCommentsService, UserService) {
     'use strict';
 
     return {
@@ -9,9 +9,11 @@ angular.module('comments')
         visibilitySwitcher: '='
       },
       controller: function($scope) {
+        $scope.currentUser = UserService.getCurrent();
+
         $scope.postComment = function() {
           if ($scope.commentText) {
-            GeneralCommentsService.create($scope.commentText);
+            GeneralCommentsService.create($scope.commentText, $scope.replyRequested);
             $scope.cancelComment();
           }
         };

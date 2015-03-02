@@ -68,8 +68,14 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "                     'thread-contextual--highlighted': comment.isHighlighted,\n" +
     "                     'thread-contextual--multiple': comment.replies.length > 0 && !comment.isSelected}\"\n" +
     "          ng-click=\"selectComment()\">\n" +
-    "  <div class=\"tc-unseen\" ng-show=\"!comment.isSelected && (!comment.seen || comment.unseenRepliesCount > 0)\">\n" +
-    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "  <div class=\"tc-unseen\" ng-show=\"!comment.isSelected\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--x-small\">\n" +
+    "      <div class=\"l-list-inline__item\" ng-show=\"currentUser.role == 'prof' && comment.replyRequested\">\n" +
+    "        <div class=\"tc-unseen__item\">\n" +
+    "          reply requested\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
     "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
     "        <div class=\"tc-unseen__item\">\n" +
     "          unseen comment\n" +
@@ -94,7 +100,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "        </div>\n" +
     "\n" +
     "        <div class=\"l-split__left\">\n" +
-    "          <div class=\"tc-comment__author\">{{comment.authorName}}</div>\n" +
+    "          <div class=\"tc-comment__author\">{{comment.author.name}} <span ng-show=\"comment.author.isInstructor && currentUser.role == 'student'\">(Prof)</span></div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -103,9 +109,19 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "      <comment-body type=\"contextual\" comment=\"comment\" truncated=\"!comment.isSelected\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"tc-comment__controls\" ng-hide=\"comment.isSelected\">\n" +
-    "      <span class=\"link\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
-    "      <span class=\"link\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
+    "    <div class=\"l-split\" ng-hide=\"comment.isSelected\">\n" +
+    "      <div class=\"l-split__right\" ng-show=\"comment.hasInstructor && currentUser.role == 'student'\">\n" +
+    "        <div class=\"tc-comment__prof-indicator\">\n" +
+    "          discussion with Prof\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-split__left\">\n" +
+    "        <div class=\"tc-comment__controls\">\n" +
+    "          <span class=\"link\" ng-if=\"comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></span>\n" +
+    "          <span class=\"link\" ng-if=\"comment.replies.length == 0\">see full comment</span>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </section>\n" +
     "\n" +
@@ -121,7 +137,7 @@ angular.module("templates/contextualComment.html", []).run(["$templateCache", fu
     "          </div>\n" +
     "\n" +
     "          <div class=\"l-split__left\">\n" +
-    "            <div class=\"tc-comment__author\">{{reply.authorName}}</div>\n" +
+    "            <div class=\"tc-comment__author\">{{reply.author.name}} <span ng-show=\"reply.author.isInstructor && currentUser.role == 'student'\">(Prof)</span></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
@@ -144,12 +160,16 @@ angular.module("templates/contextualCommentForm.html", []).run(["$templateCache"
     "            ng-class=\"{'tc-comment--unseen': comment.isSelected && !comment.seen}\"\n" +
     "            ng-mouseover=\"markSeen(comment)\">\n" +
     "    <div class=\"l-block-x-small\">\n" +
-    "      <div class=\"tc-comment__author\">{{comment.authorName}}</div>\n" +
+    "      <div class=\"tc-comment__author\">{{comment.author.name}}</div>\n" +
     "    </div>\n" +
     "\n" +
     "    <form ng-submit=\"saveComment()\">\n" +
     "      <div class=\"l-block-small\">\n" +
     "        <textarea placeholder=\"Type your comment here\" msd-elastic=\"\\n\" ng-model=\"tempText\"></textarea>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-block-small\" ng-show=\"currentUser.role == 'student'\">\n" +
+    "        <label><input type=\"checkbox\" ng-model=\"replyRequested\"> request reply from Prof.</label>\n" +
     "      </div>\n" +
     "\n" +
     "      <div class=\"l-list-inline l-list-inline--small\">\n" +
@@ -174,13 +194,19 @@ angular.module("templates/contextualReplyForm.html", []).run(["$templateCache", 
     "      <textarea msd-elastic=\"\\n\" placeholder=\"Reply to the comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-list-inline l-list-inline--small\" ng-show=\"active\">\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button\">Post</button>\n" +
+    "    <div ng-show=\"active\">\n" +
+    "      <div class=\"l-block-small\" ng-show=\"currentUser.role == 'student'\">\n" +
+    "        <label><input type=\"checkbox\" ng-model=\"replyRequested\"> request reply from Prof.</label>\n" +
     "      </div>\n" +
     "\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "      <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\">Post</button>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </form>\n" +
@@ -228,8 +254,24 @@ angular.module("templates/developerToolbar.html", []).run(["$templateCache", fun
     "\n" +
     "  <div class=\"dev-toolbar__section\">\n" +
     "    <div class=\"l-list-inline l-list-inline--small\">\n" +
-    "      <div class=\"l-list-inline__item\">Unseen indicator color</div>\n" +
+    "      <div class=\"l-list-inline__item\">Comment notification color</div>\n" +
     "      <div class=\"l-list-inline__item\"><input ng-change=\"changeUnseenIndicatorColor()\" class=\"dev-toolbar__input-color\" type=\"color\" ng-model=\"unseenIndicatorColor\"></div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"dev-toolbar__section\">\n" +
+    "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\">Current user role</div>\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <label>\n" +
+    "          <input type=\"radio\" ng-model=\"currentUser.role\" value=\"student\"> Student\n" +
+    "        </label>\n" +
+    "      </div>\n" +
+    "      <div class=\"l-list-inline__item\">\n" +
+    "        <label>\n" +
+    "          <input type=\"radio\" ng-model=\"currentUser.role\" value=\"prof\"> Prof\n" +
+    "        </label>\n" +
+    "      </div>\n" +
     "    </div>\n" +
     "  </div>\n" +
     "</div>");
@@ -239,8 +281,14 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
   $templateCache.put("templates/generalComment.html",
     "<article  class=\"thread-general\"\n" +
     "          ng-class=\"{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded}\">\n" +
-    "  <div class=\"tg-unseen\" ng-show=\"!comment.isExpanded && (!comment.seen || comment.unseenRepliesCount > 0)\">\n" +
+    "  <div class=\"tg-unseen\" ng-show=\"!comment.isExpanded\">\n" +
     "    <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "      <div class=\"l-list-inline__item\" ng-show=\"comment.replyRequested && currentUser.role == 'prof'\">\n" +
+    "        <div class=\"tg-unseen__item\">\n" +
+    "          reply requested\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
     "      <div class=\"l-list-inline__item\" ng-show=\"!comment.seen\">\n" +
     "        <div class=\"tg-unseen__item\">\n" +
     "          unseen comment\n" +
@@ -265,7 +313,7 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "        </div>\n" +
     "\n" +
     "        <div class=\"l-split__left\">\n" +
-    "          <div class=\"tg-comment__author\">{{comment.authorName}}</div>\n" +
+    "          <div class=\"tg-comment__author\">{{comment.author.name}} <span ng-show=\"comment.author.isInstructor && currentUser.role == 'student'\">(Prof)</span></div>\n" +
     "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
@@ -274,11 +322,22 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "      <comment-body comment=\"comment\" truncated=\"!comment.isExpanded\" type=\"general\"></comment-body>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"tc-comment__controls\">\n" +
-    "      <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
-    "      <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length == 0\">see full comment</button>\n" +
-    "      <button ng-click=\"comment.isExpanded = false\" class=\"link\" ng-show=\"comment.isExpanded\">collapse comment</button>\n" +
+    "    <div class=\"l-split\">\n" +
+    "      <div class=\"l-split__right\" ng-show=\"comment.hasInstructor && currentUser.role == 'student'\">\n" +
+    "        <div class=\"tc-comment__prof-indicator\">\n" +
+    "          discussion with Prof\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-split__left\">\n" +
+    "        <div class=\"tc-comment__controls\">\n" +
+    "          <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length > 0\">see {{comment.replies.length}} <ng-pluralize count=\"comment.replies.length\" when=\"{'1': 'reply', other: 'replies'}\"></ng-pluralize></button>\n" +
+    "          <button ng-click=\"comment.isExpanded = true\" class=\"link\" ng-show=\"!comment.isExpanded && comment.replies.length == 0\">see full comment</button>\n" +
+    "          <button ng-click=\"comment.isExpanded = false\" class=\"link\" ng-show=\"comment.isExpanded\">collapse comment</button>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
     "    </div>\n" +
+    "\n" +
     "  </section>\n" +
     "\n" +
     "  <div ng-show=\"comment.isExpanded\">\n" +
@@ -293,7 +352,7 @@ angular.module("templates/generalComment.html", []).run(["$templateCache", funct
     "          </div>\n" +
     "\n" +
     "          <div class=\"l-split__left\">\n" +
-    "            <div class=\"tg-comment__author\">{{reply.authorName}}</div>\n" +
+    "            <div class=\"tg-comment__author\">{{reply.author.name}} <span ng-show=\"reply.author.isInstructor && currentUser.role == 'student'\">(Prof)</span></div>\n" +
     "          </div>\n" +
     "        </div>\n" +
     "      </div>\n" +
@@ -311,6 +370,10 @@ angular.module("templates/generalCommentForm.html", []).run(["$templateCache", f
     "<form ng-submit=\"postComment()\">\n" +
     "  <div class=\"l-block-small\">\n" +
     "    <textarea msd-elastic=\"\\n\" placeholder=\"Write new comment\" ng-model=\"commentText\"></textarea>\n" +
+    "  </div>\n" +
+    "\n" +
+    "  <div class=\"l-block-small\" ng-show=\"currentUser.role == 'student'\">\n" +
+    "    <label><input type=\"checkbox\" ng-model=\"replyRequested\"> request reply from Prof.</label>\n" +
     "  </div>\n" +
     "\n" +
     "  <div class=\"l-list-inline l-list-inline--small\">\n" +
@@ -333,13 +396,19 @@ angular.module("templates/generalReplyForm.html", []).run(["$templateCache", fun
     "      <textarea msd-elastic=\"\\n\" placeholder=\"Reply to this comment\" ng-focus=\"activate()\" ng-model=\"commentText\"></textarea>\n" +
     "    </div>\n" +
     "\n" +
-    "    <div class=\"l-list-inline l-list-inline--small\" ng-show=\"active\">\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button\">Post</button>\n" +
+    "    <div ng-show=\"active\">\n" +
+    "      <div class=\"l-block-small\" ng-show=\"currentUser.role == 'student'\">\n" +
+    "        <label><input type=\"checkbox\" ng-model=\"replyRequested\"> request reply from Prof.</label>\n" +
     "      </div>\n" +
     "\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "      <div class=\"l-list-inline l-list-inline--small\">\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\">Post</button>\n" +
+    "        </div>\n" +
+    "\n" +
+    "        <div class=\"l-list-inline__item\">\n" +
+    "          <button class=\"button\" type=\"button\" ng-click=\"deactivate()\">Cancel</button>\n" +
+    "        </div>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "  </form>\n" +

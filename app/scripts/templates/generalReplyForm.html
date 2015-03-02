@@ -4,13 +4,19 @@
       <textarea msd-elastic="\n" placeholder="Reply to this comment" ng-focus="activate()" ng-model="commentText"></textarea>
     </div>
 
-    <div class="l-list-inline l-list-inline--small" ng-show="active">
-      <div class="l-list-inline__item">
-        <button class="button">Post</button>
+    <div ng-show="active">
+      <div class="l-block-small" ng-show="currentUser.role == 'student'">
+        <label><input type="checkbox" ng-model="replyRequested"> request reply from Prof.</label>
       </div>
 
-      <div class="l-list-inline__item">
-        <button class="button" type="button" ng-click="deactivate()">Cancel</button>
+      <div class="l-list-inline l-list-inline--small">
+        <div class="l-list-inline__item">
+          <button class="button">Post</button>
+        </div>
+
+        <div class="l-list-inline__item">
+          <button class="button" type="button" ng-click="deactivate()">Cancel</button>
+        </div>
       </div>
     </div>
   </form>

@@ -12,7 +12,7 @@ angular.module('comments')
 
         $scope.deselectAllComments = function($event) {
           var isContextualComment = $($event.target).parents('.thread-contextual').length,
-              isAnchor = event.target.tagName.slice(0,4) == 'NOTE';
+              isAnchor = $event.target.tagName.slice(0,4) == 'NOTE';
 
           if ($scope.activeTab == 'contextual' && !isContextualComment && !isAnchor) {
             ContextualCommentsService.deactivateAll();

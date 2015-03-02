@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('generalComment', function(GeneralCommentsService) {
+  .directive('generalComment', function(GeneralCommentsService, UserService) {
     'use strict';
 
     return {
@@ -9,6 +9,8 @@ angular.module('comments')
         comment: '='
       },
       controller: function($scope) {
+        $scope.currentUser = UserService.getCurrent();
+
         $scope.markSeen = function(comment, parent) {
           if ((comment.isExpanded) || (parent && parent.isExpanded)) {
             if (!comment.seen) {

@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('developerToolbar', function(DevParametersService, ContextualCommentsService, $timeout) {
+  .directive('developerToolbar', function(DevParametersService, ContextualCommentsService, UserService, $timeout) {
     'use strict';
 
     return {
@@ -7,6 +7,7 @@ angular.module('comments')
       templateUrl: 'templates/developerToolbar.html',
       scope: {},
       controller: function($scope) {
+        $scope.currentUser = UserService.getCurrent();
         $scope.isHidden = true;
         $scope.params = DevParametersService.getParams();
         $scope.reposition = ContextualCommentsService.reposition;

@@ -1,7 +1,13 @@
 <article  class="thread-general"
           ng-class="{'thread-general--multiple': comment.replies.length > 0 && !comment.isExpanded}">
-  <div class="tg-unseen" ng-show="!comment.isExpanded && (!comment.seen || comment.unseenRepliesCount > 0)">
+  <div class="tg-unseen" ng-show="!comment.isExpanded">
     <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item" ng-show="comment.replyRequested && currentUser.role == 'prof'">
+        <div class="tg-unseen__item">
+          reply requested
+        </div>
+      </div>
+
       <div class="l-list-inline__item" ng-show="!comment.seen">
         <div class="tg-unseen__item">
           unseen comment
@@ -26,7 +32,7 @@
         </div>
 
         <div class="l-split__left">
-          <div class="tg-comment__author">{{comment.authorName}}</div>
+          <div class="tg-comment__author">{{comment.author.name}} <span ng-show="comment.author.isInstructor && currentUser.role == 'student'">(Prof)</span></div>
         </div>
       </div>
     </div>
@@ -35,11 +41,22 @@
       <comment-body comment="comment" truncated="!comment.isExpanded" type="general"></comment-body>
     </div>
 
-    <div class="tc-comment__controls">
-      <button ng-click="comment.isExpanded = true" class="link" ng-show="!comment.isExpanded && comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></button>
-      <button ng-click="comment.isExpanded = true" class="link" ng-show="!comment.isExpanded && comment.replies.length == 0">see full comment</button>
-      <button ng-click="comment.isExpanded = false" class="link" ng-show="comment.isExpanded">collapse comment</button>
+    <div class="l-split">
+      <div class="l-split__right" ng-show="comment.hasInstructor && currentUser.role == 'student'">
+        <div class="tc-comment__prof-indicator">
+          discussion with Prof
+        </div>
+      </div>
+
+      <div class="l-split__left">
+        <div class="tc-comment__controls">
+          <button ng-click="comment.isExpanded = true" class="link" ng-show="!comment.isExpanded && comment.replies.length > 0">see {{comment.replies.length}} <ng-pluralize count="comment.replies.length" when="{'1': 'reply', other: 'replies'}"></ng-pluralize></button>
+          <button ng-click="comment.isExpanded = true" class="link" ng-show="!comment.isExpanded && comment.replies.length == 0">see full comment</button>
+          <button ng-click="comment.isExpanded = false" class="link" ng-show="comment.isExpanded">collapse comment</button>
+        </div>
+      </div>
     </div>
+
   </section>
 
   <div ng-show="comment.isExpanded">
@@ -54,7 +71,7 @@
           </div>
 
           <div class="l-split__left">
-            <div class="tg-comment__author">{{reply.authorName}}</div>
+            <div class="tg-comment__author">{{reply.author.name}} <span ng-show="reply.author.isInstructor && currentUser.role == 'student'">(Prof)</span></div>
           </div>
         </div>
       </div>

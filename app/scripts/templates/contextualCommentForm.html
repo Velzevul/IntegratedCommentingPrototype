@@ -6,12 +6,16 @@
             ng-class="{'tc-comment--unseen': comment.isSelected && !comment.seen}"
             ng-mouseover="markSeen(comment)">
     <div class="l-block-x-small">
-      <div class="tc-comment__author">{{comment.authorName}}</div>
+      <div class="tc-comment__author">{{comment.author.name}}</div>
     </div>
 
     <form ng-submit="saveComment()">
       <div class="l-block-small">
         <textarea placeholder="Type your comment here" msd-elastic="\n" ng-model="tempText"></textarea>
+      </div>
+
+      <div class="l-block-small" ng-show="currentUser.role == 'student'">
+        <label><input type="checkbox" ng-model="replyRequested"> request reply from Prof.</label>
       </div>
 
       <div class="l-list-inline l-list-inline--small">

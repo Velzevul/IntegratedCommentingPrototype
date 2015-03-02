@@ -12,6 +12,7 @@
  *            &__author
  *            &__updated-at
  *            &__controls
+ *            &__prof-indicator
  *            &--reply
  *            &--unseen
  *    <>--  .tc-unseen
@@ -92,6 +93,12 @@
   &__controls {
     font-size: em(11,13);
   }
+
+  &__prof-indicator {
+    font-size: em(11,13);
+
+    color: $color-dc-tertiary;
+  }
 }
   .tc-comment--reply {
     border-top: 1px solid darken($color-bg, 5%);
@@ -103,7 +110,7 @@
 
 .tc-unseen {
   position: absolute;
-  bottom: -10px; right: -10px;
+  bottom: -15px; right: -15px;
 
   &__item {
     padding: 0 12px;

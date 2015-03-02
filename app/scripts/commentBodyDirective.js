@@ -14,7 +14,7 @@ angular.module('comments')
       controller: function($scope) {
         $scope.parameters = DevParametersService.getParams();
         $scope.editMode = false;
-        $scope.postedByCurrentUser = $scope.comment.authorName == UserService.getCurrent().name;
+        $scope.postedByCurrentUser = $scope.comment.author.name == UserService.getCurrent().name;
 
         $scope.$watch('truncated', function(val) {
           if (val) {

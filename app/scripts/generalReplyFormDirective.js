@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('generalReplyForm', function(GeneralCommentsService) {
+  .directive('generalReplyForm', function(GeneralCommentsService, UserService) {
     'use strict';
 
     return {
@@ -9,9 +9,11 @@ angular.module('comments')
         parentThreadId: '='
       },
       controller: function($scope) {
+        $scope.currentUser = UserService.getCurrent();
+
         $scope.postComment = function() {
           if ($scope.commentText) {
-            GeneralCommentsService.create($scope.commentText, $scope.parentThreadId);
+            GeneralCommentsService.create($scope.commentText, $scope.replyRequested, $scope.parentThreadId);
           }
 
           $scope.deactivate();

@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('contextualCommentForm', function(ContextualCommentsService) {
+  .directive('contextualCommentForm', function(ContextualCommentsService, UserService) {
     'use strict';
 
     return {
@@ -10,6 +10,9 @@ angular.module('comments')
       templateUrl: 'templates/contextualCommentForm.html',
       replace: true,
       controller: function($scope) {
+        $scope.replyRequested = false;
+        $scope.currentUser = UserService.getCurrent();
+
         $scope.selectComment = function() {
           if (!$scope.comment.isSelected) {
             ContextualCommentsService.activate($scope.comment.id);
@@ -19,6 +22,7 @@ angular.module('comments')
         $scope.saveComment = function() {
           if ($scope.tempText) {
             $scope.comment.text = $scope.tempText;
+            $scope.comment.replyRequested = $scope.replyRequested;
           }
         };
 

@@ -37,11 +37,8 @@ input::-webkit-input-placeholder {
 }
 
 textarea {
-  resize: vertical;
-}
-
-input, textarea, select {
   @include appearance(none);
+  resize: vertical;
   font: inherit;
   line-height: inherit;
   background-color: transparent;
@@ -49,6 +46,11 @@ input, textarea, select {
   &:focus {
     outline: none;
   }
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 button {
