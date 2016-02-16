@@ -6,13 +6,13 @@ angular.module('comments')
       restrict: 'A',
       link: function($scope, elem, attrs) {
         $(elem).mousedown(function(e) {
-          if ($scope.activeTab == 'contextual') {
+          if ($scope.activeTab != 'general' && $scope.activeTab != false) {
             SelectionService.clearSelection();
           }
         });
 
         $(elem).mouseup(function(e) {
-          if ($scope.activeTab == 'contextual') {
+          if ($scope.activeTab != 'general' && $scope.activeTab != false) {
             SelectionService.storeSelection();
           }
 
