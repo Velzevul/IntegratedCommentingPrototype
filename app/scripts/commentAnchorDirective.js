@@ -10,14 +10,33 @@ angular.module('comments')
       link: function($scope, elem, attrs) {
         $scope.comment = ContextualCommentsService.getOne($scope.id);
 
+
         $scope.$parent.$watch('activeTab', function(value) {
+          var i = 0;
+          var activeComments = $scope.$parent.activeComments;
+          var found = false;
+
           if (value == 'contextual') {
-            elem.addClass('document__anchor');
-            elem.addClass('document__anchor--' + $scope.comment.color);
-          } else {
+              elem.addClass('document__anchor');
+              elem.addClass('document__anchor--' + $scope.comment.color);
+          }
+           else if(value != 'general' && value != false){
+            while(activeComments.length > i){
+              if(activeComments[i].id == $scope.id){
+                elem.addClass('document__anchor');
+                elem.addClass('document__anchor--' + $scope.comment.color);
+                found = true;
+              }
+              i++;
+            }
+             if( !found ){
+                elem.removeClass('document__anchor');
+                elem.removeClass('document__anchor--' + $scope.comment.color);
+              }
+          } else{
             elem.removeClass('document__anchor');
             elem.removeClass('document__anchor--' + $scope.comment.color);
-          }
+         }
         });
 
         $scope.$watch('comment.isSelected', function(value) {
