@@ -1,0 +1,22 @@
+ <div class="l-split">
+  <div class="l-split__right">
+    <div class="l-list-inline" ng-hide="selectingContext">
+      <div class="l-list-inline__item">
+        <button class="button button--small" ng-click="activeTab = false; hidden = true">Hide Comments</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="l-split__left">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">
+        <div class="document-toolbar__title">Paragraph comments:</div>
+      </div>
+
+      <div class="l-list-inline__item">
+        {{contextualStats.commentsCount}} comments, {{contextualStats.repliesCount}} replies // need to finish
+      </div>
+    </div>
+  </div>
+</div>
