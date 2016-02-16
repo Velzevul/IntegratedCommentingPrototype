@@ -212,7 +212,6 @@ angular.module('comments')
         nextId += 1;
       },
       reposition: function() {
-        // console.log('reposition');
         var spacing = 24,
             anchors = $('[comment-anchor]'),
             threads = $('.thread-contextual'),
@@ -223,14 +222,16 @@ angular.module('comments')
             secondPreviousCommentElement,
             newPosition;
 
+
+
         if (threads.length) {
           angular.forEach(mock, function(comment, index) {
             anchor = anchors[index];
-
+            
             if (index > 0) {
               previousComment = mock[index - 1];
               previousCommentElement = $('.thread-contextual')[index - 1];
-
+              
               if (previousComment.isSelected && index > 1) {
                 secondPreviousComment = mock[index - 2];
                 secondPreviousCommentElement = $('.thread-contextual')[index - 2];
@@ -238,23 +239,31 @@ angular.module('comments')
                 if (secondPreviousComment.position + secondPreviousCommentElement.offsetHeight > previousComment.position + previousCommentElement.offsetHeight) {
                   previousComment = secondPreviousComment;
                   previousCommentElement = secondPreviousCommentElement;
+
                 }
               }
             }
-
+            if(previousComment){
+            // console.log([index]);
+          }
             if (!comment.isSelected &&
                 previousComment &&
+                previousCommentElement !== undefined &&
                 previousComment.position + previousCommentElement.offsetHeight > anchor.offsetTop) {
               newPosition = previousComment.position + previousCommentElement.offsetHeight + spacing;
             } else {
               newPosition = anchor.offsetTop;
+              //if(previousCommentElement && previousCommentElement.offsetHeight == 0){
+              //  newPosition = newPosition + 122;
+              //}
             }
+            comment.position = newPosition ;
 
-            comment.position = newPosition;
           });
         }
       },
       deactivateAll: function() {
+        //console.log('deactivating');
         var self = this;
 
         deactivateAll();
