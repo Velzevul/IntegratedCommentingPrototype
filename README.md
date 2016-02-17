@@ -12,6 +12,9 @@ To see the detailed description of the interface, please refer to the system des
 * There is no persistence layer in the prototype, meaning that after page refresh any authored comments will be gone.
 * Target monitor width for this proof-of-concept prototype was 1200px.
 
+### Todo
+* Show number of comments on buttons(updates when new comment is added)
+
 ### Requirements
  * nodejs (+ npm )
  * ruby
