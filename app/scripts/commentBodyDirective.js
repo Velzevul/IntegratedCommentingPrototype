@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('commentBody', function(UserService, ContextualCommentsService, GeneralCommentsService, DevParametersService, $timeout) {
+  .directive('commentBody', function(UserService, ContextualCommentsService, DevParametersService, $timeout) {
     'use strict';
 
     return {
