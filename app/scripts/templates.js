@@ -1,4 +1,4 @@
-angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/developerToolbar.html', 'templates/heatmap.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html']);
+angular.module('app-templates', ['templates/commentBody.html', 'templates/commentTabs.html', 'templates/contextualComment.html', 'templates/contextualCommentForm.html', 'templates/contextualReplyForm.html', 'templates/developerToolbar.html', 'templates/filterOptions.html', 'templates/statusbarContextual.html', 'templates/statusbarDefault.html']);
 
 angular.module("templates/commentBody.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("templates/commentBody.html",
@@ -46,11 +46,11 @@ angular.module("templates/commentTabs.html", []).run(["$templateCache", function
     "    <div class=\"grid__item one-whole\">\n" +
     "      <button class=\"ct-item\"\n" +
     "              ng-class=\"{'ct-item--active': activeTab == 'contextual'}\"\n" +
-    "              ng-click=\"activeTab = 'contextual'\">\n" +
-    "        Contextual <span class=\"ct-item__counter\" ng-show=\"contextualStats.totalUnseenCount\">{{contextualStats.totalUnseenCount}}</span>\n" +
+    "              ng-click=\"\">\n" +
+    "        Options\n" +
     "      </button>\n" +
-    "    </div>\n" +
-    "    </div>\n" +
+    "    </div><!--\n" +
+    "    -->\n" +
     "  </div>\n" +
     "</div>");
 }]);
@@ -271,9 +271,23 @@ angular.module("templates/developerToolbar.html", []).run(["$templateCache", fun
     "</div>");
 }]);
 
-angular.module("templates/heatmap.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("templates/heatmap.html",
-    "<div container></div>");
+angular.module("templates/filterOptions.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("templates/filterOptions.html",
+    "<div class=\"filter-toolbar\" ng-show=\"showFilterOptions\">\n" +
+    "  <div class=\"dev-toolbar__section dev-toolbar__section--header\">\n" +
+    "    <div class=\"l-split\">\n" +
+    "      <div class=\"l-split__right\">\n" +
+    "        <div class=\"dev-toolbar__controls\">\n" +
+    "          <button class=\"link\" ng-click=\"isHidden = !isHidden\"><span ng-if=\"isHidden\">show</span><span ng-if=\"!isHidden\">hide</span></button>\n" +
+    "        </div>\n" +
+    "      </div>\n" +
+    "\n" +
+    "      <div class=\"l-split__left\">\n" +
+    "        <div class=\"dev-toolbar__title\">Custom Filters</div>\n" +
+    "      </div>\n" +
+    "    </div>\n" +
+    "  </div>\n" +
+    "</div>");
 }]);
 
 angular.module("templates/statusbarContextual.html", []).run(["$templateCache", function($templateCache) {
@@ -283,10 +297,6 @@ angular.module("templates/statusbarContextual.html", []).run(["$templateCache", 
     "    <div class=\"l-list-inline\" ng-hide=\"selectingContext\">\n" +
     "      <div class=\"l-list-inline__item\">\n" +
     "        <button class=\"button button--small button--success\" ng-click=\"addContextualComment()\">new contextual comment</button>\n" +
-    "      </div>\n" +
-    "\n" +
-    "      <div class=\"l-list-inline__item\">\n" +
-    "        <button class=\"button button--small\" ng-click=\"activeTab = false\">hide comments</button>\n" +
     "      </div>\n" +
     "    </div>\n" +
     "\n" +
