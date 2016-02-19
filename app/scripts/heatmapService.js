@@ -1,48 +1,82 @@
 angular.module('comments')
-  .factory('HeatmapService', function(ContextualCommentsService) {
+  .factory('HeatmapService', function() {
     'use strict';
 
-    var heatmapInstance = h337.create({
-      container: document.getElementById("test")
-    });
+    var heatmapIntensity;
+    var topLevel = angular.element($('[comment-anchor]')[0]).prop('offsetTop');
 
-    return{
-      initilizeHeatmap: function(){
-          var activeComments = $('[comment-anchor]');
-          var points =[];
-          var len = activeComments.length - 1;
-          var max = 0;
+    function initilizeHeatmap(size){
+      heatmapIntensity = new Array(size);
+      //initilize array to 0's
+      for(var i = 0; i < size; i++){
+        heatmapIntensity[i] = 0;
+      }
 
-          //console.log(height);
-          while (len >= 0) {
-            var val = ContextualCommentsService.getViews(activeComments[len].id);
-            max = Math.max(max, val);
-            var point = {
-              x: 0,
-              y: angular.element(activeComments[len]).prop('offsetTop') + 24,
-              value: val
-            };
-            points.push(point);
-            len--;
-          }
+    }
 
-          //console.log(points);
-          // heatmap data format
-          var passed_data = { 
-            max: max, 
-            data: points 
-          };
+    function calculatePosition(currAnchor){
+      var spot = Math.ceil((currAnchor - topLevel) / 24);
+      return spot;
+    }
 
-          heatmapInstance.setData(passed_data);
+    function updateHeatmapColor(){
+      var heatmapDivs = $('[heatmap]');
+
+      //hardcoded transparency models for now
+      for(var i = 0; i < heatmapDivs.length;i++){
+        if(1 == heatmapIntensity[i]){
+          heatmapDivs[i].style.backgroundColor = "#B2F7C1";
+        } else if(2 == heatmapIntensity[i] ){
+          heatmapDivs[i].style.backgroundColor = "#71FB86";
+        } else if(3 == heatmapIntensity[i] ){
+          heatmapDivs[i].style.backgroundColor = "#30FF4C";
+        } else if(4 == heatmapIntensity[i] ){
+          heatmapDivs[i].style.backgroundColor = "#75FF3C";
+        } else if(5 == heatmapIntensity[i] ){
+          heatmapDivs[i].style.backgroundColor = "#BAFF2C";
+        } else if(6 == heatmapIntensity[i] ){
+          heatmapDivs[i].style.backgroundColor = "#FFFF1C";
+        } else if(7 == heatmapIntensity[i] ){
+          heatmapDivs[i].style.backgroundColor = "#FC7F0E";
+        } else if(heatmapIntensity[i] >= 8){
+          heatmapDivs[i].style.backgroundColor = "#FA0000";
+        } else {
+          //0 comments
+          heatmapDivs[i].style.backgroundColor = "#f4f4fc";
+          heatmapDivs.innerText = "";
+        }
+
+        if(heatmapIntensity[i] > 0){
+          //heatmapDivs[i].innerText = heatmapIntensity[i];
+          heatmapDivs[i].style.pointerEvents = 'auto';
+        }
+      }
+    }
+
+    return {
+      initilize: function(size){
+        initilizeHeatmap(size);
+
+        var activeComments = $('[comment-anchor]');
+        var spot;
+
+        for(var i = 0; i < activeComments.length; i++){
+          spot = calculatePosition(angular.element(activeComments[i]).prop('offsetTop'));
+          heatmapIntensity[spot]++;
+        }
+
+        updateHeatmapColor();
       },
 
-      updateHeatmap: function(yValue){
-        var point ={
-          x: 0,
-          y: yValue,
-          value: 100
-        };
-        heatmapInstance.addData(point);
+      getHeatmap: function(){
+        return heatmapIntensity;
+      },
+
+      newAnchor: function(newAnchor){
+        var spot = calculatePosition(newAnchor);
+
+        heatmapIntensity[spot]++;
+        console.log(heatmapIntensity)
       }
     };
-});
+  });
