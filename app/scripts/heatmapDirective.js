@@ -1,23 +1,13 @@
 angular.module('comments')
-  .factory('HeatmapDirective', function() {
+  .directive('heatmapDirective', function(HeatmapService) {
     'use strict';
 
     return {
-      restrict: 'E',
       scope: {
-        data: '='
+        id: '='
       },
-      templateUrl: 'templates/heatmap.html',
-      controller: function($scope){
+      link: function($scope, elem, attrs) {
+
       }
-      /*link: 
-        function(scope, ele, attr){
-          console.log("yah");
-          scope.heatmapInstance = h337.create({
-          container: ele.find('div')[0]
-        });
-        scope.heatmapInstance.setData(scope.data);
-       }
-     }*/
-  }
-}); 
+    };
+  });
