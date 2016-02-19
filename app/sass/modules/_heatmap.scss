@@ -1,0 +1,23 @@
+
+/*********************************************************************************************************************************************
+* heatmap graph module
+*
+* includes styling for the heatmap graph
+* line height = 24px
+*
+**********************************************************************************************************************************************/
+
+heat-map {
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+
+heat-map div{
+  width: 50px; 
+  height: 2304px; 
+  z-index: 1; 
+  position: absolute; 
+
+}
