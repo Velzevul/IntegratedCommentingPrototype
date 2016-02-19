@@ -11,6 +11,7 @@ angular.module('comments')
             isInstructor: false
           },
           replyRequested: true,
+          views: 9,
           hasInstructor: true,
           postedOn: '2014-05-31T11:18:12',
           color: 'pink',
@@ -47,6 +48,7 @@ angular.module('comments')
             isInstructor: false
           },
           replyRequested: false,
+          views: 5,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
           color: 'teal',
@@ -62,6 +64,7 @@ angular.module('comments')
             isInstructor: true
           },
           replyRequested: false,
+          views: 6,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           color: 'purple',
@@ -77,6 +80,7 @@ angular.module('comments')
             isInstructor: false
           },
           replyRequested: false,
+          views: 1,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
           color: 'yellow',
@@ -101,7 +105,8 @@ angular.module('comments')
       statsCache = {
         commentsCount: 4,
         repliesCount: 3,
-        totalUnseenCount: 4
+        totalUnseenCount: 4,
+        totalViews: 150
       },
       user = UserService.getCurrent();
 
@@ -127,6 +132,10 @@ angular.module('comments')
       });
     }
 
+    function returnViews(id){
+      return mock[idIndexMap[id]];
+    }
+
     function getCommentIndex(comment) {
       var notes = $('[comment-anchor]');
 
@@ -148,6 +157,41 @@ angular.module('comments')
     }
 
     return {
+      getViews: function(id){
+        if(returnViews(id)){
+          return returnViews(id).views;
+        } else {
+          return null;
+        }
+      },
+
+      setDates: function(){
+        var date = new Date();
+
+        var comment = getById(1);
+
+        //manually set time to current time
+        comment.postedOn = date;
+
+        comment = getById(7);
+
+        // change the time of this comment to 5 hours before last comment
+        date = new Date();
+        date.setHours(date.getHours() - 5);
+        comment.postedOn = date;
+
+        date = new Date();
+        comment = getById(4);
+        date.setHours(date.getHours() - 10);
+        comment.postedOn = date;
+
+ 
+        date = new Date();
+        comment = getById(5);
+        date.setHours(date.getHours() - 15);
+        comment.postedOn = date;
+      },
+
       stats: function() {
         return statsCache;
       },
@@ -166,11 +210,16 @@ angular.module('comments')
       getOne: function(id) {
         return getById(id);
       },
+      getTotalViews: function(){
+        return returnViews();
+      }
+      ,
       create: function(text, replyRequested, parentId) {
         var parent = getById(parentId),
             comment = {
               id: nextId,
               text: text,
+              views: 1,
               author: {
                 name: user.name,
                 isInstructor: user.role == 'prof'
@@ -195,8 +244,9 @@ angular.module('comments')
           comment.replies = [];
           comment.unseenRepliesCount = 0;
           comment.hasInstructor = user.role == 'prof';
+          comment.postedOn = new Date();
 
-          SelectionService.insertRealNote(comment)
+          SelectionService.insertRealNote(comment);
 
           mock.splice(getCommentIndex(comment), 0, comment);
 
@@ -206,6 +256,7 @@ angular.module('comments')
           $timeout(function() {
             comment.isSelected = true;
             self.reposition();
+
           });
         }
 
