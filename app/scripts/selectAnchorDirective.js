@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('selectAnchor', function(SelectionService, ContextualCommentsService, $compile) {
+  .directive('selectAnchor', function(SelectionService, ContextualCommentsService, HeatmapService, $compile) {
     'use strict';
 
     return {
@@ -24,6 +24,9 @@ angular.module('comments')
 
         $scope.$watch('contextualComments.length', function() {
           $compile(elem.contents())($scope);
+          //reinitilize point to show on heat map
+          HeatmapService.initilizeHeatmap();
+          
           // debugger;
         });
       }
