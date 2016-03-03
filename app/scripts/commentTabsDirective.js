@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('commentTabs', function(ContextualCommentsService, GeneralCommentsService) {
+  .directive('commentTabs', function(ContextualCommentsService) {
     'use strict';
 
     return {
@@ -8,10 +8,6 @@ angular.module('comments')
       controller: function($scope) {
         if (!$scope.contextualStats) {
           $scope.contextualStats = ContextualCommentsService.stats();
-        }
-
-        if (!$scope.generalStas) {
-          $scope.generalStats = GeneralCommentsService.stats();
         }
       }
     };
