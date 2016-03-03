@@ -4,7 +4,7 @@ angular.module('comments')
 
     var mock = {
       name: 'Volodymyr Dziubak',
-      commentingColor: 'orange',
+      commentingColor: 'red',
       role: 'student'
     };
 
