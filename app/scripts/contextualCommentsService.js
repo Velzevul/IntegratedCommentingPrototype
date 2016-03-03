@@ -13,8 +13,9 @@ angular.module('comments')
           replyRequested: true,
           hasInstructor: true,
           postedOn: '2014-05-31T11:18:12',
-          color: 'pink',
+          color: 'red',
           unseenRepliesCount: 1,
+          score: 6,
           seen: true,
           replies: [
             {
@@ -47,9 +48,10 @@ angular.module('comments')
             isInstructor: false
           },
           replyRequested: false,
+          score: 3,
           hasInstructor: false,
           postedOn: '2014-03-27T04:01:16',
-          color: 'teal',
+          color: 'red',
           unseenRepliesCount: 0,
           seen: false,
           replies: []
@@ -63,8 +65,9 @@ angular.module('comments')
           },
           replyRequested: false,
           hasInstructor: true,
+          score: 5,
           postedOn: '2014-03-27T04:01:16',
-          color: 'purple',
+          color: 'red',
           unseenRepliesCount: 0,
           seen: true,
           replies: []
@@ -79,7 +82,8 @@ angular.module('comments')
           replyRequested: false,
           hasInstructor: true,
           postedOn: '2014-03-27T04:01:16',
-          color: 'yellow',
+          color: 'red',
+          score: 8,
           unseenRepliesCount: 1,
           seen: false,
           replies: [
@@ -109,6 +113,10 @@ angular.module('comments')
 
     function getById(id) {
       return mock[idIndexMap[id]];
+    }
+
+    function profInvolvement(id){
+      return getById(id).hasInstructor == true;
     }
 
     function updateIdIndexMap() {
@@ -166,6 +174,9 @@ angular.module('comments')
       getOne: function(id) {
         return getById(id);
       },
+      profInvolvement: function(id){
+        return profInvolvement(id);
+      },
       create: function(text, replyRequested, parentId) {
         var parent = getById(parentId),
             comment = {
@@ -176,7 +187,8 @@ angular.module('comments')
                 isInstructor: user.role == 'prof'
               },
               postedOn: '2014-03-27T04:01:16',
-              seen: true
+              seen: true,
+              score: 5
             },
             self = this;
 
@@ -197,7 +209,7 @@ angular.module('comments')
           comment.hasInstructor = user.role == 'prof';
 
           SelectionService.insertRealNote(comment)
-
+          comment.score = Math.floor( ( Math.random() *  7 ) + 1 ) ;
           mock.splice(getCommentIndex(comment), 0, comment);
 
           updateIdIndexMap();
@@ -214,45 +226,53 @@ angular.module('comments')
       reposition: function() {
         // console.log('reposition');
         var spacing = 24,
-            anchors = $('[comment-anchor]'),
+            anchors = $('[comment-active]'),
             threads = $('.thread-contextual'),
             anchor,
+            ids = [],
             previousComment,
             previousCommentElement,
             secondPreviousComment,
             secondPreviousCommentElement,
             newPosition;
+        
+        if(anchors.length){
+          for( var i = 0 ; i < anchors.length ; i++ ){
+            ids.push(getById(anchors[i].id));
+          }
+        }
 
         if (threads.length) {
-          angular.forEach(mock, function(comment, index) {
+          //index == coment id
+          angular.forEach(ids, function(comment, index) {
             anchor = anchors[index];
-
+            
             if (index > 0) {
-              previousComment = mock[index - 1];
+              previousComment = ids[index - 1];
               previousCommentElement = $('.thread-contextual')[index - 1];
-
+              
               if (previousComment.isSelected && index > 1) {
-                secondPreviousComment = mock[index - 2];
+                secondPreviousComment = ids[index - 2];
                 secondPreviousCommentElement = $('.thread-contextual')[index - 2];
 
                 if (secondPreviousComment.position + secondPreviousCommentElement.offsetHeight > previousComment.position + previousCommentElement.offsetHeight) {
                   previousComment = secondPreviousComment;
                   previousCommentElement = secondPreviousCommentElement;
+
                 }
               }
             }
-
             if (!comment.isSelected &&
                 previousComment &&
+                previousCommentElement !== undefined &&
                 previousComment.position + previousCommentElement.offsetHeight > anchor.offsetTop) {
               newPosition = previousComment.position + previousCommentElement.offsetHeight + spacing;
             } else {
               newPosition = anchor.offsetTop;
             }
-
-            comment.position = newPosition;
+            comment.position = newPosition ;
           });
-        }
+        }        
       },
       deactivateAll: function() {
         var self = this;
