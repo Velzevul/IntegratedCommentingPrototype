@@ -1,0 +1,42 @@
+
+.options-toolbar {
+  position: fixed;
+  bottom: 5px;
+  right: 44px;
+  height: 400px;
+  z-index: 100;
+  width: 290px;
+  padding: 0 12px 12px 12px;
+  font-size: 13px;
+  background: white;
+  border: 1px solid #597BE3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.options-toolbar__title {
+  font-weight: 600;
+}
+
+.options-toolbar__section {
+  padding-top: 12px;
+}
+
+.options-toolbar__section--header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #C0C0C0;
+}
+
+.options-toolbar__input-text {
+  width: 4em;
+  padding: 0 0 0 0.5em;
+  border: 1px solid #C0C0C0;
+  border-radius: 3px;
+}
+
+.options-toolbar__input-color {
+  border: none;
+}
+
+.options-toolbar--hidden {
+  top: 50px;
+}
