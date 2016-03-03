@@ -1,0 +1,51 @@
+<div class="options-toolbar" ng-show="optionsPanel" ng-class="{'options-toolbar--hidden': showOptions}">
+  <div class="options-toolbar__section options-toolbar__section--header">
+    <div class="l-split">
+      <div class="l-split__right">
+      </div>
+
+      <div class="l-split__left">
+        <div class="options-toolbar__title" >Options Panel//currently disabled</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="options-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item"></div>
+
+      <div class="l-list-inline__item">
+        <label>
+          Only Show Comments with Prof <input type="checkbox" ng-model="currentUser.role" value="prof"> 
+        </label>
+      </div>
+    </div>
+  </div>
+  <hr>
+    <div class="options-toolbar__section"> 
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Show Comments with Rating</div>
+
+      <div class="l-list-inline__item">
+        <pre>v                   v</pre>
+        | ---------- | ---------- | ---------- | 
+        <br>
+        <pre>0     25     50    75+   </pre>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="options-toolbar__section">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">Show Comments Based on Time</div>
+
+      <div class="l-list-inline__item">
+        <pre>v                   v</pre>
+        | ---------- | ---------- | ---------- | 
+        <br>
+        <pre>0     25     50    75+   </pre>
+      </div>
+    </div>
+  </div>
+</div>
