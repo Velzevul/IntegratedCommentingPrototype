@@ -1,0 +1,35 @@
+<div class="comment-body">
+  <div ng-hide="editMode">
+    <div class="l-block-x-small">
+      <div class="comment-body__text">{{comment.text | words: truncated && parameters.truncate || comment.text.length}}</div>
+    </div>
+
+    <div class="comment-body__controls">
+      <div class="l-list-inline l-list-inline--small" ng-show="postedByCurrentUser && !truncated">
+        <div class="l-list-inline__item">
+          <button class="link" ng-click="enterEditMode()">edit comment</button>
+        </div>
+
+        <div class="l-list-inline__item">
+          <button class="link link--danger" ng-click="deleteComment()">delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form ng-show="editMode" ng-submit="updateComment()">
+    <div class="l-block-small">
+      <textarea msd-elastic="\n" ng-model="tempText"></textarea>
+    </div>
+
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">
+        <button class="button">Save</button>
+      </div>
+
+      <div class="l-list-inline__item">
+        <button class="button" type="button" ng-click="leaveEditMode()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,35 @@
+/**
+ *  ICONS MODULE (SVG)
+ *
+ *  styling for svg-versions of icons on the website
+ *
+ *  .icon
+ *
+ */
+%icon {
+  display: block;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+/**
+ *  INSTRUCTOR ICON
+ *
+ *  icon for awareness widget for the total number of comments
+ *
+ *  .icon
+ *  <---  .icon-instructor
+ *
+ */
+.icon-instructor {
+  @extend %icon;
+
+  width: $global-baseline * 3/2;
+  height: $global-baseline * 3/2;
+
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjEzcHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDEzIDE2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4yLjIgKDk5ODMpIC0gaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoIC0tPgogICAgPHRpdGxlPlNoYXBlPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPHBhdGggZD0iTTMuMjUsMy4yIEMzLjI1LDEuNDMyNTMzMzMgNC43MDQ5MTY2NywwIDYuNSwwIEM4LjI5NTA4MzMzLDAgOS43NSwxLjQzMjUzMzMzIDkuNzUsMy4yIEM5Ljc1LDQuOTY3NDY2NjcgOC4yOTUwODMzMyw2LjQgNi41LDYuNCBDNC43MDQ5MTY2Nyw2LjQgMy4yNSw0Ljk2NzQ2NjY3IDMuMjUsMy4yIEwzLjI1LDMuMiBMMy4yNSwzLjIgWiBNMTAuODM0NDE2Nyw3LjQ2NjY2NjY3IEwxMC4yMzQ3OTE3LDcuNDY2NjY2NjcgTDYuODY0NTQxNjcsMTQuMjA0MjY2NyBMOC4xMjUsOCBMNi41LDYuNCBMNC44NzUsOCBMNi4xMzU0NTgzMywxNC4yMDQyNjY3IEwyLjc2NTIwODMzLDcuNDY2NjY2NjcgTDIuMTY1NTgzMzMsNy40NjY2NjY2NyBDMCw3LjQ2NjY2NjY3IDAsOC44OTk3MzMzMyAwLDEwLjY2NjY2NjcgTDAsMTYgTDEzLDE2IEwxMywxMC42NjY2NjY3IEMxMyw4Ljg5OTczMzMzIDEzLDcuNDY2NjY2NjcgMTAuODM0NDE2Nyw3LjQ2NjY2NjY3IEwxMC44MzQ0MTY3LDcuNDY2NjY2NjcgTDEwLjgzNDQxNjcsNy40NjY2NjY2NyBaIiBpZD0iU2hhcGUiIGZpbGw9IiM5MjkyOTIiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgIDwvZz4KPC9zdmc+');
+}
+
+

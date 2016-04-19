@@ -1,0 +1,55 @@
+<div class="grid grid--center grid--full">
+    <div class="grid__item three-quarters">
+        <div class="" ng-repeat="n in setDivs(51) track by $index">
+            <span class="relevantComments" id="anchorRelevant{{$index}}" relevant-anchor ></span>
+            <span class="heatmap" id="{{$index}}" ng-click="setActiveLine( $index )" heatmap ></span>
+            <span class="teacherParticipation" id="teacherParticipation{{$index}}" ng-click="setActiveLine( $index )" teacherParticipation></span>
+        </div>
+        <div class="document-toolbar" fix-width ng-show="fasle">
+            <statusbar-contextual ng-show="true"></statusbar-contextual>
+        </div>
+
+        <article class="document">    
+            <header class='l-block-med'>
+                <h1 class="document__title">Light Pollution</h1>
+            </header>
+            <div class="content-area" select-anchor="">
+                <p><span first></span>After hours of driving south in the pitch-black darkness of the Nevada desert, a dome of hazy gold suddenly appears on the horizon. Soon, a road sign confirms the obvious: Las Vegas 30 miles. Looking skyward, you notice that<note-60493 id="17" comment-anchor="" class=" document__anchor--highlighted" comment-active="false" data-content="1"> the Big Dipper</note-60493> is harder to find than it was an hour ago.</p>
+
+                <p ><note-12872 id="10" comment-anchor=""  comment-active="false" data-content="3">Light pollution</note-12872>—the artificial light that illuminates more than its intended target area—has become a problem of increasing concern <note-71961 id="13" comment-anchor=""  comment-active="false" data-content="4">across the country</note-71961> over the past 15 years. In the suburbs, where over-lit shopping mall parking lots are the norm, only 200 of the Milky Way’s 2,500 stars are visible on a clear night. Even fewer can be seen from large cities. In almost every town, big and small, street lights beam just as much light up and out as they do down, illuminating much more than just the street. Almost 50 percent of the light emanating from street lamps misses its intended target, and billboards, shopping centres, private homes and skyscrapers are similarly over-illuminated.</p>
+
+                <p > America has become so bright that in a satellite image of the United States at night, the outline of the country is visible from its lights alone. The major cities are all there, in bright clusters: New York, Boston, Miami, Houston, Los Angeles, Seattle, Chicago, and, of course, Las Vegas. Mark Adams, superintendent of the McDonald Observatory in west Texas, says that the very fact that city lights are visible from on high is proof of their wastefulness. “When you’re up in an airplane, all that light you see on the ground from the city is wasted. It’s going up into the night sky. That’s why you can see it.”</p>
+
+                <p > But don’t we need all those lights to <note-13793 id="1" comment-anchor=""  comment-active="false" data-content="2">ensure our safety</note-13793>? The answer from light engineers, light pollution control advocates and astronomers is an emphatic “<note-59913 id="6" comment-anchor=""  comment-active="false" data-content="4">no</note-59913>.” Elizabeth Alvarez of the International Dark Sky Association (IDA), a non-profit organization in Tucson, Arizona, says that overly bright security lights can actually force neighbours to close the shutters, which means that if any criminal activity does occur on the street, no one will see it. And the old assumption that bright lights deter crime appears to have been a false one: A new Department of Justice report concludes that there is no documented correlation between the level of lighting and the level of crime in an area. And contrary to popular belief, more crimes occur in broad daylight than at night.</p>
+
+                <p > For drivers, light can actually create a safety hazard. Glaring lights can temporarily blind drivers,<note-97389 id="5" comment-anchor=""  comment-active="false" data-content="1"> increasing the likelihood</note-97389> of an accident. New Hampshire law forbids the use of “any light along a highway so positioned as to blind or dazzle the vision of travellers on the adjacent highway.”</p>
+
+                <p > Badly designed lighting can pose a threat to wildlife as well as people. Newly hatched turtles in Florida move toward beach lights instead of the more muted silver shimmer of the ocean. Migrating birds, confused by lights on skyscrapers, broadcast towers and lighthouses, are injured, sometimes fatally, after colliding with high, lighted structures. And light pollution harms air quality as well: Because most of the country’s power plants are still powered by fossil fuels, more light means more air pollution.</p>
+
+                <p > So what can be done? Tucson, Arizona is taking back the night. The city has one of the best lighting ordinances in the country, and, not coincidentally, the highest concentration of observatories in the world. Kitt Peak National Optical Astronomy Observatory has 24 telescopes aimed skyward around the city’s perimeter, and its cadre of astronomers needs a dark sky to work with.</p>
+
+                <p > For a while, that darkness was threatened. “We were totally losing the night sky,” Jim Singleton of Tucson’s Lighting Committee told <note-67553 id="3" comment-anchor=""  comment-active="false" data-content="1">Tulsa, Oklahoma’s.</note-67553>
+                 The same thing is happening in a handful of other states, including Texas, which just passed a light pollution bill last summer. “Astronomers can get what they need at the same time that citizens get what they need: safety, security and good visibility at night,” says McDonald Observatory’s Mark Adams, who provided testimony at the hearings for the bill.
+                </p>
+
+
+                <p >And in the long run, everyone benefits from reduced energy costs. Wasted energy from inefficient lighting costs us between $1 and $2 billion a year, according to IDA. The city of San Diego, which installed new, high-efficiency street lights, now saves about $3 million a year in energy costs.</p>
+
+                <p >Legislation isn’t the only answer to light pollution problems. Brian Greer, Central Ohio representative for the Ohio Light Pollution Advisory Council, says that education is just as important, if not more so. “There are some special situations where regulation is the only fix,” he says. “But the vast majority of bad lighting is simply the <note-83529 id="4" comment-anchor=""  comment-active="false" data-content="1">result of not knowing any better.</note-83529></p>
+
+                <p >*The Big Dipper: a group of seven bright stars visible in the Northern Hemisphere. </p>
+            </div>
+        </article>
+    </div><!--
+    --><div class="grid__item one-quarter" ng-show="activeTab">
+      <comment-tabs></comment-tabs>
+      <!--<div class="container"><options-panel></options-panel></div>-->
+
+      <div class="new-positioning-grid">
+          <div ng-repeat="comment in contextualComments | filter:filterLine track by $index">
+            <contextual-comment comment="comment" ng-if="comment.text != undefined"></contextual-comment>
+            <contextual-comment-form comment="comment" ng-if="comment.text == undefined"></contextual-comment-form>
+          </div>
+      </div>
+    </div>
+</div>

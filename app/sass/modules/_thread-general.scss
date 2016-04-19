@@ -1,0 +1,83 @@
+/**
+ *  THREAD GENERAL
+ *
+ *  styling for general comments
+ *
+ *  .thread-general
+ *    &--multiple
+ *    &--has-unseen-items
+ *    <>--  .tg-comment
+ *            &__author
+ *            &__updated-at
+ *            &__controls
+ *            &--reply
+ *            &--unseen
+ *    <>--  .tg-unseen
+ *            &__item
+ *
+ */
+.thread-general {
+  position: relative;
+  margin-left: $global-baseline;
+
+  font-size: 13px;
+  line-height: 17px;
+
+  background: white;
+  border: 1px solid darken($color-bg, 5%);
+}
+  .thread-general--multiple {
+    box-shadow: 2px 2px 0 0 white,
+                2px 2px 0 1px darken($color-bg, 5%),
+                5px 5px 0 0 white,
+                5px 5px 0 1px darken($color-bg, 5%),
+                8px 8px 0 0 white,
+                8px 8px 0 1px darken($color-bg, 5%);
+  }
+
+.tg-comment {
+  position: relative;
+  padding: 8px;
+
+  background: transparent;
+
+  @include transition-property(background-color);
+  @include transition-duration(0.5s);
+
+  &__author {
+    display: inline-block;
+
+    font-weight: 600;
+
+    color: $color-tx-darkened;
+  }
+
+  &__updated-at {
+    font-size: em(11,13);
+    font-weight: 300;
+
+    color: $color-tx-muted;
+  }
+
+  &__controls {
+    font-size: em(11,13);
+  }
+}
+  .tg-comment--reply {
+    border-top: 1px solid darken($color-bg, 5%);
+  }
+  .tg-comment--unseen {
+    background: $color-dc-quaternary;
+  }
+
+.tg-unseen {
+  position: absolute;
+  bottom: -10px; right: -10px;
+
+  &__item {
+    padding: 0 12px;
+
+    background: $color-dc-quaternary;
+    border: 1px solid darken($color-bg, 5%);
+  }
+}

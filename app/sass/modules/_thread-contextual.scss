@@ -1,0 +1,121 @@
+/**
+ *  THREAD CONTEXTUAL MODULE
+ *
+ *  styling for comment threads
+ *
+ *  .thread-contextual
+ *    &--multiple
+ *    &--selected
+ *    &--highlighted
+ *    &--{color}
+ *    <>--  .tc-comment
+ *            &__author
+ *            &__updated-at
+ *            &__controls
+ *            &__prof-indicator
+ *            &--reply
+ *            &--unseen
+ *    <>--  .tc-unseen
+ *            &__item
+ *
+ */
+.thread-contextual {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 92%;
+  margin-bottom: $global-baseline * 2;
+
+  font-size: 13px;
+  line-height: 17px;
+
+  background: white;
+  border: 1px solid darken($color-bg, 5%);
+  border-left-width: 4px;
+
+  cursor: pointer;
+
+  @include transition-property(left, top);
+  @include transition-duration(0.2s, 0.35s);
+
+}
+  .thread-contextual--multiple {
+    box-shadow: 2px 2px 0 0 white,
+                2px 2px 0 1px darken($color-bg, 5%),
+                5px 5px 0 0 white,
+                5px 5px 0 1px darken($color-bg, 5%),
+                8px 8px 0 0 white,
+                8px 8px 0 1px darken($color-bg, 5%);
+  }
+  .thread-contextual--highlighted {
+    left: -$global-baseline;
+  }
+  .thread-contextual--selected {
+    left: -$global-baseline * 3;
+    cursor: inherit;
+    background: white;
+  }
+  @each $name, $value in $highlight-colors {
+    .thread-contextual--#{$name} {
+      border-left-color: $value;
+
+      &.thread-contextual--selected:before {
+        @include simple-arrow(8px, $value, 'quadrant-1', -20px, 6px, 'left');
+        z-index: 1;
+      }
+    }
+  }
+
+.tc-comment {
+  position: relative;
+  padding: 8px;
+
+  background: transparent;
+
+  @include transition-property(background-color);
+  @include transition-duration(0.5s);
+
+  &__author {
+    display: inline-block;
+
+    font-weight: 600;
+
+    color: $color-tx-darkened;
+  }
+
+  &__updated-at {
+    font-size: em(11,13);
+    font-weight: 300;
+
+    color: $color-tx-muted;
+  }
+
+  &__controls {
+    font-size: em(11,13);
+  }
+
+  &__prof-indicator {
+    font-size: em(11,13);
+
+    color: $color-dc-tertiary;
+  }
+}
+  .tc-comment--reply {
+    border-top: 1px solid darken($color-bg, 5%);
+  }
+  .tc-comment--unseen {
+    background: $color-dc-quaternary !important;
+  }
+
+
+.tc-unseen {
+  position: absolute;
+  bottom: -15px; right: -15px;
+
+  &__item {
+    padding: 0 12px;
+
+    background: $color-dc-quaternary;
+    border: 1px solid darken($color-bg, 5%);
+  }
+}

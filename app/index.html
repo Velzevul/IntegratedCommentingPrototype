@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app="comments">
+  <head>
+    <meta charset="UTF-8">
+    <title>Integrated Commenting Prototype</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="css/main.css">
+    <!-- build:[src] scripts/ -->
+    <script src="modernizr/modernizr.js"></script>
+    <!-- /build -->
+  </head>
+  <body ng-controller="commentsController" ng-click="deselectAllComments($event)">
+    <div class="l-wrap">
+      <div ng-view></div>
+    </div>
+
+    <developer-toolbar></developer-toolbar>
+
+  <!-- build:remove -->
+    <!-- <div class="dev-grid"></div> -->
+  <!-- /build -->
+
+  <!-- build:js scripts/dependencies.concat.js -->
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular-truncate/src/truncate.js"></script>
+    <script src="angular-elastic/elastic.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+  <!-- /build -->
+
+  <!-- build:js scripts/app.concat.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/templates.js"></script>
+
+    <script src="scripts/commentsController.js"></script>
+
+    <script src="scripts/userService.js"></script>
+    <script src="scripts/contextualCommentsService.js"></script>
+    <script src="scripts/selectionService.js"></script>
+
+    <script src="scripts/fixWidthDirective.js"></script>
+    <script src="scripts/commentsSidebarDirective.js"></script>
+    <script src="scripts/commentTabsDirective.js"></script>
+    <script src="scripts/commentBodyDirective.js"></script>
+
+    <script src="scripts/selectAnchorDirective.js"></script>
+    <script src="scripts/contextualCommentDirective.js"></script>
+    <script src="scripts/contextualCommentFormDirective.js"></script>
+    <script src="scripts/commentAnchorDirective.js"></script>
+    <script src="scripts/contextualReplyFormDirective.js"></script>
+
+
+    <script src="scripts/statusbarDefaultDirective.js"></script>
+    <script src="scripts/statusbarContextualDirective.js"></script>
+
+    <script src="scripts/devParametersService.js"></script>
+    <script src="scripts/developerToolbarDirective.js"></script>
+    <!-- search bar -->
+    <script src="scripts/searchBar.js"></script>
+    <!-- options panel -->
+    <script src="scripts/optionsPanel.js"></script>
+    <!-- init random comments -->
+    <script src="scripts/initialCommentsService.js"></script>
+    <!-- heatmap -->
+    <script src="scripts/heatmapService.js"></script>
+    <script src="scripts/heatmapDirective.js"></script>
+    <script src="scripts/controllers.js"></script>
+  <!-- /build -->
+  </body>
+</html>

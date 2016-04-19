@@ -1,0 +1,10 @@
+<div class="search-bar" >
+  <div class="grid grid--narrow">
+  	<div class="grid__item one-whole">
+  		Search: <input ng-keyup="$event.keyCode == 13 ? search() : null" ng-model="filterComments" class="search-bar-item" placeholder="Search by user, keyword"></input>
+         <button class="button button--small button--success" style="margin-left: auto; margin-right: auto; display: inline-block;" ng-click="search()">
+    	   	Find
+        </button>
+    </div>
+  </div>
+</div>

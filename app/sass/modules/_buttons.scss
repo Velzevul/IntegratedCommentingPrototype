@@ -1,0 +1,32 @@
+/**
+ *  BUTTONS MODULE
+ *
+ *  styling for buttons used in the project
+ *
+ *  .button
+ *
+ */
+.button {
+  padding: $global-baseline/4 $global-baseline;
+
+  background: white;
+  border: 1px solid darken($color-bg, 10%);
+  border-radius: 4px;
+
+}
+  .button--small {
+    height: $global-baseline*2;
+    padding: 0 $global-baseline;
+
+    line-height: 21px;
+  }
+  .button--success {
+    color: white;
+    background: $color-dc-tertiary;
+    border-color: darken($color-dc-tertiary, 10%);
+  }
+  .button--danger {
+    color: white;
+    background: $color-dc-secondary;
+    border-color: darken($color-dc-secondary, 10%);
+  }

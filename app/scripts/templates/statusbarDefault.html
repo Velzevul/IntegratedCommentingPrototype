@@ -1,0 +1,17 @@
+<div class="l-split">
+  <div class="l-split__right">
+    <button class="button button--small button--success" ng-click="activeTab = 'contextual'">show comments</button>
+  </div>
+
+  <div class="l-split__left">
+    <div class="l-list-inline l-list-inline--small">
+      <div class="l-list-inline__item">
+        <div class="document-toolbar__title">Comments:</div>
+      </div>
+
+      <div class="l-list-inline__item">
+         {{contextualStats.commentsCount}} comments, {{contextualStats.repliesCount}} replies
+      </div>
+    </div>
+  </div>
+</div>

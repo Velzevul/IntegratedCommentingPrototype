@@ -1,0 +1,28 @@
+/**
+ *  CONTENT AREA MODULE
+ *
+ *  default styles for flow of text (e.g. when text is formed in WYSIWYG editor):
+ *  paragraphs, bold, italics, headings, links, lists
+ *
+ *  .content-area
+ *
+ */
+.content-area {
+  // ...
+
+  h1 {
+    margin-bottom: $global-baseline;
+
+    font-size: em(18,14);
+
+    color: $color-tx-muted;
+  }
+
+  p {
+    margin-bottom: $global-baseline * 2;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}

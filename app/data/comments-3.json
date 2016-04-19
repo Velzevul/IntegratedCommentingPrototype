@@ -1,0 +1,244 @@
+[
+  {
+    "id": 21,
+    "text": "These can cause cancer!",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "position": 268,
+    "$$hashKey": "object:65",
+    "isSelected": false,
+    "highlightedAnchor": false,
+    "replyRequested": false
+  },
+  {
+    "id": 16,
+    "text": "Some of these diseases include cataracts and Alzheimer's.",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "position": 371,
+    "$$hashKey": "object:75",
+    "isSelected": false,
+    "highlightedAnchor": false,
+    "isHighlighted": false,
+    "replyRequested": false
+  },
+  {
+    "id": 14,
+    "text": "Did you know similar genes were found in organisms as various as fruit-flies, mice and human beings!",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      {
+        "id": 15,
+        "text": "That is interesting!",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:68"
+      }
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "isSelected": false,
+    "position": 490,
+    "$$hashKey": "object:58",
+    "highlightedAnchor": false,
+    "isHighlighted": false
+  },
+  {
+    "id": 10,
+    "text": "Do humans count as an animal being tested on?",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      {
+        "id": 11,
+        "text": "I would say no because the article only mentions Eukarion seeking permission to test on humans",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:33"
+      }
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "position": 609,
+    "$$hashKey": "object:23",
+    "isSelected": false,
+    "highlightedAnchor": false,
+    "isHighlighted": false
+  },
+  {
+    "id": 8,
+    "text": "How exactly is this a horror?",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      {
+        "id": 9,
+        "text": "Their might be other side effects apart from just being smaller",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:18"
+      },
+      {
+        "id": 17,
+        "text": "I don't think its a horror if you get to live longer and be a \"teenager\" for a longer time",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:84"
+      },
+      {
+        "id": 18,
+        "text": "Yes, but what would the long term implications be?",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:87"
+      },
+      {
+        "id": 19,
+        "text": "I guess we'll have to wait and see to find out!",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:90"
+      }
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "$$hashKey": "object:8",
+    "isSelected": false,
+    "position": 796,
+    "highlightedAnchor": false,
+    "isHighlighted": false
+  },
+  {
+    "id": 22,
+    "text": "Life should not be extended, as God meant for us to die at a certain time!",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      {
+        "id": 23,
+        "text": "This research could help with treating different diseases so it is definitely worth researching",
+        "author": {
+          "name": "Volodymyr Dziubak",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:91"
+      }
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "position": 899,
+    "$$hashKey": "object:81",
+    "isSelected": false,
+    "highlightedAnchor": false
+  },
+  {
+    "id": 25,
+    "text": "I think this depends on the person.",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "isSelected": true,
+    "position": 1036,
+    "$$hashKey": "object:121",
+    "highlightedAnchor": true,
+    "isHighlighted": false,
+    "replyRequested": false
+  },
+  {
+    "id": 20,
+    "text": "That's a lot of people!",
+    "author": {
+      "name": "Volodymyr Dziubak",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [
+      
+    ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "isSelected": false,
+    "position": 1180,
+    "$$hashKey": "object:98",
+    "highlightedAnchor": true,
+    "replyRequested": false
+  }
+]
