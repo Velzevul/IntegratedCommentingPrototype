@@ -5,21 +5,8 @@
   window.app = app;
    app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      // .when('/', {
-      //   controller: 'startScreenController',
-      //   templateUrl: 'templates/startScreen.html'
-      // })
-      // .when('/interface', {
-      //   controller: function() {
-          
-      //   },
-      //   templateUrl: function() {
-
-      //   }
-      // });
-
         .when('/integrated', {
-          controller: 'integrated-controller',
+            controller: 'integratedController',
           templateUrl: function(name){
             var path = 'templates/integrated-' + name.content;
             
@@ -33,7 +20,7 @@
           }
         })
         .when('/heatmap', {
-          controller: 'heatmap-controller',
+          controller: 'heatmapController',
           templateUrl: function(name){
             var path = 'templates/heatmap-' + name.content;
             if(name.clutter == 'true'){
@@ -42,13 +29,13 @@
               path += '.html';
             }
 
-            console.log(path);
+            console.log(path)
              
-            return path;
+             return path;
           }
         })
-        .when('/paragraph-life', {
-          controller: 'paragraph-controller',
+        .when('/paragraph', {
+          controller: 'paragraphController',
           templateUrl: function(name){
             var path = 'templates/paragraph-' + name.content;
             if(name.clutter == 'true'){
@@ -61,7 +48,7 @@
           }
         })
         .when('/add-comments', {
-          controller: 'integrated-controller',
+          controller: 'integratedController',
           templateUrl: function(name){
             var path = 'templates/temp';
             if(name.clutter == 'true'){

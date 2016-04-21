@@ -1,18 +1,20 @@
 <div class="grid grid--center grid--full">
     <div class="grid__item three-quarters">
-        <div class="document-toolbar" fix-width ng-show="false">
-            <statusbar-contextual ng-show="activeTab != false"></statusbar-contextual>
-            <statusbar-default ng-show="activeTab == false"></statusbar-default>
+        <div class="" ng-repeat="n in setDivs(51) track by $index">
+            <span class="relevantComments" id="anchorRelevant{{$index}}" relevant-anchor ></span>
+            <span class="heatmap" id="{{$index}}" ng-click="setActiveLine( $index )" heatmap ></span>
+            <span class="teacherParticipation" id="teacherParticipation{{$index}}" ng-click="setActiveLine( $index )" teacherParticipation></span>
+        </div>
+        <div class="document-toolbar" fix-width ng-show="fasle">
+            <statusbar-contextual ng-show="true"></statusbar-contextual>
         </div>
 
         <article class="document">    
             <header class='l-block-med'>
-                <h1 class="document__title">In Praise of Amateurs</h1>
-                <h2>Despite the specialization of scientific research, amateurs still have an important role to play</h2>
+                <h1 class="document__title">Light Pollution</h1>
             </header>
-
             <div class="content-area" select-anchor="">
-                <p class="ng-scope">During the scientific revolution of the 17th century, scientists were largely men of private means who pursued their interest in natural philosophy for their own edification. Only in the past century or two has it become possible to make a living from investigating the workings of nature. Modern science was, in other words, built on the work of <note-11067 id="55" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="7">amateurs</note-11067>. Today, science is an increasingly specialized and compartmentalized subject, the domain of experts who know more and more about less and less. Perhaps surprisingly, however, amateurs – even those without private means – are still important.</p>
+                <p class="ng-scope"><span first></span>During the scientific revolution of the 17th century, scientists were largely men of private means who pursued their interest in natural philosophy for their own edification. Only in the past century or two has it become possible to make a living from investigating the workings of nature. Modern science was, in other words, built on the work of <note-11067 id="55" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="7">amateurs</note-11067>. Today, science is an increasingly specialized and compartmentalized subject, the domain of experts who know more and more about less and less. Perhaps surprisingly, however, amateurs – even those without private means – are still important.</p>
 
                 <p class="ng-scope">A recent poll carried out at a meeting of the American Association for the Advancement of Science by astronomer Dr Richard Fienberg found that, in addition to his field of astronomy, amateurs are actively involved in such field as <note-99366 id="21" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">acoustics, horticulture, ornithology, meteorology, hydrology and palaeontology</note-99366>. Far from being crackpots, amateur scientists are often in close touch with professionals, some of whom rely heavily on their co-operation.</p>
 
@@ -34,7 +36,7 @@
             </div>
         </article>
     </div><!--
-    --><div class="grid__item one-quarter">
+    --><div class="grid__item one-quarter" ng-show="activeTab">
       <comment-tabs></comment-tabs>
       <!--<div class="container"><options-panel></options-panel></div>-->
 

@@ -1,17 +1,20 @@
 <div class="grid grid--center grid--full">
     <div class="grid__item three-quarters">
-        <div class="document-toolbar" fix-width ng-show="false">
-            <statusbar-contextual ng-show="activeTab != false"></statusbar-contextual>
-            <statusbar-default ng-show="activeTab == false"></statusbar-default>
+        <div class="" ng-repeat="n in setDivs(47) track by $index">
+            <span class="relevantComments" id="anchorRelevant{{$index}}" relevant-anchor ></span>
+            <span class="heatmap" id="{{$index}}" ng-click="setActiveLine( $index )" heatmap ></span>
+            <span class="teacherParticipation" id="teacherParticipation{{$index}}" ng-click="setActiveLine( $index )" teacherParticipation></span>
+        </div>
+        <div class="document-toolbar" fix-width ng-show="fasle">
+            <statusbar-contextual ng-show="true"></statusbar-contextual>
         </div>
 
         <article class="document">    
             <header class='l-block-med'>
-                <h1 class="document__title">In Life and Death</h1>
+                <h1 class="document__title">Life and Death</h1>
             </header>
-
             <div class="content-area" select-anchor="">
-                <p id="paragraph1" paragraph="" class="ng-scope">Until recently, the thought that there <note-45259 id="120" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">might ever be a cure for ageing seemed preposterous</note-45259>. Growing older and more decrepit appeared to be an <note-94865 id="122" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">inevitable and necessary part of being human.</note-94865> Over the last decade, however, scientists have begun to see ageing differently. Some now believe that the average life-expectancy may <note-4724 id="124" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">soon be pushed up to 160 years</note-4724>; others think that it may be extended to <note-69171 id="126" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">200 or 300 years</note-69171>. A handful even wonder whether we might <note-39750 id="127" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">one day live for a millennium or more</note-39750>.</p>
+                <p id="paragraph1" paragraph="" class="ng-scope"><span first></span>Until recently, the thought that there <note-45259 id="120" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">might ever be a cure for ageing seemed preposterous</note-45259>. Growing older and more decrepit appeared to be an <note-94865 id="122" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">inevitable and necessary part of being human.</note-94865> Over the last decade, however, scientists have begun to see ageing differently. Some now believe that the average life-expectancy may <note-4724 id="124" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">soon be pushed up to 160 years</note-4724>; others think that it may be extended to <note-69171 id="126" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">200 or 300 years</note-69171>. A handful even wonder whether we might <note-39750 id="127" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">one day live for a millennium or more</note-39750>.</p>
 
                 <p id="paragraph2" paragraph="" class="ng-scope">Behind this new excitement is the theory that the primary cause of ageing lies in highly reactive molecules called <note-35568 id="21" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">free radicals</note-35568>, left behind by the oxygen we breathe. <note-71804 id="129" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="2">Free radicals react with the molecules in our bodies</note-71804>, damaging DNA, proteins and other cell tissues, and are known to be implicated in <note-3256 id="16" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">diseases.</note-3256>  The <note-11786 id="131" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">body does its best to protect itself against free radicals </note-11786>by producing its <note-41347 id="133" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">own chemicals to prevent ageing</note-41347>, such as vitamins E and C, but it is <note-69371 id="132" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">always fighting a losing battle</note-69371>.</p>
 
@@ -30,7 +33,7 @@
             </div>
         </article>
     </div><!--
-    --><div class="grid__item one-quarter">
+    --><div class="grid__item one-quarter" ng-show="activeTab">
       <comment-tabs></comment-tabs>
       <!--<div class="container"><options-panel></options-panel></div>-->
 

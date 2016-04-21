@@ -1,5 +1,5 @@
 angular.module('comments')
-  .controller('integrated-controller', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService) {
+  .controller('integratedController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService) {
     'use strict';
     // contextual comments
 
@@ -9,7 +9,6 @@ angular.module('comments')
         .then(function() {
             ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);
             $scope.contextualComments = ContextualCommentsService.getAll();
-            $scope.activeTab = 'contextual';
             //ContextualCommentsService.printMock();
             //positions comments correctly after document is ready
             angular.element(document).ready(function(){
@@ -20,7 +19,6 @@ angular.module('comments')
     //should be a true/false value
     $scope.cluttered = $routeParams.clutter;
     $scope.$parent.prototypeValue = 'integrated';
-    $scope.optionsPanel = false;
 
     //for filtering comments to selectively show whatever anchor is active
     $scope.filterLine = function(comment){
@@ -40,7 +38,7 @@ angular.module('comments')
   });
 
 angular.module('comments')
-  .controller('heatmap-controller', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, HeatmapService, InitialCommentsService){
+  .controller('heatmapController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, HeatmapService, InitialCommentsService){
     'use strict';
 
     $q.all([
@@ -52,10 +50,9 @@ angular.module('comments')
             $scope.activeTab = 'contextual';
             HeatmapService.initilize(100);
             console.log('loaded ' + $scope.contextualComments.length + ' comments');
-            $scope.activeLine = -5;
             $scope.showProfOnly = false;
             $scope.relevantAnchors = new Array (79);
-            $scope.optionsPanel = false;
+            //search value stops the heatmap from doubling
             $scope.newSearchValue = -1;
         });
     $scope.activeLines = [];
@@ -96,7 +93,7 @@ angular.module('comments')
   });
 
 angular.module('comments')
-  .controller('paragraph-controller', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService) {
+  .controller('paragraphController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService) {
     'use strict';
 
     $q.all([
@@ -112,15 +109,22 @@ angular.module('comments')
 
     $scope.$parent.prototypeValue = 'paragraph';
     $scope.cluttered = $routeParams.clutter;
+
     $scope.activeTab = false;
+
+    //this variable is for showing paragraph bubbles, should be merged into one variable with activetab
     $scope.activeParagraph = false;
+    $scope.shownParagraphs = [];
 
     $scope.filteredComments = null;
 
 
+    //** All code under this line should probably be in a pargraphService.js file **
+
     var buttons = $('[comment-buttons]'),
         paragraph = $('[paragraph]');
 
+    console.log($(buttons[0]).parent().parent());
     //initlize buttons
     $scope.initlizeButtons = function(){
         var tempComment,
@@ -165,6 +169,11 @@ angular.module('comments')
                 }
 
                 buttons[i].innerText = num;
+                if(num == 0){
+                    $(buttons[i]).parent().parent().hide();
+                } else {
+                    $(buttons[i]).parent().parent().show();
+                }
             } 
         } else {
             var num,
@@ -181,19 +190,28 @@ angular.module('comments')
                 }
                 buttons[i].innerText = num;
                 num = 0;
+
+                if(num == 0){
+                    $(buttons[i]).parent().parent().hide();
+                } else {
+                    $(buttons[i]).parent().parent().show();
+                }
             } 
         }
     };
 
     //watches for context change and selects correct note id's
 
-    $scope.$watch('activeParagraph', function(value){
-        var temp = document.getElementById(value);
+    $scope.$watch('activeTab', function(value){
+        var index = $scope.shownParagraphs.indexOf(value);
 
-        if($scope.activeTab == 'contextual'){
-            $scope.activeComments = $('[comment-anchor]')
-        }else if($scope.activeTab != 'general' && $scope.activeTab != false){
-            $scope.activeComments = angular.element(temp).children();
+        if( index >= 0 ){
+            //need to remove line
+            $scope.shownParagraphs.splice(index, 1);
+        } else {
+            // need to add line
+            $scope.shownParagraphs.push(value);
         }
+        console.log($scope.shownParagraphs)
     });
   });

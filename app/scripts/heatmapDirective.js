@@ -10,8 +10,7 @@ angular.module('comments')
           var relevantComments = $('[relevant-anchor]'),
               heatmapIntensity = HeatmapService.getHeatmap(),
               yValue = e.pageY,
-              position,
-              value = $scope.$parent.activeLine;
+              position;
 
           for( var i = 0; i < relevantComments.length; i++){
             position = angular.element(relevantComments[i]).prop('offsetTop') ;
@@ -19,9 +18,6 @@ angular.module('comments')
               if(heatmapIntensity[i] !== true && heatmapIntensity[i] > 0){
                 relevantComments[i].innerText = heatmapIntensity[i];
               }
-            } else if( (value <= i + 2) && (value >= i - 2 )){
-              if(heatmapIntensity[i] !== true && heatmapIntensity[i] != 0)
-                relevantComments[i].innerText = heatmapIntensity[i];
             } else { 
               relevantComments[i].innerText = "";
             }

@@ -1,5 +1,5 @@
 angular.module('comments')
-  .factory('HeatmapService', function($timeout, ContextualCommentsService) {
+  .factory('HeatmapService', function(ContextualCommentsService) {
     'use strict';
 
     var heatmapIntensity;
@@ -18,7 +18,6 @@ angular.module('comments')
 
     function calculatePosition(currAnchor){
       var spot = Math.ceil((currAnchor - topLevel) / 24);
-      console.log(topLevel)
       return spot;
     }
 
@@ -127,9 +126,8 @@ angular.module('comments')
               spot = Math.ceil(calculatePosition(angular.element(activeComments[i]).prop('offsetTop')));
               //heatmapDivs[spot].style.border = "2px solid black";
             }
-
+            
             updateHeatmapColor();
-             console.log(comments, heatmapIntensity)
           });
       },
 

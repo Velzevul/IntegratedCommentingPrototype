@@ -23,13 +23,7 @@ angular.module('comments')
               if($scope.$parent.prototypeValue == 'integrated'){
                 var filterValue = value[2];
                 if(filterValue === undefined || filterValue === ''){
-                  if( $scope.$parent.activeTab == 'contextual' ){
-                      addClasses();
-                  } else if( $scope.$parent.activeTab == 'profOnly' && $scope.comment.hasInstructor){
-                    addClasses();
-                  } else {
-                    removeClasses();
-                  }
+                  addClasses();
                 } else {
                   if($scope.comment && $scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
                     addClasses();
@@ -44,15 +38,8 @@ angular.module('comments')
                     spot = Math.floor((angular.element(elem).prop('offsetTop')-120)/24) ;
 
                 if(filterValue === undefined || filterValue == '' ){
-                  if( value[1] == true && $scope.comment.hasInstructor  ){
-                    if( valueActiveLine.indexOf(spot) >= 0 ){
-                      addClasses();
-                    } else {
-                      removeClasses();
-                    }
-                  } else if( value[1] != true && valueActiveLine.indexOf(spot) >= 0 ){
+                  if( value[1] != true && valueActiveLine.indexOf(spot) >= 0 ){
                     addClasses();
-
                   } else {
                     removeClasses();
                   }
@@ -60,6 +47,7 @@ angular.module('comments')
                   $scope.$parent.showProfOnly = false;
                   $scope.$parent.onlyProf = false;
                   if($scope.comment && $scope.$parent.newSearchValue >= 0){
+                    //this stops the heatmap from doubling
                     $scope.$parent.newSearchValue++;
                   }
                   if($scope.comment && $scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
@@ -85,9 +73,7 @@ angular.module('comments')
                     filterValue = value[2];
 
                   if(filterValue === undefined || filterValue == ''){
-                    if( (value[1] == true && $scope.comment.hasInstructor)  ){
-                      addClasses();
-                    } else if (  elem[0].parentElement.id == valueActiveTab ){
+                    if (  elem[0].parentElement.id == valueActiveTab ){
                       addClasses();
                     } else {
                       removeClasses();

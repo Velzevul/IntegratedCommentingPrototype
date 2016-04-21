@@ -264,7 +264,6 @@ angular.module('comments')
         console.log(JSON.stringify(mock))
       },
       setMock: function(prototypeValue, clutter){
-        console.log(clutter)
         if(clutter != 'true'){
           if(prototypeValue == 'amateurs'){
             mock = mockData[0].data;

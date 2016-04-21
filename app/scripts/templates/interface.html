@@ -1,0 +1,24 @@
+<div class="grid grid--center grid--full">
+    <div class="grid__item three-quarters">
+        <heatmap ng-show="interfaceType === 'heatmap'"></heatmap>
+        <!-- <div class="" ng-repeat="n in setDivs(47) track by $index" ng-show="interfaceType === 'heatmap'">
+            <span class="relevantComments" id="anchorRelevant{{$index}}" relevant-anchor ></span>
+            <span class="heatmap" id="{{$index}}" ng-click="setActiveLine( $index )" heatmap ></span>
+            <span class="teacherParticipation" id="teacherParticipation{{$index}}" ng-click="setActiveLine( $index )" teacherParticipation></span>
+        </div> -->
+
+        <!-- check how to re-initialize html so that it recognizes directives -->
+        <div ng-html={content}>
+    </div><!--
+    --><div class="grid__item one-quarter">
+        <!-- TODO: rename to search -->
+        <comment-tabs></comment-tabs>
+        <!--<div class="container"><options-panel></options-panel></div>-->
+
+        <div class="new-positioning-grid">
+            <div ng-repeat="comment in comments | filter:filterLine track by $index">
+                <contextual-comment comment="comment"></contextual-comment>
+            </div>
+        </div>
+    </div>
+</div>
