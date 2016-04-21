@@ -1,5 +1,5 @@
 angular.module('comments')
-  .factory('ContextualCommentsService', function($timeout, $q, $http, SelectionService, UserService) {
+  .factory('ContextualCommentsService', function($timeout, $q, $http, SelectionService, UserService, rootPrefix) {
     'use strict';
 
     var mock = [],
@@ -17,12 +17,12 @@ angular.module('comments')
     updateIdIndexMap();
 
     promise = $q.all([
-      $http.get('/data/comments-1.json'),//Amateurs
-      $http.get('/data/comments-2.json'),//light
-      $http.get('/data/comments-3.json'),//life
-      $http.get('/data/comments-1-clutter.json'),
-      $http.get('/data/comments-2-clutter.json'),
-      $http.get('/data/comments-3-clutter.json')
+      $http.get(rootPrefix + '/data/comments-1.json'),//Amateurs
+      $http.get(rootPrefix + '/data/comments-2.json'),//light
+      $http.get(rootPrefix + '/data/comments-3.json'),//life
+      $http.get(rootPrefix + '/data/comments-1-clutter.json'),
+      $http.get(rootPrefix + '/data/comments-2-clutter.json'),
+      $http.get(rootPrefix + '/data/comments-3-clutter.json')
     ])
       .then(function(response) {
         mockData = response;
@@ -160,7 +160,7 @@ angular.module('comments')
             secondPreviousComment,
             secondPreviousCommentElement,
             newPosition;
-        
+
         //sets correct anchors to search through
         if(anchors.length){
           for( var i = 0 ; i < anchors.length ; i++ ){
@@ -171,11 +171,11 @@ angular.module('comments')
         if (threads.length) {
           angular.forEach(ids, function(comment, index) {
             anchor = anchors[index];
-            
+
             if (index > 0) {
               previousComment = ids[index - 1];
               previousCommentElement = $('.thread-contextual')[index - 1];
-              
+
               if (previousComment.isSelected && index > 1) {
                 secondPreviousComment = ids[index - 2];
                 secondPreviousCommentElement = $('.thread-contextual')[index - 2];
@@ -197,7 +197,7 @@ angular.module('comments')
             }
             comment.position = newPosition ;
           });
-        }        
+        }
       },
       deactivateAll: function() {
         var self = this;
@@ -280,7 +280,7 @@ angular.module('comments')
             mock = mockData[4].data;
           } else if(prototypeValue == 'life'){
             mock = mockData[5].data;
-          }      
+          }
         }
         updateStatsCache();
         updateIdIndexMap();
