@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     express: {
       server: {
         options: {
-          bases: ["app", "bower_components", "answers", "logger"],
+          bases: ["app", "bower_components", "answers", "logger", "study"],
           livereload: true
         }
       }

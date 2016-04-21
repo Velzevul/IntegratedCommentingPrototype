@@ -1,0 +1,132 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:active {
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+  color: rgb(25,25,27);
+  background: rgb(240,240,240);
+}
+
+.centered {
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+  .centered__item {
+    padding: 48px 24px 24px 24px;
+    margin-bottom: 24px;
+
+    background: white;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 1px 0 #ccc,
+                0 1px 3px rgba(0,0,0,0.25);
+  }
+
+.study-title {
+  font-size: 36px;
+  text-align: center;
+
+  padding-bottom: 36px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.form-row {
+  width: 500px;
+  display: flex;
+  align-items: center;
+}
+  .form-row__cell {
+    flex: 1;
+  }
+    .form-row__cell--label {
+      flex: 0 0 150px;
+      padding-right: 24px;
+
+      font-weight: 600;
+
+      text-align: right;
+    }
+
+
+.l-block {
+  margin-bottom: 24px;
+}
+.l-block-large {
+  margin-bottom: 48px;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 24px;
+  padding: 0 6px;
+
+  line-height: 24px;
+
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-radio {
+  margin-right: 6px;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+
+  border-top: 1px solid #cfcfcf;
+}
+
+.form-button {
+  display: block;
+  margin: 0;
+  padding: 6px 12px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
+
+  border: none;
+  border-radius: 3px;
+  background: #499A57;
+  box-shadow: 0 1px 0 0 #397544;
+}
+  .form-button:hover {
+    background-color: #56B867;
+  }
+  .form-button:active {
+    background-color: #5DC26E;
+  }
+  .form-button:disabled {
+    background-color: #A3BFA8;
+  }
+
+.l-justify {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  .l-justify__section {
+    display: flex;
+    align-items: center;
+  }
+  .l-justify__item + .l-justify__item {
+    margin-left: 6px;
+  }

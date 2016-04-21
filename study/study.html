@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" ng-app="study">
+  <head>
+    <meta charset="UTF-8">
+    <title>User study</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="study.css">
+  </head>
+  <body ng-controller="studyController">
+    <form class="centered" ng-submit="submit()">
+      <div class="centered__item">
+        <div class="l-block-large">
+          <div class="study-title">Study Information</div>
+        </div>
+
+        <div class="l-block">
+          <label class="form-row">
+            <div class="form-row__cell form-row__cell--label">Participant ID</div>
+            <div class="form-row__cell">
+              <input type="text" class="form-input">
+            </div>
+          </label>
+        </div>
+
+        <div class="l-block">
+          <div class="form-row">
+            <div class="form-row__cell form-row__cell--label">Interface</div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="interface" value="integrated">Integrated</label>
+            </div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="interface" value="paragraph">Paragraph</label>
+            </div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="interface" value="heatmap">Heatmap</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="l-block">
+          <div class="form-row">
+            <div class="form-row__cell form-row__cell--label">Content</div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="content" value="light">Light</label>
+            </div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="content" value="life">Life</label>
+            </div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="content" value="amateurs">Amateurs</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="l-block-large">
+          <div class="form-row">
+            <div class="form-row__cell form-row__cell--label">Clutter</div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="clutter" value="true">On</label>
+            </div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="clutter" value="false">Off</label>
+            </div>
+            <div class="form-row__cell">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button class="form-button">Save and Start</button>
+        </div>
+      </div>
+    </form>
+
+    <script src="angular/angular.js"></script>
+    <script src="logger.js"></script>
+    <script src="study.js"></script>
+  </body>
+</html>
