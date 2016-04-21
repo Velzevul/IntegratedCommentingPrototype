@@ -4,14 +4,6 @@
   var app = angular.module('comments', ['truncate', 'app-templates', 'monospaced.elastic', 'ngRoute']);
   window.app = app;
 
-  app.factory('server', function() {
-    if (typeof(DEVELOPMENT) === 'undefined') {
-      return '//vdziubak.com:8000'; // production environment
-    } else {
-      return '//0.0.0.0:7000'; // development environment
-    }
-  });
-
   app.factory('rootPrefix', function() {
     if (typeof(DEVELOPMENT) === 'undefined') {
       return '/switter';
@@ -34,7 +26,6 @@
 
       //   }
       // });
-
         .when('/integrated', {
             controller: 'integratedController',
           templateUrl: function(name){
