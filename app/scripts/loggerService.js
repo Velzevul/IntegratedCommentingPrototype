@@ -1,7 +1,5 @@
 angular.module('comments')
-  .factory('LoggerService', function($q) {
-    var serverUrl = '//vdziubak.com:8000';
-
+  .factory('LoggerService', function($q, server) {
     var studyData = {
       participantId: null,
       session: '',
@@ -11,7 +9,7 @@ angular.module('comments')
     };
 
     var log = function(message) {
-      $q.post(serverUrl + '/logs', Object.assign({}, studyData, {
+      $q.post(server + '/logs', Object.assign({}, studyData, {
         timestamp: new Date().toString(),
         message: message
       }));
