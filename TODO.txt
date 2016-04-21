@@ -1,16 +1,11 @@
-Search:
-- add "clear search" button/action that clears search and removes all filters
-  on comments (tip: remove "search:" text before the search bar and you will
-  have space for another button)
-
 - developer panel - should be just "finish" button that takes to the home
   startScreen
 
 - home screen - three groups of configs:
-    - interface
+    - interface with "training" button
     - content
     - clutter
-  and a "start experiment" button
+  "start experiment" button
 
 - paragraph level - do not show comments/bubbles if there aren't any. In case of
   heatmap we don't display "empty" heatmap, do we? empty paragraph indicators
@@ -24,7 +19,7 @@ Search:
 
 - connect LoggerService's "log" call to all the interactive parts with
   corresponding messages:
-    - start experiment (log participantId, timestamp, and all the config params)
+    - start experiment (log participantId, timestamp, and all the config params, session type - training or task)
     - click on an anchor (log comment ID)
     - click on a comment (log comment ID)
     - search (log search term)
@@ -35,3 +30,5 @@ Search:
     - end experiment (log participantId, timestamp, and all the config params)
 
 - remove all console.log statements
+
+- inital text for training.

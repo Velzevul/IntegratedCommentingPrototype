@@ -3,15 +3,13 @@
     "id": 122,
     "text": "Sounds scary!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Mecit Arissen",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 148,
@@ -24,15 +22,13 @@
     "id": 120,
     "text": "That's nice imagery!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Mecit Arissen",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 251,
@@ -45,15 +41,13 @@
     "id": 121,
     "text": "thats 48 kilometres!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Valentina Gori",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 354,
@@ -66,29 +60,26 @@
     "id": 17,
     "text": "This is explained at the bottom of the article!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Arthur Simonis",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 457,
+    "position": 172,
     "$$hashKey": "object:126",
     "isSelected": false,
-    "highlightedAnchor": false,
-    "replyRequested": false,
-    "isHighlighted": false
+    "highlightedAnchor": true,
+    "replyRequested": false
   },
   {
     "id": 10,
     "text": "I think light pollution is not something a majority of people will even think about because artificial lighting has become a norm.",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Amice Batts",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -99,7 +90,7 @@
         "id": 11,
         "text": "Yes, after reading about it, it is very concerning about the negative effects that light pollution can cause",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Thei Fay",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -110,7 +101,7 @@
         "id": 12,
         "text": "Light pollution affects a lot more than i thought and it is very bad!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Gerold Slane",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -120,7 +111,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 560,
+    "position": 275,
     "$$hashKey": "object:76",
     "isSelected": false,
     "highlightedAnchor": false
@@ -129,7 +120,7 @@
     "id": 13,
     "text": "It is comforting to know that people are doing something to help prevent light pollution",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Eidel Silje",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -140,7 +131,7 @@
         "id": 14,
         "text": "I don't really think its as big of a deal as everyone has been saying",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Yun Peynirci",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -151,7 +142,7 @@
         "id": 15,
         "text": "Yes but it is still a concern with wildlife being affected as well as creating more accidents on roads",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Selma Haupt",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -162,7 +153,7 @@
         "id": 16,
         "text": "The measures taken to reduce light pollution can help a lot with these",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Kyleigh Dimov",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -172,7 +163,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 679,
+    "position": 394,
     "$$hashKey": "object:99",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -182,15 +173,13 @@
     "id": 123,
     "text": "That's a lot of stars!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Brandt Bone",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 798,
@@ -202,7 +191,7 @@
     "id": 124,
     "text": "Does this mean no rain?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Brandt Bone",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -213,7 +202,7 @@
         "id": 125,
         "text": "and no clouds!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Pallab Franklyn",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -232,15 +221,13 @@
     "id": 126,
     "text": "I can barely see any stars..",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Nuada Holgersson",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1004,
@@ -253,15 +240,13 @@
     "id": 127,
     "text": "Does this mean it bounces off the ground, or is it literally pointed upwards",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "James Cameron",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1107,
@@ -274,15 +259,13 @@
     "id": 128,
     "text": "I think these need to be illuminated by that much",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Teddy Bear",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1226,
@@ -294,15 +277,13 @@
     "id": 129,
     "text": "That's cool!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Juan Manuel",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1345,
@@ -315,15 +296,13 @@
     "id": 130,
     "text": "That makes sense",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Comon Lugic",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1448,
@@ -335,15 +314,13 @@
     "id": 131,
     "text": "That makes sense",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Lester Eisma",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1551,
@@ -355,7 +332,7 @@
     "id": 1,
     "text": "Does this count as a negative effect?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kamryn Sass",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -366,7 +343,7 @@
         "id": 2,
         "text": "I think it does because more crime is bad",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Johnny Dep",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -378,7 +355,7 @@
     "hasInstructor": false,
     "$$hashKey": "object:8",
     "isSelected": false,
-    "position": 1654,
+    "position": 556,
     "highlightedAnchor": false,
     "isHighlighted": false
   },
@@ -386,7 +363,7 @@
     "id": 6,
     "text": "I feel like light would help a lot stopping people from committing crime around these ares",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Karolina Alberts",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -397,7 +374,7 @@
         "id": 7,
         "text": "I agree but if everywhere has lighting like the article suggests, then i don't believe it will have an effect",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Paden Aaltink",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -408,7 +385,7 @@
         "id": 8,
         "text": "Yes but they are an association fighting light pollution and we dont know how they came to this conclusion",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Rachelle Aliberti",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -419,7 +396,7 @@
         "id": 9,
         "text": "The article mentions a majority of crime happens in daylight rather than night anyways",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Hilda Vastagh",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -429,7 +406,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 1757,
+    "position": 659,
     "$$hashKey": "object:51",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -439,15 +416,13 @@
     "id": 132,
     "text": "I think they would be closed for privacy anyways",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Te Li",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1876,
@@ -460,15 +435,13 @@
     "id": 133,
     "text": "Their probably would be no one to see it anyways",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jessica Mendoza",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1995,
@@ -480,15 +453,13 @@
     "id": 134,
     "text": "maybe because people dont get caught at night?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Rafinha Hayden",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2114,
@@ -501,7 +472,7 @@
     "id": 80,
     "text": "Not only from road lighting sources but from other cars as well!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Asenath Croce",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -512,7 +483,7 @@
         "id": 81,
         "text": "Oh light pollution can also be very annoying when you are trying to sleep or take a nap",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Avtandil Josephson",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -523,7 +494,7 @@
         "id": 82,
         "text": "So not only can light pollution directly make driving more hazardous, but it can also cause a lack of sleep leading to a loss of concentration",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Erol Eklund",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -534,7 +505,7 @@
         "id": 83,
         "text": "Just like it was mentioned before, people would close their blinds because of bright it is and this can lead to more crimes",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Veit Abbingh",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -545,7 +516,7 @@
         "id": 84,
         "text": "The amount of effort it requires to make all this light is bad for our healths too, because they increase the amount of fossil fuels needed for energy",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Muhsin Somma",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -556,7 +527,7 @@
         "id": 86,
         "text": "Yes but light helps us see better at night an that might potentially help us reduce fatal collisions",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Mecit Arissen",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -576,15 +547,13 @@
     "id": 135,
     "text": "this must be hard to enforce.",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Rafinha Hayden",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2336,
@@ -597,15 +566,13 @@
     "id": 136,
     "text": "I never thought about that!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Steafan Abbey",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2439,
@@ -617,7 +584,7 @@
     "id": 137,
     "text": "That is so interesting!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Pam Ela",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -628,7 +595,7 @@
         "id": 138,
         "text": "Yea but it sucks for the turtles",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Mariz Turla",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -647,15 +614,13 @@
     "id": 139,
     "text": "I thought that lights would help the birds see the towers",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Paul Chang",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2661,
@@ -668,7 +633,7 @@
     "id": 140,
     "text": "This is also bad for global warming",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Hanne McKinney",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -679,7 +644,7 @@
         "id": 141,
         "text": "That can be very scary",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Shay Bosco",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -698,15 +663,13 @@
     "id": 142,
     "text": "That's good to hear!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ruslan Henriques",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2867,
@@ -718,15 +681,13 @@
     "id": 143,
     "text": "What does this mean?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Cristiana McNeal",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2970,
@@ -738,15 +699,13 @@
     "id": 144,
     "text": "Thats cool!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Cristiana McNeal",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3073,
@@ -759,15 +718,13 @@
     "id": 145,
     "text": "is that a lot?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Eliyyahu Wolff",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3176,
@@ -779,15 +736,13 @@
     "id": 146,
     "text": "I've never heard anyone use this before",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Nickolaus Davis",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3279,
@@ -799,15 +754,13 @@
     "id": 147,
     "text": "I don't mind, I'm scared of the dark",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Caratacos Pottinger",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3382,
@@ -819,18 +772,16 @@
     "id": 5,
     "text": "To help prevent such accidents, some cities and states prohibit the use of lights that impair night-time vision",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 2233,
+    "hasInstructor": true,
+    "position": 897,
     "$$hashKey": "object:37",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -841,15 +792,13 @@
     "id": 149,
     "text": "It's good the government is helping",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Agnetha Bond",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3604,
@@ -861,15 +810,13 @@
     "id": 148,
     "text": "Thats important",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Monica Medina",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3707,
@@ -882,15 +829,13 @@
     "id": 150,
     "text": "That is very true!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Tailor Cox",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3810,
@@ -903,15 +848,13 @@
     "id": 151,
     "text": "It would be impossible to be 100% efficient",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Helen Cameron",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3913,
@@ -924,15 +867,13 @@
     "id": 152,
     "text": "Thats a lot of money!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kelvin Young",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4016,
@@ -944,7 +885,7 @@
     "id": 153,
     "text": "What is the IDA?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Rachel Dressler",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -955,7 +896,7 @@
         "id": 154,
         "text": "International Dark Sky Association",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Taylor Swift",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -974,15 +915,13 @@
     "id": 155,
     "text": "That is cool they have actually implemented something to help counter light pollution",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ross Wolff",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4238,
@@ -994,15 +933,13 @@
     "id": 157,
     "text": "This is almost nothing compared to $3 billion",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jim Chun",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4357,
@@ -1014,15 +951,13 @@
   {
     "id": 158,
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Bruce Lee",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4553,
@@ -1034,7 +969,7 @@
     "id": 159,
     "text": "I think this is the most important thing!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jack Sparrow",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -1064,15 +999,13 @@
     "id": 161,
     "text": "Does this mean kids taking the habits of their parents?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Hie Jinx",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1324,
@@ -1084,40 +1017,35 @@
     "id": 3,
     "text": "Did you know after retrofitting inefficient mercury lighting with low-sodium lights, the city has greatly reduced light pollution",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 3501,
+    "hasInstructor": true,
+    "position": 1060,
     "$$hashKey": "object:23",
     "isSelected": false,
     "highlightedAnchor": false,
-    "replyRequested": false,
-    "isHighlighted": false
+    "replyRequested": false
   },
   {
     "id": 4,
     "text": "Replacing old bulbs and fixtures with more efficient and better-designed bulbs can make a big difference in preserving the night sky",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 4852,
+    "hasInstructor": true,
+    "position": 1480,
     "$$hashKey": "object:35",
     "isSelected": false,
     "highlightedAnchor": false,

@@ -49,7 +49,6 @@ angular.module('comments')
             $scope.contextualComments = ContextualCommentsService.getAll();
             $scope.activeTab = 'contextual';
             HeatmapService.initilize(100);
-            console.log('loaded ' + $scope.contextualComments.length + ' comments');
             $scope.showProfOnly = false;
             $scope.relevantAnchors = new Array (79);
             //search value stops the heatmap from doubling
@@ -124,7 +123,6 @@ angular.module('comments')
     var buttons = $('[comment-buttons]'),
         paragraph = $('[paragraph]');
 
-    console.log($(buttons[0]).parent().parent());
     //initlize buttons
     $scope.initlizeButtons = function(){
         var tempComment,
@@ -212,6 +210,5 @@ angular.module('comments')
             // need to add line
             $scope.shownParagraphs.push(value);
         }
-        console.log($scope.shownParagraphs)
     });
   });

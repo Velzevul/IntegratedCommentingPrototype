@@ -1,7 +1,7 @@
 (function(window) {
   'use strict';
 
-  var app = angular.module('comments', ['truncate', 'app-templates', 'monospaced.elastic', 'ngRoute']);
+  var app = angular.module('comments', ['logger', 'truncate', 'app-templates', 'monospaced.elastic', 'ngRoute']);
   window.app = app;
 
   app.factory('rootPrefix', function() {

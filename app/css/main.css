@@ -2631,10 +2631,13 @@ textarea {
   padding-left: 0px;
 }
 .search-bar-item {
-  width: 60%;
-  height: 24px;
-  font-size: 20px;
+  width: 160px;
+  height: 32px;
+  padding: 3px 6px;
+  font-size: 14px;
+  line-height: 24px;
   border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
 .container{

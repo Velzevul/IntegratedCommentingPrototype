@@ -7,6 +7,7 @@ angular.module('comments')
     var topLevel = angular.element($('[first]')[0]).prop('offsetTop') + 24; 
 
     function initilizeHeatmap(size){
+      console.log('initializing heatmap');
       var intensity = new Array(size);
       //initilize array to 0's
       for(var i = 0; i < size; i++){
@@ -25,7 +26,9 @@ angular.module('comments')
 
     }
 
-    function updateHeatmapColor(){
+    function updateHeatmapColor(caller){
+      console.log('coloring heatmap from ' + caller);
+
       var heatmapDivs = $('[heatmap]'),
           activeComments = $('[comment-anchor]'),
           relevantComments = $('[relevant-anchor]'),
@@ -127,15 +130,15 @@ angular.module('comments')
               //heatmapDivs[spot].style.border = "2px solid black";
             }
             
-            updateHeatmapColor();
+            updateHeatmapColor('heatmap.initialize');
           });
       },
 
       getHeatmap: function(){
         return heatmapIntensity;
       },
-      updateHeatmap: function(){
-        updateHeatmapColor();
+      updateHeatmap: function(caller){
+        updateHeatmapColor(caller);
       },
       newAnchor: function(newAnchor){
         var spot = calculatePosition(newAnchor);

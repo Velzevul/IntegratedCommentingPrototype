@@ -2,15 +2,13 @@
   {
     "id": 83,
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Hugo Isaev",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "isSelected": false
@@ -19,15 +17,13 @@
     "id": 80,
     "text": "Is this the 1800's?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Didi Knochenmus",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 148,
@@ -40,15 +36,13 @@
     "id": 81,
     "text": "With their own money?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Francisca Berkowitz",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 251,
@@ -62,7 +56,7 @@
     "id": 55,
     "text": "Doesn't that mean that they're not actually amateurs, if they're the one making the advances?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Arthur Simonis",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -73,7 +67,7 @@
         "id": 56,
         "text": "I agree with you on that, I don't think its fair to call them amateurs if they are the most advanced in their fields.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Guy Nguyen",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -84,7 +78,7 @@
         "id": 57,
         "text": "I think they had a broad knowledge of a lot of things, therefore they're not experts in a certain field",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Mike Cenina",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -95,7 +89,7 @@
         "id": 58,
         "text": "Yea but if no one else knows more then they are an expert?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Mariel Medina",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -106,7 +100,7 @@
         "id": 65,
         "text": "Are amateurs interested in the subject? what defines an amateur?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jim Jones",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -117,7 +111,7 @@
         "id": 66,
         "text": "I think it depends on the person. If you have a phd in physics you would be considered ann expert by normal people, and others with a specialized degree in physics would consider you an amateur still.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jimmy Neutron",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -138,7 +132,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 354,
+    "position": 196,
     "$$hashKey": "object:167",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -148,15 +142,13 @@
     "id": 84,
     "text": "What defines an amateur?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Yusif Van Aller",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 576,
@@ -169,15 +161,13 @@
     "id": 85,
     "text": "That's a lot of fields!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Charisma Abujamal",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 679,
@@ -190,15 +180,13 @@
     "id": 82,
     "text": "what does this mean?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jeltje Basurto",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 473,
@@ -212,15 +200,13 @@
     "id": 86,
     "text": "Are they crackpots because they dont know what they're doing?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Stanislava Trask",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 901,
@@ -233,15 +219,13 @@
     "id": 87,
     "text": "They should be compensated",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Junia Collins",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1004,
@@ -254,15 +238,13 @@
     "id": 88,
     "text": "which fields",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Simonu Groves",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1107,
@@ -276,15 +258,13 @@
     "id": 89,
     "text": "can amateurs afford this?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Judith Kaur",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1210,
@@ -298,7 +278,7 @@
     "id": 90,
     "text": "I think we should supervise amateurs",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Govad Schlender",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -309,7 +289,7 @@
         "id": 91,
         "text": "then they wouldn't be amateurs",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Fotios Radcliff",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -328,15 +308,13 @@
     "id": 92,
     "text": "How can they contribute to this?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Aureliana Amadei",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1416,
@@ -350,15 +328,13 @@
     "id": 93,
     "text": "Thats interesting!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Amanda Serediuk",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1519,
@@ -371,7 +347,7 @@
     "id": 21,
     "text": "Theres more than 3 fields here which do I use???",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Amice Batts",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -382,7 +358,7 @@
         "id": 22,
         "text": "Keep reading to find out!!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Thei Fay",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -394,7 +370,7 @@
     "hasInstructor": false,
     "$$hashKey": "object:8",
     "isSelected": false,
-    "position": 782,
+    "position": 316,
     "highlightedAnchor": false,
     "isHighlighted": false
   },
@@ -402,15 +378,13 @@
     "id": 94,
     "text": "Do long traditions mean anything?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "James Armstrong",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1741,
@@ -423,7 +397,7 @@
     "id": 47,
     "text": "I feel like amateurs cant really help as much because the equipment they have is not as powerful",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Gerold Slane",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -434,7 +408,7 @@
         "id": 48,
         "text": "For the same reason i feel like help amateurs can give is limited",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Eidel Silje",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -445,7 +419,7 @@
         "id": 49,
         "text": "buying the more powerful equipment will add up in cost very fast, and amateurs may not want to sink in so much time",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Yun Peynirci",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -456,7 +430,7 @@
         "id": 52,
         "text": "I think that amateurs are still helpful even with worse equipment because theres so many people making observations",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Selma Haupt",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -466,7 +440,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 1638,
+    "position": 556,
     "$$hashKey": "object:205",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -476,18 +450,16 @@
     "id": 25,
     "text": "Uranus was also found by amateurs, as well as various comets and asteroids.",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 1860,
+    "hasInstructor": true,
+    "position": 675,
     "$$hashKey": "object:37",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -496,20 +468,18 @@
   },
   {
     "id": 27,
-    "text": "This makes special kinds of observations possible: several observers around the world accurately record the time when a star is eclipsed by an asteroid, for example, it is possible to derive useful information about the asteroid\u2019s shape",
+    "text": "This makes special kinds of observations possible: several observers around the world accurately record the time when a star is eclipsed by an asteroid, for example, it is possible to derive useful information about the asteroid’s shape",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 1979,
+    "hasInstructor": true,
+    "position": 794,
     "$$hashKey": "object:41",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -520,7 +490,7 @@
     "id": 50,
     "text": "Due to this I believe that astronomy is a lot harder to bring amateurs together",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kyleigh Dimov",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -531,7 +501,7 @@
         "id": 51,
         "text": "This also might turn amateurs away from helping experts.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Kimberlyn Olvirsson",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -542,7 +512,7 @@
         "id": 53,
         "text": "I feel like people are naturally drawn to space anyways so this wont really discourage them",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Maura Deniel",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -552,7 +522,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 2098,
+    "position": 913,
     "$$hashKey": "object:232",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -562,7 +532,7 @@
     "id": 40,
     "text": "The help of amateurs is probably the most important here because of how interested everyone is of the past",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kamryn Sass",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -573,7 +543,7 @@
         "id": 41,
         "text": "I agree as well",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Karolina Alberts",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -583,7 +553,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 2217,
+    "position": 1032,
     "$$hashKey": "object:151",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -593,15 +563,13 @@
     "id": 95,
     "text": "Easy for people to miss seeing things too!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jesse Schmidt",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2439,
@@ -615,7 +583,7 @@
     "id": 29,
     "text": "I think palaeontology is the most important field because this helps us understand our past.",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Derya MacCailín",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -626,7 +594,7 @@
         "id": 32,
         "text": "But what if an amateur ends up damaging an important fossil?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jessica Gardinier",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -637,7 +605,7 @@
         "id": 33,
         "text": "I think Astronomy is more important as it pertains as to what is happening right now in the universe!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Carlotta Wakefield",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -648,7 +616,7 @@
         "id": 34,
         "text": "I agree that having many amateurs helping find fossils will greatly increase the speed in which discoveries are found.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Breda Griffin",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -659,7 +627,7 @@
         "id": 35,
         "text": "^ but that could be said with any of the other fields.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Rajmund Kock",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -669,7 +637,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 2336,
+    "position": 1151,
     "$$hashKey": "object:70",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -677,9 +645,9 @@
   },
   {
     "id": 42,
-    "text": "This is a very big reason i think palaeontology is the most important",
+    "text": "This is a very big reason I think palaeontology is the most important",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Brynne Frank",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -690,7 +658,7 @@
         "id": 43,
         "text": "Learning is a very important outcome of this time of volunteering",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Sam Miazga",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -701,7 +669,7 @@
         "id": 44,
         "text": "This is another reason i think palaeontology is the most important branches",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Caetano Lenox",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -712,7 +680,7 @@
         "id": 45,
         "text": "I disagree and feel like every amateur would learn from the other branches as well",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Natasha Schuler",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -723,7 +691,7 @@
         "id": 46,
         "text": "I feel like the other branches are more for the experts learning",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Meridith Terzi",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -733,7 +701,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 2558,
+    "position": 1270,
     "$$hashKey": "object:173",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -743,15 +711,13 @@
     "id": 96,
     "text": "That's a lot",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Paul Chang",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2780,
@@ -765,7 +731,7 @@
     "id": 97,
     "text": "what is a huge number?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jenni Ceelen",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -776,7 +742,7 @@
         "id": 98,
         "text": "like 6 million maybe?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Niel Young",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -796,7 +762,7 @@
     "id": 36,
     "text": "I believe amateurs are helpful here, but palaeontology is more important for amateurs because many of these projects require a lot of teamwork to be effective",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Wen Maksimov",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -807,7 +773,7 @@
         "id": 37,
         "text": "I agree that ornithology is not the most important because of the same reason",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Winfred Hayley",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -818,7 +784,7 @@
         "id": 38,
         "text": "I believe ornithology is most useful because of how many people enjoy the hobby",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Rebekka Ó Néill",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -829,7 +795,7 @@
         "id": 39,
         "text": "^ the same could be said about palaeontology",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Alice Kartal",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -839,7 +805,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 2677,
+    "position": 1389,
     "$$hashKey": "object:124",
     "isSelected": false,
     "highlightedAnchor": false
@@ -848,15 +814,13 @@
     "id": 99,
     "text": "does that mean every field?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Aldo Grillo",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3105,
@@ -869,15 +833,13 @@
     "id": 100,
     "text": "This seems very important!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Dat Guy",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3208,
@@ -891,7 +853,7 @@
     "id": 101,
     "text": "I wouldn't be happy about it either",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Klas Garrard",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -902,7 +864,7 @@
         "id": 102,
         "text": "Neither would I!!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Dolores Storstrand",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -922,15 +884,13 @@
     "id": 103,
     "text": "This still doesn't sound good",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jim Young",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3414,
@@ -944,7 +904,7 @@
     "id": 104,
     "text": "This sounds the best to me!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Vaughan McNeal",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -955,7 +915,7 @@
         "id": 105,
         "text": "They all sound degrading haha",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "James Bond",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -975,18 +935,16 @@
     "id": 28,
     "text": "One of these projects have helped uncover previously unknown trends and cycles in bird migrations",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Noble Pesti",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 3002,
+    "position": 1508,
     "$$hashKey": "object:55",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -997,15 +955,13 @@
     "id": 106,
     "text": "I would be mad because the scientist would get reimbursed",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Harry Potter",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3755,
@@ -1019,15 +975,13 @@
     "id": 107,
     "text": "Doesn't this mean they have to write the paper?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Abram Czajka",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3874,
@@ -1041,7 +995,7 @@
     "id": 108,
     "text": "I want to keep a dinosaurs head!!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Noe Rose",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -1052,7 +1006,7 @@
         "id": 109,
         "text": "Me too haha",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Albina Montagne",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -1072,18 +1026,16 @@
     "id": 54,
     "text": "this is important!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kory Frazier",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 3636,
+    "position": 1627,
     "$$hashKey": "object:263",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -1094,15 +1046,13 @@
     "id": 111,
     "text": "This sounds degrading to me haha",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Jimmy Carter",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4183,
@@ -1115,15 +1065,13 @@
     "id": 110,
     "text": "Thats a lot of money!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Donald Trump",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4286,
@@ -1136,15 +1084,13 @@
     "id": 112,
     "text": "so they do get paid?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Velimir Soler",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4389,
@@ -1158,15 +1104,13 @@
     "id": 113,
     "text": "They should obviously be credited",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ha-Jun MacBeth",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4492,
@@ -1179,15 +1123,13 @@
     "id": 114,
     "text": "That seems stupid to me",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Monica Medina",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4672,
@@ -1199,15 +1141,13 @@
     "id": 115,
     "text": "That is so cool!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Silas Kay",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4775,
@@ -1221,15 +1161,13 @@
     "id": 116,
     "text": "Is this not dangerous?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Tobias McGuire",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4878,
@@ -1243,7 +1181,7 @@
     "id": 62,
     "text": "How much experience makes someone an expert?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Chaim Bulgarelli",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -1254,7 +1192,7 @@
         "id": 63,
         "text": "I think it depends on the field of study",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Michelle Kovács",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -1264,7 +1202,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 4080,
+    "position": 1730,
     "$$hashKey": "object:253",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -1274,15 +1212,13 @@
     "id": 117,
     "text": "And hopefully keeping them safe!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ofelia Antonise",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1372,
@@ -1295,18 +1231,16 @@
     "id": 26,
     "text": "Dr, Carlson says amateurs provide enthusiasm as well as talant",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Moss Jedlicka",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 4997,
+    "position": 1849,
     "$$hashKey": "object:28",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -1316,20 +1250,18 @@
     "id": 68,
     "text": "That was interesting!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Yui Grahn",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 5177,
+    "position": 1396,
     "$$hashKey": "object:278",
-    "isSelected": false,
+    "isSelected": true,
     "highlightedAnchor": true,
     "replyRequested": false
   }

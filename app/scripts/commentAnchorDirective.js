@@ -17,11 +17,11 @@ angular.module('comments')
           .then(function() {
             $scope.comment = ContextualCommentsService.getOne($scope.id);
 
-            $scope.$parent.$watchGroup(['activeTab', 'showProfOnly', 'filterValue', 'activeLines.length'], function(value, value2, scope) {
+            $scope.$parent.$watchGroup(['activeTab', 'filterValue', 'activeLines.length'], function(value, value2, scope) {
               //console.log(elem.prop('id') ==  1)
               
               if($scope.$parent.prototypeValue == 'integrated'){
-                var filterValue = value[2];
+                var filterValue = value[1];
                 if(filterValue === undefined || filterValue === ''){
                   addClasses();
                 } else {
@@ -33,7 +33,7 @@ angular.module('comments')
                 }
               } else if($scope.$parent.prototypeValue == 'heatmap'){
                 var valueActiveLine = $scope.$parent.activeLines,
-                    filterValue = value[2],
+                    filterValue = value[1],
                     heatmapIntensity = HeatmapService.getHeatmap(),
                     spot = Math.floor((angular.element(elem).prop('offsetTop')-120)/24) ;
 
@@ -67,10 +67,10 @@ angular.module('comments')
                 if($scope.$parent.contextualComments && $scope.$parent.newSearchValue == $scope.$parent.contextualComments.length){
                   $scope.$parent.newSearchValue = -1;
                 }
-                HeatmapService.updateHeatmap();
+                HeatmapService.updateHeatmap('commentAnchor');
               } else if($scope.$parent.prototypeValue == 'paragraph'){
                 var valueActiveTab = value[0],
-                    filterValue = value[2];
+                    filterValue = value[1];
 
                   if(filterValue === undefined || filterValue == ''){
                     if (  elem[0].parentElement.id == valueActiveTab ){

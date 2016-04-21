@@ -3,7 +3,7 @@
     "id": 55,
     "text": "Doesn't that mean that they're not actually amateurs, if they're the one making the advances?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Arthur Simonis",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -14,7 +14,7 @@
         "id": 56,
         "text": "I agree with you on that, I don't think its fair to call them amateurs if they are the most advanced in their fields.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Guy Nguyen",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -25,7 +25,7 @@
         "id": 57,
         "text": "I think they had a broad knowledge of a lot of things, therefore they're not experts in a certain field",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Mike Cenina",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -36,7 +36,7 @@
         "id": 58,
         "text": "Yea but if no one else knows more then they are an expert?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Mariel Medina",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -47,7 +47,7 @@
         "id": 65,
         "text": "Are amateurs interested in the subject? what defines an amateur?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jim Jones",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -58,7 +58,7 @@
         "id": 66,
         "text": "I think it depends on the person. If you have a phd in physics you would be considered ann expert by normal people, and others with a specialized degree in physics would consider you an amateur still.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jimmy Neutron",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -89,7 +89,7 @@
     "id": 21,
     "text": "Theres more than 3 fields here which do I use???",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Amice Batts",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -100,7 +100,7 @@
         "id": 22,
         "text": "Keep reading to find out!!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Thei Fay",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -120,7 +120,7 @@
     "id": 47,
     "text": "I feel like amateurs cant really help as much because the equipment they have is not as powerful",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Gerold Slane",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -131,7 +131,7 @@
         "id": 48,
         "text": "For the same reason i feel like help amateurs can give is limited",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Eidel Silje",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -142,7 +142,7 @@
         "id": 49,
         "text": "buying the more powerful equipment will add up in cost very fast, and amateurs may not want to sink in so much time",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Yun Peynirci",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -153,7 +153,7 @@
         "id": 52,
         "text": "I think that amateurs are still helpful even with worse equipment because theres so many people making observations",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Selma Haupt",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -173,17 +173,15 @@
     "id": 25,
     "text": "Uranus was also found by amateurs, as well as various comets and asteroids.",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
+    "hasInstructor": true,
     "position": 675,
     "$$hashKey": "object:37",
     "isSelected": false,
@@ -193,19 +191,17 @@
   },
   {
     "id": 27,
-    "text": "This makes special kinds of observations possible: several observers around the world accurately record the time when a star is eclipsed by an asteroid, for example, it is possible to derive useful information about the asteroid\u2019s shape",
+    "text": "This makes special kinds of observations possible: several observers around the world accurately record the time when a star is eclipsed by an asteroid, for example, it is possible to derive useful information about the asteroid’s shape",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
+    "hasInstructor": true,
     "position": 794,
     "$$hashKey": "object:41",
     "isSelected": false,
@@ -217,7 +213,7 @@
     "id": 50,
     "text": "Due to this I believe that astronomy is a lot harder to bring amateurs together",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kyleigh Dimov",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -228,7 +224,7 @@
         "id": 51,
         "text": "This also might turn amateurs away from helping experts.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Kimberlyn Olvirsson",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -239,7 +235,7 @@
         "id": 53,
         "text": "I feel like people are naturally drawn to space anyways so this wont really discourage them",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Maura Deniel",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -259,7 +255,7 @@
     "id": 40,
     "text": "The help of amateurs is probably the most important here because of how interested everyone is of the past",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kamryn Sass",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -270,7 +266,7 @@
         "id": 41,
         "text": "I agree as well",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Karolina Alberts",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -290,7 +286,7 @@
     "id": 29,
     "text": "I think palaeontology is the most important field because this helps us understand our past.",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Derya MacCailín",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -301,7 +297,7 @@
         "id": 32,
         "text": "But what if an amateur ends up damaging an important fossil?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jessica Gardinier",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -312,7 +308,7 @@
         "id": 33,
         "text": "I think Astronomy is more important as it pertains as to what is happening right now in the universe!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Carlotta Wakefield",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -323,7 +319,7 @@
         "id": 34,
         "text": "I agree that having many amateurs helping find fossils will greatly increase the speed in which discoveries are found.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Breda Griffin",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -334,7 +330,7 @@
         "id": 35,
         "text": "^ but that could be said with any of the other fields.",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Rajmund Kock",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -352,9 +348,9 @@
   },
   {
     "id": 42,
-    "text": "This is a very big reason i think palaeontology is the most important",
+    "text": "This is a very big reason I think palaeontology is the most important",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Brynne Frank",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -365,7 +361,7 @@
         "id": 43,
         "text": "Learning is a very important outcome of this time of volunteering",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Sam Miazga",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -376,7 +372,7 @@
         "id": 44,
         "text": "This is another reason i think palaeontology is the most important branches",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Caetano Lenox",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -387,7 +383,7 @@
         "id": 45,
         "text": "I disagree and feel like every amateur would learn from the other branches as well",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Natasha Schuler",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -398,7 +394,7 @@
         "id": 46,
         "text": "I feel like the other branches are more for the experts learning",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Meridith Terzi",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -418,7 +414,7 @@
     "id": 36,
     "text": "I believe amateurs are helpful here, but palaeontology is more important for amateurs because many of these projects require a lot of teamwork to be effective",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Wen Maksimov",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -429,7 +425,7 @@
         "id": 37,
         "text": "I agree that ornithology is not the most important because of the same reason",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Winfred Hayley",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -440,7 +436,7 @@
         "id": 38,
         "text": "I believe ornithology is most useful because of how many people enjoy the hobby",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Rebekka Ó Néill",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -451,7 +447,7 @@
         "id": 39,
         "text": "^ the same could be said about palaeontology",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Alice Kartal",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -470,15 +466,13 @@
     "id": 28,
     "text": "One of these projects have helped uncover previously unknown trends and cycles in bird migrations",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Noble Pesti",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1508,
@@ -492,15 +486,13 @@
     "id": 54,
     "text": "this is important!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kory Frazier",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1627,
@@ -514,7 +506,7 @@
     "id": 62,
     "text": "How much experience makes someone an expert?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Chaim Bulgarelli",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -525,7 +517,7 @@
         "id": 63,
         "text": "I think it depends on the field of study",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Michelle Kovács",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -545,15 +537,13 @@
     "id": 26,
     "text": "Dr, Carlson says amateurs provide enthusiasm as well as talant",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Moss Jedlicka",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1849,
@@ -566,15 +556,13 @@
     "id": 68,
     "text": "That was interesting!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Yui Grahn",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1396,

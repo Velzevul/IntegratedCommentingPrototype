@@ -1,10 +1,17 @@
 <div class="search-bar" >
-  <div class="grid grid--narrow">
-  	<div class="grid__item one-whole">
-  		Search: <input ng-keyup="$event.keyCode == 13 ? search() : null" ng-model="filterComments" class="search-bar-item" placeholder="Search by user, keyword"></input>
-         <button class="button button--small button--success" style="margin-left: auto; margin-right: auto; display: inline-block;" ng-click="search()">
-    	   	Find
-        </button>
+  <form ng-submit="search()">
+    <div class="l-list-inline l-list-inline--collapsed">
+      <div class="l-list-inline__item">
+        <input ng-model="filterComments" class="search-bar-item" placeholder="Search by user, keyword"></input>
+      </div>
+
+      <div class="l-list-inline__item">      
+        <button class="button button--success">Find</button>
+      </div>
+
+      <div class="l-list-inline__item">
+        <button type="button" class="button" ng-click="filterComments = ''">Clear</button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>

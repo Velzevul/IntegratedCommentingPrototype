@@ -57,3 +57,175 @@ textarea {
   .dev-toolbar--hidden {
     bottom: -206px;
   }
+
+
+//------------------ Suneet's styles -----------------------
+/********************************
+*
+* anchor display 
+*
+********************************/
+
+.relevantComments {
+  height: 24px;
+  top: 120px;
+  width: 10px;
+  left: -3px;
+  padding: 1px;
+  position: relative;
+  pointer-events: none;
+  clear: right;
+  float: right;
+}
+
+.relevantComments--displayOff {
+  display: none;
+}
+
+.teacherParticipation {
+  height: 24px;
+  color: #10D4D4;
+  top: 120px;
+  width: 10px;
+  padding: 1px;
+  right: 23px;
+  padding-right: 3px;
+  position: relative;
+  cursor: pointer;
+  float: right;
+}
+
+/* Module for search bar implementation */
+.search-bar{
+  position: static;
+  z-index: 3;
+  height: 48px;
+  padding: 12px;
+  font-size: 13px;
+  padding-left: 0px;
+}
+.search-bar-item {
+  width: 200px;
+  height: 24px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.container{
+  position: relative;
+}
+
+.options-toolbar {
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+  height: 165px;
+  z-index: 4;
+  width: 290px;
+  padding:  12px 18px 1px;
+  font-size: 13px;
+  background: white;
+  border: 1px solid #597BE3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.options-toolbar__title {
+  font-weight: 600;
+  font-size: 150%;
+  border-bottom: 1px solid #ccc;
+}
+
+.options-toolbar__input-text {
+  width: 4em;
+  padding: 0 0 0 0.5em;
+  border: 1px solid #C0C0C0;
+  border-radius: 3px;
+}
+
+.options-toolbar__input-color {
+  border: none;
+}
+
+.options-toolbar--hidden {
+  top: 80px;
+}
+
+.document__anchor--num::before {
+    content: attr(data-content);
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    height: 10px;
+    width: 0px;
+    top: -14px;
+    font-size: 13px;
+    color: #10D4D4;
+    line-height: 10px;
+    text-align: center;
+}
+
+.bubble 
+{
+position: absolute;
+width: 40px;
+left: 807px;
+top: 12px;
+height: 35px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #000000 solid 2px;
+}
+
+.bubble:after 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 8px 8px 0;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+bottom: -5px;
+left: 12px;
+}
+
+.bubble:before 
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 9px 9px 0;
+border-color: #000000 transparent;
+display: block;
+width: 0;
+z-index: 0;
+bottom: -8px;
+left: 11px;
+}
+
+.document__anchor--teacher::before {
+    content: 'prof';
+    display: inline-block;
+    position: relative;
+    height: 10px;
+    width: 1px;
+    top: -17px;
+    font-size: 13px;
+    color: #10D4D4;
+    line-height: 10px;
+    text-align: center;
+}
+
+
+.profbubble {
+    color: #10D4D4;
+    top: -46px;
+    right: 5px;
+    position: relative;
+}
+
+
