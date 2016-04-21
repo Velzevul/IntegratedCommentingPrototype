@@ -1,15 +1,15 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    compass: {
-      dist: {
-        options: {
-          sassDir: "app/sass",
-          cssDir: "app/css",
-          imagesDir: "app/images",
-          javascriptsDir: "app/scripts"
-        }
-      }
-    },
+    // compass: {
+    //   dist: {
+    //     options: {
+    //       sassDir: "app/sass",
+    //       cssDir: "app/css",
+    //       imagesDir: "app/images",
+    //       javascriptsDir: "app/scripts"
+    //     }
+    //   }
+    // },
 
     express: {
       server: {
@@ -29,7 +29,8 @@ module.exports = function(grunt) {
         src: ['bower_components/jquery/dist/jquery.js',
               'bower_components/angular/angular.js',
               'bower_components/angular-truncate/src/truncate.js',
-              'bower_components/angular-elastic/elastic.js'],
+              'bower_components/angular-elastic/elastic.js',
+              'bower_components/angular-route/angular-route.js'],
         dest: 'dist/scripts/dependencies.concat.js'
       },
       dist: {
@@ -55,7 +56,8 @@ module.exports = function(grunt) {
 
     copy: {
       modernizr: { expand: true, cwd: 'bower_components/', src: 'modernizr/modernizr.js', dest: 'dist/scripts/', flatten: true },
-      css:       { expand: true, src: 'app/css/*.css', dest: 'dist/css/', flatten: true }
+      css:       { expand: true, src: 'app/css/*.css', dest: 'dist/css/', flatten: true },
+      data:      { expand: true, src: 'app/data/*.json', dest: 'dist/data/', flatten: true}
     },
 
     processhtml: {
@@ -66,10 +68,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      css: {
-        files: ['app/sass/**/*.scss'],
-        tasks: ['compass']
-      },
+      // css: {
+      //   files: ['app/sass/**/*.scss'],
+      //   tasks: ['compass']
+      // },
       templates: {
         files: ['app/scripts/templates/**/*.html'],
         tasks: ['html2js']
@@ -92,6 +94,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-html2js');
 
-  grunt.registerTask('default', ['compass', 'html2js', 'express', 'watch', 'express-keepalive']);
-  grunt.registerTask('dist', ['compass', 'html2js', 'clean:dist', 'concat', 'copy', 'processhtml:dist']);
+  grunt.registerTask('default', [/*'compass',*/ 'html2js', 'express', 'watch', 'express-keepalive']);
+  grunt.registerTask('dist', [/*'compass',*/ 'clean:dist', 'html2js', 'concat', 'copy', 'processhtml:dist']);
 };

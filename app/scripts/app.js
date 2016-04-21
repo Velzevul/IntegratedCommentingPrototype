@@ -3,19 +3,49 @@
 
   var app = angular.module('comments', ['truncate', 'app-templates', 'monospaced.elastic', 'ngRoute']);
   window.app = app;
-   app.config(['$routeProvider', function($routeProvider) {
+
+  app.factory('server', function() {
+    if (typeof(DEVELOPMENT) === 'undefined') {
+      return '//vdziubak.com:8000'; // production environment
+    } else {
+      return '//0.0.0.0:7000'; // development environment
+    }
+  });
+
+  app.factory('rootPrefix', function() {
+    if (typeof(DEVELOPMENT) === 'undefined') {
+      return '/switter';
+    } else {
+      return '';
+    }
+  });
+
+  app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
+      // .when('/', {
+      //   controller: 'startScreenController',
+      //   templateUrl: 'templates/startScreen.html'
+      // })
+      // .when('/interface', {
+      //   controller: function() {
+
+      //   },
+      //   templateUrl: function() {
+
+      //   }
+      // });
+
         .when('/integrated', {
             controller: 'integratedController',
           templateUrl: function(name){
             var path = 'templates/integrated-' + name.content;
-            
+
             if(name.clutter == 'true'){
               path += '_clutter.html';
             } else {
               path += '.html';
             }
-             
+
              return path;
           }
         })
@@ -43,7 +73,7 @@
             } else {
               path += '.html';
             }
-             
+
              return path;
           }
         })
@@ -56,11 +86,9 @@
             } else {
               path += '.html';
             }
-             
+
              return path;
           }
         });
-
-        
    }]);
 })(window);
