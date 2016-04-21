@@ -1,13 +1,12 @@
 angular.module('comments')
-  .factory('HeatmapService', function(ContextualCommentsService) {
+  .factory('HeatmapService', function($timeout, ContextualCommentsService) {
     'use strict';
 
-    var heatmapIntensity;
+    var heatmapIntensity =[];
     //sometimes this nu,ber is incorrect
-    var topLevel = angular.element($('[first]')[0]).prop('offsetTop') + 24; 
+    var topLevel = ($('div.content-area').children())[0].offsetTop + 24; 
 
     function initilizeHeatmap(size){
-      console.log('initializing heatmap');
       var intensity = new Array(size);
       //initilize array to 0's
       for(var i = 0; i < size; i++){
@@ -27,8 +26,6 @@ angular.module('comments')
     }
 
     function updateHeatmapColor(caller){
-      console.log('coloring heatmap from ' + caller);
-
       var heatmapDivs = $('[heatmap]'),
           activeComments = $('[comment-anchor]'),
           relevantComments = $('[relevant-anchor]'),
@@ -104,16 +101,15 @@ angular.module('comments')
         }
       },
       initilize: function(size){
-        heatmapIntensity = initilizeHeatmap(size);
+        $timeout(function() {
+          heatmapIntensity = initilizeHeatmap(size);
 
-        var activeComments = $('[comment-anchor]'),
-            starAnchors = $('[teacherParticipation]'),
-            heatmapDivs = $('[heatmap]'),
-            comments = ContextualCommentsService.getAll(),
-            spot;
+          var activeComments = $('[comment-anchor]'),
+              starAnchors = $('[teacherParticipation]'),
+              heatmapDivs = $('[heatmap]'),
+              comments = ContextualCommentsService.getAll(),
+              spot;
 
-        ContextualCommentsService.loaded
-          .then(function() {
             for(var i = 0; i < activeComments.length; i++){
               spot = calculatePosition(angular.element(activeComments[i]).prop('offsetTop'));
               if(ContextualCommentsService.profInvolvement(activeComments[i].id) && starAnchors[spot]){
@@ -122,16 +118,9 @@ angular.module('comments')
 
               heatmapIntensity[spot]+= ContextualCommentsService.getOne(activeComments[i].id).replies.length + 1;
             }
-
-            activeComments = $('[comment-active]');
-
-            for( var i = 0 ; i < activeComments.length ; i++ ){
-              spot = Math.ceil(calculatePosition(angular.element(activeComments[i]).prop('offsetTop')));
-              //heatmapDivs[spot].style.border = "2px solid black";
-            }
-            
+           
             updateHeatmapColor('heatmap.initialize');
-          });
+        }, 0);
       },
 
       getHeatmap: function(){

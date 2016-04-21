@@ -1,12 +1,12 @@
 angular.module('comments')
-  .directive('developerToolbar', function(DevParametersService, ContextualCommentsService, UserService, $timeout) {
+  .directive('developerToolbar', function($window, DevParametersService, ContextualCommentsService, UserService, $timeout) {
     'use strict';
 
     return {
       restrict: 'E',
       templateUrl: 'templates/developerToolbar.html',
       scope: {},
-      controller: function($scope) {
+      controller: function($scope, $window) {
         $scope.currentUser = UserService.getCurrent();
         $scope.isHidden = true;
         $scope.params = DevParametersService.getParams();
@@ -41,6 +41,16 @@ angular.module('comments')
 
         $scope.changeUnseenIndicatorColor = function() {
           unseenIndicators.css({'background-color': $scope.unseenIndicatorColor});
+        }
+
+        $scope.confirmQuit = function(){
+          var endSession = $window.confirm("Are you sure you want to quit?");
+
+          if(endSession){
+            $('[finishTask]').submit();
+          } else {
+            event.preventDefault();
+          }
         }
       }
     };

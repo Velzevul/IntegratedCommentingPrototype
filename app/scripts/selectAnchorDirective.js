@@ -6,7 +6,7 @@ angular.module('comments')
       restrict: 'A',
       link: function($scope, elem, attrs) {
         // to add comments uncomment this
-       /* $(elem).mousedown(function(e) {
+       $(elem).mousedown(function(e) {
           //if ($scope.activeTab == 'contextual') {
             SelectionService.clearSelection();
           //}
@@ -21,7 +21,7 @@ angular.module('comments')
             ContextualCommentsService.create();
             $scope.selectingContext = false;
           }
-        });*/
+        });
 
         $scope.$watch('contextualComments.length', function() {
           $compile(elem.contents())($scope);

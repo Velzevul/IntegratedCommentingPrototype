@@ -3,15 +3,13 @@
     "id": 120,
     "text": "I read that in an old mans voice!! haha",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Aleksei Nixon",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 148,
@@ -24,7 +22,7 @@
     "id": 122,
     "text": "It still seems to be inevitable",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kaitlin Abbing",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -35,7 +33,7 @@
         "id": 123,
         "text": "Yea i don't see us not dying anytime soonn",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Hadriana Rivero",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -53,7 +51,7 @@
     "id": 124,
     "text": "Would your body be super wrinkly?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Isaura Broz",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -64,7 +62,7 @@
         "id": 125,
         "text": "And I wonder how hunched over you would be",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Paul Chang",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -83,15 +81,13 @@
     "id": 126,
     "text": "Wow, that's amazing!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Chase Roth",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 457,
@@ -103,7 +99,7 @@
     "id": 127,
     "text": "I don't see this happening",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Yrian Maki",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -114,7 +110,7 @@
         "id": 128,
         "text": "I don't either",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Manvir Bajwa",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -133,29 +129,26 @@
     "id": 21,
     "text": "These can cause cancer!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Katherine Moya",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 663,
+    "position": 268,
     "$$hashKey": "object:65",
     "isSelected": false,
     "highlightedAnchor": false,
-    "replyRequested": false,
-    "isHighlighted": false
+    "replyRequested": false
   },
   {
     "id": 129,
     "text": "So if we stop this we stop aging right?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Wayne Ma",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -166,7 +159,7 @@
         "id": 130,
         "text": "I dont know if it works that way",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Tyler Phan",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -185,18 +178,16 @@
     "id": 16,
     "text": "Some of these diseases include cataracts and Alzheimer's.",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 869,
+    "hasInstructor": true,
+    "position": 371,
     "$$hashKey": "object:75",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -207,15 +198,13 @@
     "id": 131,
     "text": "It would be very hard to stop 100% of these free radicals",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Oluchi Vincze",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 988,
@@ -228,15 +217,13 @@
     "id": 133,
     "text": "maybe their is better chemicals than the ones that our bodies produce",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Andrej Mullins",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1107,
@@ -248,15 +235,13 @@
     "id": 132,
     "text": "this makes sense",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Genesis Cruz",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1226,
@@ -269,15 +254,13 @@
     "id": 134,
     "text": "Are theses feasible in animals? how about humans?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Lea Brennan",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1329,
@@ -290,7 +273,7 @@
     "id": 136,
     "text": "There is a typo here",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Patrick Ren",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -301,7 +284,7 @@
         "id": 137,
         "text": "maybe it was supposed to be a comma?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Adanna Peterson",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -320,15 +303,13 @@
     "id": 135,
     "text": "Thats a huge increase!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Shouji Tein",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1551,
@@ -341,7 +322,7 @@
     "id": 138,
     "text": "I'm sure everyone wants to live longer",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kevin Huang",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -352,7 +333,7 @@
         "id": 139,
         "text": "That's not always true",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Kori Mac",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -363,7 +344,7 @@
         "id": 140,
         "text": "Maybe you can stop living when you feel like?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Khamisi Artz",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -382,15 +363,13 @@
     "id": 141,
     "text": "That would be miraculous",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Edita Richelieu",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1757,
@@ -403,15 +382,13 @@
     "id": 142,
     "text": "I wonder if there is philosophical problems with this",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Geula Alvey",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1860,
@@ -434,7 +411,7 @@
         "id": 15,
         "text": "That is interesting!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jimmy Neutron",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -445,7 +422,7 @@
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "isSelected": false,
-    "position": 1979,
+    "position": 490,
     "$$hashKey": "object:58",
     "highlightedAnchor": false,
     "isHighlighted": false
@@ -454,15 +431,13 @@
     "id": 143,
     "text": "How large is the distance?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Roksana Paterson",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2098,
@@ -474,15 +449,13 @@
     "id": 144,
     "text": "I wonder if this is too generic",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Michael Hunt",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2201,
@@ -495,15 +468,13 @@
     "id": 145,
     "text": "I  think this has huge implications if it succeeds",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Harinder Treloar",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2304,
@@ -516,7 +487,7 @@
     "id": 10,
     "text": "Do humans count as an animal being tested on?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Mikey Blumberg",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -527,7 +498,7 @@
         "id": 11,
         "text": "I would say no because the article only mentions Eukarion seeking permission to test on humans",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Eugene Kwak",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -537,7 +508,7 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 2423,
+    "position": 609,
     "$$hashKey": "object:23",
     "isSelected": false,
     "highlightedAnchor": false,
@@ -547,7 +518,7 @@
     "id": 146,
     "text": "Like Alzheimer's?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Zita Couch",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -558,7 +529,7 @@
         "id": 147,
         "text": "I think so",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Michael Cruz",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -577,15 +548,13 @@
     "id": 148,
     "text": "I think it is a good idea to be careful about this kinda stuff",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Hyam Marangoz",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2645,
@@ -598,15 +567,13 @@
     "id": 149,
     "text": "This is what the trials would be for",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Annikki Schrader",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2748,
@@ -619,15 +586,13 @@
     "id": 150,
     "text": "or side effects!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Thelma McGee",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2851,
@@ -639,15 +604,13 @@
     "id": 151,
     "text": "It would be very hard to obtain rights to experiment I think",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Anneli Bokor",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 2954,
@@ -660,15 +623,13 @@
     "id": 152,
     "text": "Wouldn't this be okay, as yuo dont want to get all wrinkly and stuff when you're 70 or 80",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Erik Montero",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3073,
@@ -681,15 +642,13 @@
     "id": 153,
     "text": "I wouldn't mind being smaller if I got to live longer",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Harris Tu",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3192,
@@ -702,7 +661,7 @@
     "id": 8,
     "text": "How exactly is this a horror?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ross Wolff",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -713,8 +672,8 @@
         "id": 9,
         "text": "Their might be other side effects apart from just being smaller",
         "author": {
-          "name": "Volodymyr Dziubak",
-          "isInstructor": false
+          "name": "Andrea Bunt",
+          "isInstructor": true
         },
         "postedOn": "2014-03-27T04:01:16",
         "seen": true,
@@ -724,7 +683,7 @@
         "id": 17,
         "text": "I don't think its a horror if you get to live longer and be a \"teenager\" for a longer time",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Fabiola Danchev",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -735,7 +694,7 @@
         "id": 18,
         "text": "Yes, but what would the long term implications be?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Kimberlee Kerwar",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -746,7 +705,7 @@
         "id": 19,
         "text": "I guess we'll have to wait and see to find out!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Besnik O'Keefe",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -755,10 +714,10 @@
       }
     ],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
+    "hasInstructor": true,
     "$$hashKey": "object:8",
     "isSelected": false,
-    "position": 3311,
+    "position": 796,
     "highlightedAnchor": false,
     "isHighlighted": false
   },
@@ -766,7 +725,7 @@
     "id": 22,
     "text": "Life should not be extended, as God meant for us to die at a certain time!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kaia Guarneri",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -777,7 +736,7 @@
         "id": 23,
         "text": "This research could help with treating different diseases so it is definitely worth researching",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Willoughby Orman",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -787,25 +746,22 @@
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "position": 3414,
+    "position": 899,
     "$$hashKey": "object:81",
     "isSelected": false,
-    "highlightedAnchor": false,
-    "isHighlighted": false
+    "highlightedAnchor": false
   },
   {
     "id": 154,
     "text": "People might even stop having children because of this",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kyle Jefferson",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3533,
@@ -818,15 +774,13 @@
     "id": 155,
     "text": "I think many people would be excited by this concept!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Haap Montero",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3652,
@@ -839,15 +793,13 @@
     "id": 156,
     "text": "I dont think we know this for sure",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Mehmet Dubicki",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3771,
@@ -859,7 +811,7 @@
     "id": 157,
     "text": "This is very important",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Rachele Mac",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -870,7 +822,7 @@
         "id": 158,
         "text": "I agree",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Joe Pharlain",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -888,15 +840,13 @@
     "id": 159,
     "text": "What if you lose your limbs, or all your loved ones?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ellis Negrini",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 3977,
@@ -908,21 +858,19 @@
     "id": 25,
     "text": "I think this depends on the person.",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Hrodebert Amsel",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
-    "isSelected": false,
-    "position": 4096,
+    "isSelected": true,
+    "position": 1036,
     "$$hashKey": "object:121",
-    "highlightedAnchor": false,
+    "highlightedAnchor": true,
     "isHighlighted": false,
     "replyRequested": false
   },
@@ -930,15 +878,13 @@
     "id": 160,
     "text": "I don't think that is true for everyone",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Joey Wheeler",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4199,
@@ -951,15 +897,13 @@
     "id": 161,
     "text": "I didn't think that improved hygiene would make a huge difference haha",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Joe Kaiba",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4302,
@@ -971,7 +915,7 @@
     "id": 162,
     "text": "I didn't know the queen does this",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "John Smith",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -1000,37 +944,32 @@
     "id": 20,
     "text": "That's a lot of people!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Aleksei Nixon",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "isSelected": false,
-    "position": 4524,
+    "position": 1180,
     "$$hashKey": "object:98",
-    "highlightedAnchor": false,
-    "replyRequested": false,
-    "isHighlighted": false
+    "highlightedAnchor": true,
+    "replyRequested": false
   },
   {
     "id": 164,
     "text": "Wow people must have died really early before",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Chiemeka De Angelis",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 4627,
@@ -1043,15 +982,13 @@
     "id": 165,
     "text": "I guess that would be amazing if we went back in time and told people they could see their childrens children",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Branko Naess",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1228,

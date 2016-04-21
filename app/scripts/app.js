@@ -49,9 +49,6 @@
             } else {
               path += '.html';
             }
-
-            console.log(path)
-
              return path;
           }
         })

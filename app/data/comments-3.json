@@ -3,15 +3,13 @@
     "id": 21,
     "text": "These can cause cancer!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Katherine Moya",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 268,
@@ -24,17 +22,15 @@
     "id": 16,
     "text": "Some of these diseases include cataracts and Alzheimer's.",
     "author": {
-      "name": "Volodymyr Dziubak",
-      "isInstructor": false
+      "name": "Andrea Bunt",
+      "isInstructor": true
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
+    "hasInstructor": true,
     "position": 371,
     "$$hashKey": "object:75",
     "isSelected": false,
@@ -57,7 +53,7 @@
         "id": 15,
         "text": "That is interesting!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Jimmy Neutron",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -77,7 +73,7 @@
     "id": 10,
     "text": "Do humans count as an animal being tested on?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Mikey Blumberg",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -88,7 +84,7 @@
         "id": 11,
         "text": "I would say no because the article only mentions Eukarion seeking permission to test on humans",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Eugene Kwak",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -108,7 +104,7 @@
     "id": 8,
     "text": "How exactly is this a horror?",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Ross Wolff",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -119,8 +115,8 @@
         "id": 9,
         "text": "Their might be other side effects apart from just being smaller",
         "author": {
-          "name": "Volodymyr Dziubak",
-          "isInstructor": false
+          "name": "Andrea Bunt",
+          "isInstructor": true
         },
         "postedOn": "2014-03-27T04:01:16",
         "seen": true,
@@ -130,7 +126,7 @@
         "id": 17,
         "text": "I don't think its a horror if you get to live longer and be a \"teenager\" for a longer time",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Fabiola Danchev",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -141,7 +137,7 @@
         "id": 18,
         "text": "Yes, but what would the long term implications be?",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Kimberlee Kerwar",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -152,7 +148,7 @@
         "id": 19,
         "text": "I guess we'll have to wait and see to find out!",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Besnik O'Keefe",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -161,7 +157,7 @@
       }
     ],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
+    "hasInstructor": true,
     "$$hashKey": "object:8",
     "isSelected": false,
     "position": 796,
@@ -172,7 +168,7 @@
     "id": 22,
     "text": "Life should not be extended, as God meant for us to die at a certain time!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Kaia Guarneri",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
@@ -183,7 +179,7 @@
         "id": 23,
         "text": "This research could help with treating different diseases so it is definitely worth researching",
         "author": {
-          "name": "Volodymyr Dziubak",
+          "name": "Willoughby Orman",
           "isInstructor": false
         },
         "postedOn": "2014-03-27T04:01:16",
@@ -202,15 +198,13 @@
     "id": 25,
     "text": "I think this depends on the person.",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Hrodebert Amsel",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "isSelected": true,
@@ -224,15 +218,13 @@
     "id": 20,
     "text": "That's a lot of people!",
     "author": {
-      "name": "Volodymyr Dziubak",
+      "name": "Aleksei Nixon",
       "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      
-    ],
+    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "isSelected": false,

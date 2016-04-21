@@ -47,10 +47,12 @@ angular.module('comments')
         .then(function() {
             ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);
             $scope.contextualComments = ContextualCommentsService.getAll();
-            $scope.activeTab = 'contextual';
+            $scope.relevantAnchors = new Array (79);
             HeatmapService.initilize(100);
             $scope.showProfOnly = false;
-            $scope.relevantAnchors = new Array (79);
+            angular.element(document).ready(function(){
+
+            });
             //search value stops the heatmap from doubling
             $scope.newSearchValue = -1;
         });
