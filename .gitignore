@@ -7,3 +7,5 @@ npm-debug.log
 dist/
 .ruby-version
 .ruby-gemset
+.DS_Store
+app/scripts/templates.js

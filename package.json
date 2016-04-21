@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "author": "Volodymyr Dziubak",
   "scripts": {
-    "preinstall": "bundle",
     "postinstall": "./node_modules/.bin/bower install",
     "start": "./node_modules/.bin/grunt"
   },

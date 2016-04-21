@@ -11,7 +11,7 @@
       // })
       // .when('/interface', {
       //   controller: function() {
-          
+
       //   },
       //   templateUrl: function() {
 
@@ -22,13 +22,13 @@
           controller: 'integrated-controller',
           templateUrl: function(name){
             var path = 'templates/integrated-' + name.content;
-            
+
             if(name.clutter == 'true'){
               path += '_clutter.html';
             } else {
               path += '.html';
             }
-             
+
              return path;
           }
         })
@@ -43,11 +43,11 @@
             }
 
             console.log(path);
-             
+
             return path;
           }
         })
-        .when('/paragraph-life', {
+        .when('/paragraph', {
           controller: 'paragraph-controller',
           templateUrl: function(name){
             var path = 'templates/paragraph-' + name.content;
@@ -56,7 +56,7 @@
             } else {
               path += '.html';
             }
-             
+
              return path;
           }
         })
@@ -69,11 +69,11 @@
             } else {
               path += '.html';
             }
-             
+
              return path;
           }
         });
 
-        
+
    }]);
 })(window);

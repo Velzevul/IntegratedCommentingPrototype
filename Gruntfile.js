@@ -1,15 +1,15 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    compass: {
-      dist: {
-        options: {
-          sassDir: "app/sass",
-          cssDir: "app/css",
-          imagesDir: "app/images",
-          javascriptsDir: "app/scripts"
-        }
-      }
-    },
+    // compass: {
+    //   dist: {
+    //     options: {
+    //       sassDir: "app/sass",
+    //       cssDir: "app/css",
+    //       imagesDir: "app/images",
+    //       javascriptsDir: "app/scripts"
+    //     }
+    //   }
+    // },
 
     express: {
       server: {
@@ -66,10 +66,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      css: {
-        files: ['app/sass/**/*.scss'],
-        tasks: ['compass']
-      },
+      // css: {
+      //   files: ['app/sass/**/*.scss'],
+      //   tasks: ['compass']
+      // },
       templates: {
         files: ['app/scripts/templates/**/*.html'],
         tasks: ['html2js']
@@ -92,6 +92,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-html2js');
 
-  grunt.registerTask('default', ['compass', 'html2js', 'express', 'watch', 'express-keepalive']);
-  grunt.registerTask('dist', ['compass', 'html2js', 'clean:dist', 'concat', 'copy', 'processhtml:dist']);
+  grunt.registerTask('default', [/*'compass',*/ 'html2js', 'express', 'watch', 'express-keepalive']);
+  grunt.registerTask('dist', [/*'compass',*/ 'html2js', 'clean:dist', 'concat', 'copy', 'processhtml:dist']);
 };
