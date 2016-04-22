@@ -6,7 +6,7 @@
 
   app.factory('rootPrefix', function() {
     if (typeof(DEVELOPMENT) === 'undefined') {
-      return '/switter';
+      return '/d2l/integratedCommentingClutter';
     } else {
       return '';
     }
