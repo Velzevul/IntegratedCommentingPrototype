@@ -40,25 +40,22 @@
           </div>
         </div>
 
-        <div class="l-block">
+        <div class="l-block-small">
           <div class="form-row">
-            <div class="form-row__cell form-row__cell--label">Session</div>
+            <div class="form-row__cell form-row__cell--label">Content</div>
             <div class="form-row__cell">
-              <label><input type="radio" class="form-radio" name="session" value="training"
-                            ng-model="data.session">training</label>
+              <label><input type="radio" class="form-radio" name="content" value="training"
+                            ng-model="data.content">Training</label>
             </div>
-            <div class="form-row__cell">
-              <label><input type="radio" class="form-radio" name="session" value="task"
-                            ng-model="data.session">task</label>
-            </div>
-            <div class="form-row__cell">
-            </div>
+            <div class="form-row__cell"></div>
+            <div class="form-row__cell"></div>
           </div>
         </div>
 
-        <div class="l-block" ng-show="data.session === 'task'">
+        <div class="l-block">
           <div class="form-row">
-            <div class="form-row__cell form-row__cell--label">Content</div>
+            <div class="form-row__cell form-row__cell--label"></div>
+
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="content" value="light"
                             ng-model="data.content">Light</label>
@@ -72,18 +69,21 @@
                             ng-model="data.content">Amateurs</label>
             </div>
           </div>
+
         </div>
 
-        <div class="l-block-large" ng-show="data.session === 'task'">
+        <div class="l-block-large" >
           <div class="form-row">
             <div class="form-row__cell form-row__cell--label">Clutter</div>
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="clutter" value="on"
-                            ng-model="data.clutter">On</label>
+                            ng-model="data.clutter"
+                            ng-disabled="data.content === 'training'">On</label>
             </div>
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="clutter" value="off"
-                            ng-model="data.clutter">Off</label>
+                            ng-model="data.clutter"
+                            ng-disabled="data.content === 'training'">Off</label>
             </div>
             <div class="form-row__cell">
             </div>

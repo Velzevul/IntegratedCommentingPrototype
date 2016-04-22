@@ -8,7 +8,6 @@
     var getData = function() {
       var studyData = {
         participantId: localStorage.getItem(lsPrefix + 'participantId'),
-        session:       localStorage.getItem(lsPrefix + 'session'),
         interface:     localStorage.getItem(lsPrefix + 'interface'),
         content:       localStorage.getItem(lsPrefix + 'content'),
         clutter:       localStorage.getItem(lsPrefix + 'clutter')
@@ -18,7 +17,6 @@
     };
     var setData = function(obj) {
       localStorage.setItem(lsPrefix + 'participantId', obj.participantId);
-      localStorage.setItem(lsPrefix + 'session', obj.session);
       localStorage.setItem(lsPrefix + 'interface', obj.interface);
       localStorage.setItem(lsPrefix + 'content', obj.content);
       localStorage.setItem(lsPrefix + 'clutter', obj.clutter);

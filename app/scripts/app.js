@@ -13,16 +13,10 @@
   });
 
   var constructPath = function(interfaceType, urlParams) {
-    var path = 'templates/' + interfaceType + '-';
+    var path = 'templates/' + interfaceType + '-' + urlParams.content;
 
-    if (urlParams.session === 'training'){
-      path += 'training';
-    } else {
-      path += urlParams.content;
-
-      if (urlParams.clutter === 'on') {
-        path += '_clutter';
-      }
+    if (urlParams.clutter === 'on') {
+      path += '_clutter';
     }
 
     path += '.html';

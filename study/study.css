@@ -64,6 +64,9 @@ html, body {
 .l-block-large {
   margin-bottom: 48px;
 }
+.l-block-small {
+  margin-bottom: 12px;
+}
 
 .form-input {
   display: block;

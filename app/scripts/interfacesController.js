@@ -1,27 +1,22 @@
 angular.module('comments')
-  .controller('integratedController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService) {
+  .controller('integratedController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService) {
     'use strict';
     // contextual comments
 
-    $q.all([
-        ContextualCommentsService.loaded
-    ])    
-        .then(function() {
-            if($routeParams.training == 'true'){
-                ContextualCommentsService.setMock($routeParams.content, false, true);
-            } else {
-                ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);   
-            }
-            $scope.contextualComments = ContextualCommentsService.getAll();
-            //ContextualCommentsService.printMock();
-            //positions comments correctly after document is ready
-            angular.element(document).ready(function(){
-                ContextualCommentsService.deactivateAll();
-                //ContextualCommentsService.reposition();
-            });
+    var params = LoggerService.getData();
+
+    ContextualCommentsService.loaded
+      .then(function() {
+        ContextualCommentsService.setMock(params.content, params.clutter);
+        $scope.contextualComments = ContextualCommentsService.getAll();
+
+        //positions comments correctly after document is ready
+        angular.element(document).ready(function(){
+            ContextualCommentsService.deactivateAll();
+            //ContextualCommentsService.reposition();
         });
+      });
     //should be a true/false value
-    $scope.cluttered = $routeParams.clutter;
     $scope.$parent.prototypeValue = 'integrated';
 
     //for filtering comments to selectively show whatever anchor is active
@@ -29,7 +24,7 @@ angular.module('comments')
         var i = 0;
         var temp ;
         var children = $("[comment-active]");
-        
+
         while(children.length > i){
             temp = children[i];
             if( temp.id == comment.id ){
@@ -42,31 +37,28 @@ angular.module('comments')
   });
 
 angular.module('comments')
-  .controller('heatmapController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, HeatmapService, InitialCommentsService){
+  .controller('heatmapController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, HeatmapService, InitialCommentsService, LoggerService){
     'use strict';
 
-    $q.all([
-        ContextualCommentsService.loaded
-    ])    
-        .then(function() {
-            if($routeParams.training == 'true'){
-                ContextualCommentsService.setMock($routeParams.content, false, true);
-            } else {
-                ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);   
-            }
-            $scope.contextualComments = ContextualCommentsService.getAll();
-            $scope.relevantAnchors = new Array (79);
-            HeatmapService.initilize(100);
-            $scope.showProfOnly = false;
-            angular.element(document).ready(function(){
+    var params = LoggerService.getData();
 
-            });
-            //search value stops the heatmap from doubling
-            $scope.newSearchValue = -1;
-        });
+    ContextualCommentsService.loaded
+      .then(function() {
+          ContextualCommentsService.setMock(params.content, params.clutter);
+          $scope.contextualComments = ContextualCommentsService.getAll();
+          $scope.relevantAnchors = new Array (79);
+          HeatmapService.initilize(100);
+          $scope.showProfOnly = false;
+          // angular.element(document).ready(function(){
+          //
+          // });
+          //search value stops the heatmap from doubling
+          $scope.newSearchValue = -1;
+      });
+
     $scope.activeLines = [];
     $scope.$parent.prototypeValue = 'heatmap';
-    $scope.cluttered = $routeParams.clutter;
+    // $scope.cluttered = $routeParams.clutter;
 
     //simple object for lines
     $scope.setDivs = function(amount){
@@ -77,7 +69,7 @@ angular.module('comments')
         var i = 0;
         var temp ;
         var children = $("[comment-active]");
-        
+
         while(children.length > i){
             temp = children[i];
             if( temp.id == comment.id ){
@@ -102,23 +94,19 @@ angular.module('comments')
   });
 
 angular.module('comments')
-  .controller('paragraphController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService) {
+  .controller('paragraphController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService) {
     'use strict';
 
-    $q.all([
-        ContextualCommentsService.loaded
-    ])    
-        .then(function() {
-            if($routeParams.training == 'true'){
-                ContextualCommentsService.setMock($routeParams.content, false, true);
-            } else {
-                ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);   
-            }
-            $scope.contextualComments = ContextualCommentsService.getAll();
-            $scope.activeTab = false;
-            $scope.activeComments = null;
-            $scope.initlizeButtons();
-        });
+    var params = LoggerService.getData();
+
+    ContextualCommentsService.loaded
+      .then(function() {
+          ContextualCommentsService.setMock(params.content, params.clutter);
+          $scope.contextualComments = ContextualCommentsService.getAll();
+          $scope.activeTab = false;
+          $scope.activeComments = null;
+          $scope.initlizeButtons();
+      });
 
     $scope.$parent.prototypeValue = 'paragraph';
     $scope.cluttered = $routeParams.clutter;
@@ -158,7 +146,7 @@ angular.module('comments')
         var i = 0;
         var temp ;
         var children = $("[comment-active]");
-        
+
         while(children.length > i){
             temp = children[i];
             if( temp.id == comment.id ){
@@ -186,7 +174,7 @@ angular.module('comments')
                 } else {
                     $(buttons[i]).parent().parent().show();
                 }
-            } 
+            }
         } else {
             var num,
                 attr = $(this).attr('document__anchor');
@@ -208,7 +196,7 @@ angular.module('comments')
                 } else {
                     $(buttons[i]).parent().parent().show();
                 }
-            } 
+            }
         }
     };
 
