@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('contextualComment', function(ContextualCommentsService, UserService, $timeout) {
+  .directive('contextualComment', function(ContextualCommentsService, UserService, LoggerService) {
     'use strict';
 
     return {
@@ -14,6 +14,7 @@ angular.module('comments')
 
         $scope.selectComment = function() {
           if (!$scope.comment.isSelected) {
+            LoggerService.log('click comment #' + $scope.comment.id);
             ContextualCommentsService.activate($scope.comment.id);
           }
         };

@@ -17,15 +17,13 @@
           content: $scope.data.content,
           clutter: $scope.data.clutter,
         });
-        LoggerService.log('session started');
+        LoggerService.log('session started')
+          .then(function() {
+            var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
+                urlPath = '/#/' + $scope.data.interface;
 
-        $timeout(() => {
-          debugger;
-          var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
-              urlPath = '/#/' + $scope.data.interface;
-
-          $window.location.href = urlPath + '?' + urlParams.join('&');
-        }, 5000);
+            $window.location.href = urlPath + '?' + urlParams.join('&');
+          });
       } else {
         alert('please, set all the values first');
       }

@@ -1,5 +1,7 @@
 'use strict';
 
+console.log(new Date());
+
 const nedb = require('nedb'),
       path = require('path'),
       bodyParser = require('body-parser'),
@@ -8,8 +10,7 @@ const nedb = require('nedb'),
 
 const db = new nedb({
   filename: path.join(__dirname, 'logs.db'),
-  autoload: true,
-  timestampData: true
+  autoload: true
 });
 
 const app = express();

@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('commentAnchor', function(ContextualCommentsService, HeatmapService) {
+  .directive('commentAnchor', function(ContextualCommentsService, HeatmapService, LoggerService) {
     'use strict';
 
     return {
@@ -144,6 +144,7 @@ angular.module('comments')
             $(elem).click(function() {
               if ($scope.comment && !$scope.comment.isSelected) {
                 ContextualCommentsService.activate($scope.id);
+                LoggerService.log('click anchor for comment #' + $scope.comment.id);
                 $scope.$apply()
               }
             });

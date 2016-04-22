@@ -24,9 +24,12 @@
 
     return {
       log: function(message) {
-        var payload = Object.assign({}, getData(), { message: message });
+        var payload = Object.assign({}, getData(), {
+          message: message,
+          createdAt: new Date().toString()
+        });
 
-        $http.post(serverUrl + 'logs/', payload);
+        return $http.post(serverUrl + 'logs/', payload);
       },
       setData: function(obj) {
         setData(obj);

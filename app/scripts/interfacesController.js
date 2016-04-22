@@ -81,15 +81,17 @@ angular.module('comments')
     }
 
     $scope.setActiveLine = function(number){
-        var index = $scope.activeLines.indexOf(number);
+      var index = $scope.activeLines.indexOf(number);
 
-        if( index >= 0 ){
-            //need to remove line
-            $scope.activeLines.splice(index, 1);
-        } else {
-            // need to add line
-            $scope.activeLines.push(number);
-        }
+      if( index >= 0 ){
+        LoggerService.log('deactivate heatmap line #' + number + ' (' + HeatmapService.getHeatmap()[number] + ' comments)');
+        //need to remove line
+        $scope.activeLines.splice(index, 1);
+      } else {
+        LoggerService.log('activate heatmap line #' + number + ' (' + HeatmapService.getHeatmap()[number] + ' comments)');
+        // need to add line
+        $scope.activeLines.push(number);
+      }
     }
   });
 
@@ -204,14 +206,16 @@ angular.module('comments')
     //watches for context change and selects correct note id's
 
     $scope.$watch('activeTab', function(value){
-        var index = $scope.shownParagraphs.indexOf(value);
+      var index = $scope.shownParagraphs.indexOf(value);
 
-        if( index >= 0 ){
-            //need to remove line
-            $scope.shownParagraphs.splice(index, 1);
-        } else {
-            // need to add line
-            $scope.shownParagraphs.push(value);
-        }
+      LoggerService.log('clicked paragraph #' + value);
+
+      if( index >= 0 ){
+          //need to remove line
+          $scope.shownParagraphs.splice(index, 1);
+      } else {
+          // need to add line
+          $scope.shownParagraphs.push(value);
+      }
     });
   });

@@ -1,1 +1,26 @@
-{"participantId":"1","interface":"paragraph","content":"light","clutter":"off","message":"session started","_id":"kyqOHmkBUUoa28Bz","createdAt":{"$$date":1461357870433},"updatedAt":{"$$date":1461357870433}}
+{"participantId":"1","interface":"paragraph","content":"light","clutter":"off","message":"session started","createdAt":"Fri Apr 22 2016 16:03:02 GMT-0500 (CDT)","_id":"M0bzWdFo7F16sXYf"}
+{"participantId":"1","interface":"paragraph","content":"light","clutter":"off","message":"session finished","createdAt":"Fri Apr 22 2016 16:03:09 GMT-0500 (CDT)","_id":"kw4lOBJHZhkaEvPD"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"session started","createdAt":"Fri Apr 22 2016 16:03:26 GMT-0500 (CDT)","_id":"i8Oq1r7kPmEmokMi"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"click anchor for comment 10","createdAt":"Fri Apr 22 2016 16:05:22 GMT-0500 (CDT)","_id":"HMZP5GaRsr2nSFlH"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"click anchor for comment 13","createdAt":"Fri Apr 22 2016 16:05:26 GMT-0500 (CDT)","_id":"RM3LxzYHK7kXN9A6"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"click comment 17","createdAt":"Fri Apr 22 2016 16:07:33 GMT-0500 (CDT)","_id":"kANhAyFPilTnEbQ8"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"search for ","createdAt":"Fri Apr 22 2016 16:09:46 GMT-0500 (CDT)","_id":"JxPcwJgXAP1sN3JB"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"search for test","createdAt":"Fri Apr 22 2016 16:10:16 GMT-0500 (CDT)","_id":"UhxkkZL76zYAmuau"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"search for `test`","createdAt":"Fri Apr 22 2016 16:10:28 GMT-0500 (CDT)","_id":"Z1Xn7Si8rirOm21C"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"search for `test`","createdAt":"Fri Apr 22 2016 16:11:35 GMT-0500 (CDT)","_id":"XBgu5mLpOnAwEZk1"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clear search","createdAt":"Fri Apr 22 2016 16:11:36 GMT-0500 (CDT)","_id":"fYUBqz2JbUwjnVXQ"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked heatmap line #5 (4 comments)","createdAt":"Fri Apr 22 2016 16:15:17 GMT-0500 (CDT)","_id":"RJtILIa12ShzQvN5"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked heatmap line #4 (3 comments)","createdAt":"Fri Apr 22 2016 16:15:24 GMT-0500 (CDT)","_id":"avdXpohErTxdxfUj"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"activate heatmap line #24 (1 comments)","createdAt":"Fri Apr 22 2016 16:16:00 GMT-0500 (CDT)","_id":"TmpceBszRBTAAkfb"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"deactivate heatmap line #24 (1 comments)","createdAt":"Fri Apr 22 2016 16:16:01 GMT-0500 (CDT)","_id":"n6nyOLx0maOGFCBx"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #false","createdAt":"Fri Apr 22 2016 16:18:35 GMT-0500 (CDT)","_id":"nb4ejJUjZKExZ4Pl"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #false","createdAt":"Fri Apr 22 2016 16:18:36 GMT-0500 (CDT)","_id":"DGSfLquy0lfQAXNi"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #paragraph2","createdAt":"Fri Apr 22 2016 16:18:38 GMT-0500 (CDT)","_id":"uZZqFleNqOqBMplB"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #false","createdAt":"Fri Apr 22 2016 16:18:42 GMT-0500 (CDT)","_id":"0xJzXaq8YXnkgDZ2"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #paragraph2","createdAt":"Fri Apr 22 2016 16:18:48 GMT-0500 (CDT)","_id":"6bcS01sJR3AzzVZe"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #paragraph1","createdAt":"Fri Apr 22 2016 16:18:49 GMT-0500 (CDT)","_id":"4BPZt0lucqr5mN9G"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"clicked paragraph #false","createdAt":"Fri Apr 22 2016 16:18:49 GMT-0500 (CDT)","_id":"seamMTe10JF2WOWZ"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"answered question: 1: qwe","createdAt":"Fri Apr 22 2016 16:19:51 GMT-0500 (CDT)","_id":"X081QSEkaXyb3B8u"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"answered question: 2: asd","createdAt":"Fri Apr 22 2016 16:19:53 GMT-0500 (CDT)","_id":"BgOFd7iqDxIC6foJ"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"answered question: 3: zxc","createdAt":"Fri Apr 22 2016 16:19:55 GMT-0500 (CDT)","_id":"ErYOlk2UEviBfENv"}
+{"participantId":"1","interface":"integrated","content":"light","clutter":"off","message":"session finished","createdAt":"Fri Apr 22 2016 16:20:07 GMT-0500 (CDT)","_id":"XvJFMjQYm9qA0Qjy"}

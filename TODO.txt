@@ -2,23 +2,15 @@
 
 - connect LoggerService's "log" call to all the interactive parts with
   corresponding messages:
-    - start experiment (log participantId, timestamp, and all the config params, session type - training or task)
-    - click on an anchor (log comment ID)
-    - click on a comment (log comment ID)
-    - search (log search term)
-    - clear search (log what was in search before clearing)
-    - click on heatmap (log number of comments on heatmap and line number)
-    - click on paragraph indicator (log number of comments in the paragraph and
+    + start experiment (log participantId, timestamp, and all the config params, session type - training or task)
+    + click on an anchor (log comment ID)
+    + click on a comment (log comment ID)
+    + search (log search term)
+    + clear search (log what was in search before clearing)
+    + click on heatmap (log number of comments on heatmap and line number)
+    + click on paragraph indicator (log number of comments in the paragraph and
       paragraph number)
-    - end experiment (log participantId, timestamp, and all the config params)
-
-- remove all console.log statements
-
-- initial text for training (at least prof. comments)
-
-- server + database
-
-- deployment script
+    + end experiment (log participantId, timestamp, and all the config params)
 
 - deployment
 

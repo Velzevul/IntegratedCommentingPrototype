@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('optionsPanel', function( ContextualCommentsService, $timeout, HeatmapService) {
+  .directive('optionsPanel', function( ContextualCommentsService, $timeout, HeatmapService, LoggerService) {
     'use strict';
 
     return {
@@ -11,21 +11,9 @@ angular.module('comments')
         $scope.filterValue = '';
       },
       link: function($scope, elem, attrs) {
-        $('article').mousedown(function(e){
-            $scope.optionsPanel = false;          
-        });
-
-        $scope.toggleProf = function(){
-          $scope.profInvolvement = !$scope.profInvolvement;
-          $scope.showProfOnly = $scope.profInvolvement;
-          if( $scope.showProfOnly == true ){
-            $scope.activeTab = 'profOnly';
-          } else {
-            $scope.activeTab = 'contextual';
-          }
-        }
-
         $scope.search = function(){
+          LoggerService.log('search for `' + $scope.filterComments + '`');
+
           if($scope.prototypeValue != 'heatmap'){
             $scope.filterValue = $scope.filterComments;
           } else {
@@ -36,10 +24,12 @@ angular.module('comments')
             $scope.filterValue = $scope.filterComments;
             $scope.newSearchValue = 0;
           }
-        }             
+        };
 
         $scope.$watch('filterComments', function(filter){
           if( filter == '' ){
+            LoggerService.log('clear search');
+
             $scope.filterValue = '';
             if($scope.prototypeValue == 'heatmap'){
               //init heatmap here 
