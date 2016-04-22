@@ -3,7 +3,7 @@
 
   var app = angular.module('study', ['logger']);
 
-  app.controller('studyController', function($scope, LoggerService) {
+  app.controller('studyController', function(LoggerService, $scope, $window) {
     $scope.data = LoggerService.getData();
 
     $scope.submit = function(e) {
@@ -12,7 +12,6 @@
                    ($scope.data.content && $scope.data.clutter));
 
       if (valid) {
-        alert('redirect to url');
         LoggerService.setData({
           participantId: $scope.data.participantId,
           session: $scope.data.session,
@@ -20,7 +19,12 @@
           content: $scope.data.content,
           clutter: $scope.data.clutter,
         });
-        LoggerService.log('starting session');
+        LoggerService.log('session started');
+
+        var urlParams = ['content=' + $scope.data.content, 'session=' + $scope.data.session, 'clutter=' + $scope.data.clutter],
+            urlPath = '/#/' + $scope.data.interface;
+
+        $window.location.href = urlPath + '?' + urlParams.join('&');
       } else {
         alert('please, set all the values first');
       }

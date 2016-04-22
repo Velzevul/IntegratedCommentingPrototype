@@ -32,7 +32,7 @@
             var path = 'templates/integrated-' + name.content;
 
             if(name.training == 'true'){
-              path = 'templates/trainingIntegrated.html'; 
+              path = 'templates/trainingIntegrated.html';
             }else {
               if(name.clutter == 'true'){
                 path += '_clutter.html';
@@ -50,7 +50,7 @@
             var path = 'templates/heatmap-' + name.content;
 
             if(name.training){
-              path = 'templates/trainingHeatmap.html'; 
+              path = 'templates/trainingHeatmap.html';
             }else {
               if(name.clutter == 'true'){
                 path += '_clutter.html';
@@ -58,7 +58,7 @@
                 path += '.html';
               }
             }
-            
+
             return path;
           }
         })
@@ -68,7 +68,7 @@
             var path = 'templates/paragraph-' + name.content;
 
             if(name.training){
-              path = 'templates/trainingParagraph.html'; 
+              path = 'templates/trainingParagraph.html';
             }else {
               if(name.clutter == 'true'){
                 path += '_clutter.html';
@@ -78,14 +78,6 @@
             }
 
             return path;
-          }
-        })
-        .when('/learning', {
-          controller: 'learningController',
-          templateUrl: function(name){
-            var path = 'templates/learning' + name.prototype + '.html';
-
-             return path;
           }
         });
    }]);

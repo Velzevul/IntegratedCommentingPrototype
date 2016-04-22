@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('developerToolbar', function($window, DevParametersService, ContextualCommentsService, UserService, $timeout) {
+  .directive('developerToolbar', function($window, DevParametersService, ContextualCommentsService, UserService, LoggerService) {
     'use strict';
 
     return {
@@ -7,47 +7,12 @@ angular.module('comments')
       templateUrl: 'templates/developerToolbar.html',
       scope: {},
       controller: function($scope, $window) {
-        $scope.currentUser = UserService.getCurrent();
-        $scope.isHidden = true;
-        $scope.params = DevParametersService.getParams();
-        $scope.reposition = ContextualCommentsService.reposition;
-        $scope.documentFontSize = 14;
-        $scope.commentFontSize = 13;
-        $scope.unseenIndicatorColor = '#FFFFBC';
-      },
-      link: function($scope, elem, attrs) {
-        var document,
-            comments,
-            unseenIndicators;
-
-        // waiting for comments to be initialized and positioned
-        $timeout(function() {
-          document = $('.document'),
-          comments = $('.thread-contextual, .thread-general'),
-          unseenIndicators = $('.tc-unseen__item, .tg-unseen__item');
-        });
-
-        $scope.changeDocumentFontSize = function() {
-          document.css({'font-size': $scope.documentFontSize + 'px'});
-        }
-
-        $scope.changeCommentFontSize = function() {
-          comments.css({'font-size': $scope.commentFontSize + 'px'});
-
-          $timeout(function() {
-            $scope.reposition();
-          });
-        }
-
-        $scope.changeUnseenIndicatorColor = function() {
-          unseenIndicators.css({'background-color': $scope.unseenIndicatorColor});
-        }
-
-        $scope.confirmQuit = function(){
+        $scope.confirmQuit = function(event){
           var endSession = $window.confirm("Are you sure you want to quit?");
 
           if(endSession){
-            $('[finishTask]').submit();
+            LoggerService.log('session finished');
+            $window.location.href = '/study.html';
           } else {
             event.preventDefault();
           }
