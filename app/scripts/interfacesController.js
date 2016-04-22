@@ -183,19 +183,21 @@ angular.module('comments')
             for( var i = 0;  i < buttons.length; i++ ){
                 num = 0;
                 for( var j = 0; j < paragraph[i].children.length; j++ ){
-                    if($(paragraph[i].children[j]).hasClass( "comment-contains" )){
+                    if($(paragraph[i].children[j]).hasClass( 'comment-contains' )){
                         tempComment = ContextualCommentsService.getOne(paragraph[i].children[j].id);
                         num = num + 1 + tempComment.replies.length;
+                        console.log(num)
                     }
                 }
                 buttons[i].innerText = num;
-                num = 0;
 
                 if(num == 0){
                     $(buttons[i]).parent().parent().hide();
                 } else {
                     $(buttons[i]).parent().parent().show();
                 }
+                num = 0;
+
             }
         }
     };
