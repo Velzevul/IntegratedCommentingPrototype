@@ -31,49 +31,59 @@
           templateUrl: function(name){
             var path = 'templates/integrated-' + name.content;
 
-            if(name.clutter == 'true'){
-              path += '_clutter.html';
-            } else {
-              path += '.html';
+            if(name.training == 'true'){
+              path = 'templates/trainingIntegrated.html'; 
+            }else {
+              if(name.clutter == 'true'){
+                path += '_clutter.html';
+              } else {
+                path += '.html';
+              }
             }
 
-             return path;
+            return path;
           }
         })
         .when('/heatmap', {
           controller: 'heatmapController',
           templateUrl: function(name){
             var path = 'templates/heatmap-' + name.content;
-            if(name.clutter == 'true'){
-              path += '_clutter.html';
-            } else {
-              path += '.html';
+
+            if(name.training){
+              path = 'templates/trainingHeatmap.html'; 
+            }else {
+              if(name.clutter == 'true'){
+                path += '_clutter.html';
+              } else {
+                path += '.html';
+              }
             }
-             return path;
+            
+            return path;
           }
         })
         .when('/paragraph', {
           controller: 'paragraphController',
           templateUrl: function(name){
             var path = 'templates/paragraph-' + name.content;
-            if(name.clutter == 'true'){
-              path += '_clutter.html';
-            } else {
-              path += '.html';
+
+            if(name.training){
+              path = 'templates/trainingParagraph.html'; 
+            }else {
+              if(name.clutter == 'true'){
+                path += '_clutter.html';
+              } else {
+                path += '.html';
+              }
             }
 
-             return path;
+            return path;
           }
         })
-        .when('/add-comments', {
-          controller: 'integratedController',
+        .when('/learning', {
+          controller: 'learningController',
           templateUrl: function(name){
-            var path = 'templates/temp';
-            if(name.clutter == 'true'){
-              path += '_clutter.html';
-            } else {
-              path += '.html';
-            }
+            var path = 'templates/learning' + name.prototype + '.html';
 
              return path;
           }

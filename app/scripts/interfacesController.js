@@ -7,13 +7,17 @@ angular.module('comments')
         ContextualCommentsService.loaded
     ])    
         .then(function() {
-            ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);
+            if($routeParams.training == 'true'){
+                ContextualCommentsService.setMock($routeParams.content, false, true);
+            } else {
+                ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);   
+            }
             $scope.contextualComments = ContextualCommentsService.getAll();
             //ContextualCommentsService.printMock();
             //positions comments correctly after document is ready
             angular.element(document).ready(function(){
                 ContextualCommentsService.deactivateAll();
-                ContextualCommentsService.reposition();
+                //ContextualCommentsService.reposition();
             });
         });
     //should be a true/false value
@@ -45,7 +49,11 @@ angular.module('comments')
         ContextualCommentsService.loaded
     ])    
         .then(function() {
-            ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);
+            if($routeParams.training == 'true'){
+                ContextualCommentsService.setMock($routeParams.content, false, true);
+            } else {
+                ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);   
+            }
             $scope.contextualComments = ContextualCommentsService.getAll();
             $scope.relevantAnchors = new Array (79);
             HeatmapService.initilize(100);
@@ -101,7 +109,11 @@ angular.module('comments')
         ContextualCommentsService.loaded
     ])    
         .then(function() {
-            ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);
+            if($routeParams.training == 'true'){
+                ContextualCommentsService.setMock($routeParams.content, false, true);
+            } else {
+                ContextualCommentsService.setMock($routeParams.content, $scope.cluttered);   
+            }
             $scope.contextualComments = ContextualCommentsService.getAll();
             $scope.activeTab = false;
             $scope.activeComments = null;
