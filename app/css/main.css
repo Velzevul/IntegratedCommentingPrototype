@@ -2356,11 +2356,11 @@ iframe {
 }
 /* line 46, ../sass/modules/_document.scss */
 .document__anchor--teal:hover, .document__anchor--teal.document__anchor--highlighted {
-  background-color: rgba(150, 255, 255, 1);
+  background-color: #81ECEC;
 }
 /* line 51, ../sass/modules/_document.scss */
 .document__anchor--teal.document__anchor--selected {
-  background-color: #8cffff;
+  background-color: #81ECEC;
 }
 
 /* line 43, ../sass/modules/_document.scss */
