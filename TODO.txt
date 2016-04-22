@@ -1,21 +1,4 @@
-- developer panel - should be just "finish" button that takes to the home
-  startScreen
-
-- home screen - three groups of configs:
-    - interface with "training" button
-    - content
-    - clutter
-  "start experiment" button
-
-- paragraph level - do not show comments/bubbles if there aren't any. In case of
-  heatmap we don't display "empty" heatmap, do we? empty paragraph indicators
-  only distract
-
-- selecting text completely messes up markup and we can't really prevent users
-  from doing that. Solution: disable watchers in "SelectionService". Those were
-  added for "creating" comments, which we don't need anymore
-
-- randomize names of comment posters
+- paragraph level - toggle on/off per each paragraph
 
 - connect LoggerService's "log" call to all the interactive parts with
   corresponding messages:
@@ -31,4 +14,10 @@
 
 - remove all console.log statements
 
-- inital text for training.
+- initial text for training (at least prof. comments)
+
+- server + database
+
+- deployment script
+
+- deployment
