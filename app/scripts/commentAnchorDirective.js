@@ -125,23 +125,19 @@ angular.module('comments')
               }
             }
 
-            $scope.$watch('comment.isSelected', function(value) {
-              if ($scope.$parent.activeTab == 'contextual') {
-                if (value) {
-                  elem.addClass('document__anchor--selected');
-                } else {
-                  elem.removeClass('document__anchor--selected');
-                }
+            $scope.$watch('comment.isSelected', function(value) {              
+              if (value) {
+                elem.addClass('document__anchor--selected');
+              } else {
+                elem.removeClass('document__anchor--selected');
               }
             });
 
             $scope.$watch('comment.highlightedAnchor', function(value) {
-              if ($scope.$parent.activeTab == 'contextual') {
-                if (value) {
-                  elem.addClass('document__anchor--highlighted');
-                } else {
-                  elem.removeClass('document__anchor--highlighted');
-                }
+              if (value) {
+                elem.addClass('document__anchor--highlighted');
+              } else {
+                elem.removeClass('document__anchor--highlighted');
               }
             });
 
