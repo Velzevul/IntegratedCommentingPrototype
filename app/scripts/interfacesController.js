@@ -186,7 +186,6 @@ angular.module('comments')
                     if($(paragraph[i].children[j]).hasClass( 'comment-contains' )){
                         tempComment = ContextualCommentsService.getOne(paragraph[i].children[j].id);
                         num = num + 1 + tempComment.replies.length;
-                        console.log(num)
                     }
                 }
                 buttons[i].innerText = num;
