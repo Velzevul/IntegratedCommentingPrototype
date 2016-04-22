@@ -1,8 +1,8 @@
 (function(window) {
   var app = angular.module('logger', []);
 
-  app.factory('LoggerService', function($q) {
-    var serverUrl = '//vdziubak.com:8000',
+  app.factory('LoggerService', function($http) {
+    var serverUrl = 'http://localhost:5000/',
         lsPrefix = 'IntegratedCommentingStudy-';
 
     var getData = function() {
@@ -24,13 +24,9 @@
 
     return {
       log: function(message) {
-        var payload = Object.assign({}, getData(), {
-              timestamp: new Date().toString(),
-              message: message
-            });
+        var payload = Object.assign({}, getData(), { message: message });
 
-        console.log(payload);
-        // $q.post(serverUrl + '/logs', payload);
+        $http.post(serverUrl + 'logs/', payload);
       },
       setData: function(obj) {
         setData(obj);

@@ -3,7 +3,7 @@
 
   var app = angular.module('study', ['logger']);
 
-  app.controller('studyController', function(LoggerService, $scope, $window) {
+  app.controller('studyController', function(LoggerService, $scope, $window, $timeout) {
     $scope.data = LoggerService.getData();
 
     $scope.submit = function(e) {
@@ -19,10 +19,13 @@
         });
         LoggerService.log('session started');
 
-        var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
-            urlPath = '/#/' + $scope.data.interface;
+        $timeout(() => {
+          debugger;
+          var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
+              urlPath = '/#/' + $scope.data.interface;
 
-        $window.location.href = urlPath + '?' + urlParams.join('&');
+          $window.location.href = urlPath + '?' + urlParams.join('&');
+        }, 5000);
       } else {
         alert('please, set all the values first');
       }
