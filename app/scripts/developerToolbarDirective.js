@@ -11,8 +11,10 @@ angular.module('comments')
           var endSession = $window.confirm("Are you sure you want to quit?");
 
           if(endSession){
-            LoggerService.log('session finished');
-            $window.location.href = '/study.html';
+            LoggerService.log('session finished')
+              .finally(function() {
+                $window.location.href = '/study.html';
+              })
           } else {
             event.preventDefault();
           }

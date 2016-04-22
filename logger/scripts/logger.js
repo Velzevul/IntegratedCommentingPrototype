@@ -29,7 +29,17 @@
           createdAt: new Date().toString()
         });
 
-        return $http.post(serverUrl + 'logs/', payload);
+        // localStorage backup
+        var participantLog = localStorage.getItem(lsPrefix + payload.participantId);
+        if (!participantLog) {
+          participantLog = [];
+        } else {
+          participantLog = JSON.parse(participantLog);
+        }
+        participantLog.push(payload);
+        localStorage.setItem(lsPrefix + payload.participantId, JSON.stringify(participantLog));
+
+        // return $http.post(serverUrl + 'logs/', payload);
       },
       setData: function(obj) {
         setData(obj);

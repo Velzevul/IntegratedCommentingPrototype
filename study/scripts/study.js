@@ -18,7 +18,7 @@
           clutter: $scope.data.clutter,
         });
         LoggerService.log('session started')
-          .then(function() {
+          .finally(function() {
             var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
                 urlPath = '/#/' + $scope.data.interface;
 
