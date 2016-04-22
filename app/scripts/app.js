@@ -12,72 +12,42 @@
     }
   });
 
+  var constructPath = function(interfaceType, urlParams) {
+    var path = 'templates/' + interfaceType + '-';
+
+    if (urlParams.session === 'training'){
+      path += 'training';
+    } else {
+      path += urlParams.content;
+
+      if (urlParams.clutter === 'on') {
+        path += '_clutter';
+      }
+    }
+
+    path += '.html';
+
+    return path;
+  };
+
   app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      // .when('/', {
-      //   controller: 'startScreenController',
-      //   templateUrl: 'templates/startScreen.html'
-      // })
-      // .when('/interface', {
-      //   controller: function() {
-
-      //   },
-      //   templateUrl: function() {
-
-      //   }
-      // });
         .when('/integrated', {
-            controller: 'integratedController',
-          templateUrl: function(name){
-            var path = 'templates/integrated-' + name.content;
-
-            if(name.training == 'true'){
-              path = 'templates/trainingIntegrated.html';
-            }else {
-              if(name.clutter == 'true'){
-                path += '_clutter.html';
-              } else {
-                path += '.html';
-              }
-            }
-
-            return path;
+          controller: 'integratedController',
+          templateUrl: function(urlParams){
+            return constructPath('integrated', urlParams);
           }
         })
         .when('/heatmap', {
           controller: 'heatmapController',
-          templateUrl: function(name){
-            var path = 'templates/heatmap-' + name.content;
-
-            if(name.training){
-              path = 'templates/trainingHeatmap.html';
-            }else {
-              if(name.clutter == 'true'){
-                path += '_clutter.html';
-              } else {
-                path += '.html';
-              }
-            }
-
-            return path;
+          templateUrl: function(urlParams){
+            return constructPath('heatmap', urlParams);
           }
         })
         .when('/paragraph', {
           controller: 'paragraphController',
-          templateUrl: function(name){
-            var path = 'templates/paragraph-' + name.content;
-
-            if(name.training){
-              path = 'templates/trainingParagraph.html';
-            }else {
-              if(name.clutter == 'true'){
-                path += '_clutter.html';
-              } else {
-                path += '.html';
-              }
-            }
-
-            return path;
+          templateUrl: function(urlParams){
+            return constructPath('paragraph', urlParams);
           }
         });
    }]);
