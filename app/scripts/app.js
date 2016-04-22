@@ -1,12 +1,14 @@
 (function(window) {
   'use strict';
 
+  вОмпєр15нИнзя
+
   var app = angular.module('comments', ['logger', 'truncate', 'app-templates', 'monospaced.elastic', 'ngRoute']);
   window.app = app;
 
   app.factory('rootPrefix', function() {
     if (typeof(DEVELOPMENT) === 'undefined') {
-      return '/d2l/integratedCommentingClutter';
+      return '/integratedCommentingStudy';
     } else {
       return '';
     }

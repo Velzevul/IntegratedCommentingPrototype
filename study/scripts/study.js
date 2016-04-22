@@ -1,6 +1,14 @@
 (function(window) {
   'use strict';
 
+  var rootUrl;
+
+  if (typeof(DEVELOPMENT) === 'undefined') {
+    rootUrl = '//vdziubak.com/integratedCommentingStudy/';
+  } else {
+    rootUrl = '//localhost:3000/';
+  }
+
   var app = angular.module('study', ['logger']);
 
   app.controller('studyController', function(LoggerService, $scope, $window, $timeout) {
@@ -17,13 +25,12 @@
           content: $scope.data.content,
           clutter: $scope.data.clutter,
         });
-        LoggerService.log('session started')
-          .finally(function() {
-            var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
-                urlPath = '/#/' + $scope.data.interface;
+        LoggerService.log('session started');
 
-            $window.location.href = urlPath + '?' + urlParams.join('&');
-          });
+        var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
+            urlPath = '#/' + $scope.data.interface;
+
+        $window.location.href = rootUrl + urlPath + '?' + urlParams.join('&');
       } else {
         alert('please, set all the values first');
       }

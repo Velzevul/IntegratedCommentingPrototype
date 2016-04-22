@@ -1,5 +1,5 @@
 angular.module('comments')
-  .directive('developerToolbar', function($window, DevParametersService, ContextualCommentsService, UserService, LoggerService) {
+  .directive('developerToolbar', function($window, DevParametersService, ContextualCommentsService, UserService, LoggerService, rootPrefix) {
     'use strict';
 
     return {
@@ -12,9 +12,8 @@ angular.module('comments')
 
           if(endSession){
             LoggerService.log('session finished')
-              .finally(function() {
-                $window.location.href = '/study.html';
-              })
+
+            $window.location.href = rootPrefix + '/study.html';
           } else {
             event.preventDefault();
           }
