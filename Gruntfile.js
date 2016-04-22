@@ -26,8 +26,7 @@ module.exports = function(grunt) {
 
     concat: {
       dependencies: {
-        src: ['bower_components/jquery/dist/jquery.js',
-              'bower_components/angular-truncate/src/truncate.js',
+        src: ['bower_components/angular-truncate/src/truncate.js',
               'bower_components/angular-elastic/elastic.js',
               'bower_components/angular-route/angular-route.js'],
         dest: 'dist/scripts/dependencies.concat.js'
@@ -62,7 +61,8 @@ module.exports = function(grunt) {
       studyJS:   { expand: true, src: 'study/scripts/study.js', dest: 'dist/scripts/', flatten: true},
       answersJS: { expand: true, src: 'answers/scripts/answers.js', dest: 'dist/scripts/', flatten: true},
       logger:    { expand: true, src: 'logger/scripts/logger.js', dest: 'dist/scripts/', flatten: true},
-      angular:   { expand: true, src: 'bower_components/angular/angular.js', dest: 'dist/scripts', flatten: true}
+      angular:   { expand: true, src: 'bower_components/angular/angular.js', dest: 'dist/scripts', flatten: true},
+      jquery:    { expand: true, src: 'bower_components/jquery/dist/jquery.js', dest: 'dist/scripts', flatten: true}
     },
 
     processhtml: {
