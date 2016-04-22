@@ -15,7 +15,7 @@
   var constructPath = function(interfaceType, urlParams) {
     var path = 'templates/' + interfaceType + '-' + urlParams.content;
 
-    if (urlParams.clutter === 'on') {
+    if (urlParams.clutter === 'on' && urlParams.content !== 'training') {
       path += '_clutter';
     }
 
