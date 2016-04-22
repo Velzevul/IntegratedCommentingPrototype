@@ -8,38 +8,40 @@
   </head>
   <body ng-controller="answersController">
     <div class="centered">
-      <div class="centered__item" ng-repeat="q in questions">
-        <form class="answer-form" ng-submit="submit(q, $index+1)">
-          <div class="l-block-small">
-            <div class="answer-form__title">Question {{$index + 1}}</div>
-          </div>
-
-          <div class="l-block">
-            <div class="answer-form__text">{{q.text}}</div>
-          </div>
-
-          <div class="l-block">
-            <textarea class="answer-form__field"
-                      ng-class="{'answer-form__field--error': q.error}"
-                      ng-model="q.answer"
-                      ng-change="resetError(q)"></textarea>
-          </div>
-
-          <div class="l-justify">
-            <div class="l-justify__item">
-              <div ng-show="q.submitted">Answer submitted</div>
-              <div class="answer-form__error" ng-show="q.error">{{q.error}}</div>
+      <div class="centered__item">
+        <div class="l-block" ng-repeat="q in questions">
+          <form class="answer-form" ng-submit="submit(q, $index+1)">
+            <div class="l-block-small">
+              <div class="answer-form__title">Question {{$index + 1}}</div>
             </div>
 
-            <div class="l-justify__item">
-              <button class="answer-form__button"
-                      ng-disabled="q.submitted">
-                        <span ng-hide="q.submitted">Submit</span>
-                        <span ng-show="q.submitted">Submitted</span>
-                      </button>
+            <div class="l-block">
+              <div class="answer-form__text">{{q.text}}</div>
             </div>
-          </div>
-        </form>
+
+            <div class="l-block">
+              <textarea class="answer-form__field"
+                        ng-class="{'answer-form__field--error': q.error}"
+                        ng-model="q.answer"
+                        ng-change="resetError(q)"></textarea>
+            </div>
+
+            <div class="l-justify">
+              <div class="l-justify__item">
+                <div ng-show="q.submitted">Answer submitted</div>
+                <div class="answer-form__error" ng-show="q.error">{{q.error}}</div>
+              </div>
+
+              <div class="l-justify__item">
+                <button class="answer-form__button"
+                        ng-disabled="q.submitted">
+                          <span ng-hide="q.submitted">Submit</span>
+                          <span ng-show="q.submitted">Submitted</span>
+                        </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 

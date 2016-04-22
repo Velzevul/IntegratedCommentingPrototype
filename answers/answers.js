@@ -6,7 +6,7 @@
   app.controller('answersController', function(LoggerService, $scope, $q) {
     console.log('controller here!');
 
-    var content = LoggerService.get('content');
+    var content = LoggerService.getData().content;
 
     if (content === 'life') {
       $scope.questions = [
