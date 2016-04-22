@@ -265,7 +265,7 @@ angular.module('comments')
         console.log(JSON.stringify(mock))
       },
       setMock: function(content, clutter){
-        var startIndex = clutter === 'on' ? 0 : 3;
+        var startIndex = clutter === 'on' ? 3 : 0;
 
         if (content === 'training') {
           mock = trainingMock;
