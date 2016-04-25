@@ -23,9 +23,9 @@
           participantId: $scope.data.participantId,
           interface: $scope.data.interface,
           content: $scope.data.content,
-          clutter: $scope.data.clutter,
+          clutter: $scope.data.clutter
         });
-        LoggerService.log('session started');
+        LoggerService.log('experiment parameters set');
 
         var urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter],
             urlPath = '#/' + $scope.data.interface;

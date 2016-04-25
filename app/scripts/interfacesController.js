@@ -3,6 +3,12 @@ angular.module('comments')
     'use strict';
     // contextual comments
 
+    $scope.experimentStarted = false;
+    $scope.startExperiment = function() {
+      $scope.experimentStarted = true;
+      LoggerService.log('experiment started');
+    };
+
     var params = LoggerService.getData();
 
     ContextualCommentsService.loaded
@@ -41,6 +47,12 @@ angular.module('comments')
     'use strict';
 
     var params = LoggerService.getData();
+
+    $scope.experimentStarted = false;
+    $scope.startExperiment = function() {
+      $scope.experimentStarted = true;
+      LoggerService.log('experiment started');
+    };
 
     ContextualCommentsService.loaded
       .then(function() {
@@ -98,6 +110,12 @@ angular.module('comments')
 angular.module('comments')
   .controller('paragraphController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService) {
     'use strict';
+
+    $scope.experimentStarted = false;
+    $scope.startExperiment = function() {
+      $scope.experimentStarted = true;
+      LoggerService.log('experiment started');
+    };
 
     var params = LoggerService.getData();
 

@@ -1,38 +1,43 @@
-<div class="grid grid--center grid--full">
-    <div class="grid__item three-quarters">
-        <div class="" ng-repeat="n in setDivs(23) track by $index">
-            <span class="relevantComments" id="anchorRelevant{{$index}}" relevant-anchor ></span>
-            <span class="heatmap" id="{{$index}}" ng-click="setActiveLine( $index )" heatmap ></span>
-            <span class="teacherParticipation" id="teacherParticipation{{$index}}" ng-click="setActiveLine( $index )" teacherParticipation></span>
-        </div>
-        <div class="document-toolbar" fix-width ng-show="false">
-            <statusbar-contextual ng-show="activeTab != false"></statusbar-contextual>
-            <statusbar-default ng-show="activeTab == false"></statusbar-default>
-        </div>
-
-        <article class="document">    
-            <header class='l-block-med'>
-                <h1 class="document__title">Lorem Ipsum Training</h1>
-            </header>
-
-            <div class="content-area" select-anchor="">
-                <p id="paragraph1" paragraph="" class="ng-scope">Have you ever travelled to another part of your <note-54385 id="130" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">Land stayed for a few days? Travel within one's own</note-54385> country  country is popular throughout the world. And, according to a survey carried out in Australia in 2002, travellers are tending to spend more and more money on their holidays.</p>
-
-                <p>In most countries, the land is divided <note-84061 id="121" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">into different political areas. Australia is divided into six states</note-84061> and two territories. Since people travel for different reasons, there are significant differences in the length of time people stay in different locations and in the amount they spend while there.
-
-
+<div>
+    <div class="grid grid--center grid--full">
+        <div class="grid__item three-quarters">
+            <div class="" ng-repeat="n in setDivs(7) track by $index">
+                <span class="relevantComments" id="anchorRelevant{{$index}}" relevant-anchor ></span>
+                <span class="heatmap" id="{{$index}}" ng-click="setActiveLine( $index )" heatmap ></span>
+                <span class="teacherParticipation" id="teacherParticipation{{$index}}" ng-click="setActiveLine( $index )" teacherParticipation></span>
             </div>
-        </article>
-    </div><!--
-    --><div class="grid__item one-quarter">
-      <comment-tabs></comment-tabs>
-      <!--<div class="container"><options-panel></options-panel></div>-->
+            <div class="document-toolbar" fix-width ng-show="false">
+                <statusbar-contextual ng-show="activeTab != false"></statusbar-contextual>
+                <statusbar-default ng-show="activeTab == false"></statusbar-default>
+            </div>
 
-      <div class="new-positioning-grid">
-          <div ng-repeat="comment in contextualComments | filter:filterLine track by $index">
-            <contextual-comment comment="comment" ng-if="comment.text != undefined"></contextual-comment>
-            <contextual-comment-form comment="comment" ng-if="comment.text == undefined"></contextual-comment-form>
+            <article class="document">
+                <header class='l-block-med'>
+                    <h1 class="document__title">Lorem Ipsum Training</h1>
+                </header>
+
+                <div class="content-area" select-anchor="">
+                    <p id="paragraph1" paragraph="" class="ng-scope">Have you ever travelled to another part of your <note-54385 id="130" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">Land stayed for a few days? Travel within one's own</note-54385> country  country is popular throughout the world. And, according to a survey carried out in Australia in 2002, travellers are tending to spend more and more money on their holidays.</p>
+
+                    <p>In most countries, the land is divided <note-84061 id="121" comment-anchor="" class="document__anchor document__anchor--teal ng-isolate-scope document__anchor--num" comment-active="false" data-content="1">into different political areas. Australia is divided into six states</note-84061> and two territories. Since people travel for different reasons, there are significant differences in the length of time people stay in different locations and in the amount they spend while there.
+
+
+                </div>
+            </article>
+        </div><!--
+        --><div class="grid__item one-quarter">
+          <comment-tabs></comment-tabs>
+          <!--<div class="container"><options-panel></options-panel></div>-->
+
+          <div class="new-positioning-grid">
+              <div ng-repeat="comment in contextualComments | filter:filterLine track by $index">
+                <contextual-comment comment="comment" ng-if="comment.text != undefined"></contextual-comment>
+                <contextual-comment-form comment="comment" ng-if="comment.text == undefined"></contextual-comment-form>
+              </div>
           </div>
-      </div>
+        </div>
     </div>
+
+    <start-modal click-action="startExperiment"
+                 ng-hide="experimentStarted"></start-modal>
 </div>
