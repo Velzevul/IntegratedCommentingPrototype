@@ -6,6 +6,7 @@ angular.module('comments')
     $scope.experimentStarted = false;
     $scope.startExperiment = function() {
       $scope.experimentStarted = true;
+      localStorage.setItem('IntegratedCommentingStudy-started', true);
       LoggerService.log('experiment started');
     };
 
@@ -51,6 +52,7 @@ angular.module('comments')
     $scope.experimentStarted = false;
     $scope.startExperiment = function() {
       $scope.experimentStarted = true;
+      localStorage.setItem('IntegratedCommentingStudy-started', true);
       LoggerService.log('experiment started');
     };
 
@@ -114,6 +116,7 @@ angular.module('comments')
     $scope.experimentStarted = false;
     $scope.startExperiment = function() {
       $scope.experimentStarted = true;
+      localStorage.setItem('IntegratedCommentingStudy-started', true);
       LoggerService.log('experiment started');
     };
 

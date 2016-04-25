@@ -11,7 +11,8 @@ angular.module('comments')
           var endSession = $window.confirm("Are you sure you want to quit?");
 
           if(endSession){
-            LoggerService.log('experiment finished')
+            LoggerService.log('experiment finished');
+            localStorage.removeItem('IntegratedCommentingStudy-started');
 
             $window.location.href = rootPrefix + '/study.html';
           } else {
