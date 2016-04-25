@@ -19,13 +19,34 @@ angular.module('comments')
 
             $scope.$parent.$watchGroup(['activeTab', 'filterValue', 'activeLines.length'], function(value, value2, scope) {
               //console.log(elem.prop('id') ==  1)
+
+              //Variable is used for searching the comments to determine 
+              var found = false;
               
               if($scope.$parent.prototypeValue == 'integrated'){
-                var filterValue = value[1];
+                var filterValue = value[1],
+                    commentRepliesLength;
+
+
                 if(filterValue === undefined || filterValue === ''){
                   addClasses();
-                } else {
-                  if($scope.comment && $scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                } else if($scope.comment){
+                  //calculates how many replies are in the comment to search through each reply looking for the keyword
+                  commentRepliesLength = $scope.comment.replies.length + 1;
+                  for( var i = 0; i < commentRepliesLength; i++ ){
+                    if(i === 0){
+                      if($scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                        found = true;
+                      }
+                    } else {
+                      //look in the replies
+                      if($scope.comment.replies[i - 1].text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                        found = true;
+                      }
+                    }
+                  }
+
+                  if(found){
                     addClasses();
                   } else {
                     removeClasses();
@@ -44,24 +65,38 @@ angular.module('comments')
                     removeClasses();
                   }
                 } else{
-                  $scope.$parent.showProfOnly = false;
-                  $scope.$parent.onlyProf = false;
                   if($scope.comment && $scope.$parent.newSearchValue >= 0){
                     //this stops the heatmap from doubling
                     $scope.$parent.newSearchValue++;
                   }
-                  if($scope.comment && $scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
-                    if($scope.$parent.newSearchValue >= 0){
-                      heatmapIntensity[spot]++;
+                  //calculates how many replies are in the comment to search through each reply looking for the keyword
+                  commentRepliesLength = $scope.comment.replies.length + 1;
+                  for( var i = 0; i < commentRepliesLength; i++ ){
+                    if(i === 0){
+                      if($scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                        found = true;
+                      }
+                    } else {
+                      //look in the replies
+                      if($scope.comment.replies[i - 1].text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                        found = true;
+                      }
                     }
+                  }
+
+                  if(found){
+                    addClasses();
+                    if($scope.$parent.newSearchValue >= 0){
+                      heatmapIntensity[spot]+= $scope.comment.replies.length + 1;
+                    }                    
                     if(valueActiveLine.indexOf(spot) >= 0 ){
                       addClasses();
                     } else {
                       removeClasses();
-                    }
+                    }                    
                   } else {
                     removeClasses();
-                  }
+                  } 
                 }
                 
                 if($scope.$parent.contextualComments && $scope.$parent.newSearchValue == $scope.$parent.contextualComments.length){
@@ -72,32 +107,47 @@ angular.module('comments')
                 var valueActiveTab = value[0],
                     filterValue = value[1];
 
-                  if(filterValue === undefined || filterValue == ''){
+                if(filterValue === undefined || filterValue == ''){
+                  if (  elem[0].parentElement.id == valueActiveTab ){
+                    addClasses();
+                  } else {
+                    removeClasses();
+                  }
+                } else{
+                  //filter anchors
+                  //calculates how many replies are in the comment to search through each reply looking for the keyword
+                  commentRepliesLength = $scope.comment.replies.length + 1;
+                  for( var i = 0; i < commentRepliesLength; i++ ){
+                    if(i === 0){
+                      if($scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                        found = true;
+                      }
+                    } else {
+                      //look in the replies
+                      if($scope.comment.replies[i - 1].text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){
+                        found = true;
+                      }
+                    }
+                  }
+
+                  if(found){
+                    addClasses();
+                    elem.addClass('comment-contains', false);
                     if (  elem[0].parentElement.id == valueActiveTab ){
                       addClasses();
                     } else {
                       removeClasses();
                     }
-                  } else{
-                    //filter anchors
-                    if($scope.comment && $scope.comment.text.toLowerCase().indexOf(filterValue.toLowerCase()) != -1){              
-                      elem.addClass('comment-contains', false);
-                      if (  elem[0].parentElement.id == valueActiveTab ){
-                        addClasses();
-                      } else {
-                        removeClasses();
-                      }
-                    } else {
-                      removeClasses();
-                      elem.removeClass('comment-contains', false);
-                    }
-
+                  } else {
+                    removeClasses();
+                    elem.removeClass('comment-contains', false);
                   }
-                $scope.$parent.updateCommentButtonsNumber()
-              }
+                }
+              $scope.$parent.updateCommentButtonsNumber()
+            }
 
-              ContextualCommentsService.reposition();
-            });
+            ContextualCommentsService.reposition();
+          });
 
             function removeClasses(){
               elem.removeClass( 'document__anchor' );
