@@ -59,6 +59,17 @@
         "postedOn": "2014-03-27T04:01:16",
         "seen": true,
         "$$hashKey": "object:68"
+      },
+      {
+        "id": 1150,
+        "text": "That is cool!",
+        "author": {
+          "name": "Sum Guy",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:680"
       }
     ],
     "unseenRepliesCount": 0,
@@ -154,7 +165,40 @@
         "postedOn": "2014-03-27T04:01:16",
         "seen": true,
         "$$hashKey": "object:90"
-      }
+      },
+      {
+        "id": 190,
+        "text": "I think it is worth it to find out",
+        "author": {
+          "name": "Kevin Huang",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:90"
+      },      
+      {
+        "id": 191,
+        "text": "I am excited by this possibility!",
+        "author": {
+          "name": "Besnik O'Keefe",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:90"
+      },
+      {
+        "id": 194,
+        "text": "I wonder what other implications there will be",
+        "author": {
+          "name": "Kobe Bryant",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:90"
+      }      
     ],
     "unseenRepliesCount": 0,
     "hasInstructor": true,
