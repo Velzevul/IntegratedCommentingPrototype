@@ -117,59 +117,6 @@
     "isHighlighted": false
   },
   {
-    "id": 47,
-    "text": "I feel like amateurs cant really help as much because the equipment they have is not as powerful",
-    "author": {
-      "name": "Gerold Slane",
-      "isInstructor": false
-    },
-    "postedOn": "2014-03-27T04:01:16",
-    "seen": true,
-    "color": "teal",
-    "replies": [
-      {
-        "id": 48,
-        "text": "For the same reason i feel like help amateurs can give is limited",
-        "author": {
-          "name": "Eidel Silje",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:215"
-      },
-      {
-        "id": 49,
-        "text": "buying the more powerful equipment will add up in cost very fast, and amateurs may not want to sink in so much time",
-        "author": {
-          "name": "Yun Peynirci",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:218"
-      },
-      {
-        "id": 52,
-        "text": "I think that amateurs are still helpful even with worse equipment because theres so many people making observations",
-        "author": {
-          "name": "Selma Haupt",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:245"
-      }
-    ],
-    "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 556,
-    "$$hashKey": "object:205",
-    "isSelected": false,
-    "highlightedAnchor": false,
-    "isHighlighted": false
-  },
-  {
     "id": 25,
     "text": "Uranus was also found by amateurs, as well as various comets and asteroids.",
     "author": {
@@ -292,52 +239,7 @@
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      {
-        "id": 32,
-        "text": "But what if an amateur ends up damaging an important fossil?",
-        "author": {
-          "name": "Jessica Gardinier",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:105"
-      },
-      {
-        "id": 33,
-        "text": "I think Astronomy is more important as it pertains as to what is happening right now in the universe!",
-        "author": {
-          "name": "Carlotta Wakefield",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:108"
-      },
-      {
-        "id": 34,
-        "text": "I agree that having many amateurs helping find fossils will greatly increase the speed in which discoveries are found.",
-        "author": {
-          "name": "Breda Griffin",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:111"
-      },
-      {
-        "id": 35,
-        "text": "^ but that could be said with any of the other fields.",
-        "author": {
-          "name": "Rajmund Kock",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:114"
-      }
-    ],
+    "replies": [    ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1151,
@@ -356,52 +258,7 @@
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [
-      {
-        "id": 43,
-        "text": "Learning is a very important outcome of this time of volunteering",
-        "author": {
-          "name": "Sam Miazga",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:183"
-      },
-      {
-        "id": 44,
-        "text": "This is another reason i think palaeontology is the most important branches",
-        "author": {
-          "name": "Caetano Lenox",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:186"
-      },
-      {
-        "id": 45,
-        "text": "I disagree and feel like every amateur would learn from the other branches as well",
-        "author": {
-          "name": "Natasha Schuler",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:189"
-      },
-      {
-        "id": 46,
-        "text": "I feel like the other branches are more for the experts learning",
-        "author": {
-          "name": "Meridith Terzi",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:192"
-      }
-    ],
+    "replies": [    ],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "position": 1270,
@@ -409,58 +266,6 @@
     "isSelected": false,
     "highlightedAnchor": false,
     "isHighlighted": false
-  },
-  {
-    "id": 36,
-    "text": "I believe amateurs are helpful here, but palaeontology is more important for amateurs because many of these projects require a lot of teamwork to be effective",
-    "author": {
-      "name": "Wen Maksimov",
-      "isInstructor": false
-    },
-    "postedOn": "2014-03-27T04:01:16",
-    "seen": true,
-    "color": "teal",
-    "replies": [
-      {
-        "id": 37,
-        "text": "I agree that ornithology is not the most important because of the same reason",
-        "author": {
-          "name": "Winfred Hayley",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:134"
-      },
-      {
-        "id": 38,
-        "text": "I believe ornithology is most useful because of how many people enjoy the hobby",
-        "author": {
-          "name": "Rebekka Ó Néill",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:137"
-      },
-      {
-        "id": 39,
-        "text": "^ the same could be said about palaeontology",
-        "author": {
-          "name": "Alice Kartal",
-          "isInstructor": false
-        },
-        "postedOn": "2014-03-27T04:01:16",
-        "seen": true,
-        "$$hashKey": "object:140"
-      }
-    ],
-    "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "position": 1389,
-    "$$hashKey": "object:124",
-    "isSelected": false,
-    "highlightedAnchor": false
   },
   {
     "id": 28,
