@@ -310,6 +310,23 @@
     "highlightedAnchor": false,
     "replyRequested": false
   },
+      {
+    "id": 1150,
+    "text": "Most notably Texas has been the most pro-active state following the bill!",
+    "author": {
+      "name": "Andrea Bunt",
+      "isInstructor": true
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [],
+    "unseenRepliesCount": 0,
+    "hasInstructor": true,
+    "isSelected": false,
+    "highlightedAnchor": true,
+    "replyRequested": false
+  },
   {
     "id": 4,
     "text": "Replacing old bulbs and fixtures with more efficient and better-designed bulbs can make a big difference in preserving the night sky",
