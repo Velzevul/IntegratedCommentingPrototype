@@ -6,7 +6,7 @@
   app.controller('answersController', function(LoggerService, $scope, $interval) {
     console.log('controller here!');
 
-    var questions;
+    var questions = [];
 
     $scope.experimentPaused = false;
 
@@ -18,9 +18,17 @@
     $scope.$watchGroup(['content', 'experimentOn'], function(values) {
       $scope.activeQuestionIndex = 0;
 
-      if (values[0] === 'training') {
+      if (values[0] === 'eggplant') {
         questions = [
-          "What's the meaning of life?"
+          "From the comments, which language or dialect calls eggplant 'aubergine'?"
+        ];
+      } else if (values[0] === 'chimney') {
+        questions = [
+          "What was the name of Jack's employer?"
+        ];
+      } else if (values[0] === 'fritware') {
+        questions = [
+          "Which country first started manufacturing frit?"
         ];
       } else if (values[0] === 'life') {
         questions = [
@@ -43,6 +51,7 @@
       } else {
         console.error('wrong document type!');
       }
+
 
       getNextQuestion();
     });
