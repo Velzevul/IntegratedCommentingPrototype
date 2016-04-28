@@ -32,21 +32,21 @@
         ];
       } else if (values[0] === 'life') {
         questions = [
-          "Copy and paste names of all the animals that have been tested on in the article" ,
-          "Copy and paste names of 4 organisms that have the genes linked to increasing age" ,
-          "Copy and paste concept or definition that the students in your class discuss the most"
+          "List names of all Universities mentioned in the article" ,
+          "From the comments, copy and paste a name of the organism that has genes similar to an earth worm" ,
+          "Copy and paste a sentence that was commented the most in the document"
         ];
       } else if (values[0] === 'amateurs') {
         questions = [
-          "Copy and paste names of all the science experts that has been mentioned in the article",
-          "Copy and paste names of 3 advantages or discoveries made by amateurs",
-          "Copy and paste concept or definition that the students in your class discuss the most"
+          "List names of all science experts mentioned in the article",
+          "From the comments, copy and paste a name of the name of a planet discovered by amateurs",
+          "Copy and paste a sentence that was commented the most in the document"
         ];
       } else if (values[0] === 'light') {
         questions = [
-          "Copy and paste names of all the negative effects light pollution can cause",
-          "Copy and paste names of 4 things people are doing to cut down on light pollution.",
-          "Copy and paste concept or definition that the students in your class discuss the most"
+          "List all the people mentioned in the article",
+          "From the comments, copy and paste a name of the state that has been the most proactive in following state bills",
+          "Copy and paste a sentence that was commented the most in the document"
         ];
       } else {
         console.error('wrong document type!');
