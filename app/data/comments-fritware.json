@@ -1,0 +1,84 @@
+[
+  {
+    "id":1,
+    "text":"What's frit?",
+    "author":{
+      "name":"Martin Septim",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+      {
+        "id":1232,
+        "text":"it usually grows 40 to 150 cm (16 to 59 in) tall",
+        "author":{
+          "name":"Caius Cosades",
+          "isInstructor":true
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":true,
+    "position":0,
+    "isSelected":false
+  },
+  {
+    "id":2,
+    "text":"I am curious where was it invented in the first place",
+    "author":{
+      "name":"Mehrunes Dagon",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+      {
+        "id":22,
+        "text":"t seems to have been first manufactured in Iraq in the 9th century",
+        "author":{
+          "name":"Dagoth Uhr",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+      {
+        "id":23,
+        "text":"I read that Egypt was the main center of manufacture between the 10th and the 12th century",
+        "author":{
+          "name":"Mehrunes Dagon",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      }
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":false,
+    "position":0,
+    "isSelected":false
+  },
+  {
+    "id":3,
+    "text":"Please, read Arthur Lane's books about Islamic Pottery for the next class",
+    "author":{
+      "name":"Hermaeus Mora",
+      "isInstructor":true
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":true,
+    "position":0,
+    "isSelected":false
+  }
+]

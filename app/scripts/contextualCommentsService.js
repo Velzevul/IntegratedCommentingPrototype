@@ -3,7 +3,8 @@ angular.module('comments')
     'use strict';
 
     var mock = [],
-      trainingMock = [{"id":130,"text":"This is an inline comment!","author":{"name":"Volodymyr Dziubak","isInstructor":false},"postedOn":"2014-03-27T04:01:16","seen":true,"color":"teal","replies":[],"unseenRepliesCount":0,"hasInstructor":false,"position":148,"isSelected":false},{"id":121,"text":"This text has a prof's involvement!","author":{"name":"Andrea Bunt","isInstructor":false},"postedOn":"2014-03-27T04:01:16","seen":true,"color":"teal","replies":[{"id": 22,"text": "This is a reply to a comment!","author": {"name": "Thei Fay","isInstructor": false},"postedOn": "2014-03-27T04:01:16","seen": true,"$$hashKey": "object:18"}],"unseenRepliesCount":0,"hasInstructor":true,"position":253,"isSelected":false}],
+      contentMock = {},
+      clutterMock = {},
       idIndexMap = {},
       nextId = 120,
       statsCache = {
@@ -12,8 +13,7 @@ angular.module('comments')
         totalUnseenCount: 4*/
       },
       user = UserService.getCurrent(),
-      promise,
-      mockData;
+      promise;
 
     updateIdIndexMap();
 
@@ -23,10 +23,23 @@ angular.module('comments')
       $http.get(rootPrefix + '/data/comments-3.json'),//life
       $http.get(rootPrefix + '/data/comments-1-clutter.json'),
       $http.get(rootPrefix + '/data/comments-2-clutter.json'),
-      $http.get(rootPrefix + '/data/comments-3-clutter.json')
+      $http.get(rootPrefix + '/data/comments-3-clutter.json'),
+      $http.get(rootPrefix + '/data/comments-chimney.json'),
+      $http.get(rootPrefix + '/data/comments-fritware.json'),
+      $http.get(rootPrefix + '/data/comments-eggplant.json')
     ])
       .then(function(response) {
-        mockData = response;
+        contentMock['amateurs'] = response[0];
+        contentMock['light'] = response[1];
+        contentMock['life'] = response[2];
+        
+        clutterMock['amateurs'] = response[3];
+        clutterMock['light'] = response[4];
+        clutterMock['life'] = response[5];
+
+        contentMock['chimney'] = response[6];
+        contentMock['fritware'] = response[7];
+        contentMock['eggplant'] = response[8];
       });
 
     function getById(id) {
@@ -265,17 +278,13 @@ angular.module('comments')
         console.log(JSON.stringify(mock))
       },
       setMock: function(content, clutter){
-        var startIndex = clutter === 'on' ? 3 : 0;
+        var mockMap = contentMock;
 
-        if (content === 'training') {
-          mock = trainingMock;
-        } else if (content === 'amateurs') {
-          mock = mockData[startIndex + 0].data;
-        } else if (content === 'light') {
-          mock = mockData[startIndex + 1].data;
-        } else if (content === 'life') {
-          mock = mockData[startIndex + 2].data;
+        if (clutter === 'on') {
+          mockMap = clutterMock;
         }
+
+        mock = mockMap[content];
 
         updateStatsCache();
         updateIdIndexMap();

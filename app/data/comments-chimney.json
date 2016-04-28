@@ -1,0 +1,85 @@
+[
+  {
+    "id":1,
+    "text":"Always wondered how would it feel to be a chimney sweep",
+    "author":{
+      "name":"Martin Septim",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":false,
+    "position":0,
+    "isSelected":false
+  },
+  {
+    "id":2,
+    "text":"Just curious, who was this employer?",
+    "author":{
+      "name":"Mehrunes Dagon",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+      {
+        "id":22,
+        "text":"I think it was lord Vivec from Vvardenfell",
+        "author":{
+          "name":"Dagoth Uhr",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+      {
+        "id":23,
+        "text":"Yeah, makes sense... that guy was a jerk from what I remember",
+        "author":{
+          "name":"Mehrunes Dagon",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      }
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":false,
+    "position":0,
+    "isSelected":false
+  },
+  {
+    "id":3,
+    "text":"I was wondering why did Jack tell his employer about his finding",
+    "author":{
+      "name":"Dremora Markynaz",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+      {
+        "id":22,
+        "text":"In the story, Jack was bragging of his finding in front of his employer's daughter who he fell in love with. She told her father, Vivec, who got jealous and decided to take the treasure for himself.",
+        "author":{
+          "name":"Hermaeus Mora",
+          "isInstructor":true
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true,
+        "$$hashKey":"object:18"
+      }
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":true,
+    "position":0,
+    "isSelected":false
+  }
+]

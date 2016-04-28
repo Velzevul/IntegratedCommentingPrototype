@@ -1,0 +1,96 @@
+[
+  {
+    "id":1,
+    "text":"How tall is the plant itself?",
+    "author":{
+      "name":"Martin Septim",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+      {
+        "id":1232,
+        "text":" frit is a ceramic composition that has been fused in a special fusing oven, quenched to form a glass, and granulated (from Wikipedia)",
+        "author":{
+          "name":"Caius Cosades",
+          "isInstructor":true
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":true,
+    "position":0,
+    "isSelected":false
+  },
+  {
+    "id":2,
+    "text":"I also heard 'aubergine'. Anybody knows which language is that?",
+    "author":{
+      "name":"Mehrunes Dagon",
+      "isInstructor":false
+    },
+    "postedOn":"2014-03-27T04:01:16",
+    "seen":true,
+    "color":"teal",
+    "replies":[
+      {
+        "id":22,
+        "text":"I also heard 'melongene' and 'garden egg'",
+        "author":{
+          "name":"Dagoth Uhr",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+      {
+        "id":23,
+        "text":"or even 'guinea squash' :)",
+        "author":{
+          "name":"Mehrunes Dagon",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+      {
+        "id":24,
+        "text":"'aubergine' sounds like French to me...",
+        "author":{
+          "name":"Boethia",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+      {
+        "id":25,
+        "text":"no, 'aubergine' is British English",
+        "author":{
+          "name":"Azura",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      },
+      {
+        "id":26,
+        "text":"that's funnny :)",
+        "author":{
+          "name":"Sheogorath",
+          "isInstructor":false
+        },
+        "postedOn":"2014-03-27T04:01:16",
+        "seen":true
+      }
+    ],
+    "unseenRepliesCount":0,
+    "hasInstructor":false,
+    "position":0,
+    "isSelected":false
+  }
+]
