@@ -11,7 +11,7 @@ angular.module('comments')
     };
 
     var params = LoggerService.getData();
-
+    
     ContextualCommentsService.loaded
       .then(function() {
         ContextualCommentsService.setMock(params.content, params.clutter);

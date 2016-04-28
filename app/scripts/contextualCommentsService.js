@@ -29,17 +29,17 @@ angular.module('comments')
       $http.get(rootPrefix + '/data/comments-eggplant.json')
     ])
       .then(function(response) {
-        contentMock['amateurs'] = response[0];
-        contentMock['light'] = response[1];
-        contentMock['life'] = response[2];
+        contentMock['amateurs'] = response[0].data;
+        contentMock['light'] = response[1].data;
+        contentMock['life'] = response[2].data;
         
-        clutterMock['amateurs'] = response[3];
-        clutterMock['light'] = response[4];
-        clutterMock['life'] = response[5];
+        clutterMock['amateurs'] = response[3].data;
+        clutterMock['light'] = response[4].data;
+        clutterMock['life'] = response[5].data;
 
-        contentMock['chimney'] = response[6];
-        contentMock['fritware'] = response[7];
-        contentMock['eggplant'] = response[8];
+        contentMock['chimney'] = response[6].data;
+        contentMock['fritware'] = response[7].data;
+        contentMock['eggplant'] = response[8].data;
       });
 
     function getById(id) {

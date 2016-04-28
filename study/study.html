@@ -40,33 +40,40 @@
           </div>
         </div>
 
-        <div class="l-block-small">
+        <div class="l-block">
           <div class="form-row">
-            <div class="form-row__cell form-row__cell--label">Content</div>
+            <div class="form-row__cell form-row__cell--label">Session</div>
             <div class="form-row__cell">
-              <label><input type="radio" class="form-radio" name="content" value="training"
-                            ng-model="data.content">Training</label>
+              <label><input type="radio" class="form-radio" name="session" value="training"
+                            ng-model="data.session">Training</label>
             </div>
-            <div class="form-row__cell"></div>
-            <div class="form-row__cell"></div>
+            <div class="form-row__cell">
+              <label><input type="radio" class="form-radio" name="session" value="task"
+                            ng-model="data.session">Task</label>
+            </div>
+            <div class="form-row__cell">
+            </div>
           </div>
         </div>
 
         <div class="l-block">
           <div class="form-row">
-            <div class="form-row__cell form-row__cell--label"></div>
+            <div class="form-row__cell form-row__cell--label">Content</div>
 
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="content" value="light"
-                            ng-model="data.content">Light</label>
+                            ng-model="data.content"
+                            ng-disabled="data.session === 'training'">Light</label>
             </div>
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="content" value="life"
-                            ng-model="data.content">Life</label>
+                            ng-model="data.content"
+                            ng-disabled="data.session === 'training'">Life</label>
             </div>
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="content" value="amateurs"
-                            ng-model="data.content">Amateurs</label>
+                            ng-model="data.content"
+                            ng-disabled="data.session === 'training'">Amateurs</label>
             </div>
           </div>
 
@@ -78,12 +85,12 @@
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="clutter" value="on"
                             ng-model="data.clutter"
-                            ng-disabled="data.content === 'training'">On</label>
+                            ng-disabled="data.session === 'training'">On</label>
             </div>
             <div class="form-row__cell">
               <label><input type="radio" class="form-radio" name="clutter" value="off"
                             ng-model="data.clutter"
-                            ng-disabled="data.content === 'training'">Off</label>
+                            ng-disabled="data.session === 'training'">Off</label>
             </div>
             <div class="form-row__cell">
             </div>
