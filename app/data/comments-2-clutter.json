@@ -788,6 +788,23 @@
     "replyRequested": false,
     "isHighlighted": false
   },
+      {
+    "id": 1150,
+    "text": "Most notably Texas has been the most pro-active state following the bill!",
+    "author": {
+      "name": "Andrea Bunt",
+      "isInstructor": true
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [],
+    "unseenRepliesCount": 0,
+    "hasInstructor": true,
+    "isSelected": false,
+    "highlightedAnchor": true,
+    "replyRequested": false
+  },
   {
     "id": 149,
     "text": "It's good the government is helping",

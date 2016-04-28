@@ -1,4 +1,41 @@
 [
+    {
+    "id": 555,
+    "text": "Then why was anyone interested in the advancement of science before??",
+    "author": {
+      "name": "Hugo Isaev",
+      "isInstructor": false
+    },
+    "postedOn": "2014-03-27T04:01:16",
+    "seen": true,
+    "color": "teal",
+    "replies": [      {
+        "id": 1001,
+        "text": "Maybe they were just interested in science.",
+        "author": {
+          "name": "Guy Nguyen",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:577"
+      },
+            {
+        "id": 1002,
+        "text": "Or they didnt have any other hobbies",
+        "author": {
+          "name": "Win Chun",
+          "isInstructor": false
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:677"
+      }
+      ],
+    "unseenRepliesCount": 0,
+    "hasInstructor": false,
+    "isSelected": false
+  },
   {
     "id": 55,
     "text": "Doesn't that mean that they're not actually amateurs, if they're the one making the advances?",
@@ -340,7 +377,7 @@
   },
   {
     "id": 26,
-    "text": "Dr, Carlson says amateurs provide enthusiasm as well as talant",
+    "text": "That is very helpful for amateurs!",
     "author": {
       "name": "Moss Jedlicka",
       "isInstructor": false
