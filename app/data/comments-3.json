@@ -40,7 +40,7 @@
   },
   {
     "id": 14,
-    "text": "Did you know similar genes were found in fruit-flies!",
+    "text": "Does anybody know what those genes are?",
     "author": {
       "name": "Volodymyr Dziubak",
       "isInstructor": false
@@ -51,7 +51,7 @@
     "replies": [
       {
         "id": 15,
-        "text": "That is interesting!",
+        "text": "Not sure, but I think Dr. Bunt mentioned it in the class on Wednesday",
         "author": {
           "name": "Jimmy Neutron",
           "isInstructor": false
@@ -62,10 +62,10 @@
       },
       {
         "id": 1150,
-        "text": "That is cool!",
+        "text": "I did not have gene names on slides, but I mentioned that they found them in crows",
         "author": {
-          "name": "Sum Guy",
-          "isInstructor": false
+          "name": "Andrea Bunt",
+          "isInstructor": true
         },
         "postedOn": "2014-03-27T04:01:16",
         "seen": true,
@@ -73,7 +73,7 @@
       }
     ],
     "unseenRepliesCount": 0,
-    "hasInstructor": false,
+    "hasInstructor": true,
     "isSelected": false,
     "position": 490,
     "$$hashKey": "object:58",

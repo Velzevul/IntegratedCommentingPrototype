@@ -155,15 +155,27 @@
   },
   {
     "id": 25,
-    "text": "Uranus was also found by amateurs, as well as various comets and asteroids.",
+    "text": "Did amateurs discover something beyond the Solar System?",
     "author": {
-      "name": "Andrea Bunt",
-      "isInstructor": true
+      "name": "Thei Fay",
+      "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [],
+    "replies": [
+      {
+        "id": 31231234151123,
+        "text": "No, as they often do not have required equipment. The furthest object discovered by amateurs was Uranus.",
+        "author": {
+          "name": "Andrea Bunt",
+          "isInstructor": true
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:18"
+      }
+    ],
     "unseenRepliesCount": 0,
     "hasInstructor": true,
     "position": 675,

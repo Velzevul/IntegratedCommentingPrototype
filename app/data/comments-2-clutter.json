@@ -788,17 +788,29 @@
     "replyRequested": false,
     "isHighlighted": false
   },
-      {
+  {
     "id": 1150,
-    "text": "Most notably Texas has been the most pro-active state following the bill!",
+    "text": "Is there a list of states who passed the light pollution bill?",
     "author": {
-      "name": "Andrea Bunt",
-      "isInstructor": true
+      "name": "Mecit Arissen",
+      "isInstructor": false
     },
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
-    "replies": [],
+    "replies": [
+      {
+        "id": 86123145152,
+        "text": "Not sure you can get an entire list, but I know Texas has been the most pro-active state following the bill",
+        "author": {
+          "name": "Andrea Bunt",
+          "isInstructor": true
+        },
+        "postedOn": "2014-03-27T04:01:16",
+        "seen": true,
+        "$$hashKey": "object:143"
+      }
+    ],
     "unseenRepliesCount": 0,
     "hasInstructor": true,
     "isSelected": false,
