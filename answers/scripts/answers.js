@@ -32,19 +32,19 @@
         questions = [
           "In which educational institutions mentioned in the article researchers did NOT did work with earthworms?", // University College London, University of Michigan
           "In which organism scientists found genes that prolong life?" , // earthworm
-          "Which sentence (copy and paste) has received most commented from the students and instructor?"
+          "Which sentence (copy and paste) has received the most comments from the students and instructor?"
         ];
       } else if (values[0] === 'amateurs') {
         questions = [
           "Which scientists mentioned in the article are NOT related to Ornithology?", // Dr Fienberg, Adrian Hunt
           "Which planet was discovered by amateurs?", // Uranus
-          "Which sentence (copy and paste) has received most commented from the students and instructor?"
+          "Which sentence (copy and paste) has received the most comments from the students and instructor?"
         ];
       } else if (values[0] === 'light') {
         questions = [
           "Which people mentioned in the article are NOT related to an observatory?", // Jim Singleton, Brian Greer (out of 3)
           "Which state has been most pro-active in following the pollution bill?", // Texas
-          "Which sentence (copy and paste) has received most commented from the students and instructor?"
+          "Which sentence (copy and paste) has received the most comments from the students and instructor?"
         ];
       } else {
         // console.error('wrong document type!');
