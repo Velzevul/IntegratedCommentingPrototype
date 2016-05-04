@@ -5,6 +5,7 @@
       "name": "Hugo Isaev",
       "isInstructor": false
     },
+    "text": "Why amateurs did all those things?",
     "postedOn": "2014-03-27T04:01:16",
     "seen": true,
     "color": "teal",
@@ -30,20 +31,6 @@
         "seen": true,
         "$$hashKey": "object:677"
       }],
-    "unseenRepliesCount": 0,
-    "hasInstructor": false,
-    "isSelected": false
-  },
-  {
-    "id": 83,
-    "author": {
-      "name": "Hugo Isaev",
-      "isInstructor": false
-    },
-    "postedOn": "2014-03-27T04:01:16",
-    "seen": true,
-    "color": "teal",
-    "replies": [],
     "unseenRepliesCount": 0,
     "hasInstructor": false,
     "isSelected": false
