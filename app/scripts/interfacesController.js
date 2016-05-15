@@ -41,7 +41,7 @@ angular.module('comments')
 
     $scope.$watch('stage', function(value) {
       if (value === 'selecting') {
-        $window.location.href = rootPrefix + 'study.html';
+        $window.location.href = rootPrefix + '/study.html';
       }
     });
   });
@@ -110,7 +110,7 @@ angular.module('comments')
 
     $scope.$watch('stage', function(value) {
       if (value === 'selecting') {
-        $window.location.href = rootPrefix + 'study.html';
+        $window.location.href = rootPrefix + '/study.html';
       }
     });
   });
@@ -245,7 +245,7 @@ angular.module('comments')
 
     $scope.$watch('stage', function(value) {
       if (value === 'selecting') {
-        $window.location.href = rootPrefix + 'study.html';
+        $window.location.href = rootPrefix + '/study.html';
       }
     });
   });
