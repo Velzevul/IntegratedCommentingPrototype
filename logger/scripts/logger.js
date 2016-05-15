@@ -47,7 +47,14 @@
         setData(obj);
         console.log('data set', getData());
       },
-      getData: getData
+      getData: getData,
+      getStage: function() {
+        return localStorage.getItem(lsPrefix + 'stage');
+      },
+      setStage: function(stage) {
+        localStorage.setItem(lsPrefix + 'stage', stage);
+        
+      }
     };
   });
 

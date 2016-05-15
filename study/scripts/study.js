@@ -12,6 +12,8 @@
   var app = angular.module('study', ['logger']);
 
   app.controller('studyController', function(LoggerService, $scope, $window) {
+    LoggerService.setStage('selecting');
+
     $scope.data = LoggerService.getData();
 
     $scope.submit = function(e) {
@@ -38,11 +40,10 @@
           content: $scope.data.content,
           clutter: $scope.data.clutter
         });
-        LoggerService.log('experiment parameters set');
+        LoggerService.log('start reading stage');
+        LoggerService.setStage('reading');
 
-        urlParams = ['content=' + $scope.data.content, 'clutter=' + $scope.data.clutter, 'session=' + $scope.data.session];
-
-        $window.location.href = rootUrl + '#/' + $scope.data.interface + '?' + urlParams.join('&');
+        $window.location.href = rootUrl + '#/reading';
       } else {
         alert('please, set all the values first');
       }

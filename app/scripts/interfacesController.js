@@ -1,14 +1,7 @@
 angular.module('comments')
-  .controller('integratedController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService) {
+  .controller('integratedController', function($scope, $routeParams, $interval, $q, $window, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService, rootPrefix) {
     'use strict';
     // contextual comments
-
-    $scope.experimentStarted = false;
-    $scope.startExperiment = function() {
-      $scope.experimentStarted = true;
-      localStorage.setItem('IntegratedCommentingStudy-started', true);
-      LoggerService.log('experiment started');
-    };
 
     var params = LoggerService.getData();
     
@@ -41,20 +34,23 @@ angular.module('comments')
             }
         }
     }
+
+    $interval(function() {
+      $scope.stage = LoggerService.getStage();
+    }, 100);
+
+    $scope.$watch('stage', function(value) {
+      if (value === 'selecting') {
+        $window.location.href = rootPrefix + 'study.html';
+      }
+    });
   });
 
 angular.module('comments')
-  .controller('heatmapController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, HeatmapService, InitialCommentsService, LoggerService){
+  .controller('heatmapController', function($scope, $routeParams, $interval, $q, $window, ContextualCommentsService, SelectionService, HeatmapService, InitialCommentsService, LoggerService, rootPrefix){
     'use strict';
 
     var params = LoggerService.getData();
-
-    $scope.experimentStarted = false;
-    $scope.startExperiment = function() {
-      $scope.experimentStarted = true;
-      localStorage.setItem('IntegratedCommentingStudy-started', true);
-      LoggerService.log('experiment started');
-    };
 
     ContextualCommentsService.loaded
       .then(function() {
@@ -107,19 +103,22 @@ angular.module('comments')
         $scope.activeLines.push(number);
       }
     }
+
+    $interval(function() {
+      $scope.stage = LoggerService.getStage();
+    }, 100);
+
+    $scope.$watch('stage', function(value) {
+      if (value === 'selecting') {
+        $window.location.href = rootPrefix + 'study.html';
+      }
+    });
   });
 
 angular.module('comments')
-  .controller('paragraphController', function($scope, $routeParams, $q, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService) {
+  .controller('paragraphController', function($scope, $routeParams, $interval, $q, $window, ContextualCommentsService, SelectionService, InitialCommentsService, LoggerService, rootPrefix) {
     'use strict';
-
-    $scope.experimentStarted = false;
-    $scope.startExperiment = function() {
-      $scope.experimentStarted = true;
-      localStorage.setItem('IntegratedCommentingStudy-started', true);
-      LoggerService.log('experiment started');
-    };
-
+    
     var params = LoggerService.getData();
 
     ContextualCommentsService.loaded
@@ -237,6 +236,16 @@ angular.module('comments')
       } else {
           // need to add line
           $scope.shownParagraphs.push(value);
+      }
+    });
+
+    $interval(function() {
+      $scope.stage = LoggerService.getStage();
+    }, 100);
+
+    $scope.$watch('stage', function(value) {
+      if (value === 'selecting') {
+        $window.location.href = rootPrefix + 'study.html';
       }
     });
   });

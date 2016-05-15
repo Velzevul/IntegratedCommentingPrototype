@@ -57,7 +57,7 @@ html, body {
       border-color: red;
     }
   .answer-form__button {
-    display: block;
+    display: inline-block;
     margin: 0;
     padding: 6px 12px;
 
@@ -121,7 +121,7 @@ html, body {
   top: 0; left: 0;
   z-index: 10;
 
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.98);
 }
 
 .startModalTitle {
@@ -129,4 +129,8 @@ html, body {
   color: rgba(255,255,255,0.5);
   font-weight: 600;
   font-size: 48px;
+}
+
+.is-center-aligned {
+  text-align: center;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/answers.css">
   </head>
   <body ng-controller="answersController">
-    <div class="centered">
+    <div class="centered" ng-hide="stage == 'selecting'">
       <div class="centered__item">
         <div class="answer-form" ng-show="question">
           <div class="l-block">
@@ -35,11 +35,20 @@
           </form>
         </div>
 
-        <div class="no-questions" ng-hide="question">You have answered all questions. Plese press "finish tasks" button in the other window</div>
+        <div ng-hide="question">
+          <div class="l-block is-center-aligned" >
+            Congratulations, you have answered all questions
+          </div>
+
+          <div class="is-center-aligned">
+            <button class="answer-form__button" ng-click="setStage('selecting')">Finish</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="startModal" ng-hide="experimentOn">
+    <div class="startModal" ng-show="stage == 'reading'" ng-click="setStage('answering')">
+      <div class="startModalTitle">Click to start the experiment</div>
     </div>
 
     <!-- build:js scripts/angular.js -->

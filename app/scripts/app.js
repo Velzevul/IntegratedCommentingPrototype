@@ -26,23 +26,27 @@
 
   app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-        .when('/integrated', {
-          controller: 'integratedController',
-          templateUrl: function(urlParams){
-            return constructPath('integrated', urlParams);
-          }
-        })
-        .when('/heatmap', {
-          controller: 'heatmapController',
-          templateUrl: function(urlParams){
-            return constructPath('heatmap', urlParams);
-          }
-        })
-        .when('/paragraph', {
-          controller: 'paragraphController',
-          templateUrl: function(urlParams){
-            return constructPath('paragraph', urlParams);
-          }
-        });
+      .when('/reading', {
+        controller: 'readingController',
+        templateUrl: 'templates/reading.html'
+      })
+      .when('/integrated', {
+        controller: 'integratedController',
+        templateUrl: function(urlParams){
+          return constructPath('integrated', urlParams);
+        }
+      })
+      .when('/heatmap', {
+        controller: 'heatmapController',
+        templateUrl: function(urlParams){
+          return constructPath('heatmap', urlParams);
+        }
+      })
+      .when('/paragraph', {
+        controller: 'paragraphController',
+        templateUrl: function(urlParams){
+          return constructPath('paragraph', urlParams);
+        }
+      });
    }]);
 })(window);
