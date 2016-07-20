@@ -1,20 +1,20 @@
 Integrated Commenting Prototype
 =================
 
-NOTE: the latest version of the prototype is on the "combined" branch
+**NOTE:** the latest version of the prototype is on the "combined" branch
 
-Folder Structure
+###Folder Structure
+* `/study` - module for the 'study router' - allows the researcher behind the study to choose the proper condition for the participant, e.g. which interface is being used, which text, and whether there are clutter comments or not. The module stores the study parameters inside the browser's local storage. Accessible at /study.html
+* `/answers` - module for the window where partcipant sees questions and can submit answers. To know when the participant starts the study it is continuously polling localstorage for the values ($interval at line 10). Not very efficient, but was simple and good enough for the study.
+* `/server` - not in use, should be removed from the project
+* `/logger/scipts` - shared module that implements logging participant's actions (to localstorage).
+* `/app` - here be the prototypes...
 
-/study - module for the 'study router' - allows the researcher behind the study to choose the proper condition for the participant, e.g. which interface is being used, which text, and whether there are clutter comments or not. The module stores the study parameters inside the browser's local storage. Accessible at /study.html
-/answers - module for the window where partcipant sees questions and can submit answers. To know when the participant starts the study it is continuously polling localstorage for the values ($interval at line 10). Not very efficient, but was simple and good enough for the study.
-/server - not in use, should be removed from the project
-/logger/scipts - shared module that implements logging participant's actions (to localstorage).
-/app - here be the prototypes...
-WARNING: Inside the Gruntfile.js, sections that relate to css processing (copmass, css watcher, etc.) were commented out on purpose. During the stage 2 of the project all the new css code was added directly to the css/main.css file, which is the file generated automatically when one compiles scss. Thus, if one accidentally were to run css processing, all the chagnes would be lost :(
+**WARNING:** Inside the `Gruntfile.js`, sections that relate to css processing (copmass, css watcher, etc.) were commented out on purpose. During the stage 2 of the project all the new css code was added directly to the `css/main.css` file, which is the file generated automatically when one compiles scss. Thus, if one accidentally were to run css processing, all the chagnes would be lost :(
 
-Other than that, everything else should be pretty straightforward: npm install && npm start for dev. version or grunt build for production.
+Other than that, everything else should be pretty straightforward: `npm install && npm start` for dev. version or `grunt build` for production.
 
-===
+===============
 
 Integrated commenting prototype for the existing D2L educational platform. 
 
